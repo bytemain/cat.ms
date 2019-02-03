@@ -1,0 +1,93 @@
+layout: false
+---
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>lengthmin</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+</head>
+
+<body>
+<div class="vi">
+    <div class="sidebar">
+        <div class="header">
+        <div class = "avatar">
+        <a>
+            <img src="https://www.someline.com/cn/avatar/2496724ca51e72c5966486182b64074ca0140e45/300" class="animated zoomIn">
+        </a>
+        </div>
+            <h1>Artin</h1>
+        </div>
+        <div class="menu">
+            <a href="https://github.com/lengthmin" class="animate-init">GitHub</a>
+            <a href="http://lengthmin.com/" class="animate-init">Blog</a>
+            <a href="http://weibo.com/lengthmin" class="animate-init">WeiBo</a>
+            <p>
+                <strong>这个页面是从iissnan那里 复制粘贴加调试 来的。</strong>
+            </p>
+        </div>
+        <div class="location">
+            <i class="location-icon"></i>
+            <span class="location-text animate-init"> China</span>
+        </div>
+        <div class="relocating">
+            Navigating to: <span class="relocate-location"></span>...
+        </div>
+    </div>
+
+    <div class="content">
+        <span class="close">close</span>
+    </div>
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+    $(document).ready(function () {
+        var delay = 1;
+        var DELAY_STEP = 200;
+        var animationOptions = { opacity: 1, top: 0};
+
+        $('h1').animate(animationOptions).promise()
+                .pipe(animateMain)
+                .pipe(animateLocationIcon);
+
+        function animateMain() {
+            var dfd = $.Deferred();
+            var els = $('.animate-init');
+            var size = els.size();
+
+            els.each(function (index, el) {
+                delay++;
+                $(el).delay(index * DELAY_STEP)
+                        .animate(animationOptions);
+                (size - 1 === index) && dfd.resolve();
+            });
+            return dfd.promise();
+        }
+
+        function animateLocationIcon() {
+            $('.location-icon').delay(delay * DELAY_STEP).animate({
+                opacity: 1,
+                top: 0
+            }).promise().done(animationQuote);
+        }
+
+        function animationQuote() {}
+
+        $(document.body).on('keydown', function (event) {
+            // Press 'b' key
+            if (event.which === 66) {
+                $('.relocate-location').text('Bookmark Page');
+                $('.relocating').css('opacity', 1);
+
+                window.setTimeout(function () {
+                    window.location.href = 'http://www.lengthmin.com/urls/';
+                }, 1000);
+            }
+        });
+    });
+</script>
+</body>
+</html>

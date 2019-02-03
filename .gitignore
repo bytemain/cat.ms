@@ -1,0 +1,13 @@
+# 忽略一切
+*
+
+# source文件夹
+!.shell/
+!.shell/*
+!scaffolds/
+!scaffolds/*
+!source/
+!source/**
+!hexo
+!.prettierrc
+!.gitignore

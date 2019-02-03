@@ -1,0 +1,24 @@
+{
+	"semi": false,
+	"tabWidth": 2,
+	"useTabs": false,
+	"singleQuote": false,
+	"overrides": [
+		{
+			"files": ".prettierrc",
+			"options": { "parser": "json" }
+		},
+		{
+			"files": "*.test.js",
+			"options": {
+				"semi": true
+			}
+		},
+		{
+			"files": "*.md",
+			"options": {
+				"bracketSpacing": false
+			}
+		}
+	]
+}
