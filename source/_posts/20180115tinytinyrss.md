@@ -13,6 +13,19 @@ tags:
 permalink: tinytinyrss
 ---
 
+2019 年 2 月 17 日 16:20:57 更新：
+已经失效了！！
+已经失效了！！
+已经失效了！！
+
+现在部署可以一键部署了，但是已经无法获取更新了。
+
+```plain
+failed to open stream: no suitable wrapper could be found
+```
+
+---
+
 先说结论，不够好用，弃坑了，用国内的一览提供的 rss 服务。
 多平台支持，和 inoreader 相比速度更快，而且对于目前我订阅的源来说并没有不可阅读的，而且在 inoreader 上看不了電腦玩物的图片，在一览上没问题的。
 
@@ -23,7 +36,7 @@ permalink: tinytinyrss
 用了各种新闻软件之后，发现 rss 才是正道，不会被推荐打扰，就订阅那么几个源。每天刷一刷。
 现在微信公众号几乎都不怎么看了，二者功能几乎重复哈哈哈哈哈
 
-ttrss 即为 tinytinyrss(https://tt-rss.org/)
+ttrss 即为 tinytinyrss(<https://tt-rss.org/>)
 可以自己控制的自定义项较多的 rss 服务，
 多平台支持
 android 上推荐 feedme，最新的 3.5.1 版本支持了 tinytinyrss，体验很好。
@@ -52,12 +65,17 @@ coding 提供了 php+mysql 的环境，于是想试一试。
 
 ### 创建一个仓库备用
 
-![Snipaste_2018-01-15_13-18-53.png](https://i.loli.net/2018/01/15/5a5c3ae2a6052.png)
-这里会显示当前的仓库地址，留着备用。
+![image](https://user-images.githubusercontent.com/13938334/52909564-6838a680-32c5-11e9-9be8-5628f3350c95.png)
+
+这里会显示当前的仓库地址，复制留着备用。
+ssh 或者 https 都可以。
+ssh 要先配置好 ssh 的权限。
 
 ### 下载 tt-rss 的源码传到 git 上
 
-tiny 是一个开源项目，项目链接：https://git.tt-rss.org/git/tt-rss/src/master
+#### 使用 git clone
+
+tiny 是一个开源项目，项目链接：[https://git.tt-rss.org/git/tt-rss/src/master](https://git.tt-rss.org/fox/tt-rss)
 如果你的电脑没装 git 的话建议用 coding 提供的 webide，秒开很省心，而且 push 代码的时候很快很快的。免费用户可以可且仅可开一个。
 在安卓平台上也有提供 linux 终端的的软件，如 NeoTerm 和 Termux。
 先把源代码 clone 到本地
@@ -66,17 +84,41 @@ tiny 是一个开源项目，项目链接：https://git.tt-rss.org/git/tt-rss/sr
 git clone https://git.tt-rss.org/git/tt-rss.git
 ```
 
-![term.png](https://i.loli.net/2018/01/15/5a5c3e29a595a.png)
-
 克隆好后，修改`/tt-rss/.git/config`文件里的 remote url 为你的仓库地址(图里红框的位置)，仓库地址刚刚创建的时已经显示出来了
 ![Snipaste_2018-01-15_13-35-55.png](https://i.loli.net/2018/01/15/5a5c3e29a6434.png)
+
+> 无法克隆的可以直接去版本发布中下载最新版。<https://git.tt-rss.org/fox/tt-rss/releases>
+
+---
+
+#### 直接上传 zip 包
+
+在这里下载最新的版本。
+<https://git.tt-rss.org/fox/tt-rss/releases>
+解压之后可以看到本地多了一个`tt-rss`的文件夹，打开文件夹。
+输入
+
+```shell
+git init
+git remote add 你创建的仓库地址
+git add -A .
+git commit -am "upload tt-rss"
+```
+
+比如我的就是:
+![image](https://user-images.githubusercontent.com/13938334/52909625-94a0f280-32c6-11e9-9cc3-3e689e0fe950.png)
+
+如果执行完 commit 发现有提示 `Please tell me who you are.`
+就按照提示设置自己的邮箱和用户名。
+设置完之后再执行一遍最后一句`commit`。
+出现一堆`create mode xxx`的提示就可以了。
 
 #### 设置文件权限
 
 在这步有一个小问题，需要把目录下的每个文件的权限都设置成 777,否则后面会遇到文件无法读写导致站点无法访问的问题。
 在终端输入
 
-```bash
+```shell
 chmod -R 777 .
 ```
 
@@ -91,8 +133,10 @@ push 的方法很简单
 ```bash
 cd tt-rss #进入你的ttrss文件夹下使用下面的命令
 # 不需要进行 add 和 commit
-git push origin master
+git push -u origin master
 ```
+
+![image](https://user-images.githubusercontent.com/13938334/52909675-61ab2e80-32c7-11e9-8950-2cda85122c5e.png)
 
 输入你的用户名密码就可以了，一般来说输入密码的时候是不可见的，不用担心。
 
