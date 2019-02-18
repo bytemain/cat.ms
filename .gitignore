@@ -11,3 +11,6 @@
 !hexo
 !.prettierrc
 !.gitignore
+!package.json
+!package-lock.json
+!yarn.lock
