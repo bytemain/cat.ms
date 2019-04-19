@@ -119,7 +119,7 @@ footer:
   </a> by iissnan
 </div>
     ```
-    
+
   添加声明之后手机效果看起来不好，
   修改主题中/source/css/_schemes/Pisces/_layout.styl 第39-47行
   ```css
@@ -134,7 +134,7 @@ footer:
 }
   ```
 4. 配置config
-5. 
+5.
 
 ### 2016-12-06 在config中配置默认端口
 ```yaml
@@ -160,42 +160,3 @@ server:
 ### 2016-07-06 yelee添加置顶博客
 
 在博文的 `front-matter` 添加`top: 1`
-
-### 2016-07-05 添加腾讯分析
-
-用的主题是yelee，没有腾讯分析，自己加了一个。
-在`主题目录`下操作。
-在`_config.yml`中添加
-```yml
-tencent-analytics:
-在冒号后面配置你的腾讯分析id，id就是获取到的代码的数字部分
-```
-在`layout/_partial/`中创建一个新的`tencent-analytics.ejs`文件,
-加入如下代码
-```ejs
-<% if (theme.tencent_analytics){ %>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=<%= theme.tencent_analytics %>" charset="UTF-8"></script>
-
-<script type="text/javascript">
-    var _speedMark = new Date();
-</script>
-<% } %>
-```
-上面的代码包括了腾讯分析了。
-在`layout/_partial/`中修改`head.ejs`：
-```ejs
-#随便找一行添加如下代码，让用户在打开网页时加载腾讯分析。
-<%- partial('tencent-analytics') %>
-```
-然后在主题的`_config.yml`中输入你的腾讯分析id。
-执行
-```
-hexo clean
-hexo g -d
-```
-就ok了。
-
-### 2016-05-26 启用yelee主题
-
-目前在用的主题是yelee
-hexo有很多主题，推荐一下next跟yelee，两个都是简洁风的主题，但是yelee比较和我口味。
