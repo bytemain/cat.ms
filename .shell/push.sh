@@ -1,4 +1,4 @@
-hexo clean
+hexo c
 git add -f -A .
 str=`date '+%c'`
 git commit -am "Meow~  ${str}"
