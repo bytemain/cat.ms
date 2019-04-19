@@ -1,5 +1,3 @@
-#! /bin/bash
-
 hexo clean
 
 git add -f -A .
