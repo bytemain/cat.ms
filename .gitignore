@@ -3,7 +3,7 @@
 /_config.yml
 /old_blog
 /themes/next
-
+/themes/theme-next
 .DS_Store
 Thumbs.db
 db.json
