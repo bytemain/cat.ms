@@ -1,3 +1,5 @@
+#! /bin/bash
+echo "deploy"
 hexo c
 git add -f -A .
 str=`date '+%c'`
