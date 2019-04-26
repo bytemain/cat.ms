@@ -8,6 +8,7 @@ echo "*   4.   Hexo server.                *"
 echo "*   *.   Exit.                       *"
 echo "**************************************"
 read a
+hexo clean
 cd ./.shell
 case $a in
 1) sh deploy.sh
@@ -22,3 +23,5 @@ case $a in
 *) echo "see you"
 ;;
 esac
+cd ..
+hexo clean
