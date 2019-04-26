@@ -1,3 +1,3 @@
 #! /bin/bash
 hexo g -d
-echo "deploy done."
+echo "deploy done"

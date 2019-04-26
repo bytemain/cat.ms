@@ -7,9 +7,9 @@ date: 2018-06-29 15:54:41
 categories: 教程
 tags:
 - OpenCV
+- C++
 ---
-
-    Windows下安装OpenCV以及配环境的事情，对于VS来说一点都不麻烦，简单几步就可以让VS使用OpenCV。
+Windows下安装OpenCV以及配环境的事情，对于VS来说一点都不麻烦，简单几步就可以让VS使用OpenCV。
 
 <!-- more -->
 - [OpenCV的下载链接](https://opencv.org/releases.html)，下载winpack就行了

@@ -50,7 +50,7 @@ permalink: use-hexo-with-webide
 
 在你的 c9 控制台界面，创建一个 workspace，名字 hexo(自己喜欢就好)
 选择模板为 blank
-![](http://7xt1wl.com1.z0.glb.clouddn.com/16-5-22/58944002.jpg)
+<!-- ![](http://7xt1wl.com1.z0.glb.clouddn.com/16-5-22/58944002.jpg) -->
 c9 的控制台是 ubuntu 系统，并且已经装了我们搭建 Hexo 需要的 `nodejs` 跟 `git`。<br/>
 
 ---
@@ -63,7 +63,7 @@ c9 的控制台是 ubuntu 系统，并且已经装了我们搭建 Hexo 需要的
 npm install hexo-cli -g
 ```
 
-![](http://7xt1wl.com1.z0.glb.clouddn.com/16-5-22/25005751.jpg)
+<!-- ![](http://7xt1wl.com1.z0.glb.clouddn.com/16-5-22/25005751.jpg) -->
 等待安装成功<br/>
 创建一个 blog 文件夹，
 
@@ -86,9 +86,9 @@ hexo s -p 8081
 
 > - 先按照我这么输命令，因为 c9 只允许使用 8080，8081，8082 三个端口，而 Hexo 默认的端口是 4000，所以如果只使用`hexo s`的话就预览不了。后面讲命令的时候会再提一下。
 
-![](http://7xt1wl.com1.z0.glb.clouddn.com/16-5-22/60800577.jpg)
+<!-- ![](http://7xt1wl.com1.z0.glb.clouddn.com/16-5-22/60800577.jpg) -->
 点击终端出现的地址，出现如下图的话就说明安装好了。
-![](http://7xt1wl.com1.z0.glb.clouddn.com/16-5-22/45253572.jpg)
+<!-- ![](http://7xt1wl.com1.z0.glb.clouddn.com/16-5-22/45253572.jpg) -->
 
 > 调教 hexo 请参见[《hexo 你的博客》](http://ibruce.info/2013/11/22/hexo-your-blog/)
 
@@ -165,7 +165,7 @@ ssh 密钥在 ~/.ssh/id_rsa.pub <br/>
 在 coding 中创建一个仓库
 名字为你的 coding 用户名，不区分大小写。
 创建完仓库后，复制你的 SSH 地址
-![](http://7xt1wl.com1.z0.glb.clouddn.com/16-7-7/31815771.jpg)
+<!-- ![](http://7xt1wl.com1.z0.glb.clouddn.com/16-7-7/31815771.jpg) -->
 在 hexo 根目录下的 `_config.yml`中翻到尾部找到下面这串代码。然后**修改 coding 后面的地址为你的仓库的 ssh 地址，这里的 master 是分支的意思。**。<br/>
 
 > 一定要注意改成你自己的 ssh 地址，注意是 ssh 地址。而且`coding:`后面是有个空格的，这就是 yaml 语言的格式，以后编辑`_config.yml`也要注意的。

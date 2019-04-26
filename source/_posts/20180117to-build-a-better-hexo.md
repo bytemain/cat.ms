@@ -2,7 +2,7 @@
 title: 如何创建一个更好的Hexo使用体验
 comments: true
 toc: true
-permalink: 20180117to-build-a-better-hexo
+permalink: to-build-a-better-hexo
 date: 2018-01-17 10:24:03
 categories: 教程
 tags:
@@ -13,7 +13,7 @@ tags:
   我经常在webide更新博客，但这只限于有网络的情况下。想本地调试的话，在没网之前就需要把源文件同步到本地来。这个功能用`git`来实现会非常好。
   大概的思路就是在博客的仓库创建一个分支来备份源文件。
   在部署网页之前可以先把源文件同步到备份分支，然后需要的时候本地拉取回来。
-  
+
 <!-- more -->
 ***
 ## 备份到仓库 ##
@@ -21,7 +21,7 @@ tags:
 首先，你要在博客根目录下添加远程仓库。
 
 ```bash
-# git remote add [shortname] [url] 
+# git remote add [shortname] [url]
 # [shortname] 设置仓库的名称
 # [url] 远程仓库的链接
 git remote add hexo https://git.coding.net/Artin/Artin.git
@@ -37,7 +37,7 @@ git checkout backup
 ```
 然后在博客根目录下执行
 ```
-git add . 
+git add .
 git commit -am "update"
 git push hexo backup
 ```
