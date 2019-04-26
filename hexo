@@ -25,4 +25,3 @@ case $a in
 esac
 cd ..
 hexo clean
-hexo clean
