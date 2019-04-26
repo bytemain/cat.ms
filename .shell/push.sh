@@ -1,6 +1,6 @@
 #! /bin/bash
 echo "deploy"
-hexo c
+sh ./clean.sh
 git add -f -A .
 str=`date '+%c'`
 git commit -am "Meow~  ${str}"

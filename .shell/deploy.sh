@@ -1,5 +1,5 @@
 #! /bin/bash
 echo "deploy"
-hexo clean
+sh clean.sh
 hexo g -d
 echo "deploy done."
