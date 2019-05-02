@@ -8,7 +8,9 @@
 {"title":"如何创建一个更好的Hexo使用体验","url":"/2018/01/17/20180117to-build-a-better-hexo/"},
 {"title":"如何创建一个更好的Hexo使用体验","url":"/2018/01/17/to-build-a-better-hexo/"},
 {"title":"Win10下为Visual Studio安装OpenCV3.4.1(C++)","url":"/2018/06/29/windows-install-opencv-visualstudio/"},
+{"title":"Windows10 配置 OpenCV3.4.1 + Visual Studio","url":"/2018/06/29/windows-install-opencv-visualstudio/"},
 {"title":"20180731","url":"/2018/07/31/20180731/"},
 {"title":"ACM 输入输出语句","url":"/2018/07/31/acm-io/"},
 {"title":"安装 nvm 与 nodejs","url":"/2019/04/19/install-nvm/"},
+{"title":"为什么我们需要配置环境变量","url":"/2019/04/28/why-do-we-need-to-configure-environment-variables/"},
 ]
