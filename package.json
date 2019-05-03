@@ -16,9 +16,10 @@
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
     "hexo-leancloud-counter-security": "^1.4.0",
+    "hexo-neat": "^1.0.4",
     "hexo-related-popular-posts": "^3.0.5",
     "hexo-renderer-ejs": "^0.3.1",
-    "hexo-renderer-marked": "^0.3.2",
+    "hexo-renderer-markdown-it": "^3.4.1",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.1",
     "hexo-symbols-count-time": "^0.4.4"
