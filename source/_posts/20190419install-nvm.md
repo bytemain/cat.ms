@@ -15,8 +15,10 @@ tags:
 github 链接： [https://github.com/creationix/nvm](https://github.com/creationix/nvm)
 
 nvm 是 nodejs 的一个版本控制工具，也就是 "Node Version Manager" 的三个首字母。
+
+2019-06-29更新 Windows 安装 nvm
 <!-- more -->
-# 安装 nvm
+# Linux 安装 nvm
 ## 安装和升级 nvm
 要安装或升级 nvm, 可以使用官方给的一个脚本：
 官方目前的版本号是 `v0.34.0`。
@@ -107,3 +109,20 @@ npm install -g mirror-config-china --registry=http://registry.npm.taobao.org
 一下就可以配置好 好几个国内源～
 
 That's All.
+
+# Windows 安装 nvm
+
+## 下载安装
+[nvm-windows](https://github.com/coreybutler/nvm-windows)
+
+在 Releases 中下载最新版的 nvm-windows，如果下载的是 `nvm-noinstall.zip`，则需要配置环境变量。  
+这里直接安装了 setup 版，安装之后在 cmd 中输入 `nvm`，有显示即成功安装。
+
+## 配置国内源
+
+```bash
+nvm node_mirror https://npm.taobao.org/mirrors/node/
+nvm npm_mirror https://npm.taobao.org/mirrors/npm/
+```
+可设置 nvm 从国内下载安装。
+安装 nodejs 可见上一节：[#配置 npm 国内源]
