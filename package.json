@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.8.0"
+    "version": "3.9.0"
   },
   "dependencies": {
     "hexo": "^3.9.0",
@@ -24,6 +24,6 @@
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
     "hexo-symbols-count-time": "^0.6.0",
-    "hexo-yam": "^2.0.4"
+    "hexo-yam": "^2.1.0"
   }
 }

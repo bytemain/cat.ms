@@ -1,6 +1,8 @@
 [
 {"title":"ACM 输入输出语句","url":"/posts/acm-io/"},
 {"title":"为yelee主题加入腾讯分析","url":"/posts/add-tencent-analytics-to-yelee/"},
+{"title":"IBM-PC 汇编语言程序设计复习","url":"/posts/assembler-basic/"},
+{"title":"安装 ArchWSL 并配置","url":"/posts/install-arch-wsl/"},
 {"title":"安装 nvm 与 nodejs","url":"/posts/install-nvm/"},
 {"title":"Windows10 配置 OpenCV3.4.1 + Visual Studio","url":"/posts/install-opencv-windows-vs/"},
 {"title":"关于手贱执行了sudo git之后那些事","url":"/posts/sudo-git-fix/"},
