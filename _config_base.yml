@@ -107,8 +107,7 @@ deploy:
   - type: leancloud_counter_security_sync
   - type: git
     repo:
-      github: git@github.com:lengthmin/lengthmin.github.io.git
-      branch: master
+      github: git@github.com:lengthmin/lengthmin.github.io.git,master
 
 sitemap:
   path: sitemap.xml
