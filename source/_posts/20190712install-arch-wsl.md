@@ -13,23 +13,23 @@ tags:
 ---
 
 用 windows 写代码最想吐槽的就是 cmd 了！WSL 真的就是吾等救星。  
-之前使用的是商店里的 Ubuntu，没感觉到有啥不好的，然鹅试了 `yuk7/ArchWSL` 以后，能体会到 UbuntuWSL 是真的慢！
-链接：
+之前使用的是商店里的 UbuntuWSL ，没感觉到有啥不好的，然鹅试了 ArchWSL 以后，能体会到 UbuntuWSL 的龟速...
+ArchWSL 真的是秒开哦~
+链接拿去：
 [![yuk7/ArchWSL](https://gh-card.dev/repos/yuk7/ArchWSL.svg)](https://github.com/yuk7/ArchWSL)
 
 <!-- more -->
-# 下载安装 ArchWSL
+## 下载安装 ArchWSL
 
 这里是作者的安装教程：<https://github.com/yuk7/ArchWSL/wiki>
 
-我选择的是传统方式安装(不使用AppX)：
+我选择的是传统方式安装(不使用AppX方式)：
 1. 在[Release](https://github.com/yuk7/ArchWSL/releases)下载最新版的 `Arch.zip`
 2. 解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 `Program Files`等目录中。
 3. 双击解压好的 `Arch.exe` 进行安装，这个 **exe 可执行文件的名字** 就是要创建的 **WSL实例的名字**，改不同的名可以创建多个实例。
 
 安装好之后，进行配置。
 
-# 配置 ArchWSL
 
 ## 配置软件仓库
 
@@ -47,8 +47,7 @@ tags:
 >
 > 官方仓库地址：http://repo.archlinuxcn.org  
 
-这里我使用的是腾讯的镜像：  
-镜像地址: <http://mirrors.cloud.tencent.com/archlinuxcn/>
+这里我使用的是腾讯的镜像： <http://mirrors.cloud.tencent.com/archlinuxcn/>
 
 使用方法：  
 在 `/etc/pacman.conf` 文件末尾添加以下两行：
@@ -110,11 +109,13 @@ export EDITOR=vim;
 ```
 你也可以设置成自己喜欢的编辑器。
 
-让用户可以执行 sudo 命令，这一步不能省略：
+让用户可以执行 sudo 命令，这一步不能省略。
+使用如下系统自带命令修改 `sudoers` 文件。
 ```sh
 visudo
 ```
-并在里面添加
+
+在里面添加这一行即可：
 ```sh
 artin ALL=(ALL) ALL
 ```
@@ -122,7 +123,7 @@ artin ALL=(ALL) ALL
 
 这里我只把自己的用户名写进去了，你也可以设置一个用户组的权限，然后将你的用户加入到该用户组。
 
-### 切换 ArchWSL 默认用户
+## 切换 ArchWSL 默认用户
 在 cmd 中打开你的安装目录：
 ![](https://user-images.githubusercontent.com/13938334/61098825-e5da9a00-a492-11e9-8a77-c8979e233688.png)
 执行：
@@ -130,7 +131,7 @@ artin ALL=(ALL) ALL
 Arch.exe config --default-user artin
 ```
 
-## 配置 ArchWSL
+## 玩转 ArchWSL
 然后就是一些我自己喜欢的配置啦。
 ### 安装 zsh 和 oh-my-zsh
 `zsh` 又好看又好用又强大~
@@ -154,12 +155,12 @@ sudo pacman -S zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-### 配置 zsh
 
-#### 配置 alias
+### 配置 alias
 
 之后要经常修改 zsh，先配置几个方便、快捷的 alias。
 
+编辑 `~/.zshrc`， `zsh` 的配置文件。
 ```sh
 vim ~/.zshrc
 ```
@@ -180,20 +181,25 @@ alias rezsh="source ~/.zshrc"
 ```sh
 source ~/.zshrc
 ```
+
 即可~
 
-#### 配置 PATH 变量
+### 配置 PATH 变量
+
 WSL 中的环境变量会来自 Windows 系统，所以如果你两边都装了 npm 或者 python，可能会引起各种报错...
 ![](https://user-images.githubusercontent.com/13938334/61099457-f5f37900-a494-11e9-8b97-b8ea5455abef.png)
 
 所以手动的精简一些环境变量，从上面这个图中拿下来一点就好啦。
+编辑 `~/.zshrc`：
 ```sh
 vizsh
 ```
-修改前几行：
+
+添加：
 ```sh
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export PATH="/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$PATH"
+# 添加 `c/WINDOWS/system32` 这些目录是为了支持在 `vscode` 的 `remote-wsl`。
 export PATH="/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:$PATH"
 # 为了使用 vscode 的 `code .`
 export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
@@ -201,15 +207,21 @@ export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PA
 这里的都是我需要的，你可以根据自己的需要来判断用什么。
 ![](https://user-images.githubusercontent.com/13938334/61099545-4f5ba800-a495-11e9-9959-2d667f7ba442.png)
 
+
 ### 其他的一些配置
 
-配置 `oh-my-zsh` 的几个插件：
+配置 `oh-my-zsh` 的自带几个插件：
 
+- 自带插件列表：<https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins>
+- 插件Wiki:<https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins>
+
+找到下面这一行，填入即可。
 ```sh
 plugins=(git npm node history)
 ```
 
 配置 不匹配通配符：
+这个蛮有用的，比如想用 `find *.txt` 的时候。
 ```sh
 setopt no_nomatch
 ```
@@ -233,17 +245,17 @@ unpro () {
 # 链接：https://blog.skk.moe/post/enable-proxy-on-ubuntu/
 
 ip_ () {
-	http --follow -b https://api.ip.sb/geoip
+    http --follow -b https://api.ip.sb/geoip
 }
 
 git-config() {
-     echo -n "Please input Git Username: "      
-     read username      
-     echo -n "Please input Git Email: "
-     read email      
-     echo -n "Done!"
-     git config --global user.name "${username}"
-     git config --global user.email "${email}"  
+    echo -n "Please input Git Username: "      
+    read username      
+    echo -n "Please input Git Email: "
+    read email      
+    echo -n "Done!"
+    git config --global user.name "${username}"
+    git config --global user.email "${email}"  
 }
 # 参考自：
 # 链接：https://github.com/SukkaW/dotfiles
