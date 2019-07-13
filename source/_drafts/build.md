@@ -133,30 +133,3 @@ footer:
   }
 }
   ```
-4. 配置config
-5.
-
-### 2016-12-06 在config中配置默认端口
-```yaml
-server:
-  port: 8082
-```
-默认hexo s进入8082端口
-### 2016-12-06 增加更新历史
-
-### 2016-08-20 增加手机端的分类图标
-
-把下面几行代码删掉就会显示了
-/source/css/_partial/mobile.styl#L190
-```css
-.article-category::before{
-    display: none;
-}
-.article-tag::before {
-     display: none;
-}
-```
-
-### 2016-07-06 yelee添加置顶博客
-
-在博文的 `front-matter` 添加`top: 1`
