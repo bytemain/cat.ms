@@ -6,8 +6,9 @@
     "version": "3.9.0"
   },
   "scripts": {
-    "s": "hexo clean && hexo s",
-    "d": "hexo clean && hexo deploy"
+    "s": "node replace_secret.js && hexo clean && hexo s",
+    "d": "hexo clean && hexo deploy",
+    "d:l": "node replace_secret.js && hexo clean && hexo deploy"
   },
   "dependencies": {
     "hexo": "^3.9.0",
