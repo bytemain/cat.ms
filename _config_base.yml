@@ -572,10 +572,8 @@ theme_config:
     enable: true
     app_id: _leancloud_app_id_
     app_key: _leancloud_app_key_
-    # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
-    # If you don't care about security in leancloud counter and just want to use it directly
-    # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-    security: true
+
+    security: false
     betterPerformance: true
 
   # Show Views / Visitors of the website / page with busuanzi.
