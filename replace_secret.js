@@ -3,12 +3,6 @@ var fs = require("fs")
 var base_file = "_config_base.yml"
 var target_file = "_config.yml"
 
-// fs.unlink(target_file, function(error) {
-//   if (error) {
-//     return console.log(error)
-//   }
-//   console.log("删除文件:" + target_file)
-// })
 var secrets_file = path.join(__dirname, "secrets_.json")
 var secrets_json = null
 var secrets_data = fs.readFileSync(secrets_file)

@@ -56,7 +56,7 @@ footer:
     </li>
  <li class="post-copyright-license">
       <strong>{{ __('post.copyright.license_title') + __('symbol.colon') }} </strong>
- <i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"{{ __('post.copyright.cc') }}"</a> {{ __('post.copyright.notice') }}
+ <i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"{{ __('post.copyright.cc') }}"</a> {{ __('post.copyright.notice') }}
     </li>
     </ul>
     ```

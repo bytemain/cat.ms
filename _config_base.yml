@@ -72,8 +72,6 @@ per_page: 10
 pagination_dir: page
 
 
-
-
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -216,7 +214,7 @@ theme_config:
     #header: source/_data/header.swig
     #sidebar: source/_data/sidebar.swig
     #postMeta: source/_data/post-meta.swig
-    #postBodyEnd: source/_data/post-body-end.swig
+    postBodyEnd: source/_data/post-body-end.swig
     footer: source/_data/footer.swig
     #bodyEnd: source/_data/body-end.swig
     #variable: source/_data/variables.styl
@@ -265,20 +263,6 @@ theme_config:
       another_day: false
     categories: true
     
-  # Creative Commons 4.0 International License.
-  # See: https://creativecommons.org/share-your-work/licensing-types-examples
-  # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-  # You can set a language value if you prefer a translated version of CC license.
-  # CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
-  # Valid values of language: deed.zh, deed.fr, deed.de, etc.
-  creative_commons:
-    license: 署名-非商用-相同方式共享 4.0
-    sidebar: false
-    post: true
-    backup:
-      username: lengthmin
-      repository: lengthmin.github.io
-      branch: backup
 
   # ---------------------------------------------------------------
   # SEO Settings
@@ -430,9 +414,11 @@ theme_config:
       isDate: false
       #isImage: false
       #isExcerpt: false
+
+  # Generation of diagram and flowchart from text in a similar manner as markdown
   # Mermaid tag
   mermaid:
-    enable: true
+    enable: false
     # Available themes: default | dark | forest | neutral
     theme: forest
     cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js

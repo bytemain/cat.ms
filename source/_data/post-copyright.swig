@@ -1,0 +1,90 @@
+{#
+  移植自 http://moxfive.xyz/2016/06/14/duoshuo-disqus-comment-count/#footer
+  基于 https://github.com/theme-next/hexo-theme-next
+#}
+
+{% set ccLicense = "署名-非商用-相同方式共享 4.0" %}
+{% set ccLicenseTitle = "CC BY-NC-SA 4.0 International"%}
+{% set ccIcon = '<i class="fa fa-fw fa-creative-commons"></i>' %}
+{% set ccText = ccLicense | upper %}
+{% set ccURL = 'http://creativecommons.org/licenses/by-nc-sa/4.0/' %}
+
+{% set postURL = page.url || page.permalink %}
+
+{# 
+  设置你自己的源文件仓库信息 
+#}
+{% set username = "lengthmin" %}
+{% set repository = "lengthmin.github.io" %}
+{% set branch = "backup" %}
+
+{# 
+  设置 copyright 的文字提示 
+  __("post.xxxx") 获取 language 文件中的字段  
+#}
+{% set authorText = "文章作者" %}
+{% set titleText = "文章标题" %}
+{% set linkText = "文章标题" %}
+{% set updatedText = "更新时间" %}
+{% set historyText = "更新历史" %}
+{% set rawText = "源文件" %}
+{% set licenseTitle = "版权声明" %}
+{% set licenseContent = "%s  转载请保留原文链接及作者。" %}
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>{{ authorText + __('symbol.colon') }} </strong>{#
+  #}{{ page.author || author }}{#
+#}</li>
+  <li class="post-copyright-title">
+    <strong>{{ titleText + __('symbol.colon') }} </strong>{#
+  #}<a href="{{ url_for(page.path) }} "> {{ page.title }} </a>{#
+#}</li>
+  <li class="post-copyright-link">
+    <strong>{{ linkText + __('symbol.colon') }}</strong>
+
+    {{ next_url(postURL, postURL, {title: page.title}) }}
+    <span class="copy-path"title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+    <span class="copytooltip"/>
+    <script>
+      var x = 10;
+      var y = 20;
+      var copyButton = document.querySelector('.copy-path');
+      var copyTooltip = document.querySelector('.copytooltip');
+      copyButton.addEventListener('click',function(e){
+        var ta = document.createElement('textarea');
+        ta.readOnly = true;
+        ta.value = "原文作者：{{ page.author || author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}";
+        document.body.appendChild(ta);
+        ta.select();
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        if (result){
+          $(copyTooltip).append('<span id="mytitle" >' + '{{__("post.copy_success")}}' + '</span>');
+        }
+        else{
+          $(copyTooltip).append('<span id="mytitle" >' + '{{__("post.copy_failure")}}' + '</span>');
+        }
+        setTimeout(()=>{$(copyTooltip).empty();},2000);
+        document.body.removeChild(ta);
+      });
+    </script>
+  </li>
+  <li class="post-copyright-updated">
+    <strong>{{ updatedText + __('symbol.colon') }} </strong>{#
+  #}{{ page.updated.format("YYYY-MM-DD, HH:mm:ss") }}{#
+#}</li>
+  <li class="post-copyright-history">
+    <strong>{{ historyText + __('symbol.colon') }}</strong>
+    <i class="fa fa-github"> </i>
+    <a href="https://github.com/{{ username }}/{{ repository }}/blame/{{ branch }}/source/{{ page.source }}" title="顺序查看文章各部分修改记录" target = "_blank">Blame</a>,
+    <a href="https://github.com/{{ username }}/{{ repository }}/commits/{{ branch }}/source/{{ page.source }}" title="查看文章有关更新记录" target = "_blank">History</a>
+    <strong style="margin-left: 1em">{{ rawText + __('symbol.colon') }}</strong>
+    <i class="fa fa-file-text-o"></i>
+    <a href="https://raw.githubusercontent.com/{{ username }}/{{ repository }}/{{ branch }}/source/{{ page.source }}" title="查看 & 下载文章 Markdown 原始文件" target = "_blank">.md Raw</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>{{ licenseTitle + __('symbol.colon') }} </strong>{#
+  #}{{ ccIcon  + __(licenseContent, next_url(ccURL, ccText, {title: ccLicenseTitle }))  }}{#
+#}</li>
+</ul>

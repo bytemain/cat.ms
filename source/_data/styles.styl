@@ -21,13 +21,6 @@
   padding-left: 1px;
   overflow:hidden;
 }
-// .headband
-// .site-meta{
-//   background: #38b7ea; //天空的颜色，和我的眼镜是绝配
-// }
-// .site-subtitle{
-//   color: #fff;
-// }
 
 .copy-path {
     margin-left: 1em;
@@ -51,4 +44,27 @@
 }
 .post-body img{
   border-style: none !important;
+}
+
+$post-copyright = {
+  margin: 2em 0 0,
+  padding: .5em 1em,
+  bg: #f9f9f9,
+  border: {
+    width: 3px,
+    style: solid,
+    color: #ff1700
+  }
+}
+
+.post-copyright {
+  margin: $post-copyright.margin;
+  padding: $post-copyright.padding;
+  border-left: $post-copyright.border.width $post-copyright.border.style $post-copyright.border.color;
+  background-color: $post-copyright.bg;
+  list-style: none;
+
+  i.fa {
+    font-size: 15px;
+  }
 }
