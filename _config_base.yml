@@ -459,7 +459,8 @@ theme_config:
   links_layout: block
   #links_layout: inline block
   links:
-    maxlv: http://maxlv.org/
+    Max: http://maxlv.org/
+    "Konica 的自留地": http://www.iikira.com/
 
   # Reduce padding / margin indents on devices with narrow width.
   mobile_layout_economy: true
