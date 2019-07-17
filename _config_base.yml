@@ -108,6 +108,8 @@ deploy:
   - type: git
     repo:
       github: git@github.com:lengthmin/lengthmin.github.io.git,master
+      coding: git@git.dev.tencent.com:Artin/blog.git,master
+
 
 sitemap:
   path: sitemap.xml
