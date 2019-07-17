@@ -4,12 +4,14 @@ comments: true
 toc: true
 date: 2018-01-15 14:31:34
 categories:
-  - 教程
+  - RSS
 tags:
   - RSS
+  - 教程
   - Coding
+  - Coding Pages
 
-permalink: tinytinyrss
+permalink: coding-pages-tinytinyrss
 ---
 
 2019 年 2 月 17 日 16:20:57 更新：

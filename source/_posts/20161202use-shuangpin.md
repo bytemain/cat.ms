@@ -3,8 +3,10 @@ title: 来用用双拼吧
 comments: true
 toc: true
 date: 2016-12-02 22:21:26
-categories: 教程
-tags: 双拼
+categories: 双拼
+tags: 
+  - 双拼
+  - 教程
 permalink: use-shuangpin
 ---
 

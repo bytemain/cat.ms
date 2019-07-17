@@ -4,9 +4,10 @@ comments: true
 toc: true
 permalink: install-opencv-windows-vs
 date: 2018-06-29 15:54:41
-categories: 教程
+categories: OpenCV
 tags:
 - OpenCV
+- 教程
 - C++
 - "Visual Studio"
 ---

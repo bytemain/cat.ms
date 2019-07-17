@@ -4,9 +4,10 @@ comments: true
 toc: true
 date: 2016-07-15 10:58:13
 categories:
-  - 教程
+  - Hexo
 tags:
   - Hexo
+  - 教程
 permalink: add-tencent-analytics-to-yelee
 ---
 

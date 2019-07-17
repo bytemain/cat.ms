@@ -1,9 +1,9 @@
 ---
 title: 使用在线ide和pages服务搭建一个免费的Hexo博客
 categories:
-  - 教程
-
+  - Hexo
 tags:
+  - 教程
   - Hexo
   - c9.io
 
