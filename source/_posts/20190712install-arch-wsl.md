@@ -1,5 +1,5 @@
 ---
-title: 安装 ArchWSL 并配置
+title: 安装 Arch WSL 并配置
 comments: true
 toc: true
 permalink: install-arch-wsl
@@ -13,20 +13,20 @@ tags:
 ---
 
 用 windows 写代码最想吐槽的就是 cmd 了！WSL 真的就是吾等救星。  
-之前使用的是商店里的 UbuntuWSL ，没感觉到有啥不好的，然鹅试了 ArchWSL 以后，能体会到 UbuntuWSL 的龟速...
+之前使用的是商店里的 Ubuntu WSL ，没感觉到有啥不好的，然鹅试了 Arch WSL 以后，能体会到 Ubuntu WSL 的龟速...
 ArchWSL 真的是秒开哦~
 链接拿去：
 [![yuk7/ArchWSL](https://gh-card.dev/repos/yuk7/ArchWSL.svg)](https://github.com/yuk7/ArchWSL)
 
 <!-- more -->
-## 下载安装 ArchWSL
+## 下载安装 Arch WSL
 
 这里是作者的安装教程：<https://github.com/yuk7/ArchWSL/wiki>
 
 我选择的是传统方式安装(不使用AppX方式)：
 1. 在[Release](https://github.com/yuk7/ArchWSL/releases)下载最新版的 `Arch.zip`
 2. 解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 `Program Files`等目录中。
-3. 双击解压好的 `Arch.exe` 进行安装，这个 **exe 可执行文件的名字** 就是要创建的 **WSL实例的名字**，改不同的名可以创建多个实例。
+3. 双击解压好的 `Arch.exe` 进行安装，这个 **.exe 的名字** 就是要创建的 **WSL实例的名字**，改不同的名字就能创建多个 Arch WSL。
 
 安装好之后，进行配置。
 
@@ -123,7 +123,7 @@ artin ALL=(ALL) ALL
 
 这里我只把自己的用户名写进去了，你也可以设置一个用户组的权限，然后将你的用户加入到该用户组。
 
-## 切换 ArchWSL 默认用户
+## 切换 Arch WSL 默认用户
 在 cmd 中打开你的安装目录：
 ![](https://user-images.githubusercontent.com/13938334/61098825-e5da9a00-a492-11e9-8a77-c8979e233688.png)
 执行：
@@ -131,7 +131,7 @@ artin ALL=(ALL) ALL
 Arch.exe config --default-user artin
 ```
 
-## 玩转 ArchWSL
+## 玩转 Arch WSL
 然后就是一些我自己喜欢的配置啦。
 ### 安装 zsh 和 oh-my-zsh
 `zsh` 又好看又好用又强大~

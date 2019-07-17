@@ -45,7 +45,7 @@ permalink: use-hexo-with-webide
 
 ## 准备准备
 
-- 注册 [coding.net](http://coding.net/) ｜ [c9.io](http://c9.io/) <br/>
+- 注册 [coding.net](https://coding.net/) ｜ [c9.io](https://c9.io/) <br/>
   ** 注意:c9 没有被墙，但是注册的时候需要输入验证码，验证码使用的是 google 的 reCAPTCHA 服务。因此注册的时候需要科学上网。 **
 
 在你的 c9 控制台界面，创建一个 workspace，名字 hexo(自己喜欢就好)
@@ -90,9 +90,9 @@ hexo s -p 8081
 点击终端出现的地址，出现如下图的话就说明安装好了。
 <!-- ![](http://7xt1wl.com1.z0.glb.clouddn.com/16-5-22/45253572.jpg) -->
 
-> 调教 hexo 请参见[《hexo 你的博客》](http://ibruce.info/2013/11/22/hexo-your-blog/)
+> 调教 hexo 请参见[《hexo 你的博客》](https://ibruce.info/2013/11/22/hexo-your-blog/)
 
-> 在这推荐两个主题： [yelee](http://moxfive.coding.me/yelee/) 跟 [next](http://theme-next.iissnan.com/)
+> 在这推荐两个主题： [yelee](https://moxfive.coding.me/yelee/) 跟 [next](https://theme-next.iissnan.com/)
 
 ---
 
