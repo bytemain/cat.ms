@@ -7,7 +7,7 @@ date: 2019-07-12 09:42:25
 categories: WSL
 tags:
 - WSL
-- ArchLinux
+- Arch Linux
 - Linux
 - ZSH
 ---

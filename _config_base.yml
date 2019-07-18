@@ -425,7 +425,7 @@ theme_config:
     #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
   # Use velocity to animate everything.
   motion:
-    enable: true
+    enable: false
     async: false
     transition:
       # Transition variants:
@@ -462,8 +462,11 @@ theme_config:
     Max: http://maxlv.org/
     "Konica 的自留地": http://www.iikira.com/
 
-  # Reduce padding / margin indents on devices with narrow width.
-  mobile_layout_economy: true
+  # Set the text alignment in posts / pages.
+  text_align:
+    # Available values: start | end | left | right | center | justify | justify-all | match-parent
+    desktop: justify
+    mobile: start
 
   # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
   android_chrome_color: "#222"
@@ -481,6 +484,36 @@ theme_config:
 
   # Enable "cheers" for archive page.
   cheers: true
+
+
+
+  # ---------------------------------------------------------------
+  # Tags Settings
+  # See: https://theme-next.org/docs/tag-plugins/
+  # ---------------------------------------------------------------
+
+  # Note tag (bs-callout)
+  note:
+    # Note tag style values:
+    #  - simple    bs-callout old alert style. Default.
+    #  - modern    bs-callout new (v2-v3) alert style.
+    #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
+    #  - disabled  disable all CSS styles import of note tag.
+    style: modern
+    icons: true
+    border_radius: 3
+    # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
+    # Offset also applied to label tag variables. This option can work with disabled note tag.
+    light_bg_offset: 0
+
+  # Tabs tag
+  tabs:
+    enable: true
+    transition:
+      tabs: true
+      labels: true
+    border_radius: 0
+
 
   # Math Equations Render Support
   math:

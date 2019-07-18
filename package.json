@@ -8,11 +8,11 @@
   "scripts": {
     "s": "node replace_secret.js && hexo clean && hexo s",
     "d": "hexo clean && hexo deploy",
-    "d:l": "node replace_secret.js && hexo clean && hexo deploy"
+    "d:l": "node replace_secret.js && yarn d"
   },
   "dependencies": {
-    "hexo": "^3.9.0",
     "babel-runtime": "^6.26.0",
+    "hexo": "^3.9.0",
     "hexo-deployer-git": "^1.0.0",
     "hexo-filter-optimize": "^0.2.5",
     "hexo-generator-archive": "^0.1.5",

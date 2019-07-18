@@ -15,6 +15,10 @@ config_data = config_data.replace(
   secrets_json["gitalk_client_id"]
 )
 config_data = config_data.replace(
+  /_gitalk_client_secret_/g,
+  secrets_json["gitalk_client_secret"]
+)
+config_data = config_data.replace(
   /_leancloud_app_id_/g,
   secrets_json["leancloud_app_id"]
 )
