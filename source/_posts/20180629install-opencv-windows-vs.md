@@ -7,7 +7,6 @@ date: 2018-06-29 15:54:41
 categories: OpenCV
 tags:
 - OpenCV
-- 教程
 - C++
 - "Visual Studio"
 ---

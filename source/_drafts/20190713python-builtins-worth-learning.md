@@ -8,7 +8,6 @@ categories: Python
 tags:
   - Python
   - 翻译
-  - 教程
 ---
 
 原文链接：<https://treyhunner.com/2019/05/python-builtins-worth-learning/>

@@ -3,10 +3,9 @@ title: 使用在线ide和pages服务搭建一个免费的Hexo博客
 categories:
   - Hexo
 tags:
-  - 教程
   - Hexo
   - c9.io
-
+  - webide
 date: 2016-05-21 16:03:00
 permalink: use-hexo-with-webide
 ---

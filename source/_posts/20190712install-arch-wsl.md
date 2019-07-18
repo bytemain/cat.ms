@@ -14,7 +14,7 @@ tags:
 
 用 windows 写代码最想吐槽的就是 cmd 了！WSL 真的就是吾等救星。  
 之前使用的是商店里的 Ubuntu WSL ，没感觉到有啥不好的，然鹅试了 Arch WSL 以后，能体会到 Ubuntu WSL 的龟速...
-ArchWSL 真的是秒开哦~
+Arch WSL 真的是秒开哦~
 链接拿去：
 [![yuk7/ArchWSL](https://gh-card.dev/repos/yuk7/ArchWSL.svg)](https://github.com/yuk7/ArchWSL)
 

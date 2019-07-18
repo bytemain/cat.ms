@@ -7,7 +7,7 @@ categories:
   - Hexo
 tags:
   - Hexo
-  - 教程
+  - 主题
 permalink: add-tencent-analytics-to-yelee
 ---
 
