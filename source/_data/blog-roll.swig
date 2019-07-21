@@ -1,0 +1,15 @@
+<div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
+<div class="links-of-blogroll-title">
+    <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
+    {{ theme.links_title }}
+</div>
+<ul class="links-of-blogroll-list">
+    {% for blogrollText, blogrollInfo in theme.links_ %}
+    {% set blogrollURL = blogrollInfo.split('||')[0] | trim %}
+    {% set blogrollTitle = blogrollInfo.split('||')[1] | trim %}
+    <li class="links-of-blogroll-item">
+        {{ next_url(blogrollURL, blogrollText, {title: blogrollTitle}) }}
+    </li>
+    {% endfor %}
+</ul>
+</div>

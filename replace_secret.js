@@ -10,30 +10,12 @@ secrets_json = JSON.parse(secrets_data.toString())
 
 var data = fs.readFileSync(base_file)
 config_data = data.toString()
-config_data = config_data.replace(
-  /_gitalk_client_id_/g,
-  secrets_json["gitalk_client_id"]
-)
-config_data = config_data.replace(
-  /_gitalk_client_secret_/g,
-  secrets_json["gitalk_client_secret"]
-)
-config_data = config_data.replace(
-  /_leancloud_app_id_/g,
-  secrets_json["leancloud_app_id"]
-)
-config_data = config_data.replace(
-  /_leancloud_app_key_/g,
-  secrets_json["leancloud_app_key"]
-)
-config_data = config_data.replace(
-  /_leancloud_counter_security_password_/g,
-  secrets_json["leancloud_counter_security_password"]
-)
-config_data = config_data.replace(
-  /_leancloud_counter_security_username_/g,
-  secrets_json["leancloud_counter_security_username"]
-)
+secrets_keys = Object.keys(secrets_json)
+
+for (key of secrets_keys) {
+  exp = new RegExp(`_${key}_`, "g")
+  config_data = config_data.replace(exp, secrets_json[key])
+}
 
 fs.writeFile(target_file, config_data, function(err) {
   if (err) {

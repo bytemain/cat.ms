@@ -1,4 +1,4 @@
-// Custom styles.
+// 页面底部的 github 图片
 .footer-custom  a {
     background-color: color #000;
     border-bottom: none;
@@ -22,49 +22,18 @@
   overflow:hidden;
 }
 
-.copy-path {
-    margin-left: 1em;
-    width: 1em;
-    cursor: pointer;
-}
 
-.copytooltip{
-  padding-left: 1em;
-  padding-bottom: 10em;
-
-}
-
-#mytitle {
-    position: absolute;
-    color: #ffffff;
-    max-width: 160px;
-    font-size: 12px;
-    padding: 5px;
-    background: rgba(40, 40, 40, 0.8);
-}
+// 文章中的图片去掉边框
 .post-body img{
   border-style: none !important;
 }
 
-$post-copyright = {
-  margin: 2em 0 0,
-  padding: .5em 1em,
-  bg: #f9f9f9,
-  border: {
-    width: 3px,
-    style: solid,
-    color: #ff1700
-  }
-}
-
-.post-copyright {
-  margin: $post-copyright.margin;
-  padding: $post-copyright.padding;
-  border-left: $post-copyright.border.width $post-copyright.border.style $post-copyright.border.color;
-  background-color: $post-copyright.bg;
-  list-style: none;
-
-  i.fa {
-    font-size: 15px;
-  }
-}
+// 原文：https://blog.csdn.net/jinggege0818/article/details/82113120 
+// 自动更换背景图片
+// body {
+//     background:url(https://unsplash.artin.workers.dev/);
+//     background-repeat: no-repeat;
+//     background-attachment:fixed;
+//     background-position:50% 50%;
+//     background-size:cover;
+// }

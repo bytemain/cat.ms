@@ -1,0 +1,43 @@
+.copy-path {
+    margin-left: 1em;
+    width: 1em;
+    cursor: pointer;
+}
+
+.copytooltip{
+  padding-left: 1em;
+  padding-bottom: 10em;
+
+}
+
+#mytitle {
+    position: absolute;
+    color: #ffffff;
+    max-width: 160px;
+    font-size: 12px;
+    padding: 5px;
+    background: rgba(40, 40, 40, 0.8);
+}
+
+$post-copyright = {
+  margin: 2em 0 0,
+  padding: .5em 1em,
+  bg: #f9f9f9,
+  border: {
+    width: 3px,
+    style: solid,
+    color: #ff1700
+  }
+}
+
+.post-copyright {
+  margin: $post-copyright.margin;
+  padding: $post-copyright.padding;
+  border-left: $post-copyright.border.width $post-copyright.border.style $post-copyright.border.color;
+  background-color: $post-copyright.bg;
+  list-style: none;
+
+  i.fa {
+    font-size: 15px;
+  }
+}

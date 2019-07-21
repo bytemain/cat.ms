@@ -9,6 +9,7 @@ hexo.extend.filter.register(
       "creative-commons",
       "source/_data/post-copyright.swig"
     )
+    injects.style.push("source/_data/post-copyright.styl")
   },
   100
 )

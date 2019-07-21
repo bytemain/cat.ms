@@ -45,13 +45,17 @@ tags:
 ---
 ## 备份源文件到仓库
 ### 建立 git 仓库
-如果你以前没有备份过源文件，那就跟着一步步操作吧。
+> [如何创建一个更好的Hexo使用体验](https://lengthmin.me/posts/to-build-a-better-hexo/)
+>
+> 以前写的备份 Hexo 源文件的教程 
+
+如果你以前没有备份过源文件，可以往下跟着一步步操作。
 ```sh
 # 将当前目录作为 git 目录
 git init
 ```
 
-
+添加远程仓库：
 {% tabs remote add %}
 <!-- tab SSH -->
 
@@ -158,3 +162,4 @@ gitalk:
 ## 其他参考资料
 - [持续集成在Hexo自动化部署上的实践](https://qinyuanpei.github.io/posts/3521618732/#实现Hexo博客的自动化部署)
 - [利用 Travis CI 将 Hexo 持续集成部署到 GitHub Pages](https://easyhexo.com/1-Hexo-install-and-config/1-5-continuous-integration.html#自动部署)
+- [Hexo NexT 高阶教程之 Injects](https://www.dnocm.com/articles/beechnut/hexo-next-injects/)
