@@ -222,7 +222,7 @@ theme_config:
       # This option means `font-family: FontAwesome`, so DO Not change it.
       # Also you can choose ForkAwesome, but that's another story.
       font: FontAwesome
-      content: \E906 # CSS content for FontAwesome & ForkAwesome.
+      content: \f0c1 # CSS content for FontAwesome & ForkAwesome.
 
   # Allow to cache content generation. Introduced in NexT v6.0.0.
   cache:
