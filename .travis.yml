@@ -6,6 +6,7 @@ cache:
   npm: true
   directories:
     - node_modules
+    - themes
 
 before_install:
   - export TZ=Asia/Shanghai
