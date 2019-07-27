@@ -8,24 +8,27 @@
 language: node_js
 node_js: stable
 
+before_install:
+  # - apt-get update
+  - export TZ=Asia/Shanghai
+  # - ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+  # - export DEBIAN_FRONTEND=noninteractive
+  # - apt-get install -y tzdata
+  # - dpkg-reconfigure --frontend noninteractive tzdata
 
-before_script:
-  - apt-get update
+install:
   - npm install hexo-cli -g
   - npm install yarn -g
-  - export TZ=Asia/Shanghai
-  - ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-  - export DEBIAN_FRONTEND=noninteractive
-  - apt-get install -y tzdata
-  - dpkg-reconfigure --frontend noninteractive tzdata
 
-script:
+before_script:
   - git config --global user.email "lengthmin@gmail.com"
   - git config --global user.name "Artin"
   - ssh-keyscan github.com >> /root/.ssh/known_hosts
   - ssh-keyscan git.dev.tencent.com >> /root/.ssh/known_hosts
   - sh ./helper/replace_secret.sh 
   - sh ./helper/update_lib.sh 
+
+script:
   - yarn install
   - yarn d
 
