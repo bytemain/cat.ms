@@ -133,6 +133,21 @@ Arch.exe config --default-user artin
 
 ## 玩转 Arch WSL
 然后就是一些我自己喜欢的配置啦。
+
+### 安装网络相关的工具
+> 参考 http://www.linuxdiyf.com/view_218403.html
+> 安装archlinux 以后没有 ifconfig,route ,nslookup 等命令
+
+
+- ifconfig,route在net-tools中
+- nslookup,dig在dnsutils中
+- ftp,telnet等在inetutils中
+- ip命令在iproute2中
+  
+```sh
+pacman -S net-tools dnsutils inetutils iproute2
+```
+
 ### 安装 zsh 和 oh-my-zsh
 `zsh` 又好看又好用又强大~
 
@@ -208,7 +223,7 @@ export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PA
 ![](https://user-images.githubusercontent.com/13938334/61099545-4f5ba800-a495-11e9-9959-2d667f7ba442.png)
 
 
-### 其他的一些配置
+### zsh 的其他的一些配置
 
 配置 `oh-my-zsh` 的自带几个插件：
 
