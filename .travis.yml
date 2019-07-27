@@ -1,0 +1,35 @@
+# Refrecnes:
+# http://www.think-diff.me/2016/05/28/travis-ci-deploy-blog/
+# https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs
+# https://github.com/iissnan/theme-next-docs/blob/master/.travis.yml
+# http://changyuheng.me/2015/when-hexo-static-site-meets-github-pages-and-travis-ci/
+
+language: node_js
+node_js: stable
+
+
+before_script:
+  - apt-get update
+  - npm install hexo-cli -g
+  - npm install yarn -g
+  - export TZ=Asia/Shanghai
+  - ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+  - export DEBIAN_FRONTEND=noninteractive
+  - apt-get install -y tzdata
+  - dpkg-reconfigure --frontend noninteractive tzdata
+
+script:
+  - git config --global user.email "lengthmin@gmail.com"
+  - git config --global user.name "Artin"
+  - ssh-keyscan github.com >> /root/.ssh/known_hosts
+  - ssh-keyscan git.dev.tencent.com >> /root/.ssh/known_hosts
+  - sh ./helper/replace_secret.sh 
+  - sh ./helper/update_lib.sh 
+  - yarn install
+  - yarn d
+
+
+branches:
+  only:
+    - backup

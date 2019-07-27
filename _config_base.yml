@@ -105,8 +105,8 @@ deploy:
   - type: leancloud_counter_security_sync
   - type: git
     repo:
-      github: git@github.com:lengthmin/lengthmin.github.io.git,master
-      coding: git@git.dev.tencent.com:Artin/blog.git,master
+      github: https://_GH_TOKEN_@github.com/lengthmin/lengthmin.github.io.git,master
+      coding: https://_CODING_TOKEN_@git.dev.tencent.com/Artin/blog.git,master
 
 
 sitemap:
