@@ -23,8 +23,6 @@ install:
 before_script:
   - git config --global user.email "lengthmin@gmail.com"
   - git config --global user.name "Artin"
-  - ssh-keyscan github.com >> /root/.ssh/known_hosts
-  - ssh-keyscan git.dev.tencent.com >> /root/.ssh/known_hosts
   - sh ./helper/replace_secret.sh 
   - sh ./helper/update_lib.sh 
 
