@@ -634,17 +634,14 @@ theme_config:
     post_views: false
     post_views_icon: eye
 
-  # Algolia Search
-  # See: https://theme-next.org/docs/third-party-services/search-services#Algolia-Search
-  # Dependencies: https://github.com/theme-next/theme-next-algolia-instant-search
-  algolia_search:
-    enable: false
-    hits:
-      per_page: 10
-    labels:
-      input_placeholder: Search for Posts
-      hits_empty: "We didn't find any results for the search: ${query}"
-      hits_stats: "${hits} results found in ${time} ms"
+  # Post edit
+  # Dependencies: https://github.com/hexojs/hexo-deployer-git
+  post_edit:
+    enable: true
+    url: https://github.com/lengthmin/lengthmin.github.io/tree/backup/source
+    #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit
+
+
 
   # Local search
   # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
