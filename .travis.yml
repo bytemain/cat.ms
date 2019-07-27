@@ -30,7 +30,9 @@ script:
   - yarn install
   - yarn d
 
-
+after_script:
+  - cat ./_config.yml
+  
 branches:
   only:
     - backup

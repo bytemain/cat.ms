@@ -1,6 +1,6 @@
 # Artin's Blog
 
-[![buddy pipeline](https://app.buddy.works/lengthmin/lengthmin-github-io/pipelines/pipeline/198889/badge.svg?token=b95b1aaea6d2d999f474a4b079f0ff2387e8767cc05e207fdf9039d3fab80695 "buddy pipeline")](https://app.buddy.works/lengthmin/lengthmin-github-io/pipelines/pipeline/198889)
+[![Build Status](https://travis-ci.org/lengthmin/lengthmin.github.io.svg?branch=backup)](https://travis-ci.org/lengthmin/lengthmin.github.io)
 [![dependencies Status](https://david-dm.org/lengthmin/lengthmin.github.io.svg)](https://david-dm.org/lengthmin/lengthmin.github.io)
 
 - Powered by [Hexo](https://hexo.io/zh-cn/)
