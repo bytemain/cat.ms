@@ -137,11 +137,11 @@ pwa:
   priority: 5
 
 symbols_count_time:
-  symbols: false
-  time: false
-  total_symbols: true
-  total_time: true
-  exclude_codeblock: false
+  symbols: true
+  time: true
+  total_symbols: false
+  total_time: false
+  exclude_codeblock: true
 
 
 
@@ -417,7 +417,7 @@ theme_config:
     item_text_post: true
     item_text_total: false
     awl: 2
-    wpm: 300
+    wpm: 275
     suffix: mins.
 
   # Related popular posts
@@ -437,7 +437,7 @@ theme_config:
 
   motion:
     enable: false
-    async: false
+    async: true
     transition:
       # Transition variants:
       # fadeIn | fadeOut | flipXIn | flipXOut | flipYIn | flipYOut | flipBounceXIn | flipBounceXOut | flipBounceYIn | flipBounceYOut
@@ -453,22 +453,24 @@ theme_config:
       # Only for Pisces | Gemini.
       sidebar: slideUpIn
 
+
   codeblock:
-    # Manual define the border radius in codeblock, leave it blank for the default value: 1
-    border_radius:
+    # Code Highlight theme
+    # Available values: normal | night | night eighties | night blue | night bright
+    # See: https://github.com/chriskempson/tomorrow-theme
+    highlight_theme: normal
     # Add copy button on codeblock
     copy_button:
       enable: true
-      # Show text copy result
+      # Show text copy result.
       show_result: true
-      # Style: only 'flat' is currently available, leave it blank if you prefer default theme
+      # Available values: default | flat | mac
       style: flat
 
   # Blog rolls
   links_icon: link
   links_title: 友链
   links_layout: block
-  #links_layout: inline block
   links_:
     Max: http://maxlv.org/ || MaxLv 
     "Konica 的自留地": http://www.iikira.com/ || 一个大可爱
@@ -648,9 +650,9 @@ theme_config:
     # if manual, trigger search by pressing enter key or search button
     trigger: auto
     # show top n results per article, show all results by setting to -1
-    top_n_per_article: -1
+    top_n_per_article: 3
     # unescape html strings to the readable one
-    unescape: false
+    unescape: true
 
   fancybox: true
   fastclick: true
