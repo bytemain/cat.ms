@@ -1,5 +1,5 @@
 ---
-title: 用coding提供的动态pages来制作一个自己的rss订阅
+title: 使用 Coding 的动态 Pages 搭建 TT-RSS
 comments: true
 toc: true
 date: 2018-01-15 14:31:34
