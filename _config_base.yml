@@ -112,8 +112,11 @@ deploy:
 
 sitemap:
   path: sitemap.xml
+  tag: false
+  category: false
   # template: ./sitemap_template.xml
-
+baidusitemap:
+  path: baidusitemap.xml
 pwa:
   manifest:
     path: /manifest.json
