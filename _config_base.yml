@@ -106,7 +106,7 @@ deploy:
   - type: leancloud_counter_security_sync
   - type: git
     repo:
-      github: https://_GH_TOKEN_@github.com/lengthmin/lengthmin.github.io.git,master
+      github: https://_GH_TOKEN_@github.com/lengthmin/lengthmin.me.git,master
       coding: https://Artin:_CODING_TOKEN_@git.dev.tencent.com/Artin/artin.git,master
 
 
@@ -614,7 +614,7 @@ theme_config:
   gitalk:
     enable: true
     github_id: lengthmin # Github repo owner
-    repo: lengthmin.github.io # Repository name to store issues
+    repo: lengthmin.me # Repository name to store issues
     client_id: _gitalk_client_id_ # Github Application Client ID
     client_secret: _gitalk_client_secret_ # Github Application Client Secret
     admin_user: lengthmin # GitHub repo owner and collaborators, only these guys can initialize github issues
@@ -649,7 +649,7 @@ theme_config:
   # Dependencies: https://github.com/hexojs/hexo-deployer-git
   post_edit:
     enable: true
-    url: https://github.com/lengthmin/lengthmin.github.io/tree/backup/source/
+    url: https://github.com/lengthmin/lengthmin.me/tree/backup/source/
 
   # Local search
   # Dependencies: https://github.com/theme-next/hexo-generator-searchdb

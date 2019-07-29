@@ -1,6 +1,6 @@
 # Artin's Blog
 
-[![Build Status](https://travis-ci.org/lengthmin/lengthmin.github.io.svg?branch=backup)](https://travis-ci.org/lengthmin/lengthmin.github.io)
+[![Build Status](https://travis-ci.org/lengthmin/lengthmin.me.svg?branch=backup)](https://travis-ci.org/lengthmin/lengthmin.me)
 
 
 - Powered by [Hexo](https://hexo.io/zh-cn/)

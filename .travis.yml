@@ -7,12 +7,13 @@ cache:
     - node_modules
     - themes
 
-before_install:
-  - export TZ=Asia/Shanghai
+env:
+  - TZ=Asia/Shanghai
 
 install:
   - npm install hexo-cli -g
   - npm install yarn -g
+  - yarn install
 
 before_script:
   - git config --global user.email "lengthmin@gmail.com"
@@ -21,7 +22,6 @@ before_script:
   - sh ./helper/update_lib.sh 
 
 script:
-  - yarn install
   - yarn d
 
 after_script:

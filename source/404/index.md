@@ -3,7 +3,7 @@ title: 404 NOT FOUND
 comments: true
 toc: false
 date: 2016-01-01 00:00:01
-permalink: /404
+permalink: 404
 quicklink: true
 ---
 

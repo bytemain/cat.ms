@@ -15,7 +15,7 @@
   设置你自己的源文件仓库信息 
 #}
 {% set username = "lengthmin" %}
-{% set repository = "lengthmin.github.io" %}
+{% set repository = "lengthmin.me" %}
 {% set branch = "backup" %}
 
 {# 

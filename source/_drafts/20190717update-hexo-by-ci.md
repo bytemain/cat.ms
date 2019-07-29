@@ -40,7 +40,7 @@ tags:
 **文末提供了一些参考资料。**
 
 可以参考我的仓库：
-[![lengthmin.github.io](https://gh-card.dev/repos/lengthmin/lengthmin.github.io.svg)](https://github.com/lengthmin/lengthmin.github.io)
+[![lengthmin.me](https://gh-card.dev/repos/lengthmin/lengthmin.me.svg)](https://github.com/lengthmin/lengthmin.me)
 
 <!-- more -->
 ---
@@ -116,7 +116,7 @@ git checkout -b backup
 这样对我而言的好处就是可以 CI 每次去克隆最新版的主题~ 一个配置文件还方便管理。
 
 我们在将代码提交到 backup 分支之前，先设置一些忽略项，这完全依赖于你自己的博客源文件：
-你可以参考我的[.gitignore](https://github.com/lengthmin/lengthmin.github.io/blob/backup/.gitignore)。
+你可以参考我的[.gitignore](https://github.com/lengthmin/lengthmin.me/blob/backup/.gitignore)。
 ```sh
 _config.yml # 忽略你的配置文件
 themes/ # 忽略上传主题
@@ -144,7 +144,7 @@ gitalk:
 我们之后在部署或者生成的时候使用相应的密钥替换掉就好。
 
 
-可以参考我的 [_config_base.yml](https://github.com/lengthmin/lengthmin.github.io/blob/backup/_config_base.yml)。
+可以参考我的 [_config_base.yml](https://github.com/lengthmin/lengthmin.me/blob/backup/_config_base.yml)。
 ![_config_base.yml](https://i.loli.net/2019/07/18/5d2fea19bdd7947244.png)
 
 ## 选择一个合适的 CI 工具
