@@ -7,3 +7,4 @@ sed -i -e "s/_gitalk_client_id_/$gitalk_client_id/g" _config.yml
 sed -i -e "s/_gitalk_client_secret_/$gitalk_client_secret/g" _config.yml
 sed -i -e "s/_GH_TOKEN_/${GH_TOKEN}/g" _config.yml
 sed -i -e "s/_CODING_TOKEN_/${CODING_TOKEN}/g" _config.yml
+sed -i -e "s/_google_analytics_tracking_id_/${google_analytics_tracking_id}/g" _config.yml

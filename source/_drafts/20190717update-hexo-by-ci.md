@@ -46,7 +46,7 @@ tags:
 ---
 ## 备份源文件到仓库
 ### 建立 git 仓库
-> [如何创建一个更好的Hexo使用体验](https://lengthmin.me/posts/to-build-a-better-hexo/)
+> [如何创建一个更好的Hexo使用体验](/posts/to-build-a-better-hexo/)
 >
 > 以前写的备份 Hexo 源文件的教程 
 

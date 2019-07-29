@@ -231,7 +231,7 @@ theme_config:
 
   # Google Analytics
   google_analytics:
-    tracking_id: UA-144727481-1
+    tracking_id: _google_analytics_tracking_id_
     localhost_ignored: true
 
   custom_file_path:
