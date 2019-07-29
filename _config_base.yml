@@ -229,6 +229,11 @@ theme_config:
   cache:
     enable: true
 
+  # Google Analytics
+  google_analytics:
+    tracking_id: UA-144727481-1
+    localhost_ignored: true
+
   custom_file_path:
     #head: source/_data/head.swig
     #header: source/_data/header.swig
