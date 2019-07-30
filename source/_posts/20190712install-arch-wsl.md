@@ -88,7 +88,25 @@ pacman -S yay
 yay
 ```
 
-## 创建普通用户
+换成国内 AUR 源:
+```sh
+# yay --save --aururl "地址"
+yay --save --aururl https://aur.tuna.tsinghua.edu.cn
+```
+
+yay 的配置文件路径： `~/.config/yay/config.json`
+
+查看 yay 配置：  
+```sh
+yay -P -g
+```
+
+查看 yay 帮助：
+```sh
+man yay
+```
+
+## 创建 Arch 普通用户
 刚安装好的 Arch 是 root 用户，为了不至于权限太大误伤系统，可以先创建一个普通用户。
 
 添加一个用户：
@@ -123,7 +141,7 @@ artin ALL=(ALL) ALL
 
 这里我只把自己的用户名写进去了，你也可以设置一个用户组的权限，然后将你的用户加入到该用户组。
 
-## 切换 Arch WSL 默认用户
+## 切换 WSL 默认用户
 在 cmd 中打开你的安装目录：
 ![](https://user-images.githubusercontent.com/13938334/61098825-e5da9a00-a492-11e9-8a77-c8979e233688.png)
 执行：
@@ -133,6 +151,37 @@ Arch.exe config --default-user artin
 
 ## 玩转 Arch WSL
 然后就是一些我自己喜欢的配置啦。
+
+### pacman 使用方法
+> ArchLinux必备命令记录(manjaro) - weixin_42408100的博客 - CSDN博客
+> https://blog.csdn.net/weixin_42408100/article/details/82526087
+
+
+| 常用命令                   | 解释                                             |
+| -------------------------- | ------------------------------------------------ |
+| pacman -Sy abc             | 和源同步后安装名为abc的包                        |
+| pacman -S abc              | 从本地数据库中得到abc的信息，下载安装abc包       |
+| pacman -Sf abc             | 强制安装包abc                                    |
+| pacman -Ss abc             | 搜索有关abc信息的包                              |
+| pacman -Si abc             | 从数据库中搜索包abc的信息                        |
+| pacman -Syu                | 同步源，并更新系统                               |
+| pacman -Sy                 | 仅同步源                                         |
+| pacman -R abc              | 删除abc包                                        |
+| pacman -Rc abc             | 删除abc包和依赖abc的包                           |
+| pacman -Rsn abc            | 移除包所有不需要的依赖包并删除其配置文件         |
+| pacman -Sc                 | 清理/var/cache/pacman/pkg目录下的旧包            |
+| pacman -Scc                | 清除所有下载的包和数据库                         |
+| pacman -Sd abc             | 忽略依赖性问题，安装包abc                        |
+| pacman -Su --ignore foo    | 升级时不升级包foo                                |
+| pacman -Sg abc             | 查询abc这个包组包含的软件包                      |
+| pacman -Q                  | 列出系统中所有的包                               |
+| pacman -Q package          | 在本地包数据库搜索(查询)指定软件包               |
+| pacman -Qi package         | 在本地包数据库搜索(查询)指定软件包并列出相关信息 |
+| pacman -Q `|` wc -l        | 统计当前系统中的包数量                           |
+| pacman -Qdt                | 找出孤立包                                       |
+| pacman -Rs $(pacman -Qtdq) | 删除孤立软件包（递归的,小心用)                   |
+| pacman -U   abc.pkg.tar.gz | 安装下载的abs包，或新编译的本地abc包             |
+| pacman-optimize && sync    | 提高数据库访问速度                               |
 
 ### 安装网络相关的工具
 > 参考 http://www.linuxdiyf.com/view_218403.html
@@ -147,6 +196,18 @@ Arch.exe config --default-user artin
 ```sh
 pacman -S net-tools dnsutils inetutils iproute2
 ```
+
+### 配置基本环境
+
+安装 fakeroot、binutils 等打包基本工具
+```sh
+pacman -S base-devel
+```
+我这里会提示 `fakeroot` 被 ignore 了，因为 `/etc/pacman.conf` 里写了~ 选了 n
+然后回车就好了~ 不输入数字的话默认会安装 `base-devel` 里的所有包。
+
+
+## 安装配置 zsh
 
 ### 安装 zsh 和 oh-my-zsh
 `zsh` 又好看又好用又强大~
@@ -281,5 +342,15 @@ git-config() {
 ```sh
 pacman -S httpie
 ```
+
+## 在 VSCode 中使用 Wsl
+待补充
+
+
+
+## 更多优化配置 
+
+可参考知乎这篇：[利用WSL打造Arch开发环境](https://zhuanlan.zhihu.com/p/51270874#三、使用优化配置)
+
 
 大概就先写这么多吧~
