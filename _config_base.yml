@@ -154,6 +154,7 @@ neat_html:
   enable: true
   logger: false
   exclude:
+    - ""
 neat_css:
   enable: true
   exclude:
@@ -201,15 +202,6 @@ markdown_it_plus:
   typographer: true
   quotes: “”‘’
   pre_class: highlight
-  # plugins:
-  #   - plugin:
-  #       name: markdown-it-toc-and-anchor
-  #       enable: true
-  #       options:
-  #         wrapHeadingTextInAnchor: true
-  #         anchorLinkSymbol: "#"
-  #         tocFirstLevel: 1
-  #         slugify: string => `${string.replace(/[ \-']/g, "")}`
 
 
 theme_config:
