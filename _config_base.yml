@@ -154,7 +154,7 @@ neat_html:
   enable: true
   logger: false
   exclude:
-    - ""
+    - "index.test.html"
 neat_css:
   enable: true
   exclude:
