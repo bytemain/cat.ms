@@ -389,8 +389,6 @@ theme_config:
     url: /images/avatar.png
     # If true, the avatar would be dispalyed in circle.
     rounded: false
-    # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
-    opacity: 1
     # If true, the avatar would be rotated with the cursor.
     rotated: false
     # Sidebar Display, available values (only for Muse | Mist):
@@ -404,8 +402,7 @@ theme_config:
     offset: 12
     # Enable sidebar on narrow view (only for Muse | Mist).
     onmobile: false
-    # Click any blank part of the page to close sidebar (only for Muse | Mist).
-    dimmer: false
+
 
   back2top:
     enable: true
@@ -664,11 +661,11 @@ theme_config:
     unescape: true
 
   fancybox: true
-  fastclick: true
   lazyload: true
   
-  pace: true
-  pace_theme: pace-theme-flash
+  pace:
+    enable: true
+    theme: flash
 
   # Script Vendors. Set a CDN address for the vendor you want to customize.
   # For example
@@ -695,12 +692,6 @@ theme_config:
     # fancybox:
     # fancybox_css:
 
-    # Internal version: 1.0.6
-    # See: https://github.com/ftlabs/fastclick
-    # Example:
-    # fastclick: //cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js
-    # fastclick: //cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
-    fastclick:
 
     # Internal version: 1.10.0
     # See: https://github.com/ApoorvSaxena/lozad.js
