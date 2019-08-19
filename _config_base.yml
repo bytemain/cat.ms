@@ -732,7 +732,7 @@ theme_config:
   # Easily enable fast Ajax navigation on your website.
   # Dependencies: https://github.com/theme-next/theme-next-pjax
   # For moreinformation: https://github.com/MoOx/pjax
-  pjax: true
+  pjax: false
 
   # Fancybox. There is support for old version 2 and new version 3.
   # Choose only one variant, do not need to install both.
