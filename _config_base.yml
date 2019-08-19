@@ -28,7 +28,6 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render: 
   - README.md
-  - tools/
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -468,13 +467,17 @@ theme_config:
   # Blog rolls
   links_icon: link
   links_title: 友链
-  links_layout: block
+  links_layout: inline
   links_:
     Max: http://maxlv.org/ || MaxLv 
     "Konica 的自留地": http://www.iikira.com/ || 一个大可爱
     Sukka: https://skk.moe/ || 坏耶
     DIYgod: https://diygod.me/ || 带我领略 Github 的 DIYgay 
-
+  # links:
+  #   Max: http://maxlv.org/
+  #   "Konica 的自留地": http://www.iikira.com/
+  #   Sukka: https://skk.moe/
+  #   DIYgod: https://diygod.me/ 
   # Set the text alignment in posts / pages.
   text_align:
     # Available values: start | end | left | right | center | justify | justify-all | match-parent

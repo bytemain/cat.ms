@@ -10,6 +10,7 @@ hexo.extend.filter.register(
 
     zh["footer.powered"] = "Powered by %s"
     zh["footer.theme"] = "Theme"
+    zh["state.posts"] = "博客"
   },
   100
 )
