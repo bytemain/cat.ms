@@ -8,8 +8,7 @@
   "scripts": {
     "s": "node replace_secret.js && hexo s",
     "cs": "node replace_secret.js && hexo clean && hexo s",
-    "cd": "hexo clean && hexo deploy",
-    "d": "hexo deploy",
+    "d": "hexo clean && hexo deploy",
     "dl": "node replace_secret.js && yarn d"
   },
   "dependencies": {
