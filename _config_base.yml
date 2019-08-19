@@ -5,8 +5,8 @@
 # Site
 title: Artin's Blog
 subtitle: 我便一步一莲花祈祷
-description: Python / 前端 / 机器学习
-keywords: Python 机器学习
+description: Python / React / Nodejs / 机器学习
+keywords: Python,机器学习,React,Nodejs
 author: Artin
 language: zh-CN
 timezone: Asia/Shanghai
@@ -28,7 +28,8 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render: 
   - README.md
-  
+  - tools/
+
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
