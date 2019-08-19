@@ -3,9 +3,7 @@ node_js: stable
 cache:
   yarn: true
   npm: true
-  directories:
-    - node_modules
-    
+
 env:
   - TZ=Asia/Shanghai
 
