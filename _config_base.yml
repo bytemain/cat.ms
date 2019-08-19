@@ -365,8 +365,8 @@ theme_config:
   # Schemes
   # scheme: Muse
   #scheme: Mist
-  # scheme: Pisces
-  scheme: Gemini
+  scheme: Pisces
+  # scheme: Gemini
 
 
   # ---------------------------------------------------------------
@@ -925,9 +925,6 @@ theme_config:
     tracking_id: _google_analytics_tracking_id_
     localhost_ignored: true
 
-  # CNZZ count
-  cnzz_siteid:
-
   # Application Insights
   # See: https://azure.microsoft.com/en-us/services/application-insights
   application_insights:
@@ -1187,11 +1184,11 @@ theme_config:
     # FancyBox
     # Example:
     # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
-    # fancybox: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js
+    fancybox: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js
     # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
-    # fancybox_css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css
-    fancybox:
-    fancybox_css:
+    fancybox_css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css
+    # fancybox:
+    # fancybox_css:
 
     # Medium-zoom
     # Example:
@@ -1201,8 +1198,8 @@ theme_config:
     # Lazyload
     # Example:
     # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
-    # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js
-    lazyload:
+    lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js
+    # lazyload:
 
     # Pangu
     # Example:
