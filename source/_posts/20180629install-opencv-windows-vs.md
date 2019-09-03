@@ -4,6 +4,7 @@ comments: true
 toc: true
 permalink: install-opencv-windows-vs
 date: 2018-06-29 15:54:41
+updated: 2019-07-18 14:03:00
 categories: OpenCV
 tags:
 - OpenCV

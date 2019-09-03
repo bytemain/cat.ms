@@ -4,6 +4,7 @@ comments: true
 toc: true
 permalink: install-arch-wsl
 date: 2019-07-12 09:42:25
+updated: 2019-07-30 16:17:00
 categories: WSL
 tags:
 - WSL

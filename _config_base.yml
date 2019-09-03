@@ -26,7 +26,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: 
+skip_render:
   - README.md
 
 # Writing
@@ -54,7 +54,6 @@ index_generator:
   per_page: 10
   order_by: -date
 
-
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -71,7 +70,6 @@ time_format: HH:mm:ss
 ## Set per_page to 0 to disable pagination
 per_page: 10
 pagination_dir: page
-
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -91,7 +89,6 @@ search:
   format: html
   limit: 10000
 
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
@@ -101,11 +98,10 @@ deploy:
       github: https://_GH_TOKEN_@github.com/lengthmin/lengthmin.me.git,master
       coding: https://Artin:_CODING_TOKEN_@git.dev.tencent.com/Artin/artin.git,master
 
-
 sitemap:
   path: sitemap.xml
   tag: false
-  category: false  
+  category: false
 baidusitemap:
   path: baidusitemap.xml
 
@@ -123,7 +119,7 @@ pwa:
     opts:
       networkTimeoutSeconds: 5
     routes:
-      - pattern: '*.artin.workers.dev'
+      - pattern: "*.artin.workers.dev"
         strategy: networkFirst
       - pattern: '!!js/regexp /.*\.(js|css|jpg|jpeg|png|gif|svg|eot|ttf|woff|woff2)$/'
         strategy: cacheFirst
@@ -138,8 +134,6 @@ symbols_count_time:
   total_symbols: false
   total_time: false
   exclude_codeblock: true
-
-
 
 neat_enable: true
 neat_html:
@@ -172,17 +166,17 @@ neat_gzip:
 neat_brotli:
   enable: true
   include:
-    - '*.html'
-    - '*.css'
-    - '*.js'
-    - '*.txt'
-    - '*.ttf'
-    - '*.atom'
-    - '*.stl'
-    - '*.xml'
-    - '*.svg'
-    - '*.eot'
-    - '*.json'
+    - "*.html"
+    - "*.css"
+    - "*.js"
+    - "*.txt"
+    - "*.ttf"
+    - "*.atom"
+    - "*.stl"
+    - "*.xml"
+    - "*.svg"
+    - "*.eot"
+    - "*.json"
 
 markdown_it_plus:
   highlight: true
@@ -195,16 +189,15 @@ markdown_it_plus:
   quotes: “”‘’
   pre_class: highlight
 
-
 theme_config:
   anchor:
     enable: true
-    color: '#0e83cd'
+    color: "#0e83cd"
     position: right # If left, anchors will always be visible.
-    margin: 7px 
-    text: '#'
+    margin: 7px
+    text: "#"
     icon:
-      enable: true 
+      enable: true
       font: FontAwesome
       content: \f0c1 # CSS content for FontAwesome & ForkAwesome.
   # ---------------------------------------------------------------
@@ -241,7 +234,6 @@ theme_config:
     #variable: source/_data/variables.styl
     #mixin: source/_data/mixins.styl
     style: source/_data/styles.styl
-
 
   # ---------------------------------------------------------------
   # Site Information Settings
@@ -305,7 +297,6 @@ theme_config:
     post: false
     language:
 
-
   # ---------------------------------------------------------------
   # SEO Settings
   # ---------------------------------------------------------------
@@ -330,7 +321,6 @@ theme_config:
 
   # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
   baidu_push: false
-
 
   # ---------------------------------------------------------------
   # Menu Settings
@@ -357,7 +347,6 @@ theme_config:
     icons: true
     badges: true
 
-
   # ---------------------------------------------------------------
   # Scheme Settings
   # ---------------------------------------------------------------
@@ -367,7 +356,6 @@ theme_config:
   #scheme: Mist
   scheme: Pisces
   # scheme: Gemini
-
 
   # ---------------------------------------------------------------
   # Sidebar Settings
@@ -401,10 +389,10 @@ theme_config:
   links:
     #Title: http://example.com
   links_:
-    Max: http://maxlv.org/ || MaxLv 
+    Max: http://maxlv.org/ || MaxLv
     "Konica 的自留地": http://www.iikira.com/ || 一个大可爱
     Sukka: https://skk.moe/ || 坏耶
-    DIYgod: https://diygod.me/ || 带我领略 Github 的 DIYgay 
+    DIYgod: https://diygod.me/ || 带我领略 Github 的 DIYgay
 
   # Sidebar Avatar
   avatar:
@@ -460,7 +448,6 @@ theme_config:
     icon: comment # Icon name in Font Awesome, set false to disable icon.
     text: Chat # Button text, change it as you wish.
 
-
   # ---------------------------------------------------------------
   # Post Settings
   # See: https://theme-next.org/docs/theme-settings/posts
@@ -477,7 +464,6 @@ theme_config:
   auto_excerpt:
     enable: false
     length: 150
-
   # Read more button
   # If true, the read more button would be displayed in excerpt section.
   read_more_btn: true
@@ -541,7 +527,6 @@ theme_config:
     enable: true
     url: https://github.com/lengthmin/lengthmin.me/tree/backup/source/
 
-
   # ---------------------------------------------------------------
   # Custom Page Settings
   # See: https://theme-next.org/docs/theme-settings/custom-pages
@@ -575,7 +560,6 @@ theme_config:
     showDeleted: false
     singleEvents: true
     maxResults: 250
-
 
   # ---------------------------------------------------------------
   # Misc Theme Settings
@@ -643,7 +627,6 @@ theme_config:
     permalink: https://github.com/lengthmin
     title: Follow me on GitHub
 
-
   # ---------------------------------------------------------------
   # Font Settings
   # See: https://theme-next.org/docs/theme-settings/#Fonts-Customization
@@ -697,7 +680,6 @@ theme_config:
     codes:
       external: true
       family:
-
 
   # ---------------------------------------------------------------
   # Third Party Plugins & Services Settings
@@ -773,7 +755,6 @@ theme_config:
     # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
     # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
     ignores:
-
 
   # ---------------------------------------------------------------
   # Comments Settings
@@ -860,7 +841,6 @@ theme_config:
     # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
     language:
 
-
   # ---------------------------------------------------------------
   # Post Widgets / Content Sharing Services
   # See: https://theme-next.org/docs/third-party-services/post-widgets
@@ -868,41 +848,40 @@ theme_config:
 
   # Facebook SDK Support
   facebook_sdk:
-    enable:       false
-    app_id:       # <app_id>
-    fb_admin:     # <user_id>
-    like_button:  # true
-    webmaster:    # true
+    enable: false
+    app_id: # <app_id>
+    fb_admin: # <user_id>
+    like_button: # true
+    webmaster: # true
 
   # Facebook comments plugin
   # This plugin depends on Facebook SDK.
   # If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
   facebook_comments_plugin:
-    enable:       false
-    num_of_posts: 10    # Minimum posts num is 1
-    width:        100%  # Default width is 550px
-    scheme:       light # Default scheme is light (light or dark)
+    enable: false
+    num_of_posts: 10 # Minimum posts num is 1
+    width: 100% # Default width is 550px
+    scheme: light # Default scheme is light (light or dark)
 
   # VKontakte API Support
   # To get your AppID visit https://vk.com/editapp?act=create
   vkontakte_api:
-    enable:       false
-    app_id:       # <app_id>
-    like:         true
-    comments:     true
+    enable: false
+    app_id: # <app_id>
+    like: true
+    comments: true
     num_of_posts: 10
 
   # Star rating support to each article.
   # To get your ID visit https://widgetpack.com
   rating:
     enable: false
-    id:     # <app_id>
-    color:  fc6423
+    id: # <app_id>
+    color: fc6423
 
   # AddThis Share. See: https://www.addthis.com
   # Go to https://www.addthis.com/dashboard to customize your tools.
   add_this_id:
-
 
   # ---------------------------------------------------------------
   # Statistics and Analytics
@@ -967,7 +946,6 @@ theme_config:
   # Tencent MTA
   tencent_mta: # <app_id>
 
-
   # ---------------------------------------------------------------
   # Search Services
   # See: https://theme-next.org/docs/third-party-services/search-services
@@ -1002,7 +980,6 @@ theme_config:
   # Swiftype Search API Key
   swiftype_key:
 
-
   # ---------------------------------------------------------------
   # Chat Services
   # See: https://theme-next.org/docs/third-party-services/chat-services
@@ -1023,7 +1000,6 @@ theme_config:
   tidio:
     enable: false
     key: # Public Key, get it from dashboard. See: https://www.tidiochat.com/panel/settings/developer
-
 
   # ---------------------------------------------------------------
   # Tags Settings
@@ -1066,7 +1042,6 @@ theme_config:
     enable: false
     # Available themes: default | dark | forest | neutral
     theme: forest
-
 
   # ---------------------------------------------------------------
   # Animation Settings
@@ -1130,7 +1105,6 @@ theme_config:
     size: 300 # The width of the ribbon
     alpha: 0.6 # The transparency of the ribbon
     zIndex: -1 # The display level of the ribbon
-
 
   #! ---------------------------------------------------------------
   #! DO NOT EDIT THE FOLLOWING SETTINGS

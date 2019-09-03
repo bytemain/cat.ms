@@ -3,6 +3,7 @@ title: 关于手贱执行了sudo git之后那些事
 comments: true
 toc: true
 date: 2016-07-22 09:45:38
+updated: 2019-04-28 00:12:04
 categories:
 tags:
 permalink: sudo-git-fix
