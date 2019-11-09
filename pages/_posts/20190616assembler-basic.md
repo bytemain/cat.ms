@@ -30,7 +30,7 @@ layout: post
 
 
 ### 输入一位十六进制整数
-```asm
+```nasm
 IN_1_HEX:
 	MOV AH, 01H
 	INT 21H     ;输入的值存在AL里
@@ -43,7 +43,7 @@ IN:
 
 ### 输入两位十六进制整数
 两位十六进制表示的值最多是 `FF` ，也就是 255，用八位就可以存下。
-```asm
+```nasm
 IN_2_HEX:
 	CALL IN_1_HEX ;高位十六进制->AL
 	MOV  AH, 10H
@@ -56,7 +56,7 @@ IN_2_HEX:
 
 ### 输入一位十进制整数
 实际使用的时候记得要保护之前的数据，先 PUSH 再 POP
-```asm
+```nasm
 IN_1_DEC:
 	MOV AH, 01H ;AL
 	INT 21H
@@ -64,7 +64,7 @@ IN_1_DEC:
 ```
 
 ### 输入两位十进制整数
-```asm
+```nasm
 IN_2_DEC:
 	CALL IN_1_DEC
 	MOV  AH, 10  ; 十六进制这里为10H
@@ -75,7 +75,7 @@ IN_2_DEC:
 ```
 
 ### 输出一位十六进制整数
-```asm
+```nasm
 DISP_1_HEX:
   CMP DL, 09H
   JBE L1
@@ -88,7 +88,7 @@ L1:
 ```
 
 ### 输出两位十六进制整数
-```asm
+```nasm
 DISP_2_HEX:
   MOV AL, DL
   MOV AH, 0
@@ -100,7 +100,7 @@ DISP_2_HEX:
   CALL DISP_1_HEX
 ```
 ### 输出一位十进制整数
-```asm
+```nasm
 DISP_1_DEC:
   PUSH AX
   ADD DL,30H 
@@ -110,7 +110,7 @@ DISP_1_DEC:
 RET
 ```
 ### 输出两位十进制整数
-```asm
+```nasm
 DISP_2_DEC:    ; DL 除十取余法
   PUSH AX
   MOV AL,DL
@@ -126,7 +126,7 @@ RET
 ```
 
 ### 带符号位的输出多位十进制整数
-```asm
+```nasm
 DISP:            ; 用十进制出AX中的数
   PUSHF
   PUSH DX
@@ -200,7 +200,7 @@ if (a > b){
 }
 ```
 汇编中呢，就是：
-```asm
+```nasm
   CMP AX, BX
   JA AGB
   # AX <= BX 的话执行这儿
@@ -244,7 +244,7 @@ digraph g {
 
 ## 题目
 ### 输入二十位带符号十六进制数，排序后输出十进制最大数、最小数、次大数、次小数
-```asm
+```nasm
 DATA SEGMENT
   X  DW 20 DUP(?)
   NUM DW 6

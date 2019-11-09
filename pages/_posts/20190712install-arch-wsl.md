@@ -54,7 +54,7 @@ Arch WSL 真的是秒开哦~
 使用方法：  
 在 `/etc/pacman.conf` 文件末尾添加以下两行：
 
-```conf
+```ini
 [archlinuxcn]
 Server = https://mirrors.cloud.tencent.com/archlinuxcn/$arch
 ```

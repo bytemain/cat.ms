@@ -47,7 +47,7 @@ VC++目录：
 如果是release的话就是把d去掉opencv_world341.lib
 ## 测试
 测试一下
-```c++
+```cpp
 #include "cv.h"
 #include "highgui.h"
 

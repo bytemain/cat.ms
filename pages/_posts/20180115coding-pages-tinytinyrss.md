@@ -22,7 +22,7 @@ permalink: /posts/coding-pages-tinytinyrss
 
 现在部署可以一键部署了，但是已经无法获取更新了。
 
-```plain
+```
 failed to open stream: no suitable wrapper could be found
 ```
 
