@@ -70,14 +70,6 @@ module.exports = {
       resolve: 'saber-plugin-prismjs',
     },
     {
-      resolve: 'saber-plugin-image',
-      options: {
-        sizes: [1000, 800, 500],
-        placeholder: true,
-        blendIn: true,
-      },
-    },
-    {
       resolve: 'saber-plugin-netlify-redirect',
     },
     {

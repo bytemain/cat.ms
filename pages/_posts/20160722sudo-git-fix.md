@@ -23,14 +23,7 @@ id -a
 
 就能显示出来用户跟组的 id，
 ![Snipaste_2018-01-25_14-48-31.png](https://i.loli.net/2018/01/25/5a697dd25ebc3.png)
-<saber-image
-  src="https://i.loli.net/2018/01/25/5a697dd25ebc3.png"
-  :lazy="{
-    placeholder: true,
-    lazyLoad: true,
-    blendIn: true
-  }"
-/>
+
 
 接下来需要用 chown 命令：
 
