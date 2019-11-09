@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "saber",
+    "build": "saber build"
+  },
+  "devDependencies": {
+    "saber": "latest",
+    "saber-plugin-feed": "latest",
+    "saber-plugin-query-posts": "latest",
+    "saber-theme-minima": "latest",
+    "sass": "^1.22.12",
+    "sass-loader": "^8.0.0",
+    "vue-compile": "^0.6.0"
+  },
+  "dependencies": {
+    "nprogress": "^0.2.0",
+    "tinydate": "^1.2.0"
+  }
+}
