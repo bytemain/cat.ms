@@ -2,21 +2,16 @@
   <footer class="site-footer h-card">
     <div class="wrapper">
       <div class="footer-col-wrapper">
-        <div class="footer-col one-half">
-          <h2 class="footer-heading">{{ siteTitle }}</h2>
+        <div class="footer-col three-quarte">
+          <h2 class="footer-heading">{{ $siteConfig.author }}</h2>
           <ul class="contact-list">
-            <li class="p-name">{{ $siteConfig.author ? $siteConfig.author : siteTitle }}</li>
             <li
               v-if="$siteConfig.email"
               v-html="`<a class='u-email' href='mailto:${$siteConfig.email}'>${$siteConfig.email}</a>`"
             ></li>
           </ul>
-        </div>
-
-        <div class="footer-col one-half">
           <p>{{ $siteConfig.description }}</p>
         </div>
-
         <div class="social-links">
           <Social />
         </div>

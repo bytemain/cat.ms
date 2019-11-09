@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import Wrap from '../components/Wrap.vue'
+import Wrap from '../components/Wrap.vue';
 
 export default {
   components: {
-    Wrap
+    Wrap,
   },
 
-  props: ['page']
-}
+  props: ['page'],
+};
 </script>

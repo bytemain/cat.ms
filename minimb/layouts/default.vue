@@ -16,6 +16,11 @@
           <h3>
             <saber-link class="post-link" :to="post.permalink">{{ post.title }}</saber-link>
           </h3>
+          <p class="post-content" v-html="post.excerpt"></p>
+          <saber-link class="post-footer" :to="post.permalink">
+            阅读全文
+            <div class="post-eof"></div>
+          </saber-link>
         </li>
       </ul>
 
@@ -39,25 +44,25 @@
 </template>
 
 <script>
-import formatDate from '../utils/formatDate'
-import Wrap from '../components/Wrap.vue'
-import getSvg from '../utils/getSvg'
+import formatDate from '../utils/formatDate';
+import Wrap from '../components/Wrap.vue';
+import getSvg from '../utils/getSvg';
 
 export default {
   components: {
-    Wrap
+    Wrap,
   },
 
   props: ['page'],
 
   computed: {
     feedLink() {
-      return this.$feed && this.$feed.permalink
-    }
+      return this.$feed && this.$feed.permalink;
+    },
   },
   methods: {
     formatDate,
-    getSvg
-  }
-}
+    getSvg,
+  },
+};
 </script>
