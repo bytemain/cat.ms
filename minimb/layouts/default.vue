@@ -16,7 +16,7 @@
           <h3>
             <saber-link class="post-link" :to="post.permalink">{{ post.title }}</saber-link>
           </h3>
-          <p class="post-content" v-html="post.excerpt"></p>
+          <div class="post-content" v-html="post.excerpt">{{post.excerpt}}</div>
           <saber-link class="post-footer" :to="post.permalink">
             阅读全文
             <div class="post-eof"></div>

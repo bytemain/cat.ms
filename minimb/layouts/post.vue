@@ -29,20 +29,20 @@
 </template>
 
 <script>
-import formatDate from '../utils/formatDate'
-import Wrap from '../components/Wrap.vue'
-import Disqus from '../components/Disqus.vue'
+import formatDate from '../utils/formatDate';
+import Wrap from '../components/Wrap.vue';
+import Disqus from '../components/Disqus.vue';
 
 export default {
   components: {
     Wrap,
-    Disqus
+    Disqus,
   },
 
   props: ['page'],
 
   methods: {
-    formatDate
-  }
-}
+    formatDate,
+  },
+};
 </script>
