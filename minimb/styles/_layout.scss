@@ -147,12 +147,6 @@
   padding: $spacing-unit 0;
 }
 
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: 2px;
-}
-
-.contact-list,
 .social-media-list {
   list-style: none;
   margin-left: 0;
@@ -229,11 +223,24 @@
   > li {
     margin-bottom: $spacing-unit;
   }
+  .post-meta {
+    display: block;
+  }
 }
 
 .post-meta {
-  font-size: $small-font-size;
   color: $grey-color;
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.page-categories {
+  display: flex;
+  align-items: center;
+  &:before {
+    content: '・';
+  }
 }
 
 .post-link {
@@ -269,6 +276,8 @@
  */
 .post-header {
   margin-bottom: $spacing-unit;
+  padding: 0.8889rem 0;
+  text-align: center;
 }
 
 .post-title,

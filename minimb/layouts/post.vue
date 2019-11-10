@@ -3,13 +3,19 @@
     <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
       <header class="post-header">
         <h1 class="post-title p-name" itemprop="name headline">{{ page.title }}</h1>
-        <p class="post-meta">
+        <div class="post-meta">
           <time
             class="dt-published"
             :datetime="page.createdAt"
             itemprop="datePublished"
           >{{ formatDate(page.createdAt) }}</time>
-        </p>
+          <span class="page-categories">
+            <a
+              :href="page.categoriesInfo[0].permalink"
+              class="category"
+            >{{ page.categoriesInfo[0].name }}</a>
+          </span>
+        </div>
       </header>
 
       <div class="post-content e-content" itemprop="articleBody">
