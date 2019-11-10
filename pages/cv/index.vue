@@ -11,9 +11,10 @@
 <script>
 export const data = {
   layout: 'page',
-  title: '简历'
-}
+  title: '简历',
+  permalink: '/cv',
+};
 export default {
-  props: ['page']
-}
+  props: ['page'],
+};
 </script>

@@ -3,35 +3,36 @@
 </template>
 
 <script>
+import 'disqusjs/dist/disqusjs.css';
+import DisqusJS from 'disqusjs';
+
 export default {
   props: {
-    url: {
+    apikey: {
       type: String,
-      required: true
-    },
-    permalink: {
-      type: String,
-      required: true
+      required: true,
     },
     shortname: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
 
   mounted() {
-    const { permalink, url } = this
-    window.disqus_config = function() {
-      this.page.url = `${url}${permalink}`
-      this.page.identifier = permalink
-    }
-    const script = document.createElement('script')
-    script.async = true
-    script.src = `https://${
-      this.shortname
-    }.disqus.com/embed.js`
-    script.setAttribute('data-timestamp', +new Date())
-    document.body.appendChild(script)
-  }
-}
+    const { shortname, siteName, apikey, admin, adminLabel } = this;
+    const { identifier, url, title, api } = this;
+
+    var dsqjs = new DisqusJS({
+      shortname: shortname,
+      siteName: siteName,
+      identifier: identifier || '',
+      url: url || '',
+      title: title || '',
+      api: api || '',
+      apikey: apikey,
+      admin: admin,
+      adminLabel: adminLabel,
+    });
+  },
+};
 </script>

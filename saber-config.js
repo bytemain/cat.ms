@@ -29,6 +29,13 @@ module.exports = {
       github: 'lengthmin',
       rss: true,
     },
+    disqus: {
+      shortname: 'hexo-1',
+      siteName: "Artin's Blog",
+      apikey: 'Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR',
+      admin: 'lengthmin',
+      adminLabel: 'Admin',
+    },
     cvConfig: {
       projects: 'pinned-repos',
       skills: [
@@ -71,9 +78,6 @@ module.exports = {
     },
     {
       resolve: 'saber-plugin-netlify-redirect',
-    },
-    {
-      resolve: 'saber-plugin-code-copy',
     },
     {
       resolve: 'saber-plugin-transformer-html',

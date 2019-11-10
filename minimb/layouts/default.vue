@@ -30,13 +30,13 @@
       >
         <router-link
           class="prev-link"
-          :to="page.pagination.prevLink"
-          v-if="page.pagination.hasPrev"
+          :to="page.pagination.nextLink"
+          v-if="page.pagination.hasNext"
         >← Previous</router-link>
         <router-link
           class="next-link"
-          :to="page.pagination.nextLink"
-          v-if="page.pagination.hasNext"
+          :to="page.pagination.prevLink"
+          v-if="page.pagination.hasPrev"
         >Next →</router-link>
       </div>
     </div>

@@ -14,13 +14,27 @@
 
       <div class="post-content e-content" itemprop="articleBody">
         <slot name="default" />
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+          - 正文到此结束啦
+          <i class="fa fa-paw"></i> -
+        </div>
+        <ul>
+          <li v-if="page.prevPost">
+            <router-link :to="page.prevPost.permalink">Previous: {{ page.prevPost.title }}</router-link>
+          </li>
+          <li v-if="page.nextPost">
+            <router-link :to="page.nextPost.permalink">Next: {{ page.nextPost.title }}</router-link>
+          </li>
+        </ul>
       </div>
 
       <Disqus
         v-if="page.comments !== false && $themeConfig.disqus"
-        :url="$siteConfig.url"
-        :permalink="page.permalink"
-        :shortname="$themeConfig.disqus"
+        :shortname="$themeConfig.disqus.shortname"
+        :siteName="$themeConfig.disqus.siteName"
+        :apikey="$themeConfig.disqus.apikey"
+        :admin="$themeConfig.disqus.admin"
+        :adminLabel="$themeConfig.disqus.adminLabel"
       />
 
       <a class="u-url" :href="page.permalink" hidden></a>

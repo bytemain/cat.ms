@@ -17,6 +17,7 @@
     "vue-compile": "^0.6.0"
   },
   "dependencies": {
+    "disqusjs": "^1.2.6",
     "nprogress": "^0.2.0",
     "prismjs": "^1.17.1",
     "saber-highlight-css": "^0.1.1",

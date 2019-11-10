@@ -1,6 +1,7 @@
 ---
 title: About
 layout: page
+permalink: /about
 ---
 **本科大三在读**
 
