@@ -9,7 +9,10 @@
             :datetime="page.createdAt"
             itemprop="datePublished"
           >{{ formatDate(page.createdAt) }}</time>
-          <span class="page-categories">
+          <span
+            v-if="page.categoriesInfo && page.categoriesInfo.length > 0"
+            class="page-categories"
+          >
             <a
               :href="page.categoriesInfo[0].permalink"
               class="category"
