@@ -4,14 +4,11 @@
 /old_blog
 
 /themes
-/themes/next
-/themes/next1
-/themes/theme-next
 .DS_Store
 Thumbs.db
 db.json
 secrets_.json
-
+/source/_data/next.yml
 # Logs
 logs
 *.log

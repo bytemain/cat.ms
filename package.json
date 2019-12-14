@@ -3,35 +3,32 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "4.0.0"
+    "version": "4.1.1"
   },
   "scripts": {
-    "s": "node replace_secret.js && hexo s",
-    "cs": "node replace_secret.js && hexo clean && hexo s",
+    "secret": "node replace_secret.js",
+    "s": "yarn secret && hexo s",
+    "cs": "yarn secret && hexo clean && hexo s",
     "d": "hexo clean && hexo deploy",
-    "dl": "node replace_secret.js && yarn d"
+    "dl": "yarn secret && yarn d"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
-    "hexo": "^4.0.0",
-    "hexo-deployer-git": "^2.0.0",
-    "hexo-filter-optimize": "^0.2.7",
+    "hexo": "^4.1.1",
+    "hexo-deployer-git": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-baidu-sitemap": "^0.1.6",
     "hexo-generator-category": "^1.0.0",
-    "hexo-generator-feed": "^2.0.0",
+    "hexo-generator-feed": "^2.2.0",
     "hexo-generator-index": "^1.0.0",
     "hexo-generator-indexed": "^1.0.0",
-    "hexo-generator-searchdb": "^1.1.0",
+    "hexo-generator-searchdb": "^1.2.0",
     "hexo-generator-seo-friendly-sitemap": "^0.0.25",
     "hexo-generator-tag": "^1.0.0",
-    "hexo-pwa": "^0.1.3",
     "hexo-related-popular-posts": "^3.0.6",
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-renderer-markdown-it-plus": "^1.0.4",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
-    "hexo-symbols-count-time": "^0.6.3",
-    "hexo-yam": "^3.2.2"
+    "hexo-symbols-count-time": "^0.7.0"
   }
 }

@@ -9,7 +9,7 @@
 {% set ccText = ccLicense | upper %}
 {% set ccURL = 'http://creativecommons.org/licenses/by-nc-sa/4.0/' %}
 
-{% set postURL = page.url || page.permalink %}
+{% set postURL = page.url or page.permalink %}
 
 {# 
   设置你自己的源文件仓库信息 
@@ -24,7 +24,7 @@
 #}
 {% set authorText = "文章作者" %}
 {% set titleText = "文章标题" %}
-{% set linkText = "文章标题" %}
+{% set linkText = "文章链接" %}
 {% set updatedText = "更新时间" %}
 {% set historyText = "更新历史" %}
 {% set rawText = "源文件" %}
@@ -33,58 +33,70 @@
 
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>{{ authorText + __('symbol.colon') }} </strong>{#
-  #}{{ page.author || author }}{#
-#}</li>
+    <strong>{{ authorText  }}：
+    </strong>
+    {{ page.author or author }}
+
+  </li>
   <li class="post-copyright-title">
-    <strong>{{ titleText + __('symbol.colon') }} </strong>{#
-  #}<a href="{{ url_for(page.path) }} "> {{ page.title }} </a>{#
-#}</li>
+    <strong>{{ titleText  }}：
+    </strong>
+    <a href="{{ url_for(page.path) }}"> {{ page.title }} </a>
+  </li>
   <li class="post-copyright-link">
-    <strong>{{ linkText + __('symbol.colon') }}</strong>
+    <strong>{{ linkText  }}：</strong>
 
     {{ next_url(postURL, postURL, {title: page.title}) }}
-    <span class="copy-path"title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+    <span class="copy-path" title="点击复制文章链接">
+      <i class="fa fa-clipboard"></i>
+    </span>
     <span class="copytooltip"/>
     <script>
       var x = 10;
       var y = 20;
       var copyButton = document.querySelector('.copy-path');
       var copyTooltip = document.querySelector('.copytooltip');
-      copyButton.addEventListener('click',function(e){
+      copyButton.addEventListener('click', function (e) {
         var ta = document.createElement('textarea');
         ta.readOnly = true;
-        ta.value = "原文作者：{{ page.author || author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}";
-        document.body.appendChild(ta);
+        ta.value = "原文作者：{{ page.author or author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}";
+        document
+          .body
+          .appendChild(ta);
         ta.select();
         ta.readOnly = false;
         var result = document.execCommand('copy');
-        if (result){
+        if (result) {
           $(copyTooltip).append('<span id="mytitle" >' + '{{__("post.copy_success")}}' + '</span>');
-        }
-        else{
+        } else {
           $(copyTooltip).append('<span id="mytitle" >' + '{{__("post.copy_failure")}}' + '</span>');
         }
-        setTimeout(()=>{$(copyTooltip).empty();},2000);
-        document.body.removeChild(ta);
+        setTimeout(() => {
+          $(copyTooltip).empty();
+        }, 2000);
+        document
+          .body
+          .removeChild(ta);
       });
     </script>
   </li>
   <li class="post-copyright-updated">
-    <strong>{{ updatedText + __('symbol.colon') }} </strong>{#
-  #}{{ page.updated.format("YYYY-MM-DD, HH:mm:ss") }}{#
-#}</li>
+    <strong>{{ updatedText  }}：
+    </strong>
+    {{ page.updated.format("YYYY-MM-DD, HH:mm:ss") }}
+  </li>
   <li class="post-copyright-history">
-    <strong>{{ historyText + __('symbol.colon') }}</strong>
-    <i class="fa fa-github"> </i>
-    <a href="https://github.com/{{ username }}/{{ repository }}/blame/{{ branch }}/source/{{ page.source }}" title="顺序查看文章各部分修改记录" target = "_blank">Blame</a>,
-    <a href="https://github.com/{{ username }}/{{ repository }}/commits/{{ branch }}/source/{{ page.source }}" title="查看文章有关更新记录" target = "_blank">History</a>
-    <strong style="margin-left: 1em">{{ rawText + __('symbol.colon') }}</strong>
+    <strong>{{ historyText  }}：</strong>
+    <i class="fa fa-github"></i>
+    <a href="https://github.com/{{ username }}/{{ repository }}/blame/{{ branch }}/source/{{ page.source }}" title="顺序查看文章各部分修改记录" target="_blank">Blame</a>,
+    <a href="https://github.com/{{ username }}/{{ repository }}/commits/{{ branch }}/source/{{ page.source }}" title="查看文章有关更新记录" target="_blank">History</a>
+    <strong style="margin-left: 1em">{{ rawText  }}：</strong>
     <i class="fa fa-file-text-o"></i>
-    <a href="https://raw.githubusercontent.com/{{ username }}/{{ repository }}/{{ branch }}/source/{{ page.source }}" title="查看 & 下载文章 Markdown 原始文件" target = "_blank">.md Raw</a>
+    <a href="https://raw.githubusercontent.com/{{ username }}/{{ repository }}/{{ branch }}/source/{{ page.source }}" title="查看 & 下载文章 Markdown 原始文件" target="_blank">.md Raw</a>
   </li>
   <li class="post-copyright-license">
-    <strong>{{ licenseTitle + __('symbol.colon') }} </strong>{#
-  #}{{ ccIcon  + __(licenseContent, next_url(ccURL, ccText, {title: ccLicenseTitle }))  }}{#
-#}</li>
+    <strong>{{ licenseTitle  }}：
+    </strong>
+    {{ ccIcon  + __(licenseContent, next_url(ccURL, ccText, {title: ccLicenseTitle }))  }}
+  </li>
 </ul>
