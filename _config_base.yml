@@ -445,7 +445,7 @@ theme_config:
       # Show text copy result.
       show_result: true
       # Available values: default | flat | mac
-      style: default
+      style: flat
 
   back2top:
     enable: true
