@@ -16,6 +16,7 @@ before_script:
   - sh ./helper/update_lib.sh
 
 script:
+  - hexo clean
   - yarn d
 
 after_script:

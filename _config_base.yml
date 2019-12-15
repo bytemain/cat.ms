@@ -431,9 +431,6 @@ theme_config:
   # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
   android_chrome_color: "#222"
 
-  # Custom Logo (Do not support scheme Mist)
-  custom_logo: #/uploads/custom-logo.jpg
-
   codeblock:
     # Code Highlight theme
     # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic

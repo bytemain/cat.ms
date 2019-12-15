@@ -7,7 +7,8 @@ hexo.extend.filter.register(
   function(injects) {
     injects.postBodyEnd.file(
       "creative-commons",
-      "source/_data/copyright/post-copyright.njk"
+      "source/_data/copyright/post-copyright.njk",
+      hexo.locals
     )
     injects.style.push("source/_data/copyright/post-copyright.styl")
   },
