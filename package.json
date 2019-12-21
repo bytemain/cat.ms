@@ -6,11 +6,12 @@
     "version": "4.1.1"
   },
   "scripts": {
-    "secret": "node replace_secret.js",
+    "secret": "node ./helper/replace_secret.js",
     "s": "yarn secret && hexo s",
     "cs": "yarn secret && hexo clean && hexo s",
     "d": "hexo clean && hexo deploy",
-    "dl": "yarn secret && yarn d"
+    "dl": "yarn secret && yarn d",
+    "update": "ncu -u && node ./helper/update_lib.js"
   },
   "dependencies": {
     "hexo": "^4.1.1",

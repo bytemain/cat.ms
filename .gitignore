@@ -2,12 +2,12 @@
 /public
 /_config.yml
 /old_blog
-
 /themes
 .DS_Store
 Thumbs.db
 db.json
 secrets_.json
+secrets.json
 /source/_data/next.yml
 # Logs
 logs
