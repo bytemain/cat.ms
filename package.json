@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "4.1.1"
+    "version": "4.2.0"
   },
   "scripts": {
     "secret": "node ./helper/replace_secret.js",
@@ -14,22 +14,23 @@
     "update": "ncu -u && node ./helper/update_lib.js"
   },
   "dependencies": {
-    "hexo": "^4.1.1",
+    "hexo": "^4.2.0",
     "hexo-deployer-git": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-baidu-sitemap": "^0.1.6",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^2.2.0",
     "hexo-generator-index": "^1.0.0",
-    "hexo-generator-indexed": "^1.0.0",
+    "hexo-generator-indexed": "^1.0.1",
     "hexo-generator-searchdb": "^1.2.0",
     "hexo-generator-seo-friendly-sitemap": "^0.0.25",
     "hexo-generator-tag": "^1.0.0",
-    "hexo-related-popular-posts": "^3.0.6",
+    "hexo-related-popular-posts": "^4.0.0",
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-renderer-markdown-it-plus": "^1.0.4",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
-    "hexo-symbols-count-time": "^0.7.0"
+    "hexo-symbols-count-time": "^0.7.0",
+    "hexo-theme-next-anchor": "^1.0.3"
   }
 }

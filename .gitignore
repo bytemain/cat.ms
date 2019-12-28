@@ -3,6 +3,8 @@
 /_config.yml
 /old_blog
 /themes
+.vscode/.history
+
 .DS_Store
 Thumbs.db
 db.json

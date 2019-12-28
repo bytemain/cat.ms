@@ -1,5 +1,5 @@
 title: Artin's Blog
-subtitle: 我便一步一莲花祈祷
+subtitle: 谁有天大力气可以拎着自己飞呀
 description: Python / React / Nodejs / 机器学习
 keywords: Python,机器学习,React,Nodejs
 author: Artin
@@ -96,6 +96,7 @@ sitemap:
   path: sitemap.xml
   tag: false
   category: false
+
 baidusitemap:
   path: baidusitemap.xml
 
@@ -177,13 +178,24 @@ markdown_it_plus:
   html: true
   xhtmlOut: true
   breaks: true
-  langPrefix:
   linkify: true
   typographer: true
   quotes: “”‘’
   pre_class: highlight
 
 theme_config:
+  anchor:
+    enable: true
+    color: "#0e83cd"
+    position: right # If left, anchors will always be visible.
+    margin: 7px
+    text: "#"
+    icon:
+      # If true, the `text` option will be ignored.
+      enable: true
+      font: FontAwesome
+      content: \f0c1
+
   cache:
     enable: true
 
@@ -541,7 +553,6 @@ theme_config:
     tracking_id: UA-144727481-1
     localhost_ignored: true
 
-  # Show Views / Visitors of the website / page with busuanzi.
   # Get more information on http://ibruce.info/2015/04/04/busuanzi
   busuanzi_count:
     enable: true
@@ -552,7 +563,6 @@ theme_config:
     post_views: true
     post_views_icon: eye
 
-  # Local Search
   local_search:
     enable: true
     # If auto, trigger search by changing input.
@@ -589,10 +599,6 @@ theme_config:
       tabs: false
       labels: true
 
-  # ---------------------------------------------------------------
-  # Animation Settings
-  # ---------------------------------------------------------------
-
   # Use velocity to animate everything.
   # For more information: http://velocityjs.org
   motion:
@@ -613,6 +619,45 @@ theme_config:
       # Only for Pisces | Gemini.
       sidebar: slideUpIn
 
+  font:
+    enable: true
+
+    # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
+    host: https://fonts.loli.net
+
+    # Font options:
+    # `external: true` will load this font family from `host` above.
+    # `family: Times New Roman`. Without any quotes.
+    # `size: x.x`. Use `em` as unit. Default: 1 (16px)
+
+    # Global font settings used for all elements inside <body>.
+    global:
+      external: true
+      family: Lato
+      size:
+
+    # Font settings for site title (.site-title).
+    title:
+      external: true
+      family:
+      size:
+
+    # Font settings for headlines (<h1> to <h6>).
+    headings:
+      external: true
+      family:
+      size:
+
+    # Font settings for posts (.post-body).
+    posts:
+      external: true
+      family:
+
+    # Font settings for <code> and code blocks.
+    codes:
+      external: true
+      family:
+
   # Progress bar in the top during page loading.
   # Dependencies: https://github.com/theme-next/theme-next-pace
   # For more information: https://github.com/HubSpot/pace
@@ -622,12 +667,6 @@ theme_config:
     # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
     # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
     theme: minimal
-
-  #! ---------------------------------------------------------------
-  #! DO NOT EDIT THE FOLLOWING SETTINGS
-  #! UNLESS YOU KNOW WHAT YOU ARE DOING
-  #! See: https://theme-next.org/docs/advanced-settings
-  #! ---------------------------------------------------------------
 
   # Script Vendors. Set a CDN address for the vendor you want to customize.
   # Be aware that you would better use the same version as internal ones to avoid potential problems.
