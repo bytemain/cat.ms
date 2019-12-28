@@ -5,10 +5,11 @@ toc: true
 permalink: assembler-basic
 date: 2019-06-16 13:44:49
 updated: 2019-07-04 11:00:00
-categories: 汇编
+categories: 
+  - 汇编
 tags: 
-- 汇编
-- 复习
+  - 汇编
+  - 复习
 ---
 期末复习汇编...真的是好努力的复习...
 实验老师让我们做的那几个实验，想想还觉得谢谢了~

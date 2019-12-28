@@ -5,7 +5,9 @@ toc: true
 date: 2016-07-22 09:45:38
 updated: 2019-04-28 00:12:04
 categories:
+    - Git
 tags:
+    - Linux
 permalink: sudo-git-fix
 ---
 

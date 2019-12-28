@@ -5,12 +5,12 @@ toc: true
 permalink: install-arch-wsl
 date: 2019-07-12 09:42:25
 updated: 2019-07-30 16:17:00
-categories: WSL
+categories: 
+    - WSL
 tags:
-- WSL
-- Arch Linux
-- Linux
-- ZSH
+    - Arch Linux
+    - Linux
+    - ZSH
 ---
 
 用 windows 写代码最想吐槽的就是 cmd 了！WSL 真的就是吾等救星。  

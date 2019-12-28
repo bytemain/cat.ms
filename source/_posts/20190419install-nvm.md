@@ -5,11 +5,11 @@ toc: true
 permalink: install-nvm
 date: 2019-04-19 17:17:33
 updated: 2019-07-04 11:00:00
-categories: Nodejs
+categories: 
+    - Nodejs
 tags:
- - "Linux Mint"
- - Nodejs
- - nvm
+    - Nodejs
+    - nvm
 ---
 在网上看到nvm这个神器之后，最近装Nodejs都是用nvm来装了。
 刚好又装了 Linux Mint ，重新在Linux下安装一遍nvm。Windows 上也有的类似工具[nvm-windows](https://github.com/coreybutler/nvm-windows)，使用方法都差不多。

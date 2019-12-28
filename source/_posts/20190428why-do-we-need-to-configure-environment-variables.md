@@ -5,7 +5,8 @@ toc: true
 permalink: why-do-we-need-to-configure-environment-variables
 date: 2019-04-28 00:03:42
 updated: 2019-07-17 21:50:00
-categories: 思考
+categories: 
+- 思考
 tags:
 - Python
 - 思考

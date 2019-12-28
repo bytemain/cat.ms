@@ -5,11 +5,12 @@ toc: true
 permalink: install-opencv-windows-vs
 date: 2018-06-29 15:54:41
 updated: 2019-07-18 14:03:00
-categories: OpenCV
+categories:
+    - OpenCV
 tags:
-- OpenCV
-- C++
-- "Visual Studio"
+    - OpenCV
+    - C++
+    - "Visual Studio"
 ---
 Windows下安装OpenCV以及配环境的事情，对于VS来说一点都不麻烦，简单几步就可以让VS使用OpenCV。
 
@@ -52,12 +53,12 @@ VC++目录：
 
 int main()
 {
-	IplImage* src = cvLoadImage("C:\\1.png");//此处的路径，一定是绝对路径，相对路径会报错的
-	cvNamedWindow("showImage");
-	cvShowImage("showImage", src);
-	cvWaitKey(0);
-	cvReleaseImage(&src);
-	cvDestroyWindow("showImage");
-	return 0;
+    IplImage* src = cvLoadImage("C:\\1.png");//此处的路径，一定是绝对路径，相对路径会报错的
+    cvNamedWindow("showImage");
+    cvShowImage("showImage", src);
+    cvWaitKey(0);
+    cvReleaseImage(&src);
+    cvDestroyWindow("showImage");
+    return 0;
 }
 ```
