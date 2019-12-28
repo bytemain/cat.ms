@@ -4,7 +4,8 @@ comments: true
 toc: true
 permalink: using-wsl-in-vscode
 date: 2019-07-29 15:57:56
-categories: WSL
+categories: 
+  - WSL
 tags:
   - WSL
   - VSCode
