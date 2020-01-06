@@ -44,8 +44,5 @@
     "hexo-server": "^1.0.0",
     "hexo-symbols-count-time": "^0.7.0",
     "hexo-theme-next-anchor": "^1.0.3"
-  },
-  // "devDependencies": {
-  //   "yuque-hexo": "file:..\\yuque-hexo"
-  // }
+  }
 }
