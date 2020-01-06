@@ -45,7 +45,7 @@
     "hexo-symbols-count-time": "^0.7.0",
     "hexo-theme-next-anchor": "^1.0.3"
   },
-  "devDependencies": {
-    "yuque-hexo": "file:..\\yuque-hexo"
-  }
+  // "devDependencies": {
+  //   "yuque-hexo": "file:..\\yuque-hexo"
+  // }
 }
