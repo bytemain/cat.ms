@@ -1,10 +1,11 @@
 {
-    "default": true,
-    "MD026": {
-        "punctuation": ".,;:!。，；：！"
-    },
-    "MD007": {
-        "indent": 4
-    },
-    "no-hard-tabs": false
+  "default": true,
+  "MD026": {
+    "punctuation": ".,;:!。，；：！"
+  },
+  "MD007": {
+    "indent": 4
+  },
+  "no-hard-tabs": false,
+  "line-length": false
 }
