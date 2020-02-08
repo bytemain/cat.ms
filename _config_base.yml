@@ -90,7 +90,6 @@ deploy:
   - type: git
     repo:
       github: https://_GH_TOKEN_@github.com/lengthmin/lengthmin.me.git,master
-      coding: https://Artin:_CODING_TOKEN_@git.dev.tencent.com/Artin/artin.git,master
 
 sitemap:
   path: sitemap.xml
