@@ -2,24 +2,12 @@
   "name": "blog",
   "version": "0.0.0",
   "private": true,
-  "yuqueConfig": {
-    "postPath": "source/_posts/yuque",
-    "cachePath": "yuque.json",
-    "mdNameFormat": "title",
-    "adapter": "next",
-    "concurrency": 5,
-    "baseUrl": "https://www.yuque.com/api/v2",
-    "login": "artin",
-    "repo": "blog",
-    "onlyPublished": true
-  },
   "hexo": {
     "version": "4.2.0"
   },
   "scripts": {
     "secret": "node ./helper/replace_secret.js",
     "s": "yarn secret && hexo s",
-    "sync": "yarn yuque-hexo clean && yarn yuque-hexo sync",
     "cs": "yarn secret && hexo clean && hexo s",
     "d": "hexo clean && hexo deploy",
     "dl": "yarn secret && yarn d",
