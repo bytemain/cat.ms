@@ -45,6 +45,7 @@
 import formatDate from '../utils/formatDate';
 import Wrap from '../components/Wrap.vue';
 import getSvg from '../utils/getSvg';
+import Fuse from 'fuse.js';
 
 export default {
   components: {
@@ -52,10 +53,34 @@ export default {
   },
 
   props: ['page'],
-
   computed: {
     feedLink() {
       return this.$feed && this.$feed.permalink;
+    },
+    async search() {
+      const database = await this.$fetchSearchDatabase();
+      console.log('TCL: database', database);
+      // Typically you need to get the keyword from an `input` element
+      // We hardcoded it for convenience
+      const keyword = 'hello';
+
+      const options = {
+        keys: [
+          {
+            name: 'title',
+            weight: 0.6,
+          },
+          {
+            name: 'excerpt',
+            weight: 0.4,
+          },
+        ],
+        shouldSort: true, // sorts the results by score
+      };
+
+      const fuse = new Fuse(database, options);
+      const matchedResults = fuse.search(keyword);
+      console.log('TCL: search -> matchedResults', matchedResults);
     },
   },
   methods: {

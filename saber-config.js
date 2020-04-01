@@ -70,17 +70,17 @@ module.exports = {
     {
       resolve: 'saber-plugin-feed',
       options: {
-        atomFeed: true,
+        rss2Feed: 'rss.xml',
       },
     },
     {
       resolve: 'saber-plugin-prismjs',
     },
     {
-      resolve: 'saber-plugin-netlify-redirect',
+      resolve: 'saber-plugin-transformer-html',
     },
     {
-      resolve: 'saber-plugin-transformer-html',
+      resolve: 'saber-plugin-search',
     },
   ],
 };

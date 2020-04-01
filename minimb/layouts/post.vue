@@ -13,10 +13,12 @@
             v-if="page.categoriesInfo && page.categoriesInfo.length > 0"
             class="page-categories"
           >
-            <a
-              :href="page.categoriesInfo[0].permalink"
-              class="category"
-            >{{ page.categoriesInfo[0].name }}</a>
+            <saber-link
+              :to="category.permalink"
+              :title="`View posts in ${category.name}`"
+              v-for="category in page.categoriesInfo"
+              :key="category.permalink"
+            >{{ category.name }}</saber-link>
           </span>
         </div>
       </header>

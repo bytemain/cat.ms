@@ -25,7 +25,7 @@ export default {
     var dsqjs = new DisqusJS({
       shortname: shortname,
       siteName: siteName,
-      identifier: identifier || '',
+      identifier: identifier || document.location.pathname,
       url: url || '',
       title: title || '',
       api: api || '',

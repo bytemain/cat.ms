@@ -3229,6 +3229,11 @@ function-bind@^1.1.1:
   resolved "https://registry.npm.taobao.org/function-bind/download/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha1-pWiZ0+o8m6uHS7l3O3xe3pL0iV0=
 
+fuse.js@^3.4.5:
+  version "3.4.5"
+  resolved "https://registry.npm.taobao.org/fuse.js/download/fuse.js-3.4.5.tgz#8954fb43f9729bd5dbcb8c08f251db552595a7a6"
+  integrity sha1-iVT7Q/lym9Xby4wI8lHbVSWVp6Y=
+
 gauge@~2.7.3:
   version "2.7.4"
   resolved "https://registry.npm.taobao.org/gauge/download/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
@@ -6223,10 +6228,10 @@ saber-markdown@^0.1.6:
   resolved "https://registry.npm.taobao.org/saber-markdown/download/saber-markdown-0.1.6.tgz#49aa91c98b1772607bb42fe9438ede1d2e05735a"
   integrity sha1-SaqRyYsXcmB7tC/pQ47eHS4Fc1o=
 
-saber-plugin-code-copy@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.npm.taobao.org/saber-plugin-code-copy/download/saber-plugin-code-copy-0.3.1.tgz#feb2a3afb8765c79227dec9fc12749149adfa565"
-  integrity sha1-/rKjr7h2XHkifeyfwSdJFJrfpWU=
+saber-plugin-code-copy@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.npm.taobao.org/saber-plugin-code-copy/download/saber-plugin-code-copy-0.3.2.tgz#d754c970ada3b75a6535a6ffabadd279a27c4491"
+  integrity sha1-11TJcK2jt1plNab/q63SeaJ8RJE=
   dependencies:
     modern-copy "^1.0.3"
 
@@ -6259,19 +6264,17 @@ saber-plugin-query-posts@latest:
     slugo "^0.3.1"
     url-join "^4.0.0"
 
+saber-plugin-search@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/saber-plugin-search/download/saber-plugin-search-1.0.0.tgz#c88e7193432579f22891b3ba2a72c7e9b575f44b"
+  integrity sha1-yI5xk0MlefIokbO6KnLH6bV19Es=
+
 saber-plugin-transformer-html@^0.1.3:
   version "0.1.3"
   resolved "https://registry.npm.taobao.org/saber-plugin-transformer-html/download/saber-plugin-transformer-html-0.1.3.tgz#b26fd8661de846d3f5ea468511cd35e916afddbb"
   integrity sha1-sm/YZh3oRtP16kaFEc016Rav3bs=
   dependencies:
     extract-sfc-blocks "^0.0.2"
-
-saber-theme-minima@latest:
-  version "3.2.2"
-  resolved "https://registry.npm.taobao.org/saber-theme-minima/download/saber-theme-minima-3.2.2.tgz#4ed0ffc6530c28a8b95d58a64a85854aaa2f630f"
-  integrity sha1-TtD/xlMMKKi5XVimSoWFSqovYw8=
-  dependencies:
-    tinydate "^1.2.0"
 
 saber-utils@^0.2.4:
   version "0.2.4"
@@ -6369,7 +6372,7 @@ sass-loader@^8.0.0:
     schema-utils "^2.1.0"
     semver "^6.3.0"
 
-sass@^1.22.12:
+sass@^1.23.3:
   version "1.23.3"
   resolved "https://registry.npm.taobao.org/sass/download/sass-1.23.3.tgz#f07503b9e8d2bcf06ef69e8beea5d085589b1620"
   integrity sha1-8HUDuejSvPBu9p6L7qXQhVibFiA=
