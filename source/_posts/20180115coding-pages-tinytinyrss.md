@@ -66,7 +66,7 @@ coding 提供了 php+mysql 的环境，于是想试一试。
 
 ### 创建一个仓库备用
 
-![image](https://user-images.githubusercontent.com/13938334/52909564-6838a680-32c5-11e9-9be8-5628f3350c95.png)
+![image](https://cdn.jsdelivr.net/gh/riril/i/posts/coding-pages-tinytinyrss/5628f3350c95.png)
 
 这里会显示当前的仓库地址，复制留着备用。
 ssh 或者 https 都可以。
@@ -86,7 +86,7 @@ git clone https://git.tt-rss.org/git/tt-rss.git
 ```
 
 克隆好后，修改`/tt-rss/.git/config`文件里的 remote url 为你的仓库地址(图里红框的位置)，仓库地址刚刚创建的时已经显示出来了
-![Snipaste_2018-01-15_13-35-55.png](https://i.loli.net/2018/01/15/5a5c3e29a6434.png)
+![5a5c3e29a6434.png](https://cdn.jsdelivr.net/gh/riril/i/posts/coding-pages-tinytinyrss/5a5c3e29a6434.png)
 
 > 无法克隆的可以直接去版本发布中下载最新版。<https://git.tt-rss.org/fox/tt-rss/releases>
 
@@ -107,7 +107,7 @@ git commit -am "upload tt-rss"
 ```
 
 比如我的就是:
-![image](https://user-images.githubusercontent.com/13938334/52909625-94a0f280-32c6-11e9-9cc3-3e689e0fe950.png)
+![image](https://cdn.jsdelivr.net/gh/riril/i/posts/coding-pages-tinytinyrss/3e689e0fe950.png)
 
 如果执行完 commit 发现有提示 `Please tell me who you are.`
 就按照提示设置自己的邮箱和用户名。
@@ -137,14 +137,14 @@ cd tt-rss #进入你的ttrss文件夹下使用下面的命令
 git push -u origin master
 ```
 
-![image](https://user-images.githubusercontent.com/13938334/52909675-61ab2e80-32c7-11e9-8950-2cda85122c5e.png)
+![image](https://cdn.jsdelivr.net/gh/riril/i/posts/coding-pages-tinytinyrss/2cda85122c5e.png)
 
 输入你的用户名密码就可以了，一般来说输入密码的时候是不可见的，不用担心。
 
 ### 开启动态 Pages
 
 打开你的仓库，在侧边上选择 pages,然后选择 tab 上的**动态 Pages**
-![Snipaste_2018-01-15_13-50-12.png](https://i.loli.net/2018/01/15/5a5c4125bfd47.png)
+![5a5c4125bfd47.png](https://cdn.jsdelivr.net/gh/riril/i/posts/coding-pages-tinytinyrss/5a5c4125bfd47.png)
 **一定要等待部署完成后才能使用**
 
 ### 配置 tinyrss
@@ -152,12 +152,12 @@ git push -u origin master
 部署完成后打开上面给的链接，会来到
 `http://969983a8-4bea-4d25-bab5-2ac8183353ad.coding.io/install/`
 要开始对 tiny 的配置了，在仓库的 pages 页面有数据库的连接信息，按相应的填到框中就可以了。
-![Snipaste_2018-01-15_13-56-34.png](https://i.loli.net/2018/01/15/5a5c435383b2d.png)
+![5a5c435383b2d.png](https://cdn.jsdelivr.net/gh/riril/i/posts/coding-pages-tinytinyrss/5a5c435383b2d.png)
 
 如果不需要改访问目录的话就直接点`Test configuration`
 然后`Initialize database`就可以了
 
-![Snipaste_2018-01-15_13-58-09.png](https://i.loli.net/2018/01/15/5a5c435390342.png)
+![5a5c435390342.png](https://cdn.jsdelivr.net/gh/riril/i/posts/coding-pages-tinytinyrss/5a5c435390342.png)
 
 在`Generated configuration file`这一步，不要点击**Save configuration**，我们自己创建一个。方便我们之后调整 config
 在刚刚的`tt-rss`目录下创建`config.php`，将图中文本框的内容复制进去

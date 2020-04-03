@@ -130,33 +130,40 @@ export EDITOR=vim;
 
 让用户可以执行 sudo 命令，这一步不能省略。
 使用如下系统自带命令修改 `sudoers` 文件。
+
 ```sh
 visudo
 ```
 
 在里面添加这一行即可：
+
 ```sh
 artin ALL=(ALL) ALL
 ```
-![](https://user-images.githubusercontent.com/13938334/61097920-a2326100-a48f-11e9-8d8e-36b5901fa80f.png)
+
+![36b5901fa80f.png](https://cdn.jsdelivr.net/gh/riril/i/posts/install-arch-wsl/36b5901fa80f.png)
 
 这里我只把自己的用户名写进去了，你也可以设置一个用户组的权限，然后将你的用户加入到该用户组。
 
 ## 切换 WSL 默认用户
+
 在 cmd 中打开你的安装目录：
-![](https://user-images.githubusercontent.com/13938334/61098825-e5da9a00-a492-11e9-8a77-c8979e233688.png)
+![c8979e233688.png](https://cdn.jsdelivr.net/gh/riril/i/posts/install-arch-wsl/c8979e233688.png)
+
 执行：
+
 ```sh
 Arch.exe config --default-user artin
 ```
 
 ## 玩转 Arch WSL
+
 然后就是一些我自己喜欢的配置啦。
 
 ### pacman 使用方法
+
 > ArchLinux必备命令记录(manjaro) - weixin_42408100的博客 - CSDN博客
 > https://blog.csdn.net/weixin_42408100/article/details/82526087
-
 
 | 常用命令                   | 解释                                             |
 | -------------------------- | ------------------------------------------------ |
@@ -185,9 +192,9 @@ Arch.exe config --default-user artin
 | pacman-optimize && sync    | 提高数据库访问速度                               |
 
 ### 安装网络相关的工具
-> 参考 http://www.linuxdiyf.com/view_218403.html
-> 安装archlinux 以后没有 ifconfig,route ,nslookup 等命令
 
+> 参考 <http://www.linuxdiyf.com/view_218403.html>
+> 安装archlinux 以后没有 ifconfig,route ,nslookup 等命令
 
 - ifconfig,route在net-tools中
 - nslookup,dig在dnsutils中
@@ -201,19 +208,21 @@ pacman -S net-tools dnsutils inetutils iproute2
 ### 配置基本环境
 
 安装 fakeroot、binutils 等打包基本工具
+
 ```sh
 pacman -S base-devel
 ```
+
 我这里会提示 `fakeroot` 被 ignore 了，因为 `/etc/pacman.conf` 里写了~ 选了 n
 然后回车就好了~ 不输入数字的话默认会安装 `base-devel` 里的所有包。
 
-
 ## 安装配置 zsh
-
 ### 安装 zsh 和 oh-my-zsh
+
 `zsh` 又好看又好用又强大~
 
 先将代理设置为我本地的代理链接，因为等下 `oh-my-zsh` 的脚本会从 `github` 下载东西，国内下的慢~
+
 ```sh
 export ALL_PROXY="http://127.0.0.1:7890"
 export all_proxy="http://127.0.0.1:7890"
@@ -225,24 +234,25 @@ export all_proxy="http://127.0.0.1:7890"
 - [Oh My ZSH!](https://ohmyz.sh/)
 - [Zsh Web Pages](http://zsh.sourceforge.net/)
 
-
 在终端执行：
-```
+
+```bash
 sudo pacman -S zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-
 
 ### 配置 alias
 
 之后要经常修改 zsh，先配置几个方便、快捷的 alias。
 
 编辑 `~/.zshrc`， `zsh` 的配置文件。
+
 ```sh
 vim ~/.zshrc
 ```
 
 在文件的最后几行加上：
+
 ```sh
 alias vizsh="micro ~/.zshrc"
 alias ohmyzsh="micro ~/.oh-my-zsh"
@@ -264,15 +274,17 @@ source ~/.zshrc
 ### 配置 PATH 变量
 
 WSL 中的环境变量会来自 Windows 系统，所以如果你两边都装了 npm 或者 python，可能会引起各种报错...
-![](https://user-images.githubusercontent.com/13938334/61099457-f5f37900-a494-11e9-8b97-b8ea5455abef.png)
+![b8ea5455abef.png](https://cdn.jsdelivr.net/gh/riril/i/posts/install-arch-wsl/b8ea5455abef.png)
 
 所以手动的精简一些环境变量，从上面这个图中拿下来一点就好啦。
 编辑 `~/.zshrc`：
+
 ```sh
 vizsh
 ```
 
 添加：
+
 ```sh
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export PATH="/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$PATH"
@@ -281,8 +293,9 @@ export PATH="/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem
 # 为了使用 vscode 的 `code .`
 export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
 ```
+
 这里的都是我需要的，你可以根据自己的需要来判断用什么。
-![](https://user-images.githubusercontent.com/13938334/61099545-4f5ba800-a495-11e9-9959-2d667f7ba442.png)
+![2d667f7ba442.png](https://cdn.jsdelivr.net/gh/riril/i/posts/install-arch-wsl/2d667f7ba442.png)
 
 
 ### zsh 的其他的一些配置
@@ -293,17 +306,20 @@ export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PA
 - 插件Wiki:<https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins>
 
 找到下面这一行，填入即可。
+
 ```sh
 plugins=(git npm node history)
 ```
 
 配置 不匹配通配符：
 这个蛮有用的，比如想用 `find *.txt` 的时候。
+
 ```sh
 setopt no_nomatch
 ```
 
 设置几个顺手的函数：
+
 ```sh
 proxy () {
     export ALL_PROXY="http://127.0.0.1:7890"
@@ -326,10 +342,10 @@ ip_ () {
 }
 
 git-config() {
-    echo -n "Please input Git Username: "      
-    read username      
+    echo -n "Please input Git Username: "
+    read username
     echo -n "Please input Git Email: "
-    read email      
+    read email
     echo -n "Done!"
     git config --global user.name "${username}"
     git config --global user.email "${email}"  
@@ -340,18 +356,17 @@ git-config() {
 
 上面的脚本中的 `http` 命令来自 [httpie](https://httpie.org/) 。  
 安装：
+
 ```sh
 pacman -S httpie
 ```
 
 ## 在 VSCode 中使用 Wsl
+
 待补充
 
-
-
-## 更多优化配置 
+## 更多优化配置
 
 可参考知乎这篇：[利用WSL打造Arch开发环境](https://zhuanlan.zhihu.com/p/51270874#三、使用优化配置)
-
 
 大概就先写这么多吧~

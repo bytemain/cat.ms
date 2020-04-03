@@ -28,24 +28,26 @@ tags:
 环境变量也是如此，也很适合这个例子。
 当用户在 cmd 中执行一个命令的时候，命令行的解释器就会去找你要执行的命令。
 那么是去哪里找可执行的命令呢？两个地方：
+
 - 当前路径下的可执行文件
 - 环境变量Path中保存的路径下的可执行文件（包括系统变量和用户变量）
 
 ## 举个例子
 举个栗子：
 `win + r`大家都用过吧，经常用来快速运行某些程序，比如打开命令行窗口我们就会用到：
-![打开 cmd](https://i.loli.net/2019/05/02/5ccafd6ee176b.png)
+![打开 cmd](https://cdn.jsdelivr.net/gh/riril/i/posts/why-do-we-need-to-configure-environment-variables/5ccafd6ee176b.png)
 
 那电脑是怎么知道cmd在哪儿的呢？
-![在Everything搜索cmd.exe](https://i.loli.net/2019/05/02/5ccafe08db5ec.png)
+![在Everything搜索cmd.exe](https://cdn.jsdelivr.net/gh/riril/i/posts/why-do-we-need-to-configure-environment-variables/5ccafe08db5ec.png)
 能看到 `cmd.exe` 是在 `C:\Windows\System32\`和 `C:\Windows\SysWOW64\` 这两个路径下都有的，那就是说，电脑是去这两个路径之一打开的`cmd.exe`，那我们来看一下，系统环境变量里到底有没有这两个路径的其中一个呢？
 
 查看一下系统的环境变量中的Path是不是有这个路径：
 在小娜的输入框里输入 `path` 或者 `环境` 可以直接跳转到修改环境变量的地方，不行的话只能在计算机图标右键属性了。
-![我的环境变量](https://i.loli.net/2019/05/02/5ccb0002c8879.png)
+![我的环境变量](https://cdn.jsdelivr.net/gh/riril/i/posts/why-do-we-need-to-configure-environment-variables/5ccb0002c8879.png)
 可以验证了吧~
 所以这个流程我们也弄清楚了：
-```
+
+```plaintxt
 你在运行窗口输入 cmd：
     -> 解释器去寻找这个文件：
         -> 先寻找当前路径下是否有
@@ -55,15 +57,19 @@ tags:
 
 所以如果你没配置某个可执行文件到Path里，那你就得手动输入该文件的绝对路径才能打开了。
 比如说 Java...
+
 ## Path 外的其他字段
+
 其他的一些字段也是方便我们使用的，想用的时候使用 `%字段名%` 就能调用了。
 比如说我在系统设置里设置了 `CMDER_ROOT` 字段，将其赋值为`D:\0ArtinD\cmder`，这是一个路径。
-![设置 CMDER_ROOT](https://i.loli.net/2019/05/02/5ccb026a1dbfb.png)
+![设置 CMDER_ROOT](https://cdn.jsdelivr.net/gh/riril/i/posts/why-do-we-need-to-configure-environment-variables/5ccb026a1dbfb.png)
 然后我想打开该路径，就可以使用该字段名啦：
-![Snipaste_2019-05-02_22-47-37](https://i.loli.net/2019/05/02/5ccb03181acf2.png)
+![Snipaste_2019-05-02_22-47-37](https://cdn.jsdelivr.net/gh/riril/i/posts/why-do-we-need-to-configure-environment-variables/5ccb03181acf3.png)
 
 简单来说！就是编程中的变量名。定义一个常量，想用的时候可以使用。
+
 ## 用户变量和系统变量
+
 操作系统中有用户的概念。
 用户变量只对当前登录的用户生效。
 系统变量对当前计算机的所有用户生效。

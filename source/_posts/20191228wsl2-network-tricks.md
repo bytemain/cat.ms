@@ -39,7 +39,8 @@ cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }'
 ```
 
 原理可见: [User Experience Changes Between WSL 1 and WSL 2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-ux-changes#accessing-network-applications)
-![image.png](https://i.loli.net/2019/12/28/Pp7MZ1m8WALlr4a.png)
+
+![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/Pp7MZ1m8WALlr4a.png)
 
 [一个命令设置 proxy](#一个命令)
 
@@ -97,10 +98,10 @@ ipconfig /flushdns | Out-Null
 设置想被解析的域名，然后将 wsl 和 win 的 ip 都写入 windows 的 hosts，wsl 中 DNS 查询默认设置的就是主机，所以两边对自己 hosts 中域名的解析都没有问题。
 
 在 wsl 中启动一个 http 服务器：
-![image.png](https://i.loli.net/2019/12/28/s89jrHB2iVlZTNz.png)
+![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/s89jrHB2iVlZTNz.png)
 
 我们在 win 下请求一下：
-![image.png](https://i.loli.net/2019/12/28/8Jr9kToFdgnINUu.png)
+![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/8Jr9kToFdgnINUu.png)
 
 Awesome! 成功啦
 
@@ -172,7 +173,7 @@ powershell 中 `@()` 就是声明数组的意思，这个脚本遍历你设置�
 ## 一个命令
 
 先上效果：
-![image.png](https://i.loli.net/2019/12/28/3cGZ8gwpRlSnPhs.png)
+![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/3cGZ8gwpRlSnPhs.png)
 而且还可以为 git 以及 ssh 同时设置代理。
 
 代码：
