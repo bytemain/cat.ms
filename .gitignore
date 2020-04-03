@@ -2,7 +2,7 @@
 /public
 /_config.yml
 /themes
-
+.imgs
 .DS_Store
 Thumbs.db
 db.json

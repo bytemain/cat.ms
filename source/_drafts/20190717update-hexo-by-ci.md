@@ -154,7 +154,7 @@ gitalk:
 我们之后在部署或者生成的时候使用相应的密钥替换掉就好。
 
 可以参考我的 [_config_base.yml](https://github.com/lengthmin/lengthmin.me/blob/backup/_config_base.yml)。
-![_config_base.yml](https://i.loli.net/2019/07/18/5d2fea19bdd7947244.png)
+![_config_base.yml](https://cdn.jsdelivr.net/gh/riril/i/posts/update-hexo-by-ci/_config_base_yml.png)
 
 ## 选择一个合适的 CI 工具
 
@@ -164,8 +164,7 @@ gitalk:
 >
 > 持续发布(Continuous delivery,CD)实际上是持续集成上的一个拓展，在持续集成的基础上将发布工作自动化，避免人为操作从而减少发布时间和发布时人为造成的错误。
 
-![Buddy 可选的 Git 托管服务商](https://ae01.alicdn.com/kf/HTB10SUMauL2gK0jSZFm7637iXXa4.png)
-<!-- ![图片备份](https://i.loli.net/2019/07/18/5d2fd9822556289404.png) -->
+![Buddy 可选的 Git 托管服务商](https://cdn.jsdelivr.net/gh/riril/i/posts/update-hexo-by-ci/Optional_Git_hosting_service.png)
 
 ## 其他参考资料
 

@@ -30,7 +30,7 @@ permalink: mod-omencommandcenter-key
 
 ## 修改注册表
 
-![omencommandcenter](https://cdn.nlark.com/yuque/0/2020/png/99649/1582943719981-75a95f6f-79cf-45ee-bc98-917c6ff20608.png)
+![omencommandcenter](https://cdn.jsdelivr.net/gh/riril/i/posts/mod-omencommandcenter-key/omencommandcenter.png)
 
 按下 OMEN 键时，系统会弹出来这个框，这说明系统想打开注册了这个链接的应用。
 
@@ -41,7 +41,7 @@ HKEY_CURRENT_USER\SOFTWARE\Classes\omencommandcenter
 关于 windows 应用注册链接详见：<https://blog.walterlv.com/post/windows-uri-scheme-association.html>
 
 解决方法就是修改注册表：
-![修改注册表](https://cdn.nlark.com/yuque/0/2020/png/99649/1582944595209-e7394b3e-6d78-4884-9305-4054bbf7ffa4.png)
+![修改注册表](https://cdn.jsdelivr.net/gh/riril/i/posts/mod-omencommandcenter-key/modify-registry.png)
 
 ```reg
 HKEY_CURRENT_USER\SOFTWARE\Classes\omencommandcenter\Shell\Open\Command
