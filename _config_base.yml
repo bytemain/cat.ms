@@ -181,6 +181,9 @@ markdown_it_plus:
   typographer: true
   quotes: “”‘’
   pre_class: highlight
+nofollow:
+  enable: true
+  field: site
 
 theme_config:
   anchor:
