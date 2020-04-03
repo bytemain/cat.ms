@@ -7,13 +7,14 @@
   },
   "scripts": {
     "secret": "node ./helper/replace_secret.js",
+    "update": "node ./helper/update_lib.js",
     "s": "yarn secret && hexo s",
     "cs": "yarn secret && hexo clean && hexo s",
     "d": "hexo clean && hexo deploy",
-    "dl": "yarn secret && yarn d",
-    "update": "ncu -u && node ./helper/update_lib.js"
+    "dl": "yarn secret && yarn d"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "hexo": "^4.2.0",
     "hexo-deployer-git": "^2.1.0",
     "hexo-filter-nofollow": "^2.0.2",

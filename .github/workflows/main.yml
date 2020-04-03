@@ -1,0 +1,29 @@
+name: deploy-hexo
+
+on:
+  push:
+    branches: [hexo]
+  pull_request:
+    branches: [hexo]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+      - name: deploy hexo
+        uses: .
+        with:
+          _GH_TOKEN_: ${{ secrets._GH_TOKEN_ }}
+          _google_analytics_tracking_id_: ${{ secrets._google_analytics_tracking_id_ }}
+          _disqusjs_shortname_: ${{ secrets._disqusjs_shortname_ }}
+          _disqusjs_apikey_: ${{ secrets._disqusjs_apikey_ }}

@@ -135,14 +135,17 @@ neat_html:
   logger: false
   exclude:
     - "index.test.html"
+
 neat_css:
   enable: true
   exclude:
     - "*.min.css"
+
 neat_js:
   enable: true
   exclude:
     - "*.min.js"
+
 neat_gzip:
   enable: true
   include:
@@ -157,6 +160,7 @@ neat_gzip:
     - "*.svg"
     - "*.eot"
     - "*.json"
+
 neat_brotli:
   enable: true
   include:
@@ -181,6 +185,7 @@ markdown_it_plus:
   typographer: true
   quotes: “”‘’
   pre_class: highlight
+
 nofollow:
   enable: true
   field: site
@@ -350,9 +355,7 @@ theme_config:
     # Available values: block | inline
     layout: block
 
-  links:
-    #Title: http://yoursite.com
-  links_:
+  friends:
     Max: http://maxlv.org/ || MaxLv
     "Konica 的自留地": http://www.iikira.com/ || 一个大可爱
     Sukka: https://skk.moe/ || 坏耶
@@ -567,11 +570,11 @@ theme_config:
   disqusjs:
     enable: true
     api: https://disqus.skk.moe/disqus/
-    apikey: Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR
-    shortname: hexo-1
+    apikey: _disqusjs_apikey_
+    shortname: _disqusjs_shortname_
 
   cfga:
-    tracking_id: UA-144727481-1
+    tracking_id: _google_analytics_tracking_id_
     localhost_ignored: true
 
   # Get more information on http://ibruce.info/2015/04/04/busuanzi

@@ -1,15 +1,11 @@
 /.deploy_git
 /public
 /_config.yml
-/old_blog
 /themes
-.vscode/.history
 
 .DS_Store
 Thumbs.db
 db.json
-secrets_.json
-secrets.json
 /source/_data/next.yml
 # Logs
 logs

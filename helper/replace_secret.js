@@ -1,5 +1,7 @@
-var path = require("path");
+//@ts-ignore
 var fs = require("fs");
+const dotenv = require("dotenv");
+
 let fileList = [
   {
     base_file: "_config_base.yml",
@@ -9,18 +11,21 @@ let fileList = [
 
 fileList.map(value => {
   const { base_file, target_file } = value;
-  var secrets_file = path.join(__dirname, "secrets.json");
-  var secrets_json = null;
-  var secrets_data = fs.readFileSync(secrets_file);
-  secrets_json = JSON.parse(secrets_data.toString());
+  if (!process.env.CI) {
+    dotenv.config();
+  }
 
   var data = fs.readFileSync(base_file);
   config_data = data.toString();
-  secrets_keys = Object.keys(secrets_json);
-
+  secrets_keys = [
+    "_GH_TOKEN_",
+    "_google_analytics_tracking_id_",
+    "_disqusjs_shortname_",
+    "_disqusjs_apikey_"
+  ];
   for (key of secrets_keys) {
-    exp = new RegExp(`_${key}_`, "g");
-    config_data = config_data.replace(exp, secrets_json[key]);
+    exp = new RegExp(key, "g");
+    config_data = config_data.replace(exp, process.env[key]);
   }
 
   fs.writeFile(target_file, config_data, function(err) {
