@@ -3,8 +3,12 @@ name: deploy-hexo
 on:
   push:
     branches: [hexo]
-  pull_request:
-    branches: [hexo]
+    paths-ignore:
+      - README.md
+      - ".vscode/*"
+      - ".prettierrc"
+      - ".editorconfig"
+      - ".markdownlint.json"
 
 jobs:
   deploy:
