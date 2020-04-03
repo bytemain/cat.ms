@@ -15,15 +15,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
       - name: Cache node modules
         uses: actions/cache@v1
         with:
           path: node_modules
           key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
-      - name: deploy hexo
-        uses: .
-        with:
-          _GH_TOKEN_: ${{ secrets._GH_TOKEN_ }}
-          _google_analytics_tracking_id_: ${{ secrets._google_analytics_tracking_id_ }}
-          _disqusjs_shortname_: ${{ secrets._disqusjs_shortname_ }}
-          _disqusjs_apikey_: ${{ secrets._disqusjs_apikey_ }}
+      - run: sh entrypoint.sh

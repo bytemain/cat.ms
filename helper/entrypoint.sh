@@ -3,9 +3,9 @@
 pwd
 ls -lha
 
-echo "install npm & hexo-cli"
-npm install
-npm install -g hexo-cli
+echo "install node_modules & hexo-cli"
+yarn
+yarn global add hexo-cli
 echo ""
 
 echo "config git user"
@@ -17,21 +17,21 @@ git --version
 echo "node version"
 node --version
 echo "npm version"
-npm --version
+yarn --version
 echo "hexo version"
 hexo --version
 echo ""
 
 echo "generate secret"
-npm run secret
+yarn secret
 cat ./_config.yml
 echo ""
 
 echo "update libs"
-npm run update
+yarn update
 echo ""
 
 echo "start deploy"
-npm run d
+yarn d
 
 echo "deploy done"
