@@ -5,7 +5,6 @@
 
 {% set ccLicense = "署名-非商用-相同方式共享 4.0" %}
 {% set ccLicenseTitle = "CC BY-NC-SA 4.0 International"%}
-{% set ccIcon = '<i class="fa fa-fw fa-creative-commons"></i>' %}
 {% set ccText = ccLicense | upper %}
 {% set ccURL = 'http://creativecommons.org/licenses/by-nc-sa/4.0/' %}
 
@@ -41,7 +40,9 @@
   <li class="post-copyright-title">
     <strong>{{ titleText  }}：
     </strong>
-    <a href="{{ url_for(page.path) }}"> {{ page.title }} </a>
+    <a href="{{ url_for(page.path) }}">
+      {{ page.title }}
+    </a>
   </li>
   <li class="post-copyright-link">
     <strong>{{ linkText  }}：</strong>
@@ -50,33 +51,41 @@
     <span class="copy-path" title="点击复制文章链接">
       <i class="fa fa-clipboard"></i>
     </span>
-    <span class="copytooltip"/>
+    <span class="copytooltip"></span>
     <script>
       var x = 10;
       var y = 20;
       var copyButton = document.querySelector('.copy-path');
       var copyTooltip = document.querySelector('.copytooltip');
+      let timeout;
       copyButton.addEventListener('click', function (e) {
-        var ta = document.createElement('textarea');
-        ta.readOnly = true;
+        var ta = document.createElement('input');
         ta.value = "原文作者：{{ page.author or author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}";
+        ta.setAttribute('readonly', 'readonly');
         document
           .body
           .appendChild(ta);
-        ta.select();
-        ta.readOnly = false;
-        var result = document.execCommand('copy');
-        if (result) {
-          $(copyTooltip).append('<span id="mytitle" >' + '{{__("post.copy_success")}}' + '</span>');
-        } else {
-          $(copyTooltip).append('<span id="mytitle" >' + '{{__("post.copy_failure")}}' + '</span>');
-        }
-        setTimeout(() => {
-          $(copyTooltip).empty();
-        }, 2000);
+        ta.setSelectionRange(0, ta.value.length);
         document
           .body
           .removeChild(ta);
+        var result = document.execCommand('copy');
+        if (copyTooltip.hasChildNodes()) {
+          copyTooltip.removeChild(copyTooltip.firstChild);
+        }
+        if (timeout) {
+          clearTimeout(timeout);
+        }
+        if (result) {
+          copyTooltip.append('复制成功');
+        } else {
+          copyTooltip.append('复制失败');
+        }
+        timeout = setTimeout(() => {
+          while (copyTooltip.hasChildNodes()) {
+            copyTooltip.removeChild(copyTooltip.firstChild);
+          }
+        }, 2000);
       });
     </script>
   </li>
@@ -87,16 +96,17 @@
   </li>
   <li class="post-copyright-history">
     <strong>{{ historyText  }}：</strong>
-    <i class="fa fa-github"></i>
+    <i class="fab fa-github"></i>
     <a href="https://github.com/{{ username }}/{{ repository }}/blame/{{ branch }}/source/{{ page.source }}" title="顺序查看文章各部分修改记录" target="_blank">Blame</a>,
     <a href="https://github.com/{{ username }}/{{ repository }}/commits/{{ branch }}/source/{{ page.source }}" title="查看文章有关更新记录" target="_blank">History</a>
     <strong style="margin-left: 1em">{{ rawText  }}：</strong>
-    <i class="fa fa-file-text-o"></i>
+    <i class="fas fa-file-alt"></i>
     <a href="https://raw.githubusercontent.com/{{ username }}/{{ repository }}/{{ branch }}/source/{{ page.source }}" title="查看 & 下载文章 Markdown 原始文件" target="_blank">.md Raw</a>
   </li>
   <li class="post-copyright-license">
     <strong>{{ licenseTitle  }}：
     </strong>
-    {{ ccIcon  + __(licenseContent, next_url(ccURL, ccText, {title: ccLicenseTitle }))  }}
+    <i class="fab fa-creative-commons"></i>
+    {{ __(licenseContent, next_url(ccURL, ccText, {title: ccLicenseTitle }))  }}
   </li>
 </ul>

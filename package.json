@@ -8,13 +8,13 @@
   "scripts": {
     "secret": "node ./helper/replace_secret.js",
     "update": "node ./helper/update_lib.js",
+    "dev": "yarn nodemon --watch _config_base.yml ./helper/replace_secret.js",
     "s": "yarn secret && hexo s",
     "cs": "yarn secret && hexo clean && hexo s",
     "d": "hexo clean && hexo deploy",
     "dl": "yarn secret && yarn d"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
     "hexo": "^4.2.0",
     "hexo-deployer-git": "^2.1.0",
     "hexo-filter-nofollow": "^2.0.2",
@@ -34,5 +34,9 @@
     "hexo-server": "^1.0.0",
     "hexo-symbols-count-time": "^0.7.0",
     "hexo-theme-next-anchor": "^1.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "dotenv": "^8.2.0"
   }
 }

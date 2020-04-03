@@ -200,14 +200,14 @@ theme_config:
     icon:
       # If true, the `text` option will be ignored.
       enable: true
-      font: FontAwesome
+      font: "Font Awesome 5 Free"
       content: \f0c1
 
   cache:
     enable: true
 
   minify: true
-
+  darkmode: true
   # Create your custom files in site directory `source/_data` and uncomment needed files below.
   custom_file_path:
     #head: source/_data/head.njk
@@ -239,24 +239,14 @@ theme_config:
     since: 2016
 
     icon:
-      name: heart
+      name: fa fa-heart
       animated: true
       color: ""
 
     # If not defined, `author` from Hexo `_config.yml` will be used.
     copyright:
 
-    powered:
-      # Hexo link (Powered by Hexo).
-      enable: true
-      # Version info of Hexo after Hexo link (vX.X.X).
-      version: false
-
-    theme:
-      # Theme & scheme info link (Theme - NexT.scheme).
-      enable: true
-      # Version info of NexT after scheme info (vX.X.X).
-      version: false
+    powered: true
 
     # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
     beian:
@@ -284,11 +274,11 @@ theme_config:
   # When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
   # External url should start with http:// or https://
   menu:
-    home: / || home
-    about: /about/ || user
-    tags: /tags/ || tags
-    categories: /categories/ || th
-    archives: /archives/ || archive
+    home: / || fa fa-home
+    about: /about/ || fa fa-user
+    tags: /tags/ || fa fa-tags
+    categories: /categories/ || fa fa-th
+    archives: /archives/ || fas fa-archive
     #schedule: /schedule/ || calendar
     #sitemap: /sitemap.xml || sitemap
     #commonweal: /404/ || heartbeat
@@ -329,19 +319,12 @@ theme_config:
     rounded: false
     rotated: false
 
-  # Posts / Categories / Tags in sidebar.
-  site_state: true
-
-  # Social Links
-  # Usage: `Key: permalink || icon`
-  # Key is the link label showing to end users.
-  # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
   social:
-    E-Mail: mailto:withwinds@outlook.com || envelope
-    GitHub: https://github.com/lengthmin || github
-    Twitter: https://twitter.com/lengthmin || twitter
-    Telegram: https://telegram.me/lengthmin || telegram
-    RSS: /rss.xml || rss
+    E-Mail: mailto:withwinds@outlook.com || fa fa-envelope
+    GitHub: https://github.com/lengthmin || fab fa-github
+    Twitter: https://twitter.com/lengthmin || fab fa-twitter
+    Telegram: https://telegram.me/lengthmin || fab fa-telegram
+    RSS: /rss.xml || fas fa-rss
 
   social_icons:
     enable: true
@@ -350,7 +333,7 @@ theme_config:
 
   # Blog rolls
   links_settings:
-    icon: link
+    icon: fa fa-link
     title: Links
     # Available values: block | inline
     layout: block
@@ -361,16 +344,11 @@ theme_config:
     Sukka: https://skk.moe/ || 坏耶
     DIYgod: https://diygod.me/ || 带我领略 Github 的 DIYgay
 
-  # Front-matter variable (unsupport wrap expand_all).
   toc:
     enable: true
-    # Automatically add list number to toc.
     number: true
-    # If true, all words will placed on next lines if header width longer then sidebar width.
     wrap: false
-    # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
     expand_all: false
-    # Maximum heading depth of generated toc.
     max_depth: 6
 
   excerpt_description: true
@@ -385,16 +363,10 @@ theme_config:
       another_day: true
     categories: true
 
-  # Post wordcount display settings
-  # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
   symbols_count_time:
     separated_meta: true
     item_text_post: true
     item_text_total: false
-    awl: 2
-    wpm: 275
-
-  tag_icon: true
 
   reward_settings:
     # If true, reward will be displayed in every article by default.
@@ -480,25 +452,15 @@ theme_config:
 
   canonical: true
 
-  seo: true
-
   exturl: false
 
-  # Google Webmaster tools verification.
-  # See: https://www.google.com/webmasters
   google_site_verification:
 
-  # Math Formulas Render Support
   math:
-    # Default (true) will load mathjax / katex script on demand.
-    # That is it only render those page which has `mathjax: true` in Front-matter.
-    # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
     per_page: true
 
-    # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.
     mathjax:
       enable: false
-      # See: https://mhchem.github.io/MathJax-mhchem/
       mhchem: false
 
     # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
@@ -507,26 +469,14 @@ theme_config:
       # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
       copy_tex: false
 
-  # Easily enable fast Ajax navigation on your website.
-  # Dependencies: https://github.com/theme-next/theme-next-pjax
   pjax: true
 
-  # A JavaScript library for zooming images like Medium.
-  # Do not enable both `fancybox` and `mediumzoom`.
-  # For more information: https://github.com/francoischalifour/medium-zoom
   mediumzoom: true
 
-  # Vanilla JavaScript plugin for lazyloading images.
-  # For more information: https://github.com/ApoorvSaxena/lozad.js
   lazyload: true
 
-  # Pangu Support
-  # For more information: https://github.com/vinta/pangu.js
   pangu: true
 
-  # Quicklink Support
-  # For more information: https://github.com/GoogleChromeLabs/quicklink
-  # Front-matter (unsupport home archive).
   quicklink:
     enable: true
 
@@ -579,13 +529,13 @@ theme_config:
 
   # Get more information on http://ibruce.info/2015/04/04/busuanzi
   busuanzi_count:
-    enable: true
+    enable: false
     total_visitors: true
-    total_visitors_icon: user
+    total_visitors_icon: fa fa-user
     total_views: true
-    total_views_icon: eye
+    total_views_icon: fa fa-eye
     post_views: true
-    post_views_icon: eye
+    post_views_icon: fa fa-eye
 
   local_search:
     enable: true
@@ -703,115 +653,25 @@ theme_config:
     # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
     anime:
 
-    # Internal version: 4.7.0
-    # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
-    fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+    # Internal version: 5.13.0
     # fontawesome:
-
-    # MathJax
-    # mathjax: //cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-    # mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
-    # mhchem: //cdn.jsdelivr.net/npm/mathjax-mhchem@3
-    # mhchem: //cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.0
-    mathjax:
-    mhchem:
+    # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css
+    fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
 
     # KaTeX
     # katex: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
     katex: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css
     copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
     copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
-    # katex:
-    # copy_tex_js:
-    # copy_tex_css:
 
     # Internal version: 0.2.8
     pjax: //cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js
-    # pjax:
 
     # Medium-zoom
     mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
-    # mediumzoom:
 
     # Lazyload
-    # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
-    lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js
-    # lazyload:
+    lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
 
-    # Pangu
     # pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
     pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js
-    # pangu:
-
-    # Quicklink
-    # quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
-    quicklink:
-
-    # DisqusJS
-    # disqusjs_js: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
-    # disqusjs_css: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
-    disqusjs_js:
-    disqusjs_css:
-
-    # Valine
-    # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
-    # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js
-    valine:
-
-    # Gitalk
-    # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
-    # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
-    gitalk_js:
-    gitalk_css:
-
-    # Algolia Search
-    # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js
-    # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
-    algolia_instant_js:
-    algolia_instant_css:
-
-    # PDF
-    # pdfobject: //cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js
-    # pdfobject: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
-    pdfobject:
-
-    # Mermaid
-    # mermaid: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
-    # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.0/mermaid.min.js
-    mermaid:
-
-    # Internal version: 1.2.1
-    # velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
-    # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
-    # velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
-    # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
-    velocity:
-    velocity_ui:
-
-    # Internal version: 1.0.2
-    # pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
-    # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
-    # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
-    # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
-    pace:
-    pace_css:
-
-    # Internal version: 1.0.0
-    # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
-    # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js
-    # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js
-    # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_sphere.min.js
-    three:
-    three_waves:
-    canvas_lines:
-    canvas_sphere:
-
-    # Internal version: 1.0.0
-    # canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
-    # canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
-    canvas_nest:
-    canvas_nest_nomobile:
-
-    # Internal version: 1.0.0
-    # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
-    canvas_ribbon:
