@@ -6,11 +6,8 @@ on:
   pull_request:
     branches: [hexo]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,6 +16,12 @@ jobs:
         with:
           node-version: "12.x"
       - run: sh helper/entrypoint.sh
+        env:
+          _GH_TOKEN_: ${{ secrets._GH_TOKEN_ }}
+          _disqusjs_apikey_: ${{ secrets._disqusjs_apikey_ }}
+          _disqusjs_shortname_: ${{ secrets._disqusjs_shortname_ }}
+          _google_analytics_tracking_id_: ${{ secrets._google_analytics_tracking_id_ }}
+
       - name: Cache node modules
         uses: actions/cache@v1
         with:

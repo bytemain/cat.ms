@@ -25,6 +25,9 @@ fileList.map(value => {
   ];
   for (key of secrets_keys) {
     exp = new RegExp(key, "g");
+    if (process.env[key]) {
+      console.log(exp);
+    }
     config_data = config_data.replace(exp, process.env[key]);
   }
 
