@@ -4,7 +4,7 @@
     {{ theme.links_title }}
 </div>
 <ul class="links-of-blogroll-list">
-    {% for blogrollText, blogrollInfo in theme.links_ %}
+    {% for blogrollText, blogrollInfo in theme.friends %}
     {% set blogrollURL = blogrollInfo.split('||')[0] | trim %}
     {% set blogrollTitle = blogrollInfo.split('||')[1] | trim %}
     <li class="links-of-blogroll-item">
