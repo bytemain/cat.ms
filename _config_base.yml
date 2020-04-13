@@ -369,15 +369,13 @@ theme_config:
     item_text_total: false
 
   reward_settings:
-    # If true, reward will be displayed in every article by default.
-    enable: false
+    enable: true
     animation: false
-    #comment: Donate comment here.
+    comment: 如果您觉得有帮助的话，可以请我喝瓶饮料~
 
   reward:
-    #wechatpay: /images/wechatpay.png
-    #alipay: /images/alipay.png
-    #bitcoin: /images/bitcoin.png
+    wechatpay: https://cdn.jsdelivr.net/gh/riril/i/qiafan/wechatpay.png
+    alipay: https://cdn.jsdelivr.net/gh/riril/i/qiafan/alipay.jpg
 
   related_posts:
     enable: true
