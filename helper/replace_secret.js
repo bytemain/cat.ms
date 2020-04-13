@@ -5,11 +5,13 @@ const dotenv = require("dotenv");
 let fileList = [
   {
     base_file: "_config_base.yml",
-    target_file: "_config.yml"
-  }
+    target_file: "_config.yml",
+  },
 ];
 
-fileList.map(value => {
+console.log(new Date().toLocaleString());
+
+fileList.map((value) => {
   const { base_file, target_file } = value;
   if (!process.env.CI) {
     dotenv.config();
@@ -21,7 +23,7 @@ fileList.map(value => {
     "_GH_TOKEN_",
     "_google_analytics_tracking_id_",
     "_disqusjs_shortname_",
-    "_disqusjs_apikey_"
+    "_disqusjs_apikey_",
   ];
   for (key of secrets_keys) {
     exp = new RegExp(key, "g");
@@ -31,7 +33,7 @@ fileList.map(value => {
     config_data = config_data.replace(exp, process.env[key]);
   }
 
-  fs.writeFile(target_file, config_data, function(err) {
+  fs.writeFile(target_file, config_data, function (err) {
     if (err) {
       return console.error(err);
     }
