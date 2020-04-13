@@ -63,6 +63,12 @@ pagination_dir: page
 
 theme: next
 
+browsersync:
+  logLevel: "warn"
+  ghostMode:
+    scroll: true
+  instanceName: "uniqueString"
+
 feed:
   type: rss2
   path: rss.xml

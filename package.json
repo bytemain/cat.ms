@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "hexo": "^4.2.0",
+    "hexo-browsersync": "^0.3.0",
     "hexo-deployer-git": "^2.1.0",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-archive": "^1.0.0",
@@ -36,7 +37,7 @@
     "hexo-theme-next-anchor": "^1.0.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2"
   }
 }
