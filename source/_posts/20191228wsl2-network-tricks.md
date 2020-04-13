@@ -4,7 +4,6 @@ comments: true
 toc: true
 permalink: wsl2-network-tricks
 date: 2019-12-28 20:39:31
-updated: 2019-12-28 20:39:31
 categories:
   - WSL
 tags:
