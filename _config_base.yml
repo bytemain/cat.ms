@@ -533,7 +533,7 @@ theme_config:
 
   # Get more information on http://ibruce.info/2015/04/04/busuanzi
   busuanzi_count:
-    enable: false
+    enable: true
     total_visitors: true
     total_visitors_icon: fa fa-user
     total_views: true
