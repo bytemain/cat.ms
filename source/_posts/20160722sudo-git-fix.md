@@ -31,5 +31,5 @@ id -a
 cd .git/objects
 ls -al
 sudo chown -R uid:groups *
-## 将uid和groups换成你自己的
+# 将uid和groups换成你自己的
 ```
