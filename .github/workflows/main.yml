@@ -19,13 +19,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
-      - run: sh helper/entrypoint.sh
+      - run: sh helper/deploy.sh
         env:
           _GH_TOKEN_: ${{ secrets._GH_TOKEN_ }}
           _disqusjs_apikey_: ${{ secrets._disqusjs_apikey_ }}
           _disqusjs_shortname_: ${{ secrets._disqusjs_shortname_ }}
           _google_analytics_tracking_id_: ${{ secrets._google_analytics_tracking_id_ }}
-
       - name: Cache node modules
         uses: actions/cache@v1
         with:
