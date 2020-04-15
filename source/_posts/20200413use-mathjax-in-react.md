@@ -1,6 +1,6 @@
 ---
 title: React 项目中动态加载 Mathjax
-date: 2020-04-13T15:35:24+08:00
+date: 2020-04-13 15:35:24
 categories: 
 - React
 tags:
