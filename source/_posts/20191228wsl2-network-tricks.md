@@ -197,7 +197,7 @@ powershell 中 `@()` 就是声明数组的意思，这个脚本遍历你设置�
 ![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/3cGZ8gwpRlSnPhs.png)
 而且还可以为 git 以及 ssh 同时设置代理。
 
-代码见 <https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/ubuntuwsl2.zshrc>
+代码见 <https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc>
 
 重点见里面的 `proxy`, `unpro`, `getIp`, `proxy_git`, `proxy_npm` 等函数。
 
