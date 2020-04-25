@@ -4,6 +4,7 @@ comments: true
 toc: true
 permalink: wsl2-network-tricks
 date: 2019-12-28 20:39:31
+updated: 2020-04-25 17:03:00
 categories:
   - WSL
 tags:
@@ -20,6 +21,12 @@ tags:
 3. 局域网访问 wsl2
     局域网内访问你的 windows 主机，windows 转发端口到 wsl 上
 
+还有几个前置知识：
+
+1. Windows 和 WSL 算是在同一个局域网内，这个局域网是由 Hyper-V 创建的。
+2. WSL 内有些微软特意做的东西：
+   1. 向 `WSL 的 IP` 发送的请求都会被转发到 `WINDOWS 的 IP` 上，但是这个时灵时不灵。
+
 <!-- more -->
 
 ## wsl2 连接到主机代理
@@ -29,12 +36,6 @@ tags:
 1. 获取 Windows 的 ip
 2. Windows 上的代理软件允许局域网访问
 3. 设置 WSL 的代理
-
-还有几个前置知识：
-
-1. Windows 和 WSL 算是在同一个局域网内，这个局域网是由 Hyper-V 创建的。
-2. WSL 内有些微软特意做的东西：
-   1. 向 `WSL 的 IP` 发送的请求都会被转发到 `WINDOWS 的 IP` 上，但是这个时灵时不灵。
 
 ### 获取主机的 ip
 
