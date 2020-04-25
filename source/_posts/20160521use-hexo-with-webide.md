@@ -32,21 +32,21 @@ permalink: use-hexo-with-webide
 
 ---
 
-# 安装
+## 安装
 
-## 关于 Hexo
+### 关于 Hexo
 
-官网： https://hexo.io/zh-cn/
+官网： <https://hexo.io/zh-cn/>
 
 - A fast, simple & powerful blog framework
 - 快速、简洁且高效的博客框架
 
 作者：[Tommy Chen](https://zespia.tw/)
 
-## 准备准备
+### 准备准备
 
 - 注册 [coding.net](https://coding.net/) ｜ [c9.io](https://c9.io/) <br/>
-  ** 注意:c9 没有被墙，但是注册的时候需要输入验证码，验证码使用的是 google 的 reCAPTCHA 服务。因此注册的时候需要科学上网。 **
+  **注意:c9 没有被墙，但是注册的时候需要输入验证码，验证码使用的是 google 的 reCAPTCHA 服务。因此注册的时候需要科学上网。**
 
 在你的 c9 控制台界面，创建一个 workspace，名字 hexo(自己喜欢就好)
 选择模板为 blank
@@ -55,7 +55,7 @@ c9 的控制台是 ubuntu 系统，并且已经装了我们搭建 Hexo 需要的
 
 ---
 
-## 开始安装
+### 开始安装
 
 打开 workspace,在终端中输入
 
@@ -67,7 +67,7 @@ npm install hexo-cli -g
 等待安装成功<br/>
 创建一个 blog 文件夹，
 
-```
+```sh
 mkdir blog
 ```
 
@@ -91,17 +91,16 @@ hexo s -p 8081
 <!-- ![](http://7xt1wl.com1.z0.glb.clouddn.com/16-5-22/45253572.jpg) -->
 
 > 调教 hexo 请参见[《hexo 你的博客》](https://ibruce.info/2013/11/22/hexo-your-blog/)
-
 > 在这推荐两个主题： [yelee](https://moxfive.coding.me/yelee/) 跟 [next](https://theme-next.iissnan.com/)
 
 ---
 
-## hexo 的常用命令
+### hexo 的常用命令
 
 到这里，已经可以使用 Hexo 了
 hexo 的常用命令有这些，都要在 Hexo 的根目录下执行
 
-```
+```sh
 hexo g
 # 编译生成静态文件
 hexo d
@@ -123,13 +122,13 @@ hexo help
 #查看帮助
 ```
 
-### 在 c9 使用`hexo s`时注意事项
+#### 在 c9 使用`hexo s`时注意事项
 
 c9 只允许用户使用**8080、8081、8082**三个端口。并且 8080 端口已被占用,
 所以使用默认的`hexo server`是预览不了的，因为你进不去 4000 这个端口。
 要把`hexo server`的命令改成
 
-```
+```sh
 hexo server -p 端口号
 # 可简写
 hexo s -p 端口号
@@ -146,9 +145,9 @@ server:
 
 ---
 
-# 部署博客
+## 部署博客
 
-## 配置 SSH
+### 配置 SSH
 
 coding 的中文 ssh 配置帮助页面
 <https://coding.net/help/doc/git/ssh-key.html>
@@ -160,7 +159,7 @@ ssh 密钥在 ~/.ssh/id_rsa.pub <br/>
 
 ---
 
-## 配置 Deploy
+### 配置 Deploy
 
 在 coding 中创建一个仓库
 名字为你的 coding 用户名，不区分大小写。
@@ -179,11 +178,11 @@ deploy:
 
 ---
 
-## 部署到 Coding Pages 上
+### 部署到 Coding Pages 上
 
 这是 Coding 关于 Pages 的介绍。
 
-> https://coding.net/help/doc/pages/index.html
+> <https://coding.net/help/doc/pages/index.html>
 
 首先要安装 git 的插件:<br/>
 在终端输入
@@ -196,7 +195,7 @@ npm install hexo-deployer-git --save
 
 然后输入命令：
 
-```
+```sh
 hexo clean
 hexo g -d
 ```
@@ -205,14 +204,14 @@ hexo g -d
 
 ---
 
-# 一些 Tips
+## 一些 Tips
 
-## 修改终端时区
+### 修改终端时区
 
 c9 的终端默认的时区是 UTC，和中国相差了 8 个时区。
 终端输入:
 
-```
+```bash
 sudo dpkg-reconfigure tzdata
 ```
 
@@ -228,7 +227,7 @@ Universal Time is now:  Sat Aug  6 12:13:22 UTC 2016.
 
 ---
 
-## 开启 c9 的 markdown 实时预览
+### 开启 c9 的 markdown 实时预览
 
 写 markdown 时点击工具栏的`Preview`，选择第一个`Live Prebiew file`。
 然后屏幕就会变成双栏，左边码 markdown，右边可实时预览。
