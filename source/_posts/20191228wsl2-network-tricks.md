@@ -4,7 +4,7 @@ comments: true
 toc: true
 permalink: wsl2-network-tricks
 date: 2019-12-28 20:39:31
-updated: 2020-04-25 17:03:00
+updated: 2020-04-27 10:36:12
 categories:
   - WSL
 tags:
@@ -12,34 +12,36 @@ tags:
 ---
 快考完试了，这个学期一直在使用 Ubuntu WSL2 在进行开发，无论是 Python/C/React 都是用 VSCode Remote WSL 进行开发的，体验非常好。
 
+> 无特别说明，本文所提到的 WSL 皆指 WSL2。
+
 这篇文章大概有以下内容：
 
-1. wsl2 中连接到主机代理
-    让 wsl 里能连上 windows 上的代理软件
-2. 主机访问 wsl2
-    这里主要是设置了 hosts，让一个域名一直解析到 wsl 的 ip 上。
-3. 局域网访问 wsl2
-    局域网内访问你的 windows 主机，windows 转发端口到 wsl 上
+1. WSL2 中连接到主机代理
+    让 WSL2 里能连上 Windows 上的代理软件
+2. 主机访问 WSL2
+    这里主要是靠设置 hosts，让一个域名一直解析到 WSL2 的 ip 上。
+3. 局域网访问 WSL2
+    局域网内访问你的 Windows 主机，Windows 转发端口到 WSL2 上
 
 还有几个前置知识：
 
-1. Windows 和 WSL 算是在同一个局域网内，这个局域网是由 Hyper-V 创建的。
-2. WSL 内有些微软特意做的东西：
-   1. 向 `WSL 的 IP` 发送的请求都会被转发到 `WINDOWS 的 IP` 上，但是这个时灵时不灵。
+1. Windows 和 WSL2 算是在同一个局域网内，这个局域网是由 Hyper-V 创建的。
+2. WSL2 内有些微软特意做的东西：
+   1. 向 `WSL2 的 IP` 发送的请求都会被转发到 `Windows 的 IP` 上，但是这个时灵时不灵。
 
 <!-- more -->
 
-## wsl2 连接到主机代理
+## WSL2 连接到主机代理
 
 其实这个问题我在之前那篇[配置 ArchWSL 的文章](/posts/install-arch-wsl/#zsh-的其他的一些配置)里简单提了一下，大概流程如下：
 
 1. 获取 Windows 的 ip
 2. Windows 上的代理软件允许局域网访问
-3. 设置 WSL 的代理
+3. 设置 WSL2 的代理
 
 ### 获取主机的 ip
 
-由于 wsl2 是使用 Hyper-V 虚拟机实现的，也就不能跟 Windows 共享同一个 localhost 了，而且每次重启 ip 都会变。目前在 WSL 中可以用以下两个命令来获取主机的 ip:
+由于 WSL2 是使用 Hyper-V 虚拟机实现的，也就不能跟 Windows 共享同一个 localhost 了，而且每次重启 ip 都会变。目前在 WSL 中可以用以下两个命令来获取主机的 ip:
 
 ```bash
 ip route | grep default | awk '{print $3}'
@@ -53,7 +55,7 @@ cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }'
 
 ### 设置代理
 
-Windows 的 ip 都已经拿到了，比如说我的代理软件是监听在 7890 端口的，那我只要设置代理链接为 `{windows ip}:7890` 即可。
+Windows 的 ip 都已经拿到了，比如说我的代理软件是监听在 7890 端口的，那我只要设置代理链接为 `{Windows ip}:7890` 即可。
 
 如果无法连接的话，请你检查一下你 Windows 上的代理软件允许局域网访问了吗。
 
@@ -67,13 +69,13 @@ Windows 的 ip 都已经拿到了，比如说我的代理软件是监听在 7890
 
 [「一键」设置代理](#「一键」设置代理)
 
-## 主机访问 wsl2
+## 主机访问 WSL2
 
-这个问题困扰了我好久，因为在 wsl2 中开发，有时候就需要预览，或者查看某些应用启动的本地 web 服务，一般这种时候我也懒得启动 x11 打开 Ubuntu 中的 火狐了...
+WSL2 的 IP 会变，所以怎么随时随地的都能访问到 WSL2 呢？看了很多 issue，解决方案各种各样。
 
-还是因为 wsl2 在 Hyper-V 的容器中，所以主机访问 wsl2 也有些麻烦，官方说 Windows 版本更新到 18945 之后的，程序 listen 到 0.0.0.0 上，在 Windows 中就可以通过 localhost 访问了，而我在测试的时候发现很多时候还是不生效，也许需要看脸吧。
+这个问题困扰了我好久，因为在 WSL2 中开发，有时候就启动一些 web 应用，然后 localhost 又没法访问到.. 官方说 Windows 版本更新到 18945 之后的，程序 listen 到 0.0.0.0 上之后，在 Windows 中就可以通过 localhost 访问了，而我在测试的时候发现很多时候还是不生效，也许需要看脸吧。
 
-### 自动设置 hosts 关联到 wsl 的 IP
+### 自动设置 hosts 关联到 WSL 的 IP
 
 **解决方案**就是在 WSL 更新 IP 的时候，自动把 ip 加到 hosts 中，用自己喜欢的一个域名解析上去。
 
@@ -85,17 +87,17 @@ Windows 的 ip 都已经拿到了，比如说我的代理软件是监听在 7890
 
 链接在这儿：<https://github.com/lengthmin/dotfiles/blob/master/windows/wsl2.ps1>
 
-但是关键是我们不能让他开机运行，而是使用`任务计划程序`在 `wsl` 更新 IP 的时候执行这个脚本。
+但是关键是我们不能让他开机运行，而是使用`任务计划程序`在 `WSL` 更新 IP 的时候执行这个脚本。
 
-脚本内容也就是读取 wsl 和 windows 的 ip，然后加上自己的需要的域名，一起写入 Windows 的 Hosts 中，这样你就能用自己定义的域名来访问各自的 IP 了。
+脚本内容也就是读取 WSL 和 Windows 的 ip，然后加上自己的需要的域名，一起写入 Windows 的 Hosts 中，这样你就能用自己定义的域名来访问各自的 IP 了。
 
-而 wsl 中发起的 dns 查询，还是要 windows 来相应，所以两边都遵守 hosts 中设置的域名的解析。
+而 WSL 中发起的 dns 查询，还是要 Windows 来响应，所以两边都遵守 Windows hosts 中设置的域名的解析。
 
-[English Version](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)  
-[English Version](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)  
-[English Version](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)  
+[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)  
+[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)  
+[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)  
 
-具体**在 `wsl` 更新 IP 时运行脚本**步骤如下：
+具体**在 `WSL` 更新 IP 时运行脚本**步骤如下：
 
 1. 将[链接](https://github.com/lengthmin/dotfiles/blob/master/windows/wsl2.ps1)中的代码保存到本地文件中，文件名后缀设为 `.ps1`。
 2. 打开事件查看器，在小娜的搜索框里搜一下就能打开了。
@@ -106,7 +108,7 @@ Windows 的 ip 都已经拿到了，比如说我的代理软件是监听在 7890
 
 看看效果：
 
-在 wsl 中启动一个 http 服务器：
+在 WSL 中启动一个 http 服务器：
 ![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/s89jrHB2iVlZTNz.png)
 
 我们在 win 下请求一下：
@@ -119,20 +121,22 @@ Awesome! 成功啦
 >
 > 这是一个用 Go 写的小工具，利用 Windows 服务，Automatically update your Windows hosts file with the WSL2 VM IP address.
 
-### 让 windows 访问到 WSL 中监听本地的应用
+### 让 Windows 访问到 WSL 中监听本地的应用
 
 > 来源: <https://github.com/shayne/wsl2-hacks>
 > 见 README 内的 Access localhost ports from Windows 一节
 
-那么对于 wsl 中一些默认 listen 127.0.0.1 的程序，又不能改的，咋办呢？
+上面已经做到了应用程序监听 `0.0.0.0` 局域网请求，我们能在 Windows 中访问到，那么对于 WSL 中一些默认 listen `127.0.0.1` 的程序，咋办呢？
 
+监听 `127.0.0.1` 的图解：
 ![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/win_wsl_request_bofore.png)
 
-思路和`局域网访问 WSL 让 WINDOWS 做转发`一样，让请求 `wsl` 的请求都转发到请求 `127.0.0.1` 上。
+思路和`局域网访问 WSL 让 Windows 做转发`一样，让请求 `WSL` 的请求都转发到请求 `127.0.0.1` 上。
 
+现在：
 ![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/win_wsl_request_now.png)
 
-可以通过 linux 的命令来做到：
+WSL 中执行两条命令（花括号里面的两条）就能做到：
 
 ```bash
 expose_local(){
@@ -141,10 +145,10 @@ expose_local(){
 }
 ```
 
-### 局域网访问 wsl
+### Windows 局域网内其他机器访问 WSL2
 
 [[WSL 2] NIC Bridge mode 🖧 (Has Workaround🔨) #4150](https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723)
-上面提到过的这个 issue 里其实就是解决的局域网访问的问题，需要的端口通过 windows 代理转发到 wsl 中。
+上面提到过的这个 issue 里其实就是解决的局域网访问的问题，需要的端口通过 Windows 代理转发到 WSL 中。
 
 原理也类似于上面的两幅图。
 
@@ -155,7 +159,7 @@ expose_local(){
 不懂的请看注释。
 
 ```powershell
-# 获取 windows 和 wsl 的 ip
+# 获取 Windows 和 WSL2 的 ip
 $winip = bash.exe -c "ip route | grep default | awk '{print \`$3}'"
 $wslip = bash.exe -c "hostname -I | awk '{print \`$1}'"
 $found1 = $winip -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
@@ -166,23 +170,22 @@ if( !($found1 -and $found2) ){
   exit;
 }
 
-# [Ports]
 # 你需要映射到局域网中端口
 $ports=@(80,443,10000,3000,5000,27701,8080);
 
-# [Static ip]
-# 监听的端口，就是谁来访问自己
+# 监听的 ip，这么写是可以来自局域网
 $addr='0.0.0.0';
+# 监听的端口，就是谁来访问自己
 $ports_a = $ports -join ",";
 
-# Remove Firewall Exception Rules
+# 移除旧的防火墙规则
 iex "Remove-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' " | Out-Null
 
 # 允许防火墙规则通过这些端口
 iex "New-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' -Direction Outbound -LocalPort $ports_a -Action Allow -Protocol TCP"  | Out-Null
 iex "New-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' -Direction Inbound -LocalPort $ports_a -Action Allow -Protocol TCP"  | Out-Null
 
-# 使用 portproxy 让 windows 转发端口
+# 使用 portproxy 让 Windows 转发端口
 for( $i = 0; $i -lt $ports.length; $i++ ){
   $port = $ports[$i];
   iex "netsh interface portproxy delete v4tov4 listenport=$port listenaddress=$addr"  | Out-Null
@@ -190,7 +193,7 @@ for( $i = 0; $i -lt $ports.length; $i++ ){
 }
 ```
 
-powershell 中 `@()` 就是声明数组的意思，这个脚本遍历你设置的想暴露到局域网的端口的数组，先关闭相应的防火墙策略，然后设置 portproxy 反代 windows 的端口到 wsl 中。
+powershell 中 `@()` 就是声明数组的意思，这个脚本遍历你设置的想暴露到局域网的端口的数组，先关闭相应的防火墙策略，然后设置 portproxy 反代 Windows 的端口到 WSL 中。
 
 ## 「一键」设置代理
 
@@ -204,4 +207,4 @@ powershell 中 `@()` 就是声明数组的意思，这个脚本遍历你设置�
 
 这样我们执行 proxy 的时候，就能一键连接到主机的代理上了。
 
-有用的话别忘了给个 star
+有用的话别忘了给个 star，谢谢~
