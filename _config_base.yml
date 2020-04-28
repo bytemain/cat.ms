@@ -222,7 +222,7 @@ theme_config:
   custom_file_path:
     #head: source/_data/head.njk
     header: source/_data/header.njk
-    #sidebar: source/_data/sidebar.njk
+    # sidebar: source/_data/sidebar.njk
     #postMeta: source/_data/post-meta.njk
     postBodyEnd: source/_data/post-body-end.njk
     footer: source/_data/footer.njk
@@ -271,8 +271,8 @@ theme_config:
 
   # scheme: Muse
   # scheme: Mist
-  scheme: Pisces
-  # scheme: Gemini
+  # scheme: Pisces
+  scheme: Gemini
 
   # ---------------------------------------------------------------
   # Menu Settings
@@ -289,7 +289,7 @@ theme_config:
     tags: /tags/ || fa fa-tags
     categories: /categories/ || fa fa-th
     archives: /archives/ || fas fa-archive
-    #schedule: /schedule/ || calendar
+    友链: /friends/ || fa fa-link fa-fw
     #sitemap: /sitemap.xml || sitemap
     #commonweal: /404/ || heartbeat
 
@@ -330,7 +330,7 @@ theme_config:
     rotated: false
 
   social:
-    E-Mail: mailto:withwinds@outlook.com || fa fa-envelope
+    E-Mail: mailto:lengthmin@gmail.com || fa fa-envelope
     GitHub: https://github.com/lengthmin || fab fa-github
     Twitter: https://twitter.com/lengthmin || fab fa-twitter
     Telegram: https://telegram.me/lengthmin || fab fa-telegram
@@ -347,12 +347,6 @@ theme_config:
     title: Links
     # Available values: block | inline
     layout: block
-
-  friends:
-    Max: http://maxlv.org/ || MaxLv
-    "Konica 的自留地": http://www.iikira.com/ || 一个大可爱
-    Sukka: https://skk.moe/ || 坏耶
-    DIYgod: https://diygod.me/ || 带我领略 Github 的 DIYgay
 
   toc:
     enable: true
@@ -473,7 +467,7 @@ theme_config:
 
     # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
     katex:
-      enable: true
+      enable: false
       # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
       copy_tex: false
 

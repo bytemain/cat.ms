@@ -30,3 +30,9 @@ insert_final_newline = true
 # Matches the exact files either package.json or .travis.yml
 [{package.json,.travis.yml}]
 indent_size = 2
+
+[*.njk]
+trim_trailing_whitespace = false
+indent_style = space
+indent_size = 2
+charset = utf-8

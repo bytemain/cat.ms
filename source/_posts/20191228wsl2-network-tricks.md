@@ -10,9 +10,9 @@ categories:
 tags:
   - Linux
 ---
-快考完试了，这个学期一直在使用 Ubuntu WSL2 在进行开发，无论是 Python/C/React 都是用 VSCode Remote WSL 进行开发的，体验非常好。
+快考完试了，这个学期一直在使用 WSL 在进行开发，无论是 Python/C/React 都是用 VSCode Remote WSL 进行开发的，体验非常好。
 
-> 无特别说明，本文所提到的 WSL 皆指 WSL2。
+> 无特别说明，本文以下内容所提到的 WSL 皆指 WSL2。
 
 这篇文章大概有以下内容：
 

@@ -1,13 +1,15 @@
 {%- if theme.cfga.tracking_id %}
   <script>
-    window.ga_tid = "{{ theme.cfga.tracking_id }}"; 
-    window.ga_api = "https://ga.artin.workers.dev/"; 
+    window.ga_tid = "{{ theme.cfga.tracking_id }}";
+    window.ga_api = "https://ga.artin.workers.dev/";
     (function () {
       function loadcfga() {
         var js = document.createElement('script');
         js.src = 'https://cdn.jsdelivr.net/npm/cfga';
         js.async = true
-        document.head.appendChild(js);
+        document
+          .head
+          .appendChild(js);
       }
 
       var host = window.location.hostname;
