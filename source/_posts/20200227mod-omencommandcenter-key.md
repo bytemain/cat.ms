@@ -1,6 +1,7 @@
 ---
 title: 暗影精灵修改 OMEN 键
 date: 2020-02-27 00:00:57
+updated: 2020-05-03 22:12:00
 categories: 
     - Windows
 tags:
@@ -59,6 +60,7 @@ windows 还提供了 执行 vbs 的工具：
 ```bat
 mshta vbscript:clipboarddata.setdata(\"text\",\"%1\")(close)
 ```
+
 参考： <https://lolbas-project.github.io/lolbas/Binaries/Mshta/>
 
 或者你可以执行某个 `Powershell` 文件：

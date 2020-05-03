@@ -4,7 +4,7 @@ comments: true
 toc: true
 permalink: why-do-we-need-to-configure-environment-variables
 date: 2019-04-28 00:03:42
-updated: 2019-07-17 21:50:00
+updated: 2020-05-03 22:10:00
 categories: 
 - 思考
 tags:
@@ -20,6 +20,7 @@ tags:
 <!-- more -->
 
 ## 为什么需要环境变量
+
 我记得计算机网络的老师在给我们讲 ip/mac地址 的时候提过一个例子：
 > 你刚到这个班，班里都是新同学，你想找班里的小明同学该怎么办？
 答：在班里喊一声小明。这当然可以，小明肯定会响应你。对局域网来说也是如此。
@@ -33,6 +34,7 @@ tags:
 - 环境变量Path中保存的路径下的可执行文件（包括系统变量和用户变量）
 
 ## 举个例子
+
 举个栗子：
 `win + r`大家都用过吧，经常用来快速运行某些程序，比如打开命令行窗口我们就会用到：
 ![打开 cmd](https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccafd6ee176b.png)

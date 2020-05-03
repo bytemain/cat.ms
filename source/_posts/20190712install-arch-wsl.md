@@ -4,7 +4,7 @@ comments: true
 toc: true
 permalink: install-arch-wsl
 date: 2019-07-12 09:42:25
-updated: 2019-07-30 16:17:00
+updated: 2020-05-03 22:12:00
 categories: 
     - WSL
 tags:
@@ -25,12 +25,12 @@ Arch WSL 真的是秒开哦~
 这里是作者的安装教程：<https://github.com/yuk7/ArchWSL/wiki>
 
 我选择的是传统方式安装(不使用AppX方式)：
+
 1. 在[Release](https://github.com/yuk7/ArchWSL/releases)下载最新版的 `Arch.zip`
 2. 解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 `Program Files`等目录中。
 3. 双击解压好的 `Arch.exe` 进行安装，这个 **.exe 的名字** 就是要创建的 **WSL实例的名字**，改不同的名字就能创建多个 Arch WSL。
 
 安装好之后，进行配置。
-
 
 ## 配置软件仓库
 
@@ -46,7 +46,7 @@ Arch WSL 真的是秒开哦~
 
 > Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体/美化包等。
 >
-> 官方仓库地址：http://repo.archlinuxcn.org  
+> 官方仓库地址：<http://repo.archlinuxcn.org>
 
 这里我使用的是腾讯的镜像： <http://mirrors.cloud.tencent.com/archlinuxcn/>
 
@@ -69,14 +69,13 @@ pacman -Syy && pacman -S archlinuxcn-keyring
 ### 安装 AUR 助手 yay
 
 > Arch User Repository（常被称作 AUR），是一个为 Arch 用户而生的社区驱动软件仓库。Debian/Ubuntu 用户的对应类比是 PPA。  
-> 
+>
 > AUR 包含了不直接被 Arch Linux 官方所背书的软件。如果有人想在 Arch 上发布软件或者包，它可以通过这个社区仓库提供。这让最终用户们可以使用到比默认仓库里更多的软件。
-> 
+>
 > 所以你该如何使用 AUR 呢？简单来说，你需要另外的工具以从 AUR 中安装软件。Arch 的包管理器 pacman 不直接支持 AUR。那些支持 AUR 的“特殊工具”我们称之为 AUR 助手。
 
 我们想从 AUR 仓库中安装东西时，就需要 AUR 助手，这里推荐 `yay`.
 [![Jguer/yay](https://gh-card.dev/repos/Jguer/yay.svg)](https://github.com/Jguer/yay)
-
 
 ```sh
 pacman -S yay
@@ -85,11 +84,13 @@ pacman -S yay
 安装完 `yay`，`git` 也会被一起装好。
 
 检查本地软件包的更新:
+
 ```sh
 yay
 ```
 
 换成国内 AUR 源:
+
 ```sh
 # yay --save --aururl "地址"
 yay --save --aururl https://aur.tuna.tsinghua.edu.cn
@@ -97,20 +98,24 @@ yay --save --aururl https://aur.tuna.tsinghua.edu.cn
 
 yay 的配置文件路径： `~/.config/yay/config.json`
 
-查看 yay 配置：  
+查看 yay 配置：
+
 ```sh
 yay -P -g
 ```
 
 查看 yay 帮助：
+
 ```sh
 man yay
 ```
 
 ## 创建 Arch 普通用户
+
 刚安装好的 Arch 是 root 用户，为了不至于权限太大误伤系统，可以先创建一个普通用户。
 
 添加一个用户：
+
 ```sh
 useradd -m artin
 # 参数解析
@@ -118,14 +123,17 @@ useradd -m artin
 ```
 
 设置用户密码：
+
 ```sh
 passwd artin
 ```
 
 在下一步之前，要先把默认编辑器设置成 vim，因为用不来默认的 vi...
+
 ```sh
-export EDITOR=vim; 
+export EDITOR=vim;
 ```
+
 你也可以设置成自己喜欢的编辑器。
 
 让用户可以执行 sudo 命令，这一步不能省略。
@@ -163,7 +171,7 @@ Arch.exe config --default-user artin
 ### pacman 使用方法
 
 > ArchLinux必备命令记录(manjaro) - weixin_42408100的博客 - CSDN博客
-> https://blog.csdn.net/weixin_42408100/article/details/82526087
+> <https://blog.csdn.net/weixin_42408100/article/details/82526087>
 
 | 常用命令                   | 解释                                             |
 | -------------------------- | ------------------------------------------------ |
@@ -217,6 +225,7 @@ pacman -S base-devel
 然后回车就好了~ 不输入数字的话默认会安装 `base-devel` 里的所有包。
 
 ## 安装配置 zsh
+
 ### 安装 zsh 和 oh-my-zsh
 
 `zsh` 又好看又好用又强大~
@@ -296,7 +305,6 @@ export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PA
 
 这里的都是我需要的，你可以根据自己的需要来判断用什么。
 ![2d667f7ba442.png](https://i.lengthm.in/posts/install-arch-wsl/2d667f7ba442.png)
-
 
 ### zsh 的其他的一些配置
 
