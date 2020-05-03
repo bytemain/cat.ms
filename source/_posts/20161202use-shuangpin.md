@@ -39,7 +39,7 @@ Hello everybody,long time no see.
 ## 学习使我快乐
 
 学双拼要记得住每个键对应的声母和韵母，这有张小鹤的码表，同学你一定要记住它。
-![键位图](https://cdn.jsdelivr.net/gh/riril/i/posts/use-shuangpin/hejp.png)
+![键位图](https://i.lengthm.in/posts/use-shuangpin/hejp.png)
 当时想着能在空余时间练习一下。于是用草稿纸画了一张上面那个图，事实证明这招很有效，放在桌上慢慢打字练手感，这个表和小鹤双拼的口诀 已经是要学习的全部内容。一开始我也背了这个口诀，后来打熟练了就能记住键位了，口诀也忘了...：
 
 > Kuai ing Liang uang Ruan Cao Zou T ue Qiu Yun Wei Jan Mian

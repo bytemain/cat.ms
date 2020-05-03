@@ -38,15 +38,15 @@ Google 许久，发现了下面这个 gist, 可以直接拿到 Angular 的实例
 
 ## 分析网页数据流
 
-![btn-list.png](https://cdn.jsdelivr.net/gh/riril/i/posts/using-userscript-in-angular-page/btn-list.png)
+![btn-list.png](https://i.lengthm.in/posts/using-userscript-in-angular-page/btn-list.png)
 
 平常我们是无法点击这个用户行为按钮的，因为属性里的 `disable` 被设置为了 `true`，选中这个按钮的 DOM，在控制台输入 `$scope`（你需要按 gist 中的注释现在网页中执行代码片段）查看信息。
 
-![btn-scope-info.png](https://cdn.jsdelivr.net/gh/riril/i/posts/using-userscript-in-angular-page/btn-scope-info.png)
+![btn-scope-info.png](https://i.lengthm.in/posts/using-userscript-in-angular-page/btn-scope-info.png)
 
 尝试修改 `$scope.disabled = false`，再点击该按钮，可以点击了。
 
-![btn-can-click.png](https://cdn.jsdelivr.net/gh/riril/i/posts/using-userscript-in-angular-page/btn-can-click.png)
+![btn-can-click.png](https://i.lengthm.in/posts/using-userscript-in-angular-page/btn-can-click.png)
 
 但是我们切换到另一页再切换回来之后，又无法点击了，究其根本就是我们没影响到最内层的数据流。
 

@@ -51,7 +51,7 @@ cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }'
 
 原理可见: [User Experience Changes Between WSL 1 and WSL 2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-ux-changes#accessing-network-applications)
 
-![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/Pp7MZ1m8WALlr4a.png)
+![image.png](https://i.lengthm.in/posts/wsl2-network-tricks/Pp7MZ1m8WALlr4a.png)
 
 ### 设置代理
 
@@ -109,10 +109,10 @@ WSL2 的 IP 会变，所以怎么随时随地的都能访问到 WSL2 呢？看�
 看看效果：
 
 在 WSL 中启动一个 http 服务器：
-![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/s89jrHB2iVlZTNz.png)
+![image.png](https://i.lengthm.in/posts/wsl2-network-tricks/s89jrHB2iVlZTNz.png)
 
 我们在 win 下请求一下：
-![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/8Jr9kToFdgnINUu.png)
+![image.png](https://i.lengthm.in/posts/wsl2-network-tricks/8Jr9kToFdgnINUu.png)
 
 Awesome! 成功啦
 
@@ -129,12 +129,12 @@ Awesome! 成功啦
 上面已经做到了应用程序监听 `0.0.0.0` 局域网请求，我们能在 Windows 中访问到，那么对于 WSL 中一些默认 listen `127.0.0.1` 的程序，咋办呢？
 
 监听 `127.0.0.1` 的图解：
-![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/win_wsl_request_bofore.png)
+![image.png](https://i.lengthm.in/posts/wsl2-network-tricks/win_wsl_request_bofore.png)
 
 思路和`局域网访问 WSL 让 Windows 做转发`一样，让请求 `WSL` 的请求都转发到请求 `127.0.0.1` 上。
 
 现在：
-![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/win_wsl_request_now.png)
+![image.png](https://i.lengthm.in/posts/wsl2-network-tricks/win_wsl_request_now.png)
 
 WSL 中执行两条命令（花括号里面的两条）就能做到：
 
@@ -198,7 +198,7 @@ powershell 中 `@()` 就是声明数组的意思，这个脚本遍历你设置�
 ## 「一键」设置代理
 
 先上效果：
-![image.png](https://cdn.jsdelivr.net/gh/riril/i/posts/wsl2-network-tricks/3cGZ8gwpRlSnPhs.png)
+![image.png](https://i.lengthm.in/posts/wsl2-network-tricks/3cGZ8gwpRlSnPhs.png)
 而且还可以为 git 以及 ssh 同时设置代理。
 
 代码见 <https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc>

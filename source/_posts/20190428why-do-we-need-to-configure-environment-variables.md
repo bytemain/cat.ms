@@ -35,15 +35,15 @@ tags:
 ## 举个例子
 举个栗子：
 `win + r`大家都用过吧，经常用来快速运行某些程序，比如打开命令行窗口我们就会用到：
-![打开 cmd](https://cdn.jsdelivr.net/gh/riril/i/posts/why-do-we-need-to-configure-environment-variables/5ccafd6ee176b.png)
+![打开 cmd](https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccafd6ee176b.png)
 
 那电脑是怎么知道cmd在哪儿的呢？
-![在Everything搜索cmd.exe](https://cdn.jsdelivr.net/gh/riril/i/posts/why-do-we-need-to-configure-environment-variables/5ccafe08db5ec.png)
+![在Everything搜索cmd.exe](https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccafe08db5ec.png)
 能看到 `cmd.exe` 是在 `C:\Windows\System32\`和 `C:\Windows\SysWOW64\` 这两个路径下都有的，那就是说，电脑是去这两个路径之一打开的`cmd.exe`，那我们来看一下，系统环境变量里到底有没有这两个路径的其中一个呢？
 
 查看一下系统的环境变量中的Path是不是有这个路径：
 在小娜的输入框里输入 `path` 或者 `环境` 可以直接跳转到修改环境变量的地方，不行的话只能在计算机图标右键属性了。
-![我的环境变量](https://cdn.jsdelivr.net/gh/riril/i/posts/why-do-we-need-to-configure-environment-variables/5ccb0002c8879.png)
+![我的环境变量](https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccb0002c8879.png)
 可以验证了吧~
 所以这个流程我们也弄清楚了：
 
@@ -62,9 +62,9 @@ tags:
 
 其他的一些字段也是方便我们使用的，想用的时候使用 `%字段名%` 就能调用了。
 比如说我在系统设置里设置了 `CMDER_ROOT` 字段，将其赋值为`D:\0ArtinD\cmder`，这是一个路径。
-![设置 CMDER_ROOT](https://cdn.jsdelivr.net/gh/riril/i/posts/why-do-we-need-to-configure-environment-variables/5ccb026a1dbfb.png)
+![设置 CMDER_ROOT](https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccb026a1dbfb.png)
 然后我想打开该路径，就可以使用该字段名啦：
-![Snipaste_2019-05-02_22-47-37](https://cdn.jsdelivr.net/gh/riril/i/posts/why-do-we-need-to-configure-environment-variables/5ccb03181acf3.png)
+![Snipaste_2019-05-02_22-47-37](https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccb03181acf3.png)
 
 简单来说！就是编程中的变量名。定义一个常量，想用的时候可以使用。
 

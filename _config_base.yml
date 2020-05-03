@@ -378,8 +378,8 @@ theme_config:
     comment: 如果您觉得有帮助的话，可以请我喝瓶饮料~
 
   reward:
-    wechatpay: https://cdn.jsdelivr.net/gh/riril/i/qiafan/wechatpay.png
-    alipay: https://cdn.jsdelivr.net/gh/riril/i/qiafan/alipay.jpg
+    wechatpay: https://i.lengthm.in/qiafan/wechatpay.png
+    alipay: https://i.lengthm.in/qiafan/alipay.jpg
 
   related_posts:
     enable: true

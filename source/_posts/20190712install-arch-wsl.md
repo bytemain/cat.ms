@@ -141,14 +141,14 @@ visudo
 artin ALL=(ALL) ALL
 ```
 
-![36b5901fa80f.png](https://cdn.jsdelivr.net/gh/riril/i/posts/install-arch-wsl/36b5901fa80f.png)
+![36b5901fa80f.png](https://i.lengthm.in/posts/install-arch-wsl/36b5901fa80f.png)
 
 这里我只把自己的用户名写进去了，你也可以设置一个用户组的权限，然后将你的用户加入到该用户组。
 
 ## 切换 WSL 默认用户
 
 在 cmd 中打开你的安装目录：
-![c8979e233688.png](https://cdn.jsdelivr.net/gh/riril/i/posts/install-arch-wsl/c8979e233688.png)
+![c8979e233688.png](https://i.lengthm.in/posts/install-arch-wsl/c8979e233688.png)
 
 执行：
 
@@ -274,7 +274,7 @@ source ~/.zshrc
 ### 配置 PATH 变量
 
 WSL 中的环境变量会来自 Windows 系统，所以如果你两边都装了 npm 或者 python，可能会引起各种报错...
-![b8ea5455abef.png](https://cdn.jsdelivr.net/gh/riril/i/posts/install-arch-wsl/b8ea5455abef.png)
+![b8ea5455abef.png](https://i.lengthm.in/posts/install-arch-wsl/b8ea5455abef.png)
 
 所以手动的精简一些环境变量，从上面这个图中拿下来一点就好啦。
 编辑 `~/.zshrc`：
@@ -295,7 +295,7 @@ export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PA
 ```
 
 这里的都是我需要的，你可以根据自己的需要来判断用什么。
-![2d667f7ba442.png](https://cdn.jsdelivr.net/gh/riril/i/posts/install-arch-wsl/2d667f7ba442.png)
+![2d667f7ba442.png](https://i.lengthm.in/posts/install-arch-wsl/2d667f7ba442.png)
 
 
 ### zsh 的其他的一些配置
