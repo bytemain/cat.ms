@@ -4,7 +4,7 @@ comments: true
 toc: true
 permalink: wsl2-network-tricks
 date: 2019-12-28 20:39:31
-updated: 2020-04-27 10:36:12
+updated: 2020-05-16 22:33:00
 categories:
   - WSL
 tags:
@@ -26,7 +26,8 @@ tags:
 还有几个前置知识：
 
 1. Windows 和 WSL2 算是在同一个局域网内，这个局域网是由 Hyper-V 创建的。
-2. WSL2 内有些微软特意做的东西：
+2. WSL2 使用的网络适配器是 'Default Hyper-V Switch'，这个适配器每次重启都会被删除重建，这就是 WSL2 为什么 IP 不固定的原因。
+3. WSL2 内有些微软特意做的东西：
    1. 向 `WSL2 的 IP` 发送的请求都会被转发到 `Windows 的 IP` 上，但是这个时灵时不灵。
 
 <!-- more -->
@@ -67,7 +68,7 @@ Windows 的 ip 都已经拿到了，比如说我的代理软件是监听在 7890
 
 顺着作者的思路，我也实现了我自己的一个 `「一键」设置代理` 的脚本：
 
-[「一键」设置代理](#「一键」设置代理)
+[「一键」设置代理](#一键设置代理)
 
 ## 主机访问 WSL2
 
@@ -195,13 +196,14 @@ for( $i = 0; $i -lt $ports.length; $i++ ){
 
 powershell 中 `@()` 就是声明数组的意思，这个脚本遍历你设置的想暴露到局域网的端口的数组，先关闭相应的防火墙策略，然后设置 portproxy 反代 Windows 的端口到 WSL 中。
 
-## 「一键」设置代理
+## 一键设置代理
 
 先上效果：
 ![image.png](https://i.lengthm.in/posts/wsl2-network-tricks/3cGZ8gwpRlSnPhs.png)
 而且还可以为 git 以及 ssh 同时设置代理。
 
-代码见 <https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc>
+代码见:  
+<https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc>
 
 重点见里面的 `proxy`, `unpro`, `getIp`, `proxy_git`, `proxy_npm` 等函数。
 
