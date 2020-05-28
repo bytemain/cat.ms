@@ -4,7 +4,7 @@ comments: true
 toc: true
 permalink: wsl2-network-tricks
 date: 2019-12-28 20:39:31
-updated: 2020-05-16 22:33:00
+updated: 2020-05-29 01:13:00
 categories:
   - WSL
 tags:
@@ -59,6 +59,8 @@ cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }'
 Windows 的 ip 都已经拿到了，比如说我的代理软件是监听在 7890 端口的，那我只要设置代理链接为 `{Windows ip}:7890` 即可。
 
 如果无法连接的话，请你检查一下你 Windows 上的代理软件允许局域网访问了吗。
+
+还是没法连接的话有可能是 windows 防火墙的原因，我是把防火墙关了的。
 
 还有这篇**必读**的文章：
 

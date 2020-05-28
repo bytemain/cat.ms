@@ -1,7 +1,7 @@
 ---
 title: 暗影精灵修改 OMEN 键
 date: 2020-02-27 00:00:57
-updated: 2020-05-03 22:12:00
+updated: 2020-05-29 01:13:00
 categories: 
     - Windows
 tags:
@@ -23,10 +23,11 @@ permalink: mod-omencommandcenter-key
 
 ## 如果你按这个键没有效果
 
-你需要先安装两个惠普提供的驱动：
+参考惠普官方文档：<https://support.hp.com/cn-zh/document/c01198500>
 
-- <ftp://ftp.hp.com/pub/caps-softpaq/Omen/SP98588.exe>
-- <https://www.microsoft.com/store/productId/9P4W8RFN9M2T>
+对于我的暗影精灵3，安装一个惠普提供的驱动即可：
+
+- <https://h30318.www3.hp.com/pub/softpaq/sp104001-104500/sp104002.exe>
 
 ## 修改注册表
 
