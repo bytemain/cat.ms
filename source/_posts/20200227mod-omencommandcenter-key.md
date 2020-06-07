@@ -29,6 +29,18 @@ permalink: mod-omencommandcenter-key
 
 - <https://h30318.www3.hp.com/pub/softpaq/sp104001-104500/sp104002.exe>
 
+再装一个惠普的 SystemEvent：
+
+- <https://www.microsoft.com/store/productId/9P4W8RFN9M2T>
+
+## 20200607 更新
+
+SystemEvent 更新了，目前会直接启动：`AD2F1837.OMENCommandCenter` 这个软件， 过段时间再看看怎么弄。
+
+**以下内容已经失效。**
+
+---
+
 ## 修改注册表
 
 ![omencommandcenter](https://i.lengthm.in/posts/mod-omencommandcenter-key/omencommandcenter.png)
@@ -52,7 +64,7 @@ HKEY_CURRENT_USER\SOFTWARE\Classes\omencommandcenter\Shell\Open\Command
 
 这里的 `Open` 的意思就是你在资源管理器中双击一个类型的文件就打开某个软件那样。
 
-比如说像我就设置成了 `wt.exe -d .`，就是调用 Windows Terminal 打开当前目录。
+比如说像我就设置成了 `wt.exe`，就是打开 Windows Terminal。
 
 ## 一些 Tips
 
