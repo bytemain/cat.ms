@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "4.2.0"
+    "version": "4.2.1"
   },
   "scripts": {
     "secret": "node ./helper/replace_secret.js",
@@ -13,17 +13,16 @@
     "d": "hexo deploy"
   },
   "dependencies": {
-    "hexo": "^4.2.0",
+    "hexo": "^4.2.1",
     "hexo-browsersync": "^0.3.0",
     "hexo-deployer-git": "^2.1.0",
-    "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-baidu-sitemap": "^0.1.6",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^2.2.0",
     "hexo-generator-index": "^1.0.0",
-    "hexo-generator-indexed": "^1.0.1",
-    "hexo-generator-searchdb": "^1.2.0",
+    "hexo-generator-indexed": "^1.2.0",
+    "hexo-generator-searchdb": "^1.3.0",
     "hexo-generator-seo-friendly-sitemap": "^0.0.25",
     "hexo-generator-tag": "^1.0.0",
     "hexo-pangu": "^0.1.0",
@@ -32,11 +31,11 @@
     "hexo-renderer-markdown-it-plus": "^1.0.4",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
-    "hexo-symbols-count-time": "^0.7.0",
+    "hexo-symbols-count-time": "^0.7.1",
     "hexo-theme-next-anchor": "^1.0.3"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.4"
   }
 }

@@ -106,28 +106,7 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
-pwa:
-  manifest:
-    path: /manifest.json
-  serviceWorker:
-    path: /sw.js
-    preload:
-      urls:
-        - /
-        - /archives/
-        - /categories/
-      posts: 5
-    opts:
-      networkTimeoutSeconds: 5
-    routes:
-      - pattern: "*.artin.workers.dev"
-        strategy: networkFirst
-      - pattern: '!!js/regexp /.*\.(js|css|jpg|jpeg|png|gif|svg|eot|ttf|woff|woff2)$/'
-        strategy: cacheFirst
-      - pattern: '!!js/regexp /\//'
-        strategy: networkFirst
 
-  priority: 5
 
 symbols_count_time:
   symbols: true
@@ -139,52 +118,6 @@ symbols_count_time:
   wpm: 275
   suffix: "mins."
 
-neat_enable: true
-neat_html:
-  enable: true
-  logger: false
-  exclude:
-    - "index.test.html"
-
-neat_css:
-  enable: true
-  exclude:
-    - "*.min.css"
-
-neat_js:
-  enable: true
-  exclude:
-    - "*.min.js"
-
-neat_gzip:
-  enable: true
-  include:
-    - "*.html"
-    - "*.css"
-    - "*.js"
-    - "*.txt"
-    - "*.ttf"
-    - "*.atom"
-    - "*.stl"
-    - "*.xml"
-    - "*.svg"
-    - "*.eot"
-    - "*.json"
-
-neat_brotli:
-  enable: true
-  include:
-    - "*.html"
-    - "*.css"
-    - "*.js"
-    - "*.txt"
-    - "*.ttf"
-    - "*.atom"
-    - "*.stl"
-    - "*.xml"
-    - "*.svg"
-    - "*.eot"
-    - "*.json"
 
 markdown_it_plus:
   highlight: true
@@ -215,7 +148,6 @@ theme_config:
 
   cache:
     enable: true
-
   minify: true
   darkmode: true
   # Create your custom files in site directory `source/_data` and uncomment needed files below.
