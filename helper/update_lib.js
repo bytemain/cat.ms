@@ -14,14 +14,6 @@ const printInfo = (error, stdout, stderr) => {
 };
 
 exec(
-  "git -C themes/next pull || git clone https://github.com/theme-next/hexo-theme-next.git themes/next",
-  printInfo
-);
-exec(
-  "git -C themes/next/source/lib/pace pull || git clone https://github.com/theme-next/theme-next-pace.git themes/next/source/lib/pace",
-  printInfo
-);
-exec(
-  "git -C themes/next/source/lib/pjax pull || git clone https://github.com/theme-next/theme-next-pjax themes/next/source/lib/pjax",
+  "git -C themes/next pull || git clone https://github.com/next-theme/hexo-theme-next.git themes/next",
   printInfo
 );

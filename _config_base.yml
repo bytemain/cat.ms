@@ -1,7 +1,7 @@
 title: Artin's Blog
 subtitle: 谁有天大力气可以拎着自己飞呀
-description: Python / React / Nodejs / 机器学习
-keywords: Python,机器学习,React,Nodejs
+description: Python / React / Nodejs / ML
+keywords: Python,ML,React,Nodejs
 author: Artin
 language: zh-CN
 timezone: Asia/Shanghai
@@ -220,15 +220,15 @@ theme_config:
   darkmode: true
   # Create your custom files in site directory `source/_data` and uncomment needed files below.
   custom_file_path:
-    #head: source/_data/head.njk
-    header: source/_data/header.njk
+    # head: source/_data/head.njk
+    # header: source/_data/header.njk
     # sidebar: source/_data/sidebar.njk
-    #postMeta: source/_data/post-meta.njk
+    # postMeta: source/_data/post-meta.njk
     postBodyEnd: source/_data/post-body-end.njk
     footer: source/_data/footer.njk
-    #bodyEnd: source/_data/body-end.njk
-    #variable: source/_data/variables.styl
-    #mixin: source/_data/mixins.styl
+    bodyEnd: source/_data/body-end.njk
+    # variable: source/_data/variables.styl
+    # mixin: source/_data/mixins.styl
     style: source/_data/styles.styl
 
   # ---------------------------------------------------------------
@@ -270,9 +270,9 @@ theme_config:
       gongan_icon_url:
 
   # scheme: Muse
-  # scheme: Mist
+  scheme: Mist
   # scheme: Pisces
-  scheme: Gemini
+  # scheme: Gemini
 
   # ---------------------------------------------------------------
   # Menu Settings
@@ -285,10 +285,10 @@ theme_config:
   # External url should start with http:// or https://
   menu:
     home: / || fa fa-home
-    about: /about/ || fa fa-user
     tags: /tags/ || fa fa-tags
     categories: /categories/ || fa fa-th
     archives: /archives/ || fas fa-archive
+    about: /about/ || fa fa-user
     友链: /friends/ || fa fa-link fa-fw
     #sitemap: /sitemap.xml || sitemap
     #commonweal: /404/ || heartbeat
@@ -306,12 +306,12 @@ theme_config:
   sidebar:
     # Sidebar Position.
     # position: left
-    position: left
+    position: right
 
     # Manual define the sidebar width. If commented, will be default for:
     # Muse | Mist: 320
     # Pisces | Gemini: 240
-    #width: 300
+    # width: 300
 
     # Sidebar Display (only for Muse | Mist), available values:
     #  - post    expand on posts automatically. Default.
@@ -340,13 +340,6 @@ theme_config:
     enable: true
     icons_only: false
     transition: true
-
-  # Blog rolls
-  links_settings:
-    icon: fa fa-link
-    title: Links
-    # Available values: block | inline
-    layout: block
 
   toc:
     enable: true
@@ -529,6 +522,7 @@ theme_config:
     tracking_id: _google_analytics_tracking_id_
     localhost_ignored: true
 
+  # Show Views / Visitors of the website / page with busuanzi.
   # Get more information on http://ibruce.info/2015/04/04/busuanzi
   busuanzi_count:
     enable: true
@@ -644,34 +638,20 @@ theme_config:
     # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
     theme: minimal
 
-  # Script Vendors. Set a CDN address for the vendor you want to customize.
-  # Be aware that you would better use the same version as internal ones to avoid potential problems.
-  # Remember to use the https protocol of CDN files when you enable https on your site.
   vendors:
-    # Internal path prefix.
     _internal: lib
 
-    # Internal version: 3.1.0
-    # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
-    anime:
-
-    # Internal version: 5.13.0
-    # fontawesome:
-    # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css
     fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
 
-    # KaTeX
-    katex: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
-    copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
-    copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
+    pjax: //cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js
 
-    # Internal version: 0.2.8
-    pjax: //cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js
-
-    # Medium-zoom
     mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
 
-    # Lazyload
     lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
 
-    pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
+    pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
+    pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
+
+    katex: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css
+    copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
+    copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
