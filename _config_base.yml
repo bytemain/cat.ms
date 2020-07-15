@@ -93,10 +93,9 @@ server:
       - html
 
 deploy:
-  # other deployer
   - type: git
     repo:
-      github: https://_GH_TOKEN_@github.com/lengthmin/lengthmin.me.git,master
+      github: https://_GH_TOKEN_@github.com/lengthmin/lengthmin.me.git,gh-pages
 
 sitemap:
   path: sitemap.xml
