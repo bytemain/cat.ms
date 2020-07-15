@@ -18,6 +18,5 @@ yarn update
 echo ""
 
 echo "start deploy"
-yarn d:pre
 yarn d
 echo "deploy done"
