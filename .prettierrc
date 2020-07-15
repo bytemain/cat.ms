@@ -9,12 +9,6 @@
       "options": { "parser": "json" }
     },
     {
-      "files": "*.test.js",
-      "options": {
-        "semi": true
-      }
-    },
-    {
       "files": "*.md",
       "options": {
         "bracketSpacing": false,
