@@ -106,8 +106,6 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
-
-
 symbols_count_time:
   symbols: true
   time: false
@@ -117,7 +115,6 @@ symbols_count_time:
   awl: 4
   wpm: 275
   suffix: "mins."
-
 
 markdown_it_plus:
   highlight: true
@@ -147,9 +144,9 @@ theme_config:
       content: \f0c1
 
   cache:
-    enable: true
+    enable: false
   minify: true
-  darkmode: true
+  darkmode: false
   # Create your custom files in site directory `source/_data` and uncomment needed files below.
   custom_file_path:
     # head: source/_data/head.njk
@@ -250,7 +247,7 @@ theme_config:
     #  - always  expand for all pages automatically.
     #  - hide    expand only when click on the sidebar toggle icon.
     #  - remove  totally remove sidebar including sidebar toggle.
-    display: post
+    display: always
 
     padding: 18
     offset: 12
