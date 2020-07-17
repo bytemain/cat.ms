@@ -260,7 +260,6 @@ theme_config:
   social:
     E-Mail: mailto:lengthmin@gmail.com || fa fa-envelope
     GitHub: https://github.com/lengthmin || fab fa-github
-    Twitter: https://twitter.com/lengthmin || fab fa-twitter
     Telegram: https://telegram.me/lengthmin || fab fa-telegram
     RSS: /rss.xml || fas fa-rss
 
