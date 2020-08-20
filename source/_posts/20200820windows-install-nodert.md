@@ -48,13 +48,13 @@ gyp ERR! build error
 <!-- more -->
 
 啊，这熟悉的 msvc 工具链报错。错误原因是 [fatal error C1107: 未能找到程序集“Windows.winmd”](https://docs.microsoft.com/zh-cn/cpp/error-messages/compiler-errors-1/fatal-error-c1107?view=vs-2019)，提示说可以用 LIBPATH 设置这个文件的位置。
-使用 Library 查了一下本机的 `Windows.winmd` 的 位置，然后就开始了第一次的错误尝试，设置了 `LIBPATH`，依然报错。
+使用 listary 查了一下本机的 `Windows.winmd` 的 位置，然后就开始了第一次的错误尝试，设置了 `LIBPATH`，依然报错。
 
 想想以前使用 VS 的时候，需要在项目中配置一下引用的库的位置才能正确编译，所以这很有可能还是找不到库的位置所以报的错。中间的摸索过程就不写了，直接写怎么解决。
 
 ## 配置 node-gyp
 
-因为之前也接触过 `node-gyp`，比如装 `node-sass` 的时候，第一件事就是要确保 `node-gyp` 能使用。
+因为之前装 `node-sass` 的时候接触过 `node-gyp`，所以现在第一件事就是要确保 `node-gyp` 能使用。
 
 查看 `node-gyp` 的仓库 README，发现有教程： [Installation On Windows](https://github.com/nodejs/node-gyp#on-windows)
 
