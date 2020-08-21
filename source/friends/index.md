@@ -57,9 +57,15 @@ toc:
 
 ### 那些年遇到的可爱网友
 
-- <span class="name">Sukka - 苏卡卡的有底洞</span><https://skk.moe>
+- <span class="name">Sukka - 苏卡卡的有底洞</span>
+  <https://skk.moe>
   <span class="intro">坏耶，有很多奇奇妙妙的工具</span>
-- <span class="name">DIYgod - Hi, DIYgod</span><https://diygod.me>
+- <span class="name">DIYgod - Hi, DIYgod</span>
+  <https://diygod.me>
   <span class="intro">带我领略 Github 的 DIYguy</span>
-- <span class="name">ChungZH - ChungZH 的小窝</span><https://chungzh.cn>
+- <span class="name">ChungZH - ChungZH 的小窝</span>
+  <https://chungzh.cn>
   <span class="intro">OIer，05后~</span>
+- <span class="name">Project RC</span>
+  <https://stdrc.cc/>
+  <span class="intro">真的很厉害，CQHTTP 让很多人都实现了一个 QQ 机器人梦</span>
