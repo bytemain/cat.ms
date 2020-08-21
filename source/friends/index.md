@@ -46,26 +46,22 @@ toc:
 
 </style>
 
-- <span class="name">Maxlv</span><http://maxlv.org>
+- <a class="name" href="http://maxlv.org/">Maxlv</a>
   <span class="intro">足智多谋</span>
-- <span class="name">Konica 的自留地</span><http://www.iikira.com>
+- <a class="name" href="http://www.iikira.com">Konica 的自留地</a>
   <span class="intro">一个大可爱，PCS-Go开发者</span>
-- <span class="name">Jirath Blog</span><http://jirath.cn>
+- <a class="name" href="http://jirath.cn">Jirath Blog</a>
   <span class="intro">我的 Java 老师，老全栈工程师了</span>
 
 ---
 
 ### 那些年遇到的可爱网友
 
-- <span class="name">Sukka - 苏卡卡的有底洞</span>
-  <https://skk.moe>
+- <a class="name" href="https://skk.moe">Sukka - 苏卡卡的有底洞</a>
   <span class="intro">坏耶，有很多奇奇妙妙的工具</span>
-- <span class="name">DIYgod - Hi, DIYgod</span>
-  <https://diygod.me>
+- <a class="name" href="https://diygod.me">DIYgod - Hi, DIYgod</a>
   <span class="intro">带我领略 Github 的 DIYguy</span>
-- <span class="name">ChungZH - ChungZH 的小窝</span>
-  <https://chungzh.cn>
+- <a class="name" href="https://chungzh.cn/">ChungZH - ChungZH 的小窝</a>
   <span class="intro">OIer，05后~</span>
-- <span class="name">Project RC</span>
-  <https://stdrc.cc/>
+- <a class="name" href="https://stdrc.cc/">Project RC</a>
   <span class="intro">真的很厉害，CQHTTP 让很多人都实现了一个 QQ 机器人梦</span>
