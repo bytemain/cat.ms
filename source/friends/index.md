@@ -1,17 +1,11 @@
 ---
-title: 我欣赏的朋友们~
+title: 那些花儿
 date: 2020-04-28 11:46:47
 comments: true
 toc:
   enable: false
 ---
 <style>
-.post-body h3 {
-  margin: 0;
-  padding: 0;
-  padding-bottom: 1em;
-}
-
 .post-body ul {
   list-style-type: none;
   margin: 0;
@@ -39,12 +33,9 @@ toc:
   border: none;
   border-bottom: 1px solid #ccc;
 }
-
-.post-body li > a {
-  margin-left: 1em;
-}
-
 </style>
+
+那些年遇到的可爱的人
 
 - <a class="name" href="http://maxlv.org/">Maxlv</a>
   <span class="intro">足智多谋</span>
@@ -52,11 +43,6 @@ toc:
   <span class="intro">一个大可爱，PCS-Go开发者</span>
 - <a class="name" href="http://jirath.cn">Jirath Blog</a>
   <span class="intro">我的 Java 老师，老全栈工程师了</span>
-
----
-
-### 那些年遇到的可爱网友
-
 - <a class="name" href="https://skk.moe">Sukka - 苏卡卡的有底洞</a>
   <span class="intro">坏耶，有很多奇奇妙妙的工具</span>
 - <a class="name" href="https://diygod.me">DIYgod - Hi, DIYgod</a>
