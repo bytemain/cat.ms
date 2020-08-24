@@ -1,6 +1,7 @@
 ---
 title: Windows 安装 NodeRT 踩坑
 date: 2020-08-20 11:25:18
+updated: 2020-08-24 16:44:31
 categories: Nodejs
 tags:
   - Nodejs
@@ -9,12 +10,14 @@ tags:
   - electron
 comments: true
 toc: true
-permalink: windows-install-NodeRT
+permalink: windows-install-nodert
 ---
 
 最近在学习 electron，因为在 Windows 上 electron 自带的 Notification 功能有点少，没法加按钮啥的。
 
 查了一下，发现有人已经基于 `NodeRT` 做了 [electron-windows-notifications](https://github.com/felixrieseberg/electron-windows-notifications)，可以在 electron 展示原生的通知框。`NodeRT` 能让我们在 Node 环境中使用 Windows Runtime API。
+
+> 更新了一下关于 `electron-windows-notifications` 的吐槽，见文末
 
 然后兴高采烈的执行 `yarn add electron-windows-notifications`, 结果报错了：
 
@@ -106,3 +109,11 @@ gyp ERR! build error
 从此以后，遇到打包 Native 的场景，我再也不怕了！
 
 ![安装成功](https://i.lengthm.in/posts/windows-install-nodert/succ.png)
+
+---
+
+2020/08/24 后记
+
+`electron-windows-notifications` 确实 8 太行啊，简单的 toast 写上去倒是可以弹框，加了 `actions` 之后就展示不出来了。
+
+而且还很久没更新了，依赖的 `NodeRT` 的版本都很久远了，所以现在使用 `node-notifier` 了，这个包在 Windows 下会使用一个现成的 Native 应用：`SnoreToast` 做通知的提醒。
