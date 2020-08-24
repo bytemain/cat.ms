@@ -6,7 +6,7 @@
 .DS_Store
 Thumbs.db
 db.json
-/source/_data/next.yml
+
 # Logs
 logs
 *.log

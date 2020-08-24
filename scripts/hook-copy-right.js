@@ -4,12 +4,12 @@
 
 hexo.extend.filter.register(
   "theme_inject",
-  function(injects) {
+  function (injects) {
     injects.postBodyEnd.file(
       "creative-commons",
-      "source/_data/copyright/post-copyright.njk"
+      "data/copyright/post-copyright.njk"
     );
-    injects.style.push("source/_data/copyright/post-copyright.styl");
+    injects.style.push("data/copyright/post-copyright.styl");
   },
   100
 );
