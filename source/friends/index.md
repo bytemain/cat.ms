@@ -37,6 +37,8 @@ toc:
 
 那些年遇到的可爱的人
 
+---
+
 - <a class="name" href="http://maxlv.org/">Maxlv</a>
   <span class="intro">足智多谋</span>
 - <a class="name" href="http://www.iikira.com">Konica 的自留地</a>
@@ -50,4 +52,4 @@ toc:
 - <a class="name" href="https://chungzh.cn/">ChungZH - ChungZH 的小窝</a>
   <span class="intro">OIer，05后~</span>
 - <a class="name" href="https://stdrc.cc/">Project RC</a>
-  <span class="intro">真的很厉害，CQHTTP 让很多人都实现了一个 QQ 机器人梦</span>
+  <span class="intro">很佩服的一个人，真的非常厉害。CQHTTP 开发者</span>
