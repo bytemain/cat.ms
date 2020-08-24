@@ -57,18 +57,12 @@ category_map:
 tag_map:
 
 date_format: YYYY-MM-DD
-time_format: HH:mm:ss
+time_format: HH:mm
 
 per_page: 10
 pagination_dir: page
 
 theme: next
-
-browsersync:
-  logLevel: "warn"
-  ghostMode:
-    scroll: true
-  instanceName: "uniqueString"
 
 feed:
   type: rss2

@@ -46,53 +46,16 @@
   </li>
   <li class="post-copyright-link">
     <strong>{{ linkText  }}：</strong>
-
     {{ next_url(postURL, postURL, {title: page.title}) }}
     <span class="copy-path" title="点击复制文章链接">
       <i class="fa fa-clipboard"></i>
     </span>
-    <span class="copytooltip"></span>
-    <script>
-      var x = 10;
-      var y = 20;
-      var copyButton = document.querySelector('.copy-path');
-      var copyTooltip = document.querySelector('.copytooltip');
-      let timeout;
-      copyButton.addEventListener('click', function (e) {
-        var ta = document.createElement('input');
-        ta.value = "原文作者：{{ page.author or author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}";
-        ta.setAttribute('readonly', 'readonly');
-        document
-          .body
-          .appendChild(ta);
-        ta.setSelectionRange(0, ta.value.length);
-        document
-          .body
-          .removeChild(ta);
-        var result = document.execCommand('copy');
-        if (copyTooltip.hasChildNodes()) {
-          copyTooltip.removeChild(copyTooltip.firstChild);
-        }
-        if (timeout) {
-          clearTimeout(timeout);
-        }
-        if (result) {
-          copyTooltip.append('复制成功');
-        } else {
-          copyTooltip.append('复制失败');
-        }
-        timeout = setTimeout(() => {
-          while (copyTooltip.hasChildNodes()) {
-            copyTooltip.removeChild(copyTooltip.firstChild);
-          }
-        }, 2000);
-      });
-    </script>
+    <span class="copy-tooltip"></span>
   </li>
   <li class="post-copyright-updated">
     <strong>{{ updatedText  }}：
     </strong>
-    {{ page.updated.format("YYYY-MM-DD, HH:mm:ss") }}
+    {{ page.updated.format("YYYY-MM-DD, HH:mm") }}
   </li>
   <li class="post-copyright-history">
     <strong>{{ historyText  }}：</strong>
@@ -110,3 +73,42 @@
     {{ __(licenseContent, next_url(ccURL, ccText, {title: ccLicenseTitle }))  }}
   </li>
 </ul>
+
+<script>
+  var x = 10;
+  var y = 20;
+  var copyButton = document.querySelector('.copy-path');
+  var copyTooltip = document.querySelector('.copy-tooltip');
+  let timeout;
+  copyButton.addEventListener('click', function (e) {
+    var ta = document.createElement('textarea');
+    ta.contentEditable = true;
+    ta.readOnly = false;
+    ta.value = "原文作者：{{ page.author or author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}";
+    ta.setAttribute('readonly', 'readonly');
+    document
+      .body
+      .appendChild(ta);
+    ta.select();
+    var result = document.execCommand('copy');
+    if (copyTooltip.hasChildNodes()) {
+      copyTooltip.removeChild(copyTooltip.firstChild);
+    }
+    document
+      .body
+      .removeChild(ta);
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+    if (result) {
+      copyTooltip.append('复制成功');
+    } else {
+      copyTooltip.append('复制失败');
+    }
+    timeout = setTimeout(() => {
+      while (copyTooltip.hasChildNodes()) {
+        copyTooltip.removeChild(copyTooltip.firstChild);
+      }
+    }, 2000);
+  });
+</script>
