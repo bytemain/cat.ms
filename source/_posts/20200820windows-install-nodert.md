@@ -15,9 +15,7 @@ permalink: windows-install-nodert
 
 最近在学习 electron，因为在 Windows 上 electron 自带的 Notification 功能有点少，没法加按钮啥的。
 
-查了一下，发现有人已经基于 `NodeRT` 做了 [electron-windows-notifications](https://github.com/felixrieseberg/electron-windows-notifications)，可以在 electron 展示原生的通知框。`NodeRT` 能让我们在 Node 环境中使用 Windows Runtime API。
-
-> 更新了一下关于 `electron-windows-notifications` 的吐槽，见文末
+查了一下，发现有人已经基于 `NodeRT` 做了 [electron-windows-notifications](https://github.com/felixrieseberg/electron-windows-notifications)，可以在 electron 展示原生的通知框。`NodeRT` 能让我们在 Node.js 中使用 Windows Runtime API。
 
 然后兴高采烈的执行 `yarn add electron-windows-notifications`, 结果报错了：
 
@@ -66,9 +64,9 @@ gyp ERR! build error
 强烈建议去看原教程后再看本教程。  
 
 首先需要安装 Python，如果你本地没有，最简单的方法就是从微软商店直接安装，直接打开 Microsoft Store，搜索安装即可。  
-[Python Microsoft Store package](https://docs.python.org/3/using/windows.html#the-microsoft-store-package).
+[Python Microsoft Store package](https://docs.python.org/3/using/windows.html#the-microsoft-store-package)
 
-`node-gyp` 支持以下这几个版本：v2.7, v3.5, v3.6, v3.7, v3.8。想指定要使用的版本见 [Configuring Python Dependency](https://github.com/nodejs/node-gyp#configuring-python-dependency)。
+`node-gyp` 支持以下这几个 Python 版本：v2.7, v3.5, v3.6, v3.7, v3.8。
 
 ### 方案 1（个人不推荐，可能会出现自己不可控制的局面）
 
@@ -80,15 +78,13 @@ gyp ERR! build error
 
 手动安装:
 
-1. 安装 Visual C++ Build 环境: [Visual Studio Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools)
- (安装时选上 "Visual C++ build tools") 或者 [Visual Studio 2017 Community](https://visualstudio.microsoft.com/pl/thank-you-downloading-visual-studio/?sku=Community)
- (安装时选上 "Desktop development with C++")
+1. 安装 Visual C++ Build 环境: [Visual Studio Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools) (安装组件时勾选 "Visual C++ build tools") 或者 [Visual Studio 2017 Community](https://visualstudio.microsoft.com/pl/thank-you-downloading-visual-studio/?sku=Community) (安装组件时勾选 "Desktop development with C++")
 2. 打开 cmd, 执行：`npm config set msvs_version 2017`
 
-如果你想编译到其他处理器平台上，记得选组件的时候也要勾上对应的组件。比如 ARM64，要选择："Visual C++ compilers and libraries for ARM64" 和 "Visual C++ ATL for ARM64" 两个组件。
+如果你的程序还需要运行在其他的处理器平台上，记得安装组件的时候也要勾上对应的。比如 ARM64 平台的，要选择："Visual C++ compilers and libraries for ARM64" 和 "Visual C++ ATL for ARM64" 两个组件。
 
-如何确定自己的 node-gyp 环境安装好了呢？
-以下包随便安装一个就知道了，安装成功则说明 node-gyp 环境已经好了：
+如何确定自己的 `node-gyp` 环境安装好了呢？
+以下包随便安装一个就行了，安装成功则说明 node-gyp 环境已经好了：
 
 - bson
 - bufferutil
@@ -99,7 +95,7 @@ gyp ERR! build error
 
 ## 解决找不到 `Windows.winmd` 文件
 
-其实这个问题就是代码的问题，根据[这个 issue 中的描述](https://github.com/NodeRT/NodeRT/issues/65#issuecomment-303938757)，当前版本的 NodeRT 只会去扫描 `C:\Program Files (x86)\Windows Kits\10\UnionMetadata` 路径下的 `.winmd` 文件，真令人忍俊不禁呢。
+其实这个问题就是代码的问题，根据[这个 issue 中的描述](https://github.com/NodeRT/NodeRT/issues/65#issuecomment-303938757)，当前版本的 NodeRT 只会去扫描 `C:\Program Files (x86)\Windows Kits\10\UnionMetadata` 路径下的 `.winmd` 文件，硬编码了依赖库目录（不过也说得通）。
 
 所以解决方案就是，把你的 `Windows.winmd` 文件放到这个文件夹下就行了，默认安装的 Windows 10 SDK 应该都在这个文件夹下的一个个子文件夹，直接把对应版本的 Windows.winmd 挪出来就行。
 
@@ -114,6 +110,6 @@ gyp ERR! build error
 
 2020/08/24 后记
 
-`electron-windows-notifications` 确实 8 太行啊，简单的 toast 写上去倒是可以弹框，加了 `actions` 之后就展示不出来了。
+`electron-windows-notifications` 确实 8 太行啊，简单的 toast 写上去倒是可以弹通知，加了 `actions` 之后就展示不出来通知了。
 
-而且还很久没更新了，依赖的 `NodeRT` 的版本都很久远了，所以现在使用 `node-notifier` 了，这个包在 Windows 下会使用一个现成的 Native 应用：`SnoreToast` 做通知的提醒。
+而且这个库也很久没更新了，依赖的 `NodeRT` 的版本都很久远了，所以现在使用 `node-notifier`，这个包在 Windows 下会使用一个编译好的程序：`SnoreToast`，通过调用这个 Native 程序来显示通知。
