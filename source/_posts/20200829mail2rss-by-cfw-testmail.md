@@ -23,13 +23,13 @@ testmail 免费版每个月可以接收 100 封邮件，邮件能保存一天。
 
 {% mermaid sequenceDiagram %}
 loop 每十分钟
-  RSS阅读器->>Serverless函数: 获取 tag 的最新 RSS 内容
-  activate Serverless函数
-  Serverless函数->>testmail.app: 请求 tag 对应的邮件列表
-  testmail.app-->>Serverless函数: 返回邮件列表
-  Note right of Serverless函数: 处理邮件列表、内容等
-  Serverless函数-->>RSS阅读器: 根据邮件列表生成 RSS 并返回
-  deactivate Serverless函数
+    RSS阅读器->>Serverless函数: a.获取 tag 的最新 RSS 内容
+    activate Serverless函数
+    Serverless函数->>testmail.app: b.请求 tag 对应的邮件列表
+    testmail.app-->>Serverless函数: c.返回邮件列表
+    Note right of Serverless函数:  1.处理邮件列表、内容等
+    Serverless函数-->>RSS阅读器: d.根据邮件列表生成 RSS 并返回
+    deactivate Serverless函数
 end
 {% endmermaid %}
 
