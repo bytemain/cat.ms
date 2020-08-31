@@ -193,8 +193,12 @@ theme_config:
 
   # scheme: Muse
   scheme: Mist
-  # scheme: Pisces
-  # scheme: Gemini
+
+  # Mermaid tag
+  mermaid:
+    enable: true
+    # Available themes: default | dark | forest | neutral
+    theme: neutral
 
   # ---------------------------------------------------------------
   # Menu Settings
