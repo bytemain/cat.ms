@@ -8,4 +8,3 @@ Disallow: /vendors/
 Disallow: /fancybox/
 
 Sitemap: https://lengthmin.me/sitemap.xml
-Sitemap: https://lengthmin.me/baidusitemap.xml

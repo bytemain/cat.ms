@@ -25,7 +25,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-  - _data/**/*
+  - _data/
   - README.md
 
 new_post_name: :title.md # File name of new posts
@@ -94,9 +94,6 @@ sitemap:
   path: sitemap.xml
   tag: false
   category: false
-
-baidusitemap:
-  path: baidusitemap.xml
 
 symbols_count_time:
   symbols: true
