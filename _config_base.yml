@@ -118,10 +118,6 @@ markdown_it_plus:
   quotes: “”‘’
   pre_class: highlight
 
-nofollow:
-  enable: true
-  field: site
-
 theme_config:
   anchor:
     enable: true
