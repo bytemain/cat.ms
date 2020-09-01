@@ -39,17 +39,4 @@ toc:
 
 ---
 
-- <a class="name" href="http://maxlv.org/">Maxlv</a>
-  <span class="intro">足智多谋</span>
-- <a class="name" href="http://www.iikira.com">Konica 的自留地</a>
-  <span class="intro">一个大可爱，PCS-Go开发者</span>
-- <a class="name" href="http://jirath.cn">Jirath Blog</a>
-  <span class="intro">我的 Java 老师，老全栈工程师了</span>
-- <a class="name" href="https://skk.moe">Sukka - 苏卡卡的有底洞</a>
-  <span class="intro">坏耶，有很多奇奇妙妙的工具</span>
-- <a class="name" href="https://diygod.me">DIYgod - Hi, DIYgod</a>
-  <span class="intro">带我领略 Github 的 DIYguy</span>
-- <a class="name" href="https://chungzh.cn/">ChungZH - ChungZH 的小窝</a>
-  <span class="intro">OIer，05后~</span>
-- <a class="name" href="https://stdrc.cc/">Project RC</a>
-  <span class="intro">很佩服的一个人，真的非常厉害。CQHTTP 开发者</span>
+{% friends %}
