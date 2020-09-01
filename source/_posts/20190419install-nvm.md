@@ -2,7 +2,7 @@
 title: 安装 nvm 与 nodejs
 comments: true
 toc: true
-permalink: install-nvm
+permalink: posts/install-nvm/
 date: 2019-04-19 17:17:33
 updated: 2019-07-04 11:00:00
 categories: 

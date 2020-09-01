@@ -11,7 +11,7 @@ tags:
   - Coding
   - Coding Pages
 
-permalink: coding-pages-tinytinyrss
+permalink: posts/coding-pages-tinytinyrss/
 ---
 
 2019 年 2 月 17 日 16:20:57 更新：

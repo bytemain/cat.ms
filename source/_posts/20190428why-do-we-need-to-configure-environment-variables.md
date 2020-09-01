@@ -2,7 +2,7 @@
 title: 为什么我们需要配置环境变量
 comments: true
 toc: true
-permalink: why-do-we-need-to-configure-environment-variables
+permalink: posts/why-do-we-need-to-configure-environment-variables/
 date: 2019-04-28 00:03:42
 updated: 2020-05-03 22:10:00
 categories: 

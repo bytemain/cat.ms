@@ -8,7 +8,7 @@ tags:
     - tricks
 comments: true
 toc: true
-permalink: using-userscript-in-angular-page
+permalink: posts/using-userscript-in-angular-page/
 ---
 
 作为一个前端开发者（，偶尔会写点用户脚本[^1]增强自己的浏览体验。

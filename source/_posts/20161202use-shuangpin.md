@@ -8,7 +8,7 @@ categories: [ 双拼 ]
 tags:
   - 双拼
   - 效率
-permalink: use-shuangpin
+permalink: posts/use-shuangpin/
 ---
 
 Hello everybody,long time no see.

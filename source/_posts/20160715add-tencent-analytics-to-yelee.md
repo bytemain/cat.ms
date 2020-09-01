@@ -9,7 +9,7 @@ categories:
 tags:
   - Hexo
   - 主题
-permalink: add-tencent-analytics-to-yelee
+permalink: posts/add-tencent-analytics-to-yelee/
 ---
 
 hexo 的原生主题自带了谷歌分析,而谷歌分析在国内水土不服。琢磨琢磨，把 next 主题上的腾讯分析添加到了正在用的 yelee 主题上。

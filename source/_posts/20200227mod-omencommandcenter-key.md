@@ -8,7 +8,7 @@ tags:
     - tricks
 comments: true
 toc: true
-permalink: mod-omencommandcenter-key
+permalink: posts/mod-omencommandcenter-key/
 ---
 
 暗影精灵的键盘上有一个自带的 OEM 键，按了之后可以打开 OMEN Command Center, 一个可以对笔记本的性能，网络管理的工具。

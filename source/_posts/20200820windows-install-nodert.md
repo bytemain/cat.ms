@@ -10,7 +10,7 @@ tags:
   - electron
 comments: true
 toc: true
-permalink: windows-install-nodert
+permalink: posts/windows-install-nodert/
 ---
 
 最近在学习 electron，因为在 Windows 上 electron 自带的 Notification 功能有点少，没法加按钮啥的。

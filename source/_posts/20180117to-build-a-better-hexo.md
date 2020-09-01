@@ -2,7 +2,7 @@
 title: 如何创建一个更好的Hexo使用体验
 comments: true
 toc: true
-permalink: to-build-a-better-hexo
+permalink: posts/to-build-a-better-hexo/
 date: 2018-01-17 10:24:03
 updated: 2019-07-18 14:03:00
 categories: 

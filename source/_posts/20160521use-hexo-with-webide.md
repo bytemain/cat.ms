@@ -8,7 +8,7 @@ tags:
   - webide
 date: 2016-05-21 16:03:00
 updated: 2019-07-18 14:03:00
-permalink: use-hexo-with-webide
+permalink: posts/use-hexo-with-webide/
 ---
 
 一直有着想写一点东西的想法，想有个自己的博客。但是现在国内的知名博客服务(某浪，CSXN)首页都是广告= = ，最后在知乎发现了 Hexo 这么个东西。

@@ -8,7 +8,7 @@ tags:
   - Serverless
 comments: true
 toc: true
-permalink: mail2rss-by-testmail-and-cfworkers
+permalink: posts/mail2rss-by-testmail-and-cfworkers/
 ---
 
 我之前都是使用自己的邮箱订阅 Newsletter，但是每天好多邮件发送给你，混杂在一些提醒和交流邮件中，怪麻烦的。

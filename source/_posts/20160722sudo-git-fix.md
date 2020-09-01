@@ -8,7 +8,7 @@ categories:
     - Git
 tags:
     - Linux
-permalink: sudo-git-fix
+permalink: posts/sudo-git-fix/
 ---
 
 在 Ubuntu 下用 git 的时候使用了`sudo git add`命令，导致每次不使用`sudo`前缀都无法对仓库进行操作。

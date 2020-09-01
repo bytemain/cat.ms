@@ -2,7 +2,7 @@
 title: 安装 Arch WSL 并配置
 comments: true
 toc: true
-permalink: install-arch-wsl
+permalink: posts/install-arch-wsl/
 date: 2019-07-12 09:42:25
 updated: 2020-05-03 22:12:00
 categories: 

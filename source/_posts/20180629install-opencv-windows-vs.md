@@ -2,7 +2,7 @@
 title: Windows10 配置 OpenCV3.4.1 + Visual Studio
 comments: true
 toc: true
-permalink: install-opencv-windows-vs
+permalink: posts/install-opencv-windows-vs/
 date: 2018-06-29 15:54:41
 updated: 2019-07-18 14:03:00
 categories:

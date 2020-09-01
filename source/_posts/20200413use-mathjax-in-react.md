@@ -7,7 +7,7 @@ tags:
 - Web
 comments: true
 toc: true
-permalink: use-mathjax-in-react
+permalink: posts/use-mathjax-in-react/
 ---
 
 做一个 React 项目的时候，想在网页上渲染数学公式，不想用别人封装好的 React 组件，采用动态加载的方式直接渲染 DOM。

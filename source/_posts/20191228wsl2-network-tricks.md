@@ -2,7 +2,7 @@
 title: WSL2 的一些网络访问问题
 comments: true
 toc: true
-permalink: wsl2-network-tricks
+permalink: posts/wsl2-network-tricks/
 date: 2019-12-28 20:39:31
 updated: 2020-05-29 01:13:00
 categories:
