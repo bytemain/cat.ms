@@ -7,9 +7,7 @@ language: zh-CN
 timezone: Asia/Shanghai
 
 meta_generator: true
-
-## Use post's date for updated date unless set in front-matter
-use_date_for_updated: true
+updated_option: 'date'
 
 url: https://lengthmin.me
 root: /

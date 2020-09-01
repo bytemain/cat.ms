@@ -1,8 +1,5 @@
 #!/bin/sh -le
 
-pwd
-ls -lha
-
 echo "install node_modules & hexo-cli"
 yarn
 yarn global add hexo-cli
@@ -18,5 +15,5 @@ yarn update
 echo ""
 
 echo "start deploy"
-yarn d
+yarn deploy
 echo "deploy done"
