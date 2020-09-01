@@ -18,7 +18,7 @@ hexo.extend.tag.register("friends", function (args) {
   let template = `<ul>
   {% for item in items -%}
     <li>
-      <a class="name" href="{{ item.href }}" rel="noopener external nofollow noreferrer">{{ item.name }}</a>
+      <a class="name" href="{{ item.href }}" target="_blank">{{ item.name }}</a>
       <br>
       <span class="intro">{{ item.intro }}</span>
     </li>
