@@ -10,6 +10,9 @@ on:
       - ".editorconfig"
       - ".markdownlint.json"
 
+env:
+  TZ: Asia/Shanghai
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -28,4 +31,4 @@ jobs:
         uses: actions/cache@v1
         with:
           path: node_modules
-          key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+          key: ${{runner.OS}}-${{hashFiles('**/yarn.lock')}}
