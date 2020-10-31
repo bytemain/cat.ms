@@ -13,7 +13,9 @@ tags:
 
 原文链接：<https://treyhunner.com/2019/05/python-builtins-worth-learning/>
 
-每一次我在上 Python 入门课时，总有人说：“我们怎么能记住这么多的东西啊？”
+---
+
+每一次我给 Python 新手上课时，总有人说：“我们怎么能记住这么多的东西啊？”
 
 这些问题的方式通常是以下几种：
 
@@ -42,7 +44,7 @@ tags:
 
 我将这些函数大致分为五类：
 
-1. [众所周知的](#10_Commonly_known_built-in_functions)：
+1. [众所周知的](#10_Commonly_known_built-in_functions)：大部分 Python 新手
 2. [被初学者忽视的](#Built-ins_overlooked_by_new_Pythonistas)：
 3. [稍后学习的](#Learn_it_later)：
 4. [某一天最终会学到的](#Maybe_learn_it_eventually)：
