@@ -1,7 +1,7 @@
 ---
 title: 暗影精灵修改 OMEN 键
 date: 2020-02-27 00:00:57
-updated: 2020-06-19 16:05:00
+updated: 2020-10-31 21:55:00
 categories: 
     - Windows
 tags:
@@ -25,17 +25,13 @@ permalink: posts/mod-omencommandcenter-key/
 
 参考惠普官方文档：<https://support.hp.com/cn-zh/document/c01198500>
 
-对于我的暗影精灵3，安装一个惠普提供的驱动即可：
-
-- <https://h30318.www3.hp.com/pub/softpaq/sp104001-104500/sp104002.exe>
-
-再装一个惠普的 SystemEvent：
+对于我的暗影精灵3，装一个惠普的 SystemEvent 即可：
 
 - <https://www.microsoft.com/store/productId/9P4W8RFN9M2T>
 
 ## 20200607 更新
 
-SystemEvent 更新了，目前会直接启动：`AD2F1837.OMENCommandCenter` 这个软件， 过段时间再看看怎么弄。
+SystemEvent 更新了，反编译后发现按这个键目前会直接启动：`AD2F1837.OMENCommandCenter` 这个软件， 过段时间再看看怎么弄。
 
 **以下内容已经失效。**
 
