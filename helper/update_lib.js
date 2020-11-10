@@ -14,6 +14,6 @@ const printInfo = (error, stdout, stderr) => {
 };
 
 exec(
-  "git -C themes/next pull || git clone https://github.com/next-theme/hexo-theme-next.git themes/next",
+  "git -C themes/next pull --rebase || git clone https://github.com/next-theme/hexo-theme-next.git themes/next",
   printInfo
 );
