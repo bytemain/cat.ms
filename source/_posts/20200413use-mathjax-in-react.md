@@ -24,7 +24,7 @@ Mathjax@3 做了很大的一个更新，使用方式也和 2.x 版本不同。
 
 封装成函数如下，只需要传入需要加载的 js 链接，然后使用 `.then` 方法进行后续操作。
 
-```ts
+```typescript
 export const loadJS = (url: string) =>
   new Promise(function (resolve, reject) {
     const script = document.createElement('script');
@@ -99,7 +99,6 @@ showMathjax = () => {
     setTimeout(this.showMathjax, 1000);
   }
 };
-
 ```
 
 2.x 的版本，我们要使用 `Mathjax.Hub.Config` 来配置，这几个配置看起来也很好懂，`tex2jax` 中设置了在什么字符包裹的时候渲染数学公式。

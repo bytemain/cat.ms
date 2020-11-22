@@ -14,8 +14,8 @@ permalink: posts/use-hexo-with-webide/
 一直有着想写一点东西的想法，想有个自己的博客。但是现在国内的知名博客服务(某浪，CSXN)首页都是广告= = ，最后在知乎发现了 Hexo 这么个东西。
 自己就能搭建一个国内访问快无广告自定义颇多的炫酷博客。
 
-- [`Hexo`](https://hexo.io/)是一个用 nodejs 编写的静态博客框架，可以将生成的静态博客网页托管在服务器上。
-- 国外的[`github.com`](https://github.com/)和国内的[`coding.net`](https://coding.net/) 都提供免费的 pages 服务，可以用托管博客。
+- [`Hexo`](https://hexo.io/) 是一个用 nodejs 编写的静态博客框架，可以将生成的静态博客网页托管在服务器上。
+- 国外的 [`github.com`](https://github.com/) 和国内的 [`coding.net`](https://coding.net/) 都提供免费的 pages 服务，可以用托管博客。
 - ~~[`c9.io`](https://c9.io/)提供免费的在线 webide 服务~~
 - 好难过，评论说现在**注册 c9 要绑定信用卡**了，这是真的这不是梦。
 

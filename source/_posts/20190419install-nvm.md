@@ -13,7 +13,8 @@ tags:
 ---
 在网上看到nvm这个神器之后，最近装Nodejs都是用nvm来装了。
 刚好又装了 Linux Mint ，重新在Linux下安装一遍nvm。Windows 上也有的类似工具[nvm-windows](https://github.com/coreybutler/nvm-windows)，使用方法都差不多。
-github 链接： [https://github.com/creationix/nvm](https://github.com/creationix/nvm)
+
+GitHub 链接： [https://github.com/creationix/nvm](https://github.com/creationix/nvm)
 
 nvm 是 nodejs 的一个版本控制工具，也就是 "Node Version Manager" 的三个首字母。
 
@@ -41,9 +42,10 @@ But in China, 你还需要配置一下代理。
 
 ### 配置 git 代理
 我本地使用的是 electron-ssr，代理的地址是 `socks5://127.0.0.1:1080`。
-执行下面这个命令，就可以针对github设置代理了。
-```
-# 只对github.com
+执行下面这个命令，就可以针对 GitHub 设置代理了。
+
+```bash
+# 只对 github.com
 git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
 
 # 取消代理

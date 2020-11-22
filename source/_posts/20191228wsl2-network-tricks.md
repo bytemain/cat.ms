@@ -85,7 +85,7 @@ WSL2 的 IP 会变，所以怎么随时随地的都能访问到 WSL2 呢？看�
 
 请看：
 
-在 github 上找到了这个 issue：[[WSL 2] NIC Bridge mode 🖧 (Has Workaround🔨) #4150](https://github.com/microsoft/WSL/issues/4150)，根据回复有了思路。
+在 GitHub 上找到了这个 issue：[[WSL 2] NIC Bridge mode 🖧 (Has Workaround🔨) #4150](https://github.com/microsoft/WSL/issues/4150)，根据回复有了思路。
 
 思路就是使用**任务计划程序**执行 powershell 脚本，来做一些事。
 
