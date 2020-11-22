@@ -25,7 +25,6 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-  - _data/
   - README.md
 
 new_post_name: :title.md # File name of new posts
@@ -39,12 +38,13 @@ filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
-future: true
+
 highlight:
+  enable: false
+
+prismjs:
   enable: true
   line_number: true
-  auto_detect: false
-  tab_replace:
 
 index_generator:
   path: ""
@@ -105,21 +105,37 @@ symbols_count_time:
   wpm: 275
   suffix: "mins."
 
-markdown_it_plus:
-  highlight: true
-  html: true
-  xhtmlOut: true
-  breaks: true
-  linkify: true
-  typographer: true
-  quotes: “”‘’
-  pre_class: highlight
+markdown:
+  preset: 'default'
+  render:
+    html: true
+    xhtmlOut: true
+    breaks: false
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  enable_rules:
+  disable_rules:
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-sub
+    - markdown-it-sup
+    - markdown-it-footnote
+    - markdown-it-cjk-breaks
+    - markdown-it-container
+  anchors:
+    level: 2
+    collisionSuffix: ''
+    case: 0
+    separator: '-'
+
 
 theme_config:
+  preconnect: true
   anchor:
     enable: true
     color: "#0e83cd"
-    position: right # If left, anchors will always be visible.
+    position: left # If left, anchors will always be visible.
     margin: 7px
     text: "#"
     icon:
@@ -334,16 +350,24 @@ theme_config:
 
   codeblock:
     # Code Highlight theme
-    # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
-    # See: https://github.com/chriskempson/tomorrow-theme
-    highlight_theme: normal
+    # All available themes: https://theme-next.js.org/highlight/
+    theme:
+      light: default
+      dark: tomorrow-night
+    prism:
+      light: prism
+      dark: prism-dark
     # Add copy button on codeblock
     copy_button:
       enable: true
-      # Show text copy result.
-      show_result: true
       # Available values: default | flat | mac
       style: flat
+
+  # Follow me on GitHub banner in right-top corner.
+  github_banner:
+    enable: true
+    permalink: https://github.com/lengthmin
+    title: Follow me on GitHub
 
   back2top:
     enable: true
@@ -359,7 +383,11 @@ theme_config:
     position: top
     color: "#37c6c0"
     height: 3px
-
+  
+  nprogress:
+    enable: true
+    spinner: true
+  
   disable_baidu_transformation: true
 
   canonical: true
@@ -394,8 +422,8 @@ theme_config:
 
     # Home page and archive page can be controlled through home and archive options below.
     # This configuration item is independent of `enable`.
-    home: false
-    archive: false
+    home: true
+    archive: true
 
     # Default (true) will initialize quicklink after the load event fires.
     delay: true
@@ -507,7 +535,7 @@ theme_config:
       sidebar: slideUpIn
 
   font:
-    enable: true
+    enable: false
 
     # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
     host: https://fonts.loli.net
@@ -545,30 +573,6 @@ theme_config:
       external: true
       family:
 
-  # Progress bar in the top during page loading.
-  # Dependencies: https://github.com/theme-next/theme-next-pace
-  # For more information: https://github.com/HubSpot/pace
-  pace:
-    enable: true
-    # Themes list:
-    # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
-    # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-    theme: minimal
-
   vendors:
     _internal: lib
-
-    fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
-
-    pjax: //cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js
-
-    mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
-
-    lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
-
-    pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
-    pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
-
-    katex: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css
-    copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
-    copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
+    plugins: jsdelivr

@@ -9,7 +9,7 @@ let fileList = [
   },
 ];
 
-console.log(new Date().toLocaleString());
+console.log(new Date().toLocaleString("zh", { hour12: false }));
 
 fileList.map((value) => {
   const { base_file, target_file } = value;
