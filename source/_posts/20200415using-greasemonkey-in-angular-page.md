@@ -25,9 +25,9 @@ so how to hack(actually: modify) an angular page?
 
 ## 获取 Angular 实例
 
-Google 许久，发现了下面这个 gist, 可以直接拿到 Angular 的实例。
+Google 许久，发现了下面这个 [gist](https://gist.github.com/mgol/7893061), 可以直接拿到 Angular 的实例。
 
-{% gist 7893061 %}
+<script src="https://gist.github.com/mgol/7893061.js"></script>
 
 解释一下代码：  
 因为 angular 会把自己注入到 `window.angular`，所以可以调用 `angular.element` 方法生成 Angular 对象。
