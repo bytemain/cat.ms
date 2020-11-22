@@ -37,6 +37,6 @@ fileList.map((value) => {
     if (err) {
       return console.error(err);
     }
-    console.log(`生成 ${target_file} 成功`);
+    console.log(`生成 ./${target_file} 成功`);
   });
 });

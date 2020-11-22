@@ -128,22 +128,17 @@ markdown:
     collisionSuffix: ''
     case: 0
     separator: '-'
-
+    # If `true`, creates an anchor tag with a permalink besides the heading.
+    permalink: true              
+    # Class used for the permalink anchor tag.
+    permalinkClass: header-anchor
+    # Set to 'right' to add permalink after heading
+    permalinkSide: 'right'
+    # The symbol used to make the permalink
+    permalinkSymbol: ''
 
 theme_config:
   preconnect: true
-  anchor:
-    enable: true
-    color: "#0e83cd"
-    position: left # If left, anchors will always be visible.
-    margin: 7px
-    text: "#"
-    icon:
-      # If true, the `text` option will be ignored.
-      enable: true
-      font: "Font Awesome 5 Free"
-      content: \f0c1
-
   cache:
     enable: false
   minify: true
