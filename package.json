@@ -23,22 +23,19 @@
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^3.0.0",
     "hexo-generator-index": "^2.0.0",
-    "hexo-generator-indexed": "^1.2.1",
     "hexo-generator-searchdb": "^1.3.3",
-    "hexo-generator-seo-friendly-sitemap": "^0.1.1",
+    "hexo-generator-seo-friendly-sitemap": "^0.2.0",
     "hexo-generator-tag": "^1.0.0",
     "hexo-pangu": "^0.2.0",
     "hexo-related-popular-posts": "^5.0.1",
-    "hexo-renderer-ejs": "^1.0.0",
     "hexo-renderer-markdown-it": "^5.0.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
-    "hexo-symbols-count-time": "^0.7.1",
-    "prism-themes": "^1.5.0"
+    "hexo-symbols-count-time": "^0.7.1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.6",
-    "npm-check-updates": "^10.0.0"
+    "npm-check-updates": "^10.2.2"
   }
 }
