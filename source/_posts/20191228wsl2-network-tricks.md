@@ -87,15 +87,19 @@ WSL2 的 IP 会变，所以怎么随时随地的都能访问到 WSL2 呢？看�
 
 在 github 上找到了这个 issue：[[WSL 2] NIC Bridge mode 🖧 (Has Workaround🔨) #4150](https://github.com/microsoft/WSL/issues/4150)，根据回复有了思路。
 
-思路就是使用`任务计划程序`开机执行 powershell 脚本，来做一些事。
+思路就是使用**任务计划程序**执行 powershell 脚本，来做一些事。
 
-用这个思路，写了一个脚本文件（[地址](https://github.com/lengthmin/dotfiles/blob/master/windows/wsl2.ps1)），也包括了 issue 中实现的功能一起放进去了。
+我们需要写一个脚本（[地址](https://github.com/lengthmin/dotfiles/blob/master/windows/wsl2.ps1)）实现我们想要的功能。
 
-但是关键是我们不能让他开机运行，而是使用**任务计划程序**在 `WSL` 要更新 IP 的时候执行这个脚本。
+脚本的功能大概是：
 
-脚本内容也就是读取 WSL 和 Windows 的 ip，然后加上自己的需要的域名，一起写入 Windows 的 Hosts 中，这样你就能用自己定义的域名来访问各自的 IP 了。
+1. 读取 WSL 和 Windows 的 IP
+2. 将 IP 和想设定的域名组合起来，如：`{wsl_ip} wsl.local # wsl_ip`
+3. 将具体内容写入 Windows 的 `hosts` 中。
 
-而 WSL 中发起的 dns 查询，还是要 Windows 来响应，所以两边都遵守 Windows hosts 中设置的域名的解析。
+这样你就能用自己定义的域名来访问两个系统了，wsl2 能访问 `win.local` 是因为它会向主机查询 dns（因为 wsl2 默认的 nameserver 指向了 windows 主机），主机会把 hosts 中的域名直接缓存起来然后直接作为一个 dns 记录。
+
+关键来了，我们要使用**任务计划程序**在 `WSL` 要更新 IP 的时候执行这个脚本。
 
 [English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)  
 [English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)  
