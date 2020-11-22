@@ -10,7 +10,7 @@
     "secret": "node ./helper/replace_secret.js",
     "secret:dev": "yarn nodemon --watch _config_base.yml ./helper/replace_secret.js",
     "build": "yarn build:pre && hexo g",
-    "build:pre": "hexo clean && yarn secret",
+    "build:pre": "yarn secret",
     "deploy": "yarn build:pre && hexo deploy",
     "update": "node ./helper/update_lib.js",
     "clean": "hexo clean",
