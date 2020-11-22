@@ -32,11 +32,11 @@
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
     "hexo-symbols-count-time": "^0.7.1",
-    "hexo-theme-next-anchor": "^1.0.3",
-    "npm-check-updates": "^10.0.0"
+    "hexo-theme-next-anchor": "^1.0.3"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "npm-check-updates": "^10.0.0"
   }
 }
