@@ -1,8 +1,8 @@
 ---
-title: \[翻译\] 值得学习的 Python 内置方法
+title: "[译] 值得学习的 Python 内置方法"
 comments: true
 toc: true
-permalink: python-builtins-worth-learning
+permalink: posts/python-builtins-worth-learning/
 date: 2019-07-13 13:52:04
 categories: 
   - Python

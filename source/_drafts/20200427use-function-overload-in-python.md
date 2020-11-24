@@ -5,7 +5,7 @@ categories:
 tags:
 comments: true
 toc: true
-permalink: 20200427use-function-overload-in-python
+permalink: posts/use-function-overload-in-python/
 ---
 
 <!-- more -->

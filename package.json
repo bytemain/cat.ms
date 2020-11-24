@@ -6,7 +6,7 @@
     "version": "5.2.0"
   },
   "scripts": {
-    "start": "hexo server",
+    "start": "hexo server --draft",
     "secret": "node ./helper/replace_secret.js",
     "secret:dev": "yarn nodemon --watch _config_base.yml ./helper/replace_secret.js",
     "build": "yarn build:pre && hexo g",
