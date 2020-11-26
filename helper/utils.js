@@ -28,8 +28,8 @@ const printInfo = (error, stdout, stderr) => {
   }
 };
 
-const run = (command, shell = "cmd.exe") => {
-  exec(command, { shell, encoding: binaryEncoding }, printInfo);
+const run = (command) => {
+  exec(command, { encoding: binaryEncoding }, printInfo);
 };
 
 module.exports = {
