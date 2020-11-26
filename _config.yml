@@ -85,11 +85,6 @@ server:
     extensions:
       - html
 
-deploy:
-  - type: git
-    repo:
-      github: https://_GH_TOKEN_@github.com/lengthmin/lengthmin.me.git,gh-pages
-
 sitemap:
   path: sitemap.xml
   tag: false

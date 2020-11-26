@@ -1,6 +1,5 @@
 /.deploy_git
 /public
-/_config.yml
 /themes
 .imgs
 .DS_Store
