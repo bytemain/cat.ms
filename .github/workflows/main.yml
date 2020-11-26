@@ -44,9 +44,12 @@ jobs:
         if: |
           steps.cache-yarn-cache.outputs.cache-hit != 'true' ||
           steps.cache-node-modules.outputs.cache-hit != 'true'
-      - run: sh helper/deploy.sh
-        env:
-          _GH_TOKEN_: ${{ secrets._GH_TOKEN_ }}
-          _disqusjs_apikey_: ${{ secrets._disqusjs_apikey_ }}
-          _disqusjs_shortname_: ${{ secrets._disqusjs_shortname_ }}
-          _google_analytics_tracking_id_: ${{ secrets._google_analytics_tracking_id_ }}
+      - name: Update libs & Build
+        run: |
+          yarn update
+          yarn build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
