@@ -129,7 +129,7 @@ markdown:
     case: 0
     separator: '-'
     # If `true`, creates an anchor tag with a permalink besides the heading.
-    permalink: true              
+    permalink: true
     # Class used for the permalink anchor tag.
     permalinkClass: header-anchor
     # Set to 'right' to add permalink after heading
@@ -378,11 +378,11 @@ theme_config:
     position: top
     color: "#37c6c0"
     height: 3px
-  
+
   nprogress:
     enable: true
     spinner: true
-  
+
   disable_baidu_transformation: true
 
   canonical: true
@@ -455,11 +455,11 @@ theme_config:
   disqusjs:
     enable: true
     api: https://disqus.skk.moe/disqus/
-    apikey: _disqusjs_apikey_
-    shortname: _disqusjs_shortname_
+    apikey: Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR
+    shortname: hexo-1
 
   cfga:
-    tracking_id: _google_analytics_tracking_id_
+    tracking_id: UA-144727481-1
     localhost_ignored: true
 
   # Show Views / Visitors of the website / page with busuanzi.
