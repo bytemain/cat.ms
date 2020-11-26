@@ -1,6 +1,8 @@
+const { exec } = require("child_process");
 var iconv = require("iconv-lite");
 const chardet = require("chardet");
-const { exec } = require("child_process");
+const { Transform } = require("stream");
+
 var binaryEncoding = "binary";
 
 const getEncoding = (data) => {
@@ -32,7 +34,19 @@ const run = (command) => {
   exec(command, { encoding: binaryEncoding }, printInfo);
 };
 
+const transformFactory = () => {
+  return Transform({
+    transform: function (chunk, encoding, next) {
+      let buf = Buffer.from(chunk, encoding);
+      let bufEncoding = getEncoding(buf);
+      next(null, iconv.decode(buf, bufEncoding));
+    },
+  });
+};
+
 module.exports = {
   printInfo,
   run,
+  getEncoding,
+  transformFactory,
 };

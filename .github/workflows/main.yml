@@ -6,9 +6,11 @@ on:
     paths-ignore:
       - README.md
       - ".vscode/*"
+      - "helper/*"
       - ".prettierrc"
       - ".editorconfig"
       - ".markdownlint.json"
+      - ".gitignore"
 
 env:
   TZ: Asia/Shanghai
