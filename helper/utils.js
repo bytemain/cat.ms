@@ -14,7 +14,7 @@ const getEncoding = (data) => {
 const printInfo = (error, stdout, stderr) => {
   if (error) {
     console.error(`exec error: \n${error}`);
-    return;
+    process.exit(1);
   }
   if (stdout) {
     let buf = Buffer.from(stdout, binaryEncoding);
