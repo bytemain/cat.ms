@@ -2,10 +2,11 @@
 title: 在 Angular 网页中使用 UserScript
 date: 2020-04-15 09:49:01
 categories:
-    - userscript
+    - Web
 tags:
     - Web
-    - tricks
+    - UserScript
+    - Angular
 comments: true
 toc: true
 permalink: posts/using-userscript-in-angular-page/
@@ -29,7 +30,7 @@ Google 许久，发现了下面这个 [gist](https://gist.github.com/mgol/789306
 
 <script src="https://gist.github.com/mgol/7893061.js"></script>
 
-解释一下代码：  
+解释一下代码：
 因为 angular 会把自己注入到 `window.angular`，所以可以调用 `angular.element` 方法生成 Angular 对象。
 
 按照 gist 里的提示执行代码片段。
