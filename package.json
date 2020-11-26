@@ -6,15 +6,15 @@
     "version": "5.2.0"
   },
   "scripts": {
-    "start": "hexo server --draft",
+    "dev": "hexo server --draft",
+    "dev:clean": "yarn clean && yarn start",
     "secret": "node ./helper/replace_secret.js",
     "secret:dev": "yarn nodemon --watch _config_base.yml ./helper/replace_secret.js",
-    "build": "yarn build:pre && hexo g",
-    "build:pre": "yarn secret",
-    "deploy": "yarn build:pre && hexo deploy",
+    "build": "yarn secret && hexo g",
+    "new": "node ./helper/new.js",
+    "deploy": "yarn secret && hexo deploy",
     "update": "node ./helper/update_lib.js",
-    "clean": "hexo clean",
-    "restart": "yarn clean && yarn start"
+    "clean": "hexo clean"
   },
   "dependencies": {
     "hexo": "^5.2.0",
@@ -34,6 +34,7 @@
     "hexo-symbols-count-time": "^0.7.1"
   },
   "devDependencies": {
+    "chardet": "^1.3.0",
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.6",
     "npm-check-updates": "^10.2.2"

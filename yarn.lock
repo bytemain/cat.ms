@@ -665,6 +665,11 @@ chalk@^4.0.0, chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+chardet@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/chardet/-/chardet-1.3.0.tgz#a56ed2d9e4517a7128721340a0cb9a10a8fac238"
+  integrity sha512-cyTQGGptIjIT+CMGT5J/0l9c6Fb+565GCFjjeUTKxUO7w3oR+FcNCMEKTn5xtVKaLFmladN7QF68IiQsv5Fbdw==
+
 cheerio@^1.0.0-rc.2:
   version "1.0.0-rc.3"
   resolved "https://registry.npm.taobao.org/cheerio/download/cheerio-1.0.0-rc.3.tgz#094636d425b2e9c0f4eb91a46c05630c9a1a8bf6"

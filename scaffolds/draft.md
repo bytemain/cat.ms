@@ -5,7 +5,7 @@ categories:
 tags:
 comments: true
 toc: true
-permalink: {{title}}
+permalink: posts/{{title}}/
 ---
 
 <!-- more -->
