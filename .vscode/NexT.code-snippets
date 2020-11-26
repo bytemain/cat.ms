@@ -1,7 +1,66 @@
 {
   "centerquote tag": {
     "prefix": "cq",
-    "body": ["{% centerquote %}$1{% endcenterquote %}"],
-    "description": "centerquote tag"
+    "body": ["{% centerquote %}$1{% endcenterquote %}"]
+  },
+  "button": {
+    "prefix": "btn",
+    "body": [
+      "{% button ${1:url}, ${2:text}, ${3:icon [class]}, ${4:[title]} %}"
+    ]
+  },
+  "caniuse": {
+    "prefix": "can",
+    "body": ["{% caniuse ${1:feature} @ ${2:periods} %}"]
+  },
+  "label": {
+    "prefix": "label",
+    "body": [
+      "{% label ${1|default,primary,success,info,warning,danger|}@${2:text} %}"
+    ]
+  },
+  "Mermaid": {
+    "prefix": "mermaid",
+    "body": ["{% mermaid ${1:type} %}", "$2", "{% endmermaid %}"]
+  },
+  "Note (Bootstrap Callout)": {
+    "prefix": "note",
+    "body": [
+      "{% note ${1|default,primary,success,info,warning,danger|} ${2:[no-icon]} ${3:[summary]} %}",
+      "$4",
+      "{% endnote %}"
+    ]
+  },
+  "PDF": {
+    "prefix": "pdf",
+    "body": ["{% pdf ${1:url} ${2:[height]} %}"]
+  },
+  "Tabs": {
+    "prefix": "tabs",
+    "body": [
+      "{% tabs ${1:Unique name}, ${2:[index]} %}",
+      "<!-- tab ${3:[Tab caption]} ${4:[@icon]} -->",
+      "${5:Any content (support inline tags too).}",
+      "<!-- endtab -->",
+      "{% endtabs %}"
+    ]
+  },
+  "Sub Tabs": {
+    "prefix": "subtabs",
+    "body": [
+      "{% subtabs ${1:Unique name}, ${2:[index]} %}",
+      "<!-- tab ${3:[Tab caption]} ${4:[@icon]} -->",
+      "${5:Any content (support inline tags too).}",
+      "<!-- endtab -->",
+      "{% endsubtabs %}"
+    ]
+  },
+  "Tab": {
+    "prefix": "tab",
+    "body": [
+      "<!-- tab ${1:[Tab caption]} ${2:[@icon]} -->",
+      "${3:Any content (support inline tags too).}",
+      "<!-- endtab -->"
+    ]
   }
 }

@@ -8,7 +8,7 @@
     ]
   },
   "Code Block - Javascript": {
-    "prefix": "-hcbj",
+    "prefix": "hcbj",
     "body": [
       "{% codeblock ${1:title} lang:JavaScript  %}",
       "$2",
@@ -16,59 +16,43 @@
     ]
   },
   "Block Quote": {
-    "prefix": "-hquote",
+    "prefix": "hquote",
     "body": [
       "{% blockquote ${1:author} ${2:link} ${3:link_title} %}",
       "$4",
       "{% endblockquote %}"
     ]
   },
-  "PUll Quote": {
-    "prefix": "-hpullquote",
+  "Pull Quote": {
+    "prefix": "hpullquote",
     "body": ["{% pullquote ${1:class} %}", "$2", "{% endpullquote %}"]
   },
   "jsfiddle": {
-    "prefix": "-hjsfiddle",
+    "prefix": "hjsfiddle",
     "body": [
       "{% jsfiddle ${1:shorttag} ${2:tabs} ${3:skin} ${4:width} ${5:height}  %}"
     ]
   },
   "Gist": {
-    "prefix": "-hgist",
+    "prefix": "hgist",
     "body": ["{% gist  ${1:gist_id} ${2:filename} %}"]
   },
   "iframe": {
-    "prefix": "-hiframe",
+    "prefix": "hiframe",
     "body": ["{% iframe ${1:url} ${2:width} ${3:height}  %}"]
   },
   "image": {
-    "prefix": "-himage",
+    "prefix": "himage",
     "body": [
       "{% img ${1:class_names} ${2:path} ${3:width} ${4:height} ${5:title}  %}"
     ]
   },
   "link": {
-    "prefix": "-hlink",
+    "prefix": "hlink",
     "body": ["{% link ${1:text} ${2:url} ${3:external} ${4:title}  %}"]
   },
   "youtube": {
-    "prefix": "-hyoutube",
+    "prefix": "hyoutube",
     "body": ["{% youtube ${1:video_id} %}"]
-  },
-  "posts": {
-    "prefix": "-hpost",
-    "body": ["{% post_path slug ${1:title} %}"]
-  },
-  "assets-image": {
-    "prefix": "-himgasset",
-    "body": ["{% asset_img slug ${1:title} %}"]
-  },
-  "assets-path": {
-    "prefix": "-hpathasset",
-    "body": ["{% asset_path slug  %}"]
-  },
-  "assets-link": {
-    "prefix": "-hlinkasset",
-    "body": ["{% asset_link slug ${1:title} %}"]
   }
 }
