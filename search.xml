@@ -1953,7 +1953,7 @@ gyp ERR! build error<span aria-hidden="true" class="line-numbers-rows"><span></s
 <li><a href="https://frantic.im/cdtmp">cdtmp</a></li>
 <li><a href="https://github.com/umijs/umi/issues/1614#issuecomment-452140570">sorrycc 介绍 cdtmp</a></li>
 <li><a href="https://github.com/sorrycc/zaobao/issues/2">sorrycc 早报 @ 2017.10</a></li>
-<li>[stackoverflow 上关于 PowerShell 创建临时文件夹的答案 (<a href="https://stackoverflow.com/questions/34559553/create-a-temporary-directory-in-powershell">https://stackoverflow.com/questions/34559553/create-a-temporary-directory-in-powershell</a>)</li>
+<li><a href="https://stackoverflow.com/questions/34559553/create-a-temporary-directory-in-powershell">stackoverflow 上关于 PowerShell 创建临时文件夹的答案</a></li>
 <li><a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-temporaryfile?view=powershell-7">PowerShell New-TemporaryFile 命令详解</a></li>
 </ul>
 ]]></content>
