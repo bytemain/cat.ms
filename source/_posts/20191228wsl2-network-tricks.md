@@ -63,6 +63,19 @@ Windows 的 IP 都已经拿到了，比如说我的代理软件是监听在 7890
 
 还是没法连接的话有可能是 **Windows 防火墙**的原因，我是把防火墙关了的。
 
+---
+
+感谢评论区 Xing Fang 给了[一个链接](https://github.com/microsoft/WSL/issues/4585) 以及开放防火墙的一句命令。
+
+直接放开网卡名的防火墙：
+
+
+```ps1
+New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow
+```
+
+---
+
 还有这篇**必读**的文章：
 
 - [Ubuntu「一键」设置代理](https://blog.skk.moe/post/enable-proxy-on-ubuntu/)
@@ -101,9 +114,9 @@ WSL2 的 IP 会变，所以怎么随时随地的都能访问到 WSL2 呢？看�
 
 关键来了，我们要使用**任务计划程序**在 `WSL` 要更新 IP 的时候执行这个脚本。
 
-[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)  
-[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)  
-[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)  
+[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)
+[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)
+[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)
 
 具体**在 `WSL` 要更新 IP 时运行特定脚本**步骤如下：
 
@@ -213,7 +226,7 @@ Powershell 语法里 `@()` 就是数组的意思，这个脚本遍历你设置�
 ![image.png](https://i.lengthm.in/posts/wsl2-network-tricks/proxy.png)
 而且还可以为 git 以及 ssh 同时设置代理。
 
-代码见:  
+代码见:
 <https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc>
 
 重点见里面的 `proxy`, `unpro`, `getIp`, `proxy_git`, `proxy_npm` 等函数。
