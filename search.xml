@@ -1393,6 +1393,11 @@ git-config() {
 <p>Windows 的 IP 都已经拿到了，比如说我的代理软件是监听在 7890 端口的，那我只要设置代理链接为 <code>{windows_ip}:7890</code> 即可。</p>
 <p>如果无法连接的话，请你检查一下你 Windows 上的代理软件允许局域网访问了吗。</p>
 <p>还是没法连接的话有可能是 <strong>Windows 防火墙</strong>的原因，我是把防火墙关了的。</p>
+<hr>
+<p>感谢评论区 Xing Fang 给了<a href="https://github.com/microsoft/WSL/issues/4585">一个链接</a> 以及开放防火墙的一句命令。</p>
+<p>直接放开网卡名的防火墙：</p>
+<pre class="line-numbers language-ps1" data-language="ps1"><code class="language-ps1">New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
 <p>还有这篇<strong>必读</strong>的文章：</p>
 <ul>
 <li><a href="https://blog.skk.moe/post/enable-proxy-on-ubuntu/">Ubuntu「一键」设置代理</a></li>
@@ -1417,8 +1422,8 @@ git-config() {
 </ol>
 <p>这样你就能用自己定义的域名来访问两个系统了，wsl2 能访问 <code>win.local</code> 是因为它会向主机查询 dns（因为 wsl2 默认的 nameserver 指向了 windows 主机），主机会把 hosts 中的域名直接缓存起来然后直接作为一个 dns 记录。</p>
 <p>关键来了，我们要使用<strong>任务计划程序</strong>在 <code>WSL</code> 要更新 IP 的时候执行这个脚本。</p>
-<p><a href="https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534">English version here</a><br>
-<a href="https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534">English version here</a><br>
+<p><a href="https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534">English version here</a>
+<a href="https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534">English version here</a>
 <a href="https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534">English version here</a></p>
 <p>具体<strong>在 <code>WSL</code> 要更新 IP 时运行特定脚本</strong>步骤如下：</p>
 <ol>
@@ -1500,7 +1505,7 @@ git-config() {
 <h2 id="一键设置代理">一键设置代理<a class="header-anchor" href="#一键设置代理"></a></h2>
 <p>先上效果：<img data-src="https://i.lengthm.in/posts/wsl2-network-tricks/proxy.png" alt="image.png">
 而且还可以为 git 以及 ssh 同时设置代理。</p>
-<p>代码见:<br>
+<p>代码见:
 <a href="https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc">https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc</a></p>
 <p>重点见里面的 <code>proxy</code>, <code>unpro</code>, <code>getIp</code>, <code>proxy_git</code>, <code>proxy_npm</code> 等函数。</p>
 <p>这样我们执行 proxy 的时候，就能一键连接到主机的代理上了。</p>

@@ -921,13 +921,6 @@ END GO<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 
 
 
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1093,23 +1086,6 @@ if (document.querySelectorAll('.mermaid').length) {
       });
       });
   </script>
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css">
-
-<script>
-NexT.utils.loadComments('#disqus_thread', () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqus.js', () => {
-    window.dsqjs = new DisqusJS({
-      api       : 'https://disqus.skk.moe/disqus/' || 'https://disqus.com/api/',
-      apikey    : 'Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR',
-      shortname : 'hexo-1',
-      url       : "https://lengthmin.me/posts/assembler-basic/",
-      identifier: "/posts/assembler-basic/",
-      title     : "IBM-PC 汇编语言程序设计复习",
-    });
-  }, window.DisqusJS);
-});
-</script>
 
   <script>
     window.ga_tid = "UA-144727481-1";
