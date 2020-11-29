@@ -376,13 +376,13 @@
  <a id="more"></a>
 <p>首先我们要知道自己的用户和用户组的 id，在终端输入</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">id</span> -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>就能显示出来用户跟组的 id，
-<img data-src="https://i.lengthm.in/posts/sudo-git-fix/Snipaste_2018-01-25_14-48-31.png" alt="Snipaste_2018-01-25_14-48-31.png"></p>
+<p>就能显示出来用户跟组的 id：</p>
+<p><img data-src="https://i.lengthm.in/posts/sudo-git-fix/Snipaste_2018-01-25_14-48-31.png" alt="Snipaste_2018-01-25_14-48-31.png"></p>
 <p>接下来需要用 chown 命令：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> .git/objects
 <span class="token function">ls</span> -al
 <span class="token function">sudo</span> <span class="token function">chown</span> -R uid:groups *
-<span class="token comment"># 将uid和groups换成你自己的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 将 uid 和 groups 换成你自己的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
     </div>
 

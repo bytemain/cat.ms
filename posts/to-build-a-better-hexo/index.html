@@ -360,7 +360,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>726</span>
+      <span>723</span>
     </span>
 </div>
 
@@ -377,27 +377,29 @@
 <a id="more"></a>
 <hr>
 <h2 id="备份到仓库">备份到仓库<a class="header-anchor" href="#备份到仓库"></a></h2>
-<p>你需要安装好 git。首先，你要在博客根目录下添加远程仓库。</p>
+<p>你需要安装好 git。<br>
+首先，你要在博客根目录下添加远程仓库。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># git remote add [shortname] [url]</span>
 <span class="token comment"># [shortname] 设置仓库的名称</span>
 <span class="token comment"># [url] 远程仓库的链接</span>
 <span class="token function">git</span> remote <span class="token function">add</span> hexo https://git.coding.net/Artin/Artin.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>然后创建一个新的分支</p>
+<p>然后创建一个新的分支：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch backup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>切换到 backup 分支</p>
-<pre class="line-numbers language-none"><code class="language-none">git checkout backup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后在博客根目录下执行</p>
-<pre class="line-numbers language-none"><code class="language-none">git add .
-git commit -am "update"
-git push hexo backup<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>你可以去看看<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰的 git 教程</a>关于 push 主题失败的同学，把主题中的.git 给删掉就 ok 了</p>
+<p>切换到 backup 分支：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout backup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后在博客根目录下执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token function">git</span> commit -am <span class="token string">"update"</span>
+<span class="token function">git</span> push hexo backup<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>你可以去看看 <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰的 git 教程</a></p>
+<p>关于 push 主题失败的同学，把主题中的.git 给删掉就 ok 了，或者不推送主题。</p>
 <hr>
 <h2 id="更加便携的方法">更加便携的方法<a class="header-anchor" href="#更加便携的方法"></a></h2>
-<p>这个主意我只在 ubuntu 下试过。首先，在博客根目录创建一个 <code>git.sh</code> 在里面输入如下代码</p>
+<p>首先，在博客根目录创建一个 <code>git.sh</code>。在里面输入如下代码：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash/</span>
 <span class="token comment"># 这里的路径是你的博客的路径</span>
 <span class="token builtin class-name">cd</span> /home/ubuntu/workspace/hexo/
-<span class="token builtin class-name">echo</span> <span class="token string">"执行hexo clean"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"执行 hexo clean"</span>
 hexo clean
 <span class="token builtin class-name">echo</span> <span class="token string">"hexo clean 执行完毕"</span>
 <span class="token builtin class-name">echo</span> <span class="token string">"推送源代码"</span>
@@ -405,7 +407,7 @@ hexo clean
 <span class="token function">git</span> commit -am <span class="token string">"update"</span>
 <span class="token function">git</span> push hexo master
 <span class="token builtin class-name">echo</span> <span class="token string">"推送源代码 执行完毕"</span>
-<span class="token builtin class-name">echo</span> <span class="token string">"执行hexo g -d"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"执行 hexo g -d"</span>
 hexo g -d
 <span class="token builtin class-name">echo</span> <span class="token string">"hexo g -d 执行完毕"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以后想要更新博客，直接在博客根目录下输入:</p>

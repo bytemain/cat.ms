@@ -26,12 +26,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"lengthmin.me","root":"/","images":"/images","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":true,"preload":true}};
   </script>
-<meta name="description" content="Windows 下安装 OpenCV 以及配环境的事情，对于 VS 来说一点都不麻烦，简单几步就可以让 VS 使用 OpenCV。">
+<meta name="description" content="Windows 下安装 OpenCV 以及配环境的事情，对于 VS 来说一点都不麻烦，简单几步就可以在 VS 中使用 OpenCV 这个库。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows10 配置 OpenCV3.4.1 + Visual Studio">
 <meta property="og:url" content="https://lengthmin.me/posts/install-opencv-windows-vs/">
 <meta property="og:site_name" content="Artin&#39;s Blog">
-<meta property="og:description" content="Windows 下安装 OpenCV 以及配环境的事情，对于 VS 来说一点都不麻烦，简单几步就可以让 VS 使用 OpenCV。">
+<meta property="og:description" content="Windows 下安装 OpenCV 以及配环境的事情，对于 VS 来说一点都不麻烦，简单几步就可以在 VS 中使用 OpenCV 这个库。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-06-29T07:54:41.000Z">
 <meta property="article:modified_time" content="2019-07-18T06:03:00.000Z">
@@ -219,7 +219,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDOpenCV"><span class="nav-number">1.</span> <span class="nav-text">下载 OpenCV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">配置系统变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">3.</span> <span class="nav-text">测试</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-OpenCV"><span class="nav-number">1.</span> <span class="nav-text">下载 OpenCV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">配置系统变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">3.</span> <span class="nav-text">测试</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -362,7 +362,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>771</span>
+      <span>785</span>
     </span>
 </div>
 
@@ -373,20 +373,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Windows 下安装 OpenCV 以及配环境的事情，对于 VS 来说一点都不麻烦，简单几步就可以让 VS 使用 OpenCV。</p>
+        <p>Windows 下安装 OpenCV 以及配环境的事情，对于 VS 来说一点都不麻烦，简单几步就可以在 VS 中使用 OpenCV 这个库。</p>
 <a id="more"></a>
-<h2 id="下载OpenCV">下载 OpenCV<a class="header-anchor" href="#下载OpenCV"></a></h2>
-<ul>
-<li>OpenCV 的下载链接：[<a href="https://opencv.org/releases.html">https://opencv.org/releases.html</a>]
-选择 Windows 版本的下载。</li>
-</ul>
-<p>下载下来是一个<code>.exe</code> 格式的可执行文件，运行之后选择 OpenCV 的安装目录就可以。我选的是 <code>c:/opencv</code>，之后的教程都是有关这个目录的。</p>
+<h2 id="下载-OpenCV">下载 OpenCV<a class="header-anchor" href="#下载-OpenCV"></a></h2>
+<p>OpenCV 的下载链接：<a href="https://opencv.org/releases.html">https://opencv.org/releases.html</a></p>
+<p>选择 Windows 版本的下载。</p>
+<p>下载下来是一个 <code>.exe</code> 格式的可执行文件，运行之后选择安装目录就可以。我选的是 <code>c:/opencv</code>，之后的教程都是有关这个目录的。</p>
 <h2 id="配置系统变量">配置系统变量<a class="header-anchor" href="#配置系统变量"></a></h2>
-<p>打开系统设置界面（可以在小娜上输入<code>系统设置</code>），小娜就会帮你打开高级系统设置，点击环境变量，在系统变量的 Path 一栏中新建两个:</p>
+<p>打开系统设置界面（可以在小娜上输入「系统设置」），小娜就会帮你打开高级系统设置，点击环境变量，在系统变量的 Path 一栏中新建两个：</p>
 <pre class="line-numbers language-none"><code class="language-none">C:\opencv\build\bin
 C:\opencv\build\x64\vc14\bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>打开 VS，创建一个项目属性页：
-VC++ 目录：包含文件目录：</p>
+<p>打开 VS，创建一个项目。</p>
+<p>属性页 -&gt; VC++ 目录 -&gt; 包含文件目录：</p>
 <ul>
 <li>C:\opencv\build\include\</li>
 <li>C:\opencv\build\include\opencv2</li>
@@ -396,7 +394,10 @@ VC++ 目录：包含文件目录：</p>
 <ul>
 <li>C:\opencv\build\x64\vc14\lib</li>
 </ul>
-<p>链接器：输入：附加依赖项：opencv_world341d.lib</p>
+<p>链接器 -&gt; 输入 -&gt; 附加依赖项：</p>
+<ul>
+<li>opencv_world341d.lib</li>
+</ul>
 <p>如果是 release 的话就是把 d 去掉 opencv_world341.lib</p>
 <h2 id="测试">测试<a class="header-anchor" href="#测试"></a></h2>
 <p>测试一下</p>

@@ -3,12 +3,13 @@
   <entry>
     <title>使用在线 ide 和 pages 服务搭建一个免费的 Hexo 博客</title>
     <url>//posts/use-hexo-with-webide/</url>
-    <content><![CDATA[<p>一直有着想写一点东西的想法，想有个自己的博客。但是现在国内的知名博客服务 (某浪，CSXN) 首页都是广告 = = ，最后在知乎发现了 Hexo 这么个东西。自己就能搭建一个国内访问快无广告自定义颇多的炫酷博客。</p>
+    <content><![CDATA[<p>一直有着想写一点东西的想法，想有个自己的博客。但是现在国内的知名博客服务（特指 CSXN）好多广告 = =，最后在知乎发现了 Hexo 这么个东西。自己就能搭建一个国内访问快无广告自定义颇多的炫酷博客。</p>
 <ul>
 <li><a href="https://hexo.io/"><code>Hexo</code></a> 是一个用 nodejs 编写的静态博客框架，可以将生成的静态博客网页托管在服务器上。</li>
-<li>国外的 <a href="https://github.com/"><code>github.com</code></a> 和国内的 <a href="https://coding.net/"><code>coding.net</code></a> 都提供免费的 pages 服务，可以用托管博客。</li>
+<li>国外的 <a href="https://github.com/"><code>github.com</code></a> 和国内的 <a href="https://coding.net/"><code>coding.net</code></a> 都提供免费的静态网页托管服务。</li>
 <li><s><a href="https://c9.io/"><code>c9.io</code></a>提供免费的在线 webide 服务</s></li>
 <li>好难过，评论说现在<strong>注册 c9 要绑定信用卡</strong>了，这是真的这不是梦。</li>
+<li>c9 现在被亚马逊收购了，可以在自己的 ec2 实例上免费使用。</li>
 </ul>
 <p>优点:</p>
 <ol>
@@ -31,7 +32,7 @@
 <h3 id="准备准备">准备准备<a class="header-anchor" href="#准备准备"></a></h3>
 <ul>
 <li>注册 <a href="https://coding.net/">coding.net</a> ｜ <a href="https://c9.io/">c9.io</a> <br>
-<strong> 注意:c9 没有被墙，但是注册的时候需要输入验证码，验证码使用的是 google 的 reCAPTCHA 服务。因此注册的时候需要科学上网。</strong></li>
+<strong> 注意：c9 没有被墙，但是注册的时候需要输入验证码，验证码使用的是 Google 的 reCAPTCHA 服务。因此注册的时候需要科学上网。</strong></li>
 </ul>
 <p>在你的 c9 控制台界面，创建一个 workspace，名字 hexo (自己喜欢就好)
 选择模板为 blank
@@ -129,21 +130,17 @@ ssh 密钥在～/.ssh/id_rsa.pub <br>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">hexo clean
 hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><strong>每一次更新博客，都要重新部署。</strong></p>
-<hr>
 <h2 id="一些-Tips">一些 Tips<a class="header-anchor" href="#一些-Tips"></a></h2>
 <h3 id="修改终端时区">修改终端时区<a class="header-anchor" href="#修改终端时区"></a></h3>
-<p>c9 的终端默认的时区是 UTC，和中国相差了 8 个时区。终端输入:</p>
+<p>c9 终端的默认时区是 UTC，和中国相差了 8 个时区。终端输入:</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> dpkg-reconfigure tzdata<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后进入图形交互界面，选择 <code>Asia/Shanghai</code> 时区就行了出现下面的提示即为成功</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Current default <span class="token function">time</span> zone: <span class="token string">'Asia/Shanghai'</span>
 
 Local <span class="token function">time</span> is now:      Sat Aug  <span class="token number">6</span> <span class="token number">20</span>:13:22 CST <span class="token number">2016</span>.
 Universal Time is now:  Sat Aug  <span class="token number">6</span> <span class="token number">12</span>:13:22 UTC <span class="token number">2016</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
 <h3 id="开启-c9-的-markdown-实时预览">开启 c9 的 markdown 实时预览<a class="header-anchor" href="#开启-c9-的-markdown-实时预览"></a></h3>
 <p>写 markdown 时点击工具栏的 <code>Preview</code>，选择第一个 <code>Live Prebiew file</code>。然后屏幕就会变成双栏，左边码 markdown，右边可实时预览。</p>
-<hr>
-<h2 id="未完待续">未完待续<a class="header-anchor" href="#未完待续"></a></h2>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -159,11 +156,11 @@ Universal Time is now:  Sat Aug  <span class="token number">6</span> <span class
     <url>//posts/add-tencent-analytics-to-yelee/</url>
     <content><![CDATA[<p>hexo 的原生主题自带了谷歌分析，而谷歌分析在国内水土不服。琢磨琢磨，把 next 主题上的腾讯分析添加到了正在用的 yelee 主题上。顺带一提，腾讯分析真的是用过的最好用的站点统计软件。</p>
 <a id="more"></a>
-<p>用的主题是 yelee，没有腾讯分析，自己加了一个。在<code>主题目录</code>下操作。在<code>_config.yml</code> 中添加</p>
+<p>用的主题是 yelee，没有腾讯分析，自己加了一个。在 <code>主题目录</code> 下操作。在 <code>_config.yml</code> 中添加</p>
 <pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">tencent-analytics</span><span class="token punctuation">:</span>
-<span class="token comment"># 在冒号后面配置你的腾讯分析id，id就是获取到的代码的数字部分</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token comment"># 在冒号后面配置你的腾讯分析 id，id 就是获取到的代码的数字部分</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>在 <code>layout/_partial/</code> 中创建一个新的 <code>tencent-analytics.ejs</code> 文件，
-加入如下代码</p>
+加入如下代码：</p>
 <pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs"><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>tencent_analytics<span class="token punctuation">)</span><span class="token punctuation">{</span> </span><span class="token delimiter punctuation">%&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://tajs.qq.com/stats?sId=<span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%=</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>tencent_analytics </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 
@@ -172,9 +169,9 @@ Universal Time is now:  Sat Aug  <span class="token number">6</span> <span class
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 <span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token punctuation">}</span> </span><span class="token delimiter punctuation">%&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上面的代码包括了腾讯分析了。在 <code>layout/_partial/</code> 中修改 <code>head.ejs</code>：</p>
-<pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs">#随便找一行添加如下代码，让用户在打开网页时加载腾讯分析。
+<pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs"># 随便找一行添加如下代码，让用户在打开网页时加载腾讯分析。
 <span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%-</span><span class="token language-javascript"> <span class="token function">partial</span><span class="token punctuation">(</span><span class="token string">'tencent-analytics'</span><span class="token punctuation">)</span> </span><span class="token delimiter punctuation">%&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>然后在主题的<code>_config.yml</code> 中输入你的腾讯分析 id。执行</p>
+<p>然后在主题的 <code>_config.yml</code> 中输入你的腾讯分析 id。执行</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo clean
 hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>就 ok 了。</p>
@@ -194,13 +191,13 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
  <a id="more"></a>
 <p>首先我们要知道自己的用户和用户组的 id，在终端输入</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">id</span> -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>就能显示出来用户跟组的 id，
-<img data-src="https://i.lengthm.in/posts/sudo-git-fix/Snipaste_2018-01-25_14-48-31.png" alt="Snipaste_2018-01-25_14-48-31.png"></p>
+<p>就能显示出来用户跟组的 id：</p>
+<p><img data-src="https://i.lengthm.in/posts/sudo-git-fix/Snipaste_2018-01-25_14-48-31.png" alt="Snipaste_2018-01-25_14-48-31.png"></p>
 <p>接下来需要用 chown 命令：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> .git/objects
 <span class="token function">ls</span> -al
 <span class="token function">sudo</span> <span class="token function">chown</span> -R uid:groups *
-<span class="token comment"># 将uid和groups换成你自己的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 将 uid 和 groups 换成你自己的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>Git</category>
@@ -214,7 +211,10 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
     <url>//posts/use-shuangpin/</url>
     <content><![CDATA[<p>Hello everybody,long time no see.</p>
 <p>时隔数月，终于更了第二篇文章，现在我想介绍一种输入方法，不同于平时使用的全拼，叫双拼，双拼和全拼或五笔一样，是一种输入方法 。</p>
-<p>双拼是用<code>定义好的单字母</code>代替<code>较长的多字母韵母或声母</code>来进行输入的一种方法。比如说我想用拼音打 程序员，用全拼方案就要打 <code>"cheng xv yuan"</code>，而用小鹤双拼方案只需要打 <code>"ig xu yr"</code>，比全拼的效率高了不少。这篇文章只是介绍一下双拼就直接带你入门，而我也只是个初级使用者，还有很多更高级的使用方法就靠你自己学了。文章后会给几个链接，搭配本文食用更佳。</p>
+<p>双拼是用「定义好的单字母」代替「较长的多字母韵母或声母」来进行输入的一种方法。</p>
+<p>比如说我想用拼音打 「程序员」三个字，用全拼方案就要打 <code>cheng xv yuan</code>，而用小鹤双拼方案只需要打 <code>ig xu yr</code>，比全拼的效率高了不少。</p>
+<p>这篇文章只是介绍一下双拼入门，而我也只是个初级使用者，还有很多更高级的使用方法就靠你自己学了。</p>
+<p>文章后会给几个链接，搭配本文食用更佳。</p>
 <p>实际使用感受我只能说：比全拼打的快，比五笔学的快。</p>
 <a id="more"></a>
 <hr>
@@ -222,17 +222,15 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <p>先来一段百科上的：</p>
 <blockquote>
 <p>双拼是一种建立在拼音输入法基础上的输入方法，可视为全拼的一种改进，它通过将汉语拼音中每个含多个字母的声母或韵母各自映射到某个按键上，使得每个音都可以用最多两次按键打出，极大地提高了拼音输入法的输入速度。(此处说的只是拼音输入法…)</p>
-<p>现在常见的方案包括小鹤双拼、微软拼音 2003、智能 ABC、拼音加加、紫光双拼、搜狗双拼、自然码、小熊双拼、大牛双拼等方案。这些方案的主要区别在于韵母的键位安排。双拼是用定义好的单字母代替较长的多字母韵母或声母来进行输入的一种方式。例如：如果 T=t，M=ian，键入两个字母 "TM" 就会输入拼音 "tian"。使用双拼可以减少击键次数，虽然需要记忆字母对应的键位，但是熟练之后效率会有一定提高。如果使用双拼，要在设置属性窗口把双拼选上即可。特殊拼音的双拼输入规则有：对于单韵母字，需要在前面输入字母 O + 韵母。例如：输入 OA→A，输入 OO→O，输入 OE→E。而在自然码双拼方案中，和自然码输入法的双拼方式一致，对于单韵母字，需要输入双韵母，例如：输入 AA→A，输入 OO→O，输入 EE→E。</p>
 </blockquote>
-<p>第一次知道双拼是看了少数派的一篇文章<a href="http://sspai.com/32809/">做少数派中的少数派：双拼输入快速入门</a>，里面推荐的是用<strong>小鹤双拼</strong>，就一直在用 (其实也就学习了这么一种…)。很多输入法都支持小鹤双拼的，当然也支持其他的双拼。</p>
+<p>第一次知道双拼是看了少数派的一篇文章 <a href="http://sspai.com/32809/">做少数派中的少数派：双拼输入快速入门</a>，里面推荐的是用<strong>小鹤双拼</strong>，就一直在用 (其实也就学习了这么一种…)。很多输入法都支持小鹤双拼的。</p>
 <h2 id="学习使我快乐">学习使我快乐<a class="header-anchor" href="#学习使我快乐"></a></h2>
 <p>学双拼要记得住每个键对应的声母和韵母，这有张小鹤的码表，同学你一定要记住它。<img data-src="https://i.lengthm.in/posts/use-shuangpin/hejp.png" alt="键位图">
 当时想着能在空余时间练习一下。于是用草稿纸画了一张上面那个图，事实证明这招很有效，放在桌上慢慢打字练手感，这个表和小鹤双拼的口诀 已经是要学习的全部内容。一开始我也背了这个口诀，后来打熟练了就能记住键位了，口诀也忘了…：</p>
 <blockquote>
-<p>Kuai ing Liang uang Ruan Cao Zou T ue Qiu Yun Wei Jan Mian</p>
-<p>快 迎 两 王 软 草 走， 特 约 秋 云 为 见 面。</p>
-<p>Xia ua Song iong shU chI zhVi Geng Dai Bin Niao Fen Pie Hang</p>
-<p>夏 娃 怂 恿 书 痴 追， 更 待 滨 鸟 分 撇 航？</p>
+<p>快 迎 两 王 软 草 走， 特 约 秋 云 为 见 面。夏 娃 怂 恿 书 痴 追， 更 待 滨 鸟 分 撇 航？</p>
+<p>Kuai ing Liang uang Ruan Cao Zou, T ue Qiu Yun Wei Jan Mian
+Xia ua Song iong shU chI zhVi, Geng Dai Bin Niao Fen Pie Hang</p>
 </blockquote>
 <p>把这首小诗结合上面的键位图看一下，就能看懂了。比如说 <code>Kuai ing</code> 就是 <code>K</code> 这个键作韵母时对应两个韵母 <code>uai</code> 和 <code>ing</code>。举个例子：</p>
 <ul>
@@ -246,17 +244,15 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <li>练习使用键盘： <a href="http://typing.sjz.io/#/keyboard/">http://typing.sjz.io/#/keyboard/</a></li>
 <li> 练习打文章： <a href="http://typing.sjz.io/#/article/">http://typing.sjz.io/#/article/</a></li>
 </ul>
-<p>** 推荐先打打古诗词，因为很多诗词都押韵。打起来比较爽快。</p>
+<p>推荐先打打古诗词，因为很多诗词都押韵。打起来比较爽快。</p>
 <p>目前发现这个网站就是有些多音字的拼音处理的不好，标出来的不是正确的读音，练习的时候需要注意拼音。还有就是说 文章字数太多可能会卡。</p>
 <p>在下面可以下载到一个跟打器，可以本地练习打字的。</p>
-<hr>
 <h2 id="资源">资源<a class="header-anchor" href="#资源"></a></h2>
 <ul>
 <li><a href="http://flypy.com/">小鹤官网</a></li>
 <li><a href="http://tieba.baidu.com/f?kw=%E5%B0%8F%E9%B9%A4%E5%8F%8C%E6%8B%BC&amp;ie=utf-8">小鹤双拼贴吧</a></li>
 <li><a href="http://flypy.ys168.com/">小鹤官方资源网盘 (跟打器在飞扬版目录下的打字练习文件夹内)</a></li>
 </ul>
-<hr>
 <h2 id="一些链接">一些链接<a class="header-anchor" href="#一些链接"></a></h2>
 <p>这里再给出我参考的一部分网址，感谢：</p>
 <ul>
@@ -278,20 +274,29 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
   <entry>
     <title>使用 Coding 的动态 Pages 搭建 TT-RSS</title>
     <url>//posts/coding-pages-tinytinyrss/</url>
-    <content><![CDATA[<p>2019 年 2 月 17 日 16:20:57 更新：已经失效了！！已经失效了！！已经失效了！！</p>
-<p>现在部署可以一键部署了，但是已经无法获取更新了。</p>
+    <content><![CDATA[<p>2019 年 2 月 17 日 16:20:57 更新：<br>
+已经失效了！！<br>
+已经失效了！！</p>
+<p>现在部署可以一键部署了，但是已经无法获取 rss 更新了。</p>
 <pre class="line-numbers language-none"><code class="language-none">failed to open stream: no suitable wrapper could be found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <hr>
-<p>先说结论，不够好用，弃坑了，用国内的一览提供的 rss 服务。多平台支持，和 inoreader 相比速度更快，而且对于目前我订阅的源来说并没有不可阅读的，而且在 inoreader 上看不了電腦玩物的图片，在一览上没问题的。</p>
+<p>先说结论，不够好用，弃坑了，用国内的一览提供的 rss 服务。<br>
+多平台支持，和 inoreader 相比速度更快，而且对于目前我订阅的源来说并没有不可阅读的，而且在 inoreader 上看不了電腦玩物的图片（因为 refer 的问题），在一览上没问题的。</p>
 <h2 id="关于-ttrss">关于 ttrss<a class="header-anchor" href="#关于-ttrss"></a></h2>
-<p>因为很喜欢关注科技界的新闻，需要一个聚合来看新闻的软件。说不上是 rss 重度使用者吧，但是还是每天必刷新闻的用了各种新闻软件之后，发现 rss 才是正道，不会被推荐打扰，就订阅那么几个源。每天刷一刷。现在微信公众号几乎都不怎么看了，二者功能几乎重复哈哈哈哈哈</p>
-<p>ttrss 即为 tinytinyrss (<a href="https://tt-rss.org/">https://tt-rss.org/</a>)
-可以自己控制的自定义项较多的 rss 服务，多平台支持
-android 上推荐 feedme，最新的 3.5.1 版本支持了 tinytinyrss，体验很好。之前用 inoreader 的时候就用的 feedme，已通过 play 请开发者吃了个苹果哈哈哈哈哈，
+<p>因为很喜欢关注科技界的新闻，需要一个聚合来看新闻的软件。<br>
+说不上是 rss 重度使用者吧，但是还是每天必刷新闻的<br>
+用了各种新闻软件之后，发现 rss 才是正道，不会被推荐打扰，就订阅那么几个源。每天刷一刷。<br>
+现在微信公众号几乎都不怎么看了，二者功能几乎重复哈哈哈哈哈</p>
+<p>ttrss 即为 tinytinyrss (<a href="https://tt-rss.org/">https://tt-rss.org/</a>)<br>
+可以自己控制的自定义项较多的 rss 服务，<br>
+多平台支持<br>
+android 上推荐 feedme，最新的 3.5.1 版本支持了 tinytinyrss，体验很好。<br>
+之前用 inoreader 的时候就用的 feedme，已通过 play 请开发者吃了个苹果哈哈哈哈哈，<br>
 tinytinyrss 也就是在 php 环境下安装的，pc 上用浏览器打开就可以了。</p>
 <a id="more"></a>
 <h2 id="关于-coding-的动态-pages">关于 coding 的动态 pages<a class="header-anchor" href="#关于-coding-的动态-pages"></a></h2>
-<p>coding 提供了免费的动态 pages，可以用来架设自己的个人动态博客。但是我最近在 rss 服务选择上犯了选择困难证，刚好想到之前看到过 ttrss
+<p>coding 提供了免费的动态 pages，可以用来架设自己的个人动态博客。<br>
+但是我最近在 rss 服务选择上犯了选择困难证，刚好想到之前看到过 ttrss<br>
 coding 提供了 php+mysql 的环境，于是想试一试。要准备的东西：</p>
 <ul>
 <li>coding webide</li>
@@ -312,55 +317,69 @@ ssh 要先配置好 ssh 的权限。</p>
 <p>tiny 是一个开源项目，项目链接：<a href="https://git.tt-rss.org/fox/tt-rss">https://git.tt-rss.org/git/tt-rss/src/master</a>
 如果你的电脑没装 git 的话建议用 coding 提供的 webide，秒开很省心，而且 push 代码的时候很快很快的。免费用户可以可且仅可开一个。在安卓平台上也有提供 linux 终端的的软件，如 NeoTerm 和 Termux。先把源代码 clone 到本地</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://git.tt-rss.org/git/tt-rss.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>克隆好后，修改 <code>/tt-rss/.git/config</code> 文件里的 remote url 为你的仓库地址 (图里红框的位置)，仓库地址刚刚创建的时已经显示出来了
-<img data-src="https://i.lengthm.in/posts/coding-pages-tinytinyrss/5a5c3e29a6434.png" alt="5a5c3e29a6434.png"></p>
+<p>克隆好后，修改 <code>/tt-rss/.git/config</code> 文件里的 remote url 为你的仓库地址 (图里红框的位置)，仓库地址刚刚创建的时已经显示出来了</p>
+<p><img data-src="https://i.lengthm.in/posts/coding-pages-tinytinyrss/5a5c3e29a6434.png" alt="5a5c3e29a6434.png"></p>
 <blockquote>
-<p>无法克隆的可以直接去版本发布中下载最新版。<a href="https://git.tt-rss.org/fox/tt-rss/releases">https://git.tt-rss.org/fox/tt-rss/releases</a></p>
+<p>无法克隆的可以直接去版本发布中下载最新版。<br>
+<a href="https://git.tt-rss.org/fox/tt-rss/releases">https://git.tt-rss.org/fox/tt-rss/releases</a></p>
 </blockquote>
 <hr>
 <h4 id="直接上传-zip-包">直接上传 zip 包<a class="header-anchor" href="#直接上传-zip-包"></a></h4>
-<p>在这里下载最新的版本。
-<a href="https://git.tt-rss.org/fox/tt-rss/releases">https://git.tt-rss.org/fox/tt-rss/releases</a>
-解压之后可以看到本地多了一个 <code>tt-rss</code> 的文件夹，打开文件夹。输入</p>
+<p>在这里下载最新的版本。</p>
+<p><a href="https://git.tt-rss.org/fox/tt-rss/releases">https://git.tt-rss.org/fox/tt-rss/releases</a></p>
+<p>解压之后可以看到本地多了一个 <code>tt-rss</code> 的文件夹，打开文件夹。输入：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">git</span> init
 <span class="token function">git</span> remote <span class="token function">add</span> 你创建的仓库地址
 <span class="token function">git</span> <span class="token function">add</span> -A <span class="token builtin class-name">.</span>
 <span class="token function">git</span> commit -am <span class="token string">"upload tt-rss"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>比如我的就是:
+<p>比如我的就是:<br>
 <img data-src="https://i.lengthm.in/posts/coding-pages-tinytinyrss/3e689e0fe950.png" alt="image"></p>
 <p>如果执行完 commit 发现有提示 <code>Please tell me who you are.</code>
-就按照提示设置自己的邮箱和用户名。设置完之后再执行一遍最后一句 <code>commit</code>。出现一堆 <code>create mode xxx</code> 的提示就可以了。</p>
+就按照提示设置自己的邮箱和用户名。<br>
+设置完之后再执行一遍最后一句 <code>commit</code>。<br>
+出现一堆 <code>create mode xxx</code> 的提示就可以了。</p>
 <h4 id="设置文件权限">设置文件权限<a class="header-anchor" href="#设置文件权限"></a></h4>
 <p>在这步有一个小问题，需要把目录下的每个文件的权限都设置成 777, 否则后面会遇到文件无法读写导致站点无法访问的问题。在终端输入</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">chmod</span> -R <span class="token number">777</span> <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>保存好后就可以 push 到仓库里了，</p>
 <blockquote>
-<p>如果你创建仓库的时候勾选了<code>使用readme初始化仓库</code>，那么你在 push 的时候会遇到文件冲突。方法是：修改了仓库地址之后先把本地的 <a href="http://readme.md">readme.md</a> 删除掉，然后使用 <code>git pull</code> 将远程仓库的 <a href="http://readme.md">readme.md</a> 拉回本地。</p>
+<p>如果你创建仓库的时候勾选了 「使用 readme 初始化仓库」，那么你在 push 的时候会遇到文件冲突。<br>
+方法是：修改了仓库地址之后先把本地的 <a href="http://readme.md">readme.md</a> 删除掉，<br>
+然后使用 <code>git pull</code> 将远程仓库的 <a href="http://readme.md">readme.md</a> 拉回本地。</p>
 </blockquote>
 <p>push 的方法很简单</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> tt-rss <span class="token comment">#进入你的ttrss文件夹下使用下面的命令</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 进入你的 ttrss 文件夹下使用下面的命令</span>
+<span class="token builtin class-name">cd</span> tt-rss
 <span class="token comment"># 不需要进行 add 和 commit</span>
-<span class="token function">git</span> push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token function">git</span> push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img data-src="https://i.lengthm.in/posts/coding-pages-tinytinyrss/2cda85122c5e.png" alt="image"></p>
 <p>输入你的用户名密码就可以了，一般来说输入密码的时候是不可见的，不用担心。</p>
 <h3 id="开启动态-Pages">开启动态 Pages<a class="header-anchor" href="#开启动态-Pages"></a></h3>
-<p>打开你的仓库，在侧边上选择 pages, 然后选择 tab 上的<strong>动态 Pages</strong>
-<img data-src="https://i.lengthm.in/posts/coding-pages-tinytinyrss/5a5c4125bfd47.png" alt="5a5c4125bfd47.png">
-<strong> 一定要等待部署完成后才能使用</strong></p>
+<p>打开你的仓库，在侧边上选择 pages, 然后选择 tab 上的 <strong>动态 Pages</strong></p>
+<p><img data-src="https://i.lengthm.in/posts/coding-pages-tinytinyrss/5a5c4125bfd47.png" alt="5a5c4125bfd47.png"></p>
+<p><strong>一定要等待部署完成后才能使用</strong></p>
 <h3 id="配置-tinyrss">配置 tinyrss<a class="header-anchor" href="#配置-tinyrss"></a></h3>
-<p>部署完成后打开上面给的链接，会来到 <code>http://969983a8-4bea-4d25-bab5-2ac8183353ad.coding.io/install/</code>
-要开始对 tiny 的配置了，在仓库的 pages 页面有数据库的连接信息，按相应的填到框中就可以了。
-<img data-src="https://i.lengthm.in/posts/coding-pages-tinytinyrss/5a5c435383b2d.png" alt="5a5c435383b2d.png"></p>
-<p>如果不需要改访问目录的话就直接点 <code>Test configuration</code> 然后 <code>Initialize database</code> 就可以了</p>
+<p>部署完成后打开上面给的链接，会来到
+<a href="http://969983a8-xxxx-xxxx-xxxx-2ac8183353ad.coding.io/install/">http://969983a8-xxxx-xxxx-xxxx-2ac8183353ad.coding.io/install/</a><br>
+要开始对 tiny 的配置了，在仓库的 pages 页面有数据库的连接信息，按相应的填到框中就可以了。</p>
+<p><img data-src="https://i.lengthm.in/posts/coding-pages-tinytinyrss/5a5c435383b2d.png" alt="5a5c435383b2d.png"></p>
+<p>如果不需要改访问目录的话就直接点 <code>Test configuration</code>，然后 <code>Initialize database</code> 就可以了</p>
 <p><img data-src="https://i.lengthm.in/posts/coding-pages-tinytinyrss/5a5c435390342.png" alt="5a5c435390342.png"></p>
-<p>在 <code>Generated configuration file</code> 这一步，不要点击 <strong>Save configuration</strong>，我们自己创建一个。方便我们之后调整 config
-在刚刚的 <code>tt-rss</code> 目录下创建 <code>config.php</code>，将图中文本框的内容复制进去打开<code>.gitignore</code> 文件，把 config,php 字样去掉才能 push，否则 git 会忽视这个文件。继续将修改好的代码 push 到仓库</p>
+<p>在 <code>Generated configuration file</code> 这一步，不要点击 <strong>Save configuration</strong>，我们自己创建一个。方便我们之后调整 config。<br>
+在刚刚的 <code>tt-rss</code> 目录下创建 <code>config.php</code>，将图中文本框的内容复制进去<br>
+打开 <code>.gitignore</code> 文件，把 config，php 字样去掉才能 push，否则 git 会忽视这个文件。<br>
+继续将修改好的代码 push 到仓库</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
 <span class="token function">git</span> commit -m <span class="token string">"push config.php"</span>
 <span class="token function">git</span> push origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>等待再次部署好就可以访问了，默认的用户名密码为 <code>admin</code> 和 <code>password</code></p>
+<p>等待再次部署好<br>
+就可以访问了，默认的用户名密码为 <code>admin</code> 和 <code>password</code>。</p>
 <h3 id="更好用的-tinytiny">更好用的 tinytiny<a class="header-anchor" href="#更好用的-tinytiny"></a></h3>
-<p>进去之后会让你改密码。设置中有很多选项，也有很多插件，大家可以百度一下。你需要启用 API 访问才能使用第三方客户端登陆。推荐关闭<code>在连续模式下自动展开文章</code>和<code>合并信息源，使之连续显示</code>总之自己使用吧，还是很好玩的。</p>
+<p>进去之后会让你改密码。<br>
+设置中有很多选项，也有很多插件，大家可以百度一下。<br>
+你需要启用 API 访问才能使用第三方客户端登陆。<br>
+推荐关闭 「在连续模式下自动展开文章」 和 「合并信息源，使之连续显示」<br>
+总之自己使用吧，还是很好玩的。</p>
 ]]></content>
       <categories>
         <category>RSS</category>
@@ -380,27 +399,29 @@ ssh 要先配置好 ssh 的权限。</p>
 <a id="more"></a>
 <hr>
 <h2 id="备份到仓库">备份到仓库<a class="header-anchor" href="#备份到仓库"></a></h2>
-<p>你需要安装好 git。首先，你要在博客根目录下添加远程仓库。</p>
+<p>你需要安装好 git。<br>
+首先，你要在博客根目录下添加远程仓库。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># git remote add [shortname] [url]</span>
 <span class="token comment"># [shortname] 设置仓库的名称</span>
 <span class="token comment"># [url] 远程仓库的链接</span>
 <span class="token function">git</span> remote <span class="token function">add</span> hexo https://git.coding.net/Artin/Artin.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>然后创建一个新的分支</p>
+<p>然后创建一个新的分支：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch backup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>切换到 backup 分支</p>
-<pre class="line-numbers language-none"><code class="language-none">git checkout backup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后在博客根目录下执行</p>
-<pre class="line-numbers language-none"><code class="language-none">git add .
-git commit -am "update"
-git push hexo backup<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>你可以去看看<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰的 git 教程</a>关于 push 主题失败的同学，把主题中的.git 给删掉就 ok 了</p>
+<p>切换到 backup 分支：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout backup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后在博客根目录下执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token function">git</span> commit -am <span class="token string">"update"</span>
+<span class="token function">git</span> push hexo backup<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>你可以去看看 <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰的 git 教程</a></p>
+<p>关于 push 主题失败的同学，把主题中的.git 给删掉就 ok 了，或者不推送主题。</p>
 <hr>
 <h2 id="更加便携的方法">更加便携的方法<a class="header-anchor" href="#更加便携的方法"></a></h2>
-<p>这个主意我只在 ubuntu 下试过。首先，在博客根目录创建一个 <code>git.sh</code> 在里面输入如下代码</p>
+<p>首先，在博客根目录创建一个 <code>git.sh</code>。在里面输入如下代码：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash/</span>
 <span class="token comment"># 这里的路径是你的博客的路径</span>
 <span class="token builtin class-name">cd</span> /home/ubuntu/workspace/hexo/
-<span class="token builtin class-name">echo</span> <span class="token string">"执行hexo clean"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"执行 hexo clean"</span>
 hexo clean
 <span class="token builtin class-name">echo</span> <span class="token string">"hexo clean 执行完毕"</span>
 <span class="token builtin class-name">echo</span> <span class="token string">"推送源代码"</span>
@@ -408,7 +429,7 @@ hexo clean
 <span class="token function">git</span> commit -am <span class="token string">"update"</span>
 <span class="token function">git</span> push hexo master
 <span class="token builtin class-name">echo</span> <span class="token string">"推送源代码 执行完毕"</span>
-<span class="token builtin class-name">echo</span> <span class="token string">"执行hexo g -d"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"执行 hexo g -d"</span>
 hexo g -d
 <span class="token builtin class-name">echo</span> <span class="token string">"hexo g -d 执行完毕"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以后想要更新博客，直接在博客根目录下输入:</p>
@@ -424,20 +445,18 @@ hexo g -d
   <entry>
     <title>Windows10 配置 OpenCV3.4.1 + Visual Studio</title>
     <url>//posts/install-opencv-windows-vs/</url>
-    <content><![CDATA[<p>Windows 下安装 OpenCV 以及配环境的事情，对于 VS 来说一点都不麻烦，简单几步就可以让 VS 使用 OpenCV。</p>
+    <content><![CDATA[<p>Windows 下安装 OpenCV 以及配环境的事情，对于 VS 来说一点都不麻烦，简单几步就可以在 VS 中使用 OpenCV 这个库。</p>
 <a id="more"></a>
-<h2 id="下载OpenCV">下载 OpenCV<a class="header-anchor" href="#下载OpenCV"></a></h2>
-<ul>
-<li>OpenCV 的下载链接：[<a href="https://opencv.org/releases.html">https://opencv.org/releases.html</a>]
-选择 Windows 版本的下载。</li>
-</ul>
-<p>下载下来是一个<code>.exe</code> 格式的可执行文件，运行之后选择 OpenCV 的安装目录就可以。我选的是 <code>c:/opencv</code>，之后的教程都是有关这个目录的。</p>
+<h2 id="下载-OpenCV">下载 OpenCV<a class="header-anchor" href="#下载-OpenCV"></a></h2>
+<p>OpenCV 的下载链接：<a href="https://opencv.org/releases.html">https://opencv.org/releases.html</a></p>
+<p>选择 Windows 版本的下载。</p>
+<p>下载下来是一个 <code>.exe</code> 格式的可执行文件，运行之后选择安装目录就可以。我选的是 <code>c:/opencv</code>，之后的教程都是有关这个目录的。</p>
 <h2 id="配置系统变量">配置系统变量<a class="header-anchor" href="#配置系统变量"></a></h2>
-<p>打开系统设置界面（可以在小娜上输入<code>系统设置</code>），小娜就会帮你打开高级系统设置，点击环境变量，在系统变量的 Path 一栏中新建两个:</p>
+<p>打开系统设置界面（可以在小娜上输入「系统设置」），小娜就会帮你打开高级系统设置，点击环境变量，在系统变量的 Path 一栏中新建两个：</p>
 <pre class="line-numbers language-none"><code class="language-none">C:\opencv\build\bin
 C:\opencv\build\x64\vc14\bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>打开 VS，创建一个项目属性页：
-VC++ 目录：包含文件目录：</p>
+<p>打开 VS，创建一个项目。</p>
+<p>属性页 -&gt; VC++ 目录 -&gt; 包含文件目录：</p>
 <ul>
 <li>C:\opencv\build\include\</li>
 <li>C:\opencv\build\include\opencv2</li>
@@ -447,7 +466,10 @@ VC++ 目录：包含文件目录：</p>
 <ul>
 <li>C:\opencv\build\x64\vc14\lib</li>
 </ul>
-<p>链接器：输入：附加依赖项：opencv_world341d.lib</p>
+<p>链接器 -&gt; 输入 -&gt; 附加依赖项：</p>
+<ul>
+<li>opencv_world341d.lib</li>
+</ul>
 <p>如果是 release 的话就是把 d 去掉 opencv_world341.lib</p>
 <h2 id="测试">测试<a class="header-anchor" href="#测试"></a></h2>
 <p>测试一下</p>
@@ -523,19 +545,21 @@ w <span class="token operator">=</span> <span class="token builtin">map</span><s
     <title>安装 nvm 与 nodejs</title>
     <url>//posts/install-nvm/</url>
     <content><![CDATA[<p>在网上看到 nvm 这个神器之后，最近装 Nodejs 都是用 nvm 来装了。刚好又装了 Linux Mint ，重新在 Linux 下安装一遍 nvm。Windows 上也有的类似工具 <a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a>，使用方法都差不多。</p>
-<p>GitHub 链接： <a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a></p>
+<p>GitHub 链接：<a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a></p>
 <p>nvm 是 nodejs 的一个版本控制工具，也就是 “Node Version Manager” 的三个首字母。</p>
-<p>2019-06-29 更新 Windows 安装 nvm</p>
+<p>2019-06-29 更新：Windows 安装 nvm</p>
 <a id="more"></a>
-<h1>Linux 安装 nvm</h1>
-<h2 id="安装和升级-nvm">安装和升级 nvm<a class="header-anchor" href="#安装和升级-nvm"></a></h2>
-<p>要安装或升级 nvm, 可以使用官方给的一个脚本：官方目前的版本号是 <code>v0.34.0</code>。你可以去上面给的链接里去安装最新的。可以使用 curl：</p>
+<h2 id="Linux-安装-nvm">Linux 安装 nvm<a class="header-anchor" href="#Linux-安装-nvm"></a></h2>
+<h3 id="安装和升级-nvm">安装和升级 nvm<a class="header-anchor" href="#安装和升级-nvm"></a></h3>
+<p>要安装或升级 nvm, 可以使用官方给的一个脚本。</p>
+<p>可以使用 curl：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">curl</span> -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>或者 wget:</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">wget</span> -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这个脚本会克隆 nvm 的远程仓库到 <code>~/.nvm</code> 路径下，并且会将添加激活代码到你终端的配置文件中。</p>
-<p>执行完这条命令之后，一切就安装好了。
-But in China, 你还需要配置一下代理。</p>
+<p>官方目前的版本号是 <code>v0.34.0</code>。<br>
+你可以去上面给的链接里去安装最新的。<br>
+这个脚本会克隆 nvm 的远程仓库到 <code>~/.nvm</code> 路径下，并且会将添加激活代码到你终端的配置文件中。</p>
+<p>执行完这条命令之后，一切就安装好了。但是在国内，你还需要配置一下代理。</p>
 <h3 id="配置-git-代理">配置 git 代理<a class="header-anchor" href="#配置-git-代理"></a></h3>
 <p>我本地使用的是 electron-ssr，代理的地址是 <code>socks5://127.0.0.1:1080</code>。执行下面这个命令，就可以针对 GitHub 设置代理了。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 只对 github.com</span>
@@ -546,51 +570,53 @@ But in China, 你还需要配置一下代理。</p>
 <blockquote>
 <p>注意哦，这种方式不支持 ssh 方式的代理，那个需要另外配置。在这里就不多讲，我会再写一篇博客来讲配置 ssh 的代理。</p>
 </blockquote>
-<p>使用命令行的配置等效于修改个人目录下的 <code>.gitconfig</code> 文件。 Windows/Linux 都可以。也就是说，可以通过修改 <code>~/.gitconfig</code> 达到一样的效果：加入下面这块代码就可以了。Windows 同理。</p>
-<pre class="line-numbers language-none"><code class="language-none">[http "https://github.com"]
-        proxy = socks5://127.0.0.1:1080<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>使用命令行的配置也会修改个人目录下的 <code>.gitconfig</code> 文件。 Windows/Linux 都是这样。</p>
+<p>也就是说，可以通过修改 <code>~/.gitconfig</code> 达到一样的效果：</p>
+<pre class="line-numbers language-ini" data-language="ini"><div class="caption"><span>.gitconfig</span></div><code class="language-ini"><span class="token selector">[http "https://github.com"]</span>
+<span class="token constant">        proxy</span> <span class="token attr-value"><span class="token punctuation">=</span> socks5://127.0.0.1:1080</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="配置终端代理">配置终端代理<a class="header-anchor" href="#配置终端代理"></a></h3>
-<p>因为终端里的命令是不走系统代理的，可以使用 proxychains4 等软件代理命令。配置好 proxychains4 后，使用</p>
-<pre class="line-numbers language-none"><code class="language-none">proxychains4 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>因为终端里的命令是不走系统代理的，可以使用 proxychains4 等软件代理命令。</p>
+<p>配置好 proxychains4 后，使用:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">proxychains4 <span class="token function">wget</span> -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>就安装好了。</p>
-<h2 id="配置-zsh">配置 zsh<a class="header-anchor" href="#配置-zsh"></a></h2>
+<h3 id="配置-zsh">配置 zsh<a class="header-anchor" href="#配置-zsh"></a></h3>
 <p>安装好 nvm 后，发现我本机只把启动的配置写入到 <code>~/.bashrc</code> 而已，手动将配置复制到 <code>~/.zshrc</code> 中。</p>
-<pre class="line-numbers language-none"><code class="language-none">export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] &amp;&amp; \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NVM_DIR</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.nvm"</span>
+<span class="token punctuation">[</span> -s <span class="token string">"<span class="token variable">$NVM_DIR</span>/nvm.sh"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>. <span class="token string">"<span class="token variable">$NVM_DIR</span>/nvm.sh"</span>  <span class="token comment"># This loads nvm</span>
+<span class="token punctuation">[</span> -s <span class="token string">"<span class="token variable">$NVM_DIR</span>/bash_completion"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>. <span class="token string">"<span class="token variable">$NVM_DIR</span>/bash_completion"</span>  <span class="token comment"># This loads nvm bash_completion</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>然后执行 <code>source ~/.zshrc</code>，即可</p>
-<h1>安装 nodejs</h1>
-<h2 id="配置-nvm-下载来源">配置 nvm 下载来源<a class="header-anchor" href="#配置-nvm-下载来源"></a></h2>
+<h2 id="安装-nodejs">安装 nodejs<a class="header-anchor" href="#安装-nodejs"></a></h2>
+<h3 id="配置-nvm-下载来源">配置 nvm 下载来源<a class="header-anchor" href="#配置-nvm-下载来源"></a></h3>
 <p>执行：</p>
-<pre class="line-numbers language-none"><code class="language-none">export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NVM_NODEJS_ORG_MIRROR</span><span class="token operator">=</span>https://npm.taobao.org/mirrors/node<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>将下载来源设置为国内淘宝镜像。</p>
-<h2 id="nvm-安装-nodejs">nvm 安装 nodejs<a class="header-anchor" href="#nvm-安装-nodejs"></a></h2>
+<h3 id="nvm-安装-nodejs">nvm 安装 nodejs<a class="header-anchor" href="#nvm-安装-nodejs"></a></h3>
 <p>执行：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 安装node稳定版</span>
 nvm <span class="token function">install</span> stable
 <span class="token comment"># 安装node最新版</span>
 nvm <span class="token function">install</span> node<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>就是这么简单～～～</p>
-<h2 id="nvm-基本使用">nvm 基本使用<a class="header-anchor" href="#nvm-基本使用"></a></h2>
-<p>详见：<a href="https://github.com/creationix/nvm#usage">https://github.com/creationix/nvm#usage</a>
-我自己使用的就几个命令，其实也就掌握这几个命令就够用了：</p>
+<p>就是这么简单～</p>
+<h3 id="nvm-基本使用">nvm 基本使用<a class="header-anchor" href="#nvm-基本使用"></a></h3>
+<p>详见：<a href="https://github.com/creationix/nvm#usage">https://github.com/creationix/nvm#usage</a></p>
+<p>我自己使用的就几个命令，其实也就掌握这几个命令就够用了：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">nvm list <span class="token comment"># 展示可下载的版本</span>
 nvm <span class="token function">install</span> <span class="token number">10.10</span>.0 <span class="token comment"># 安装对应版本</span>
 nvm use <span class="token number">10.10</span>.0 <span class="token comment"># 使用对应版本</span>
 nvm <span class="token function">which</span> <span class="token number">10.10</span>.0 <span class="token comment"># 查看对应版本的安装目录</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="配置-npm-国内源">配置 npm 国内源<a class="header-anchor" href="#配置-npm-国内源"></a></h2>
+<h3 id="配置-npm-国内源">配置 npm 国内源<a class="header-anchor" href="#配置-npm-国内源"></a></h3>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">npm</span> <span class="token function">install</span> -g mirror-config-china --registry<span class="token operator">=</span>http://registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>一下就可以配置好 好几个国内源～</p>
 <p>That’s All.</p>
-<h1>Windows 安装 nvm</h1>
-<h2 id="下载安装">下载安装<a class="header-anchor" href="#下载安装"></a></h2>
+<h2 id="Windows-安装-nvm">Windows 安装 nvm<a class="header-anchor" href="#Windows-安装-nvm"></a></h2>
+<h3 id="下载安装">下载安装<a class="header-anchor" href="#下载安装"></a></h3>
 <p><a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a></p>
 <p>在 Releases 中下载最新版的 nvm-windows，如果下载的是 <code>nvm-noinstall.zip</code>，则需要配置环境变量。<br>
 这里直接安装了 setup 版，安装之后在 cmd 中输入 <code>nvm</code>，有显示即成功安装。</p>
-<h2 id="配置国内源">配置国内源<a class="header-anchor" href="#配置国内源"></a></h2>
+<h3 id="配置国内源">配置国内源<a class="header-anchor" href="#配置国内源"></a></h3>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm node_mirror https://npm.taobao.org/mirrors/node/
 nvm npm_mirror https://npm.taobao.org/mirrors/npm/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>可设置 nvm 从国内下载安装。安装 nodejs 可见上一节：[# 配置 npm 国内源]</p>
+<p>可设置 nvm 从国内下载安装。安装 nodejs 可见上一节：<a href="#%E9%85%8D%E7%BD%AE-npm-%E5%9B%BD%E5%86%85%E6%BA%90">配置 npm 国内源</a></p>
 ]]></content>
       <categories>
         <category>Nodejs</category>
@@ -603,40 +629,49 @@ nvm npm_mirror https://npm.taobao.org/mirrors/npm/<span aria-hidden="true" class
   <entry>
     <title>为什么我们需要配置环境变量</title>
     <url>//posts/why-do-we-need-to-configure-environment-variables/</url>
-    <content><![CDATA[<p>之前学习 Java 的时候，感觉最难做的一件事情就是配置 jdk 的环境。那叫一个困难啊，Path, JAVA_HOME, CLASSPATH 印象深刻的很…（但是现在 JDK11 不用再配置 classpath 了，jre 和 jdk 合并了）就在去年暑假，要<a href="/posts/install-opencv-windows-vs/">配 OpenCV 的环境</a>，要调的东西还是比较多的，对环境配置的概念又加深了。现在懂的多了，配过的环境也多了，配过的平台也不算少。现在就想分享一下 关于我对配环境这件事情的感受。</p>
+    <content><![CDATA[<p>之前学习 Java 的时候，感觉最难做的一件事情就是配置 jdk 的环境。那叫一个困难啊，Path、JAVA_HOME、CLASSPATH 印象深刻的很…（但是现在 JDK11 不用再配置 classpath 了，jre 和 jdk 合并了）。就在去年暑假，要 <a href="/posts/install-opencv-windows-vs/">配 OpenCV 的环境</a>，要调的东西还是比较多的，对环境配置的概念又加深了。</p>
+<p>现在懂的多了，配过的环境也多了，配过的平台也不算少。现在就想分享一下 「关于我对配环境这件事情的感受」。</p>
 <p>那就以 Windows 来说说环境配置的问题，Linux 下的其实差不多。</p>
 <a id="more"></a>
 <h2 id="为什么需要环境变量">为什么需要环境变量<a class="header-anchor" href="#为什么需要环境变量"></a></h2>
-<p>我记得计算机网络的老师在给我们讲 ip/mac 地址 的时候提过一个例子：</p>
-<blockquote>
-<p>你刚到这个班，班里都是新同学，你想找班里的小明同学该怎么办？答：在班里喊一声小明。这当然可以，小明肯定会响应你。对局域网来说也是如此。但是，如果有一张座位表，上面有每个同学的座位信息，你想找到某个人是不是就很简单了。</p>
-</blockquote>
-<p>环境变量也是如此，也很适合这个例子。当用户在 cmd 中执行一个命令的时候，命令行的解释器就会去找你要执行的命令。那么是去哪里找可执行的命令呢？两个地方：</p>
+<p>我记得计算机网络的老师在给我们讲 ip/mac 地址的时候提过一个例子：</p>
+<p>** 问：** 你刚到这个班，班里都是新同学，你想找班里的小明同学该怎么办？<br>
+** 答：** 在班里喊一声小明。这当然可以，小明肯定会响应你。在网络上来说也是如此。但是，如果有一张座位表，上面有每个同学的座位信息，你想找到某个人是不是就很简单了。</p>
+<p>环境变量也是如此，也很适合这个例子。</p>
+<p>当用户在 cmd 中执行一个命令的时候，命令行的解释器就会去找你要执行的命令。那么是去哪里找可执行的命令呢？两个地方：</p>
 <ul>
 <li>当前路径下的可执行文件</li>
 <li>环境变量 Path 中保存的路径下的可执行文件（包括系统变量和用户变量）</li>
 </ul>
 <h2 id="举个例子">举个例子<a class="header-anchor" href="#举个例子"></a></h2>
-<p>举个栗子：<code>win + r</code> 大家都用过吧，经常用来快速运行某些程序，比如打开命令行窗口我们就会用到：
-<img data-src="https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccafd6ee176b.png" alt="打开 cmd"></p>
-<p>那电脑是怎么知道 cmd 在哪儿的呢？<img data-src="https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccafe08db5ec.png" alt="在Everything搜索cmd.exe">
-能看到 <code>cmd.exe</code> 是在 <code>C:\Windows\System32\</code> 和 <code>C:\Windows\SysWOW64\</code> 这两个路径下都有的，那就是说，电脑是去这两个路径之一打开的 <code>cmd.exe</code>，那我们来看一下，系统环境变量里到底有没有这两个路径的其中一个呢？</p>
-<p>查看一下系统的环境变量中的 Path 是不是有这个路径：在小娜的输入框里输入 <code>path</code> 或者 <code>环境</code> 可以直接跳转到修改环境变量的地方，不行的话只能在计算机图标右键属性了。<img data-src="https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccb0002c8879.png" alt="我的环境变量">
-可以验证了吧～
+<p>举个栗子：</p>
+<p><code>win + r</code> 大家都用过吧，经常用来快速运行某些程序，比如打开命令行窗口我们就会用到：</p>
+<p><img data-src="https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccafd6ee176b.png" alt="打开 cmd"></p>
+<p>那电脑是怎么知道 cmd 在哪儿的呢？</p>
+<p><img data-src="https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccafe08db5ec.png" alt="在Everything搜索cmd.exe"></p>
+<p>能看到 <code>cmd.exe</code> 是在 <code>C:\Windows\System32\</code> 和 <code>C:\Windows\SysWOW64\</code> 这两个路径下都有的，那就是说，电脑是去这两个路径之一打开的 <code>cmd.exe</code>，那我们来看一下，系统环境变量里到底有没有这两个路径的其中一个呢？</p>
+<p>查看一下系统的环境变量中的 Path 是不是有这个路径：在小娜的输入框里输入 <code>path</code> 或者「环境」可以直接跳转到修改环境变量的地方，不行的话只能在计算机图标右键属性了。</p>
+<p><img data-src="https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccb0002c8879.png" alt="我的环境变量"></p>
+<p>可以发现有，验证了我们的想法～
 所以这个流程我们也弄清楚了：</p>
 <pre class="line-numbers language-plaintxt" data-language="plaintxt"><code class="language-plaintxt">你在运行窗口输入 cmd：
     -&gt; 解释器去寻找这个文件：
         -&gt; 先寻找当前路径下是否有
         -&gt; 再寻找环境变量中的Path保存的路径是否有
     -&gt; 没找到就报没找到<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>所以如果你没配置某个可执行文件到 Path 里，那你就得手动输入该文件的绝对路径才能打开了。比如说 Java…</p>
+<p>所以如果你没配置某个可执行文件到 Path 里，那你就得手动输入该文件的绝对路径才能打开了。</p>
 <h2 id="Path-外的其他字段">Path 外的其他字段<a class="header-anchor" href="#Path-外的其他字段"></a></h2>
-<p>其他的一些字段也是方便我们使用的，想用的时候使用 <code>%字段名%</code> 就能调用了。比如说我在系统设置里设置了 <code>CMDER_ROOT</code> 字段，将其赋值为 <code>D:\0ArtinD\cmder</code>，这是一个路径。<img data-src="https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccb026a1dbfb.png" alt="设置 CMDER_ROOT">
-然后我想打开该路径，就可以使用该字段名啦：
+<p>其他的一些字段也是方便我们使用的，想用的时候使用 <code>%字段名%</code> 就能调用了。比如说我在系统设置里设置了 <code>CMDER_ROOT</code> 字段，将其赋值为 <code>D:\0ArtinD\cmder</code>，这是一个路径。
+<img data-src="https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccb026a1dbfb.png" alt="设置 CMDER_ROOT"></p>
+<p>然后我想打开该路径，就可以使用该字段名啦：
 <img data-src="https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccb03181acf3.png" alt="Snipaste_2019-05-02_22-47-37"></p>
 <p>简单来说！就是编程中的变量名。定义一个常量，想用的时候可以使用。</p>
+<p>在 Linux Shell 中，我们可以使用 <code>$VAR</code> 来使用一个变量。</p>
+<p>在 PowerShell 中，我们可以使用 <code>$env:VAR</code> 来使用一个变量。</p>
 <h2 id="用户变量和系统变量">用户变量和系统变量<a class="header-anchor" href="#用户变量和系统变量"></a></h2>
-<p>操作系统中有用户的概念。用户变量只对当前登录的用户生效。系统变量对当前计算机的所有用户生效。</p>
+<p>操作系统中有用户的概念。</p>
+<p>用户变量只对当前登录的用户生效。<br>
+系统变量对当前计算机的所有用户生效。</p>
 ]]></content>
       <categories>
         <category>思考</category>
@@ -654,7 +689,7 @@ nvm npm_mirror https://npm.taobao.org/mirrors/npm/<span aria-hidden="true" class
 谈一下输入输出、分支流程、基本指令，再谈一下做过的几个题目。</p>
 <a id="more"></a>
 <h2 id="输入输出">输入输出<a class="header-anchor" href="#输入输出"></a></h2>
-<h3 id="整数的ASCII码值转为数值">整数的 ASCII 码值转为数值<a class="header-anchor" href="#整数的ASCII码值转为数值"></a></h3>
+<h3 id="整数的-ASCII-码值转为数值">整数的 ASCII 码值转为数值<a class="header-anchor" href="#整数的-ASCII-码值转为数值"></a></h3>
 <ul>
 <li>0-9  30H-39H<br>
 可以减去 30H 或者 与上 1111 (15)</li>
@@ -786,16 +821,18 @@ FF:
 RET<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="循环分支结构">循环分支结构<a class="header-anchor" href="#循环分支结构"></a></h2>
 <h3 id="比较">比较<a class="header-anchor" href="#比较"></a></h3>
-<p>最重要的就是 <code>比较</code> 了，
-<code>TEST</code>,<code>AND</code>,<code>CMP</code>,<code>SUB</code> 还有等等等等… 都可以拿来做比较。</p>
+<p>最重要的就是 比较，</p>
+<p><code>TEST</code>，<code>AND</code>，<code>CMP</code>，<code>SUB</code> 还有等等等等… 都可以拿来做比较。</p>
 <h4 id="TEST-指令">TEST 指令<a class="header-anchor" href="#TEST-指令"></a></h4>
-<p>指令格式： <code>TEST DST, SRC</code>
-<code>TEST</code> 指令可以被用来检测某一位是否为 1，因为其本质就是与运算，也就是 <code>DST &amp; SRC</code>，但是不改变源操作数和目标操作数。如 <code>00010000 &amp; X</code> 的结果就表示 X 的倒数第五位是否为 1，要是与出来为 0，就说明这一位为 0，否则为 1。</p>
+<p>指令格式：<code>TEST DST, SRC</code>
+<code>TEST</code> 指令可以被用来检测某一位是否为 1，因为其本质就是与运算，也就是 <code>DST &amp; SRC</code>，但是不改变源操作数和目标操作数。</p>
+<p>如 <code>00010000 &amp; X</code> 的结果就表示 X 的倒数第五位是否为 1，要是与出来为 0，就说明这一位为 0，否则为 1。</p>
 <h4 id="CMP-指令">CMP 指令<a class="header-anchor" href="#CMP-指令"></a></h4>
-<p>指令格式：<code>CMP DST, SRC</code> 可以比较两个数的大小，本质就是减法运算，也就是 <code>DST - SRC</code>，但是不改变源操作数和目标操作数。</p>
+<p>指令格式：<code>CMP DST, SRC</code></p>
+<p>可以比较两个数的大小，本质就是减法运算，也就是 <code>DST - SRC</code>，但是不改变源操作数和目标操作数。</p>
 <h3 id="跳转指令">跳转指令<a class="header-anchor" href="#跳转指令"></a></h3>
-<p>这里的就是判断被比较的两个数的具体大小，然后决定执行哪一句。
-C-style 的语言中是这样：</p>
+<p>这里的就是判断被比较的两个数的具体大小，然后决定执行哪一句。</p>
+<p>C-style 的语言中是这样：</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">&gt;</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment">// a &gt; b 的话执行这儿</span>
 <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
@@ -1053,7 +1090,7 @@ Arch WSL 真的是秒开哦～
 <a id="more"></a>
 <h2 id="下载安装-Arch-WSL">下载安装 Arch WSL<a class="header-anchor" href="#下载安装-Arch-WSL"></a></h2>
 <p>这里是作者的安装教程：<a href="https://github.com/yuk7/ArchWSL/wiki">https://github.com/yuk7/ArchWSL/wiki</a></p>
-<p>我选择的是传统方式安装 (不使用 AppX 方式)：</p>
+<p>我选择的是传统方式安装（不使用 AppX 方式）：</p>
 <ol>
 <li>在 <a href="https://github.com/yuk7/ArchWSL/releases">Release</a> 下载最新版的 <code>Arch.zip</code></li>
 <li>解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 <code>Program Files</code> 等目录中。</li>
@@ -1063,8 +1100,8 @@ Arch WSL 真的是秒开哦～
 <h2 id="配置软件仓库">配置软件仓库<a class="header-anchor" href="#配置软件仓库"></a></h2>
 <h3 id="Arch-Linux-软件仓库国内镜像">Arch Linux 软件仓库国内镜像<a class="header-anchor" href="#Arch-Linux-软件仓库国内镜像"></a></h3>
 <p>编辑 <code>/etc/pacman.d/mirrorlist</code>，里面有注释了的 <code>China</code> 的镜像，选一个你喜欢的取消注释就可以了。然后更新软件包缓存，执行： <code>pacman -Syyu</code></p>
-<p>其他跟镜像有关的可以看这里：<br>
-<a href="https://wiki.archlinux.org/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Mirrors_(简体中文)</a></p>
+<p>其他跟镜像有关的可以看这里：</p>
+<p><a href="https://wiki.archlinux.org/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Mirrors_(简体中文)</a></p>
 <h3 id="添加-ArchlinuxCN-源">添加 ArchlinuxCN 源<a class="header-anchor" href="#添加-ArchlinuxCN-源"></a></h3>
 <blockquote>
 <p>Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体 / 美化包等。</p>
@@ -1092,9 +1129,9 @@ pacman -Syy &amp;&amp; pacman -S archlinuxcn-keyring<span aria-hidden="true" cla
 <p>检查本地软件包的更新:</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">yay<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>换成国内 AUR 源:</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># yay --save --aururl "地址"
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># yay --save --aururl [url]
 yay --save --aururl https://aur.tuna.tsinghua.edu.cn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>yay 的配置文件路径： <code>~/.config/yay/config.json</code></p>
+<p>yay 的配置文件路径：<code>~/.config/yay/config.json</code></p>
 <p>查看 yay 配置：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">yay -P -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>查看 yay 帮助：</p>
@@ -1103,11 +1140,10 @@ yay --save --aururl https://aur.tuna.tsinghua.edu.cn<span aria-hidden="true" cla
 <p>刚安装好的 Arch 是 root 用户，为了不至于权限太大误伤系统，可以先创建一个普通用户。</p>
 <p>添加一个用户：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">useradd -m artin
-# 参数解析
-# -m 参数能帮助创建 /home/artin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+# -m 参数能帮助创建 /home/artin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>设置用户密码：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">passwd artin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>在下一步之前，要先把默认编辑器设置成 vim，因为用不来默认的 vi…</p>
+<p>在下一步之前，可以先把系统默认编辑器设置成 vim，个人觉得还是比 vi 和 nano 好用多了…</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">export EDITOR=vim;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>你也可以设置成自己喜欢的编辑器。</p>
 <p>让用户可以执行 sudo 命令，这一步不能省略。使用如下系统自带命令修改 <code>sudoers</code> 文件。</p>
@@ -1117,8 +1153,8 @@ yay --save --aururl https://aur.tuna.tsinghua.edu.cn<span aria-hidden="true" cla
 <p><img data-src="https://i.lengthm.in/posts/install-arch-wsl/36b5901fa80f.png" alt="36b5901fa80f.png"></p>
 <p>这里我只把自己的用户名写进去了，你也可以设置一个用户组的权限，然后将你的用户加入到该用户组。</p>
 <h2 id="切换-WSL-默认用户">切换 WSL 默认用户<a class="header-anchor" href="#切换-WSL-默认用户"></a></h2>
-<p>在 cmd 中打开你的安装目录：
-<img data-src="https://i.lengthm.in/posts/install-arch-wsl/c8979e233688.png" alt="c8979e233688.png"></p>
+<p>在 cmd 中打开你的安装目录：</p>
+<p><img data-src="https://i.lengthm.in/posts/install-arch-wsl/c8979e233688.png" alt="c8979e233688.png"></p>
 <p>执行：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">Arch.exe config --default-user artin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="玩转-Arch-WSL">玩转 Arch WSL<a class="header-anchor" href="#玩转-Arch-WSL"></a></h2>
@@ -1233,20 +1269,20 @@ yay --save --aururl https://aur.tuna.tsinghua.edu.cn<span aria-hidden="true" cla
 <h3 id="安装网络相关的工具">安装网络相关的工具<a class="header-anchor" href="#安装网络相关的工具"></a></h3>
 <blockquote>
 <p>参考 <a href="http://www.linuxdiyf.com/view_218403.html">http://www.linuxdiyf.com/view_218403.html</a>
-安装 archlinux 以后没有 ifconfig,route ,nslookup 等命令</p>
+安装 archlinux 以后没有 ifconfig, route, nslookup 等命令</p>
 </blockquote>
 <ul>
-<li>ifconfig,route 在 net-tools 中</li>
-<li> nslookup,dig 在 dnsutils 中</li>
-<li> ftp,telnet 等在 inetutils 中</li>
+<li>ifconfig、route 在 net-tools 中</li>
+<li> nslookup、dig 在 dnsutils 中</li>
+<li> ftp、telnet 等在 inetutils 中</li>
 <li> ip 命令在 iproute2 中 </li>
 </ul>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">pacman -S net-tools dnsutils inetutils iproute2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="配置基本环境">配置基本环境<a class="header-anchor" href="#配置基本环境"></a></h3>
 <p>安装 fakeroot、binutils 等打包基本工具</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">pacman -S base-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>我这里会提示 <code>fakeroot</code> 被 ignore 了，因为 <code>/etc/pacman.conf</code> 里写了～选了 n
-然后回车就好了～不输入数字的话默认会安装 <code>base-devel</code> 里的所有包。</p>
+<p>我这里会提示 <code>fakeroot</code> 被 ignore 了，因为 <code>/etc/pacman.conf</code> 里写了～</p>
+<p>不输入数字的话默认会安装 <code>base-devel</code> 里的所有包。</p>
 <h2 id="安装配置-zsh">安装配置 zsh<a class="header-anchor" href="#安装配置-zsh"></a></h2>
 <h3 id="安装-zsh-和-oh-my-zsh">安装 zsh 和 oh-my-zsh<a class="header-anchor" href="#安装-zsh-和-oh-my-zsh"></a></h3>
 <p><code>zsh</code> 又好看又好用又强大～</p>
@@ -1270,15 +1306,17 @@ export all_proxy="http://127.0.0.1:7890"<span aria-hidden="true" class="line-num
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">alias vizsh="micro ~/.zshrc"
 alias ohmyzsh="micro ~/.oh-my-zsh"
 alias rezsh="source ~/.zshrc"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>这里的 <code>micro</code> 是我在用的编辑器：<a href="https://github.com/zyedidia/micro"><img data-src="https://gh-card.dev/repos/zyedidia/micro.svg" alt="zyedidia/micro"></a>
-你可以改成你喜欢的， whatever.</p>
+<p>这里的 <code>micro</code> 是我在用的编辑器：</p>
+<p><a href="https://github.com/zyedidia/micro"><img data-src="https://gh-card.dev/repos/zyedidia/micro.svg" alt="zyedidia/micro"></a></p>
+<p>你可以改成你喜欢的， whatever.</p>
 <p>保存后要在终端里激活一下 zsh 的配置文件：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">source ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>即可～</p>
 <h3 id="配置-PATH-变量">配置 PATH 变量<a class="header-anchor" href="#配置-PATH-变量"></a></h3>
-<p>WSL 中的环境变量会来自 Windows 系统，所以如果你两边都装了 npm 或者 python，可能会引起各种报错…
-<img data-src="https://i.lengthm.in/posts/install-arch-wsl/b8ea5455abef.png" alt="b8ea5455abef.png"></p>
-<p>所以手动的精简一些环境变量，从上面这个图中拿下来一点就好啦。编辑 <code>~/.zshrc</code>：</p>
+<p>WSL 中的环境变量会来自 Windows 系统，所以如果你两边都装了 npm 或者 python，可能会引起各种报错…</p>
+<p><img data-src="https://i.lengthm.in/posts/install-arch-wsl/b8ea5455abef.png" alt="b8ea5455abef.png"></p>
+<p>所以手动的精简一些环境变量，从上面这个图中拿下来一点就好啦。</p>
+<p>编辑 <code>~/.zshrc</code>：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">vizsh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>添加：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
@@ -1287,17 +1325,17 @@ export PATH="/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$PATH"
 export PATH="/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:$PATH"
 # 为了使用 vscode 的 `code .`
 export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这里的都是我需要的，你可以根据自己的需要来判断用什么。
-<img data-src="https://i.lengthm.in/posts/install-arch-wsl/2d667f7ba442.png" alt="2d667f7ba442.png"></p>
+<p>这里的都是我需要的，你可以根据自己的需要来判断用什么。</p>
+<p><img data-src="https://i.lengthm.in/posts/install-arch-wsl/2d667f7ba442.png" alt="2d667f7ba442.png"></p>
 <h3 id="zsh-的其他的一些配置">zsh 的其他的一些配置<a class="header-anchor" href="#zsh-的其他的一些配置"></a></h3>
 <p>配置 <code>oh-my-zsh</code> 的自带几个插件：</p>
 <ul>
 <li>自带插件列表：<a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins">https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins</a></li>
-<li> 插件 Wiki:<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins">https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins</a></li>
+<li> 插件 Wiki：<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins">https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins</a></li>
 </ul>
 <p>找到下面这一行，填入即可。</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">plugins=(git npm node history)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>配置 不匹配通配符：这个蛮有用的，比如想用 <code>find *.txt</code> 的时候。</p>
+<p>配置 zsh「不匹配通配符」：这个蛮有用的，比如想用 <code>find *.txt</code> 的时候。</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">setopt no_nomatch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>设置几个顺手的函数：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">proxy () {
@@ -1334,7 +1372,7 @@ git-config() {
 <p>上面的脚本中的 <code>http</code> 命令来自 <a href="https://httpie.org/">httpie</a> 。<br>
 安装：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">pacman -S httpie<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="在-VSCode-中使用-Wsl">在 VSCode 中使用 Wsl<a class="header-anchor" href="#在-VSCode-中使用-Wsl"></a></h2>
+<h2 id="在-VSCode-中使用-WSL">在 VSCode 中使用 WSL<a class="header-anchor" href="#在-VSCode-中使用-WSL"></a></h2>
 <p>待补充</p>
 <h2 id="更多优化配置">更多优化配置<a class="header-anchor" href="#更多优化配置"></a></h2>
 <p>可参考知乎这篇：<a href="https://zhuanlan.zhihu.com/p/51270874#%E4%B8%89%E3%80%81%E4%BD%BF%E7%94%A8%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE">利用 WSL 打造 Arch 开发环境</a></p>

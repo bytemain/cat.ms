@@ -360,7 +360,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>666</span>
+      <span>667</span>
     </span>
 </div>
 
@@ -373,11 +373,11 @@
     <div class="post-body" itemprop="articleBody">
         <p>hexo 的原生主题自带了谷歌分析，而谷歌分析在国内水土不服。琢磨琢磨，把 next 主题上的腾讯分析添加到了正在用的 yelee 主题上。顺带一提，腾讯分析真的是用过的最好用的站点统计软件。</p>
 <a id="more"></a>
-<p>用的主题是 yelee，没有腾讯分析，自己加了一个。在<code>主题目录</code>下操作。在<code>_config.yml</code> 中添加</p>
+<p>用的主题是 yelee，没有腾讯分析，自己加了一个。在 <code>主题目录</code> 下操作。在 <code>_config.yml</code> 中添加</p>
 <pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">tencent-analytics</span><span class="token punctuation">:</span>
-<span class="token comment"># 在冒号后面配置你的腾讯分析id，id就是获取到的代码的数字部分</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token comment"># 在冒号后面配置你的腾讯分析 id，id 就是获取到的代码的数字部分</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>在 <code>layout/_partial/</code> 中创建一个新的 <code>tencent-analytics.ejs</code> 文件，
-加入如下代码</p>
+加入如下代码：</p>
 <pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs"><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>tencent_analytics<span class="token punctuation">)</span><span class="token punctuation">{</span> </span><span class="token delimiter punctuation">%&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://tajs.qq.com/stats?sId=<span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%=</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>tencent_analytics </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 
@@ -386,9 +386,9 @@
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 <span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token punctuation">}</span> </span><span class="token delimiter punctuation">%&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上面的代码包括了腾讯分析了。在 <code>layout/_partial/</code> 中修改 <code>head.ejs</code>：</p>
-<pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs">#随便找一行添加如下代码，让用户在打开网页时加载腾讯分析。
+<pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs"># 随便找一行添加如下代码，让用户在打开网页时加载腾讯分析。
 <span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%-</span><span class="token language-javascript"> <span class="token function">partial</span><span class="token punctuation">(</span><span class="token string">'tencent-analytics'</span><span class="token punctuation">)</span> </span><span class="token delimiter punctuation">%&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>然后在主题的<code>_config.yml</code> 中输入你的腾讯分析 id。执行</p>
+<p>然后在主题的 <code>_config.yml</code> 中输入你的腾讯分析 id。执行</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo clean
 hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>就 ok 了。</p>
