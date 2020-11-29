@@ -24,10 +24,10 @@ Arch WSL 真的是秒开哦~
 
 这里是作者的安装教程：<https://github.com/yuk7/ArchWSL/wiki>
 
-我选择的是传统方式安装(不使用AppX方式)：
+我选择的是传统方式安装（不使用AppX方式）：
 
-1. 在[Release](https://github.com/yuk7/ArchWSL/releases)下载最新版的 `Arch.zip`
-2. 解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 `Program Files`等目录中。
+1. 在 [Release](https://github.com/yuk7/ArchWSL/releases) 下载最新版的 `Arch.zip`
+2. 解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 `Program Files` 等目录中。
 3. 双击解压好的 `Arch.exe` 进行安装，这个 **.exe 的名字** 就是要创建的 **WSL实例的名字**，改不同的名字就能创建多个 Arch WSL。
 
 安装好之后，进行配置。
@@ -40,6 +40,7 @@ Arch WSL 真的是秒开哦~
 然后更新软件包缓存，执行： `pacman -Syyu`
 
 其他跟镜像有关的可以看这里：  
+
 <https://wiki.archlinux.org/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>
 
 ### 添加 ArchlinuxCN 源
@@ -92,11 +93,11 @@ yay
 换成国内 AUR 源:
 
 ```sh
-# yay --save --aururl "地址"
+# yay --save --aururl [url]
 yay --save --aururl https://aur.tuna.tsinghua.edu.cn
 ```
 
-yay 的配置文件路径： `~/.config/yay/config.json`
+yay 的配置文件路径：`~/.config/yay/config.json`
 
 查看 yay 配置：
 
@@ -118,7 +119,6 @@ man yay
 
 ```sh
 useradd -m artin
-# 参数解析
 # -m 参数能帮助创建 /home/artin
 ```
 
@@ -128,7 +128,7 @@ useradd -m artin
 passwd artin
 ```
 
-在下一步之前，要先把默认编辑器设置成 vim，因为用不来默认的 vi...
+在下一步之前，可以先把系统默认编辑器设置成 vim，个人觉得还是比 vi 和 nano 好用多了...
 
 ```sh
 export EDITOR=vim;
@@ -156,6 +156,7 @@ artin ALL=(ALL) ALL
 ## 切换 WSL 默认用户
 
 在 cmd 中打开你的安装目录：
+
 ![c8979e233688.png](https://i.lengthm.in/posts/install-arch-wsl/c8979e233688.png)
 
 执行：
@@ -202,13 +203,13 @@ Arch.exe config --default-user artin
 ### 安装网络相关的工具
 
 > 参考 <http://www.linuxdiyf.com/view_218403.html>
-> 安装archlinux 以后没有 ifconfig,route ,nslookup 等命令
+> 安装 archlinux 以后没有 ifconfig, route, nslookup 等命令
 
-- ifconfig,route在net-tools中
-- nslookup,dig在dnsutils中
-- ftp,telnet等在inetutils中
-- ip命令在iproute2中
-  
+- ifconfig、route 在 net-tools 中
+- nslookup、dig 在 dnsutils 中
+- ftp、telnet 等在 inetutils 中
+- ip 命令在 iproute2 中
+
 ```sh
 pacman -S net-tools dnsutils inetutils iproute2
 ```
@@ -221,8 +222,9 @@ pacman -S net-tools dnsutils inetutils iproute2
 pacman -S base-devel
 ```
 
-我这里会提示 `fakeroot` 被 ignore 了，因为 `/etc/pacman.conf` 里写了~ 选了 n
-然后回车就好了~ 不输入数字的话默认会安装 `base-devel` 里的所有包。
+我这里会提示 `fakeroot` 被 ignore 了，因为 `/etc/pacman.conf` 里写了~
+
+不输入数字的话默认会安装 `base-devel` 里的所有包。
 
 ## 安装配置 zsh
 
@@ -269,7 +271,9 @@ alias rezsh="source ~/.zshrc"
 ```
 
 这里的 `micro` 是我在用的编辑器：
+
 [![zyedidia/micro](https://gh-card.dev/repos/zyedidia/micro.svg)](https://github.com/zyedidia/micro)
+
 你可以改成你喜欢的， whatever.
 
 保存后要在终端里激活一下 zsh 的配置文件：
@@ -283,9 +287,11 @@ source ~/.zshrc
 ### 配置 PATH 变量
 
 WSL 中的环境变量会来自 Windows 系统，所以如果你两边都装了 npm 或者 python，可能会引起各种报错...
+
 ![b8ea5455abef.png](https://i.lengthm.in/posts/install-arch-wsl/b8ea5455abef.png)
 
 所以手动的精简一些环境变量，从上面这个图中拿下来一点就好啦。
+
 编辑 `~/.zshrc`：
 
 ```sh
@@ -304,6 +310,7 @@ export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PA
 ```
 
 这里的都是我需要的，你可以根据自己的需要来判断用什么。
+
 ![2d667f7ba442.png](https://i.lengthm.in/posts/install-arch-wsl/2d667f7ba442.png)
 
 ### zsh 的其他的一些配置
@@ -311,7 +318,7 @@ export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PA
 配置 `oh-my-zsh` 的自带几个插件：
 
 - 自带插件列表：<https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins>
-- 插件Wiki:<https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins>
+- 插件Wiki：<https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins>
 
 找到下面这一行，填入即可。
 
@@ -319,7 +326,7 @@ export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PA
 plugins=(git npm node history)
 ```
 
-配置 不匹配通配符：
+配置 zsh「不匹配通配符」：
 这个蛮有用的，比如想用 `find *.txt` 的时候。
 
 ```sh
@@ -369,7 +376,7 @@ git-config() {
 pacman -S httpie
 ```
 
-## 在 VSCode 中使用 Wsl
+## 在 VSCode 中使用 WSL
 
 待补充
 
