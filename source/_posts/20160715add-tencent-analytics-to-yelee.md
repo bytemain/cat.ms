@@ -18,16 +18,16 @@ hexo 的原生主题自带了谷歌分析,而谷歌分析在国内水土不服�
 <!-- more -->
 
 用的主题是 yelee，没有腾讯分析，自己加了一个。
-在`主题目录`下操作。
-在`_config.yml`中添加
+在 `主题目录` 下操作。
+在 `_config.yml` 中添加
 
 ```yml
 tencent-analytics:
-# 在冒号后面配置你的腾讯分析id，id就是获取到的代码的数字部分
+# 在冒号后面配置你的腾讯分析 id，id 就是获取到的代码的数字部分
 ```
 
-在`layout/_partial/`中创建一个新的`tencent-analytics.ejs`文件,
-加入如下代码
+在 `layout/_partial/` 中创建一个新的 `tencent-analytics.ejs` 文件,
+加入如下代码：
 
 ```ejs
 <% if (theme.tencent_analytics){ %>
@@ -40,14 +40,14 @@ tencent-analytics:
 ```
 
 上面的代码包括了腾讯分析了。
-在`layout/_partial/`中修改`head.ejs`：
+在 `layout/_partial/` 中修改 `head.ejs`：
 
 ```ejs
-#随便找一行添加如下代码，让用户在打开网页时加载腾讯分析。
+# 随便找一行添加如下代码，让用户在打开网页时加载腾讯分析。
 <%- partial('tencent-analytics') %>
 ```
 
-然后在主题的`_config.yml`中输入你的腾讯分析 id。
+然后在主题的 `_config.yml` 中输入你的腾讯分析 id。
 执行
 
 ```
