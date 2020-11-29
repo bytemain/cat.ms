@@ -5,7 +5,7 @@ const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate();
 
-const prefix = `${year}${month}${day}`;
+let prefix = `${year}${month}${day}`;
 const args = process.argv.slice(2);
 
 let type = "post";
@@ -33,6 +33,9 @@ console.log(`type:`, type);
 console.log(`title:`, title);
 let exec;
 if (type !== "page") {
+  if (title[0] >= "0" && title[0] <= "9") {
+    prefix = prefix + "-";
+  }
   let slug = `${prefix}${title}`;
   exec = execa(`yarn hexo new ${type} ${title} -s ${slug}`);
 } else {
