@@ -92,9 +92,9 @@ sitemap:
 
 symbols_count_time:
   symbols: true
-  time: false
-  total_symbols: false
-  total_time: false
+  time: true
+  total_symbols: true
+  total_time: true
   exclude_codeblock: true
   awl: 4
   wpm: 275
@@ -286,16 +286,7 @@ theme_config:
   symbols_count_time:
     separated_meta: true
     item_text_post: true
-    item_text_total: false
-
-  reward_settings:
-    enable: true
-    animation: false
-    comment: 如果您觉得有帮助的话，可以请我喝瓶饮料~
-
-  reward:
-    wechatpay: https://i.lengthm.in/qiafan/wechatpay.png
-    alipay: https://i.lengthm.in/qiafan/alipay.jpg
+    item_text_total: true
 
   related_posts:
     enable: true

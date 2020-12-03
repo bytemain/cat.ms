@@ -17,16 +17,6 @@ toc:
   color: #000;
   font: 200 16px/1.5 Helvetica, Verdana, sans-serif;
   padding-bottom: 0.5em;
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
-}
-
-.post-body li:hover {
-  font-size: 25px;
-  background: #f6f6f6;
 }
 
 .post-body li > .name {
