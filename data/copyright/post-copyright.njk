@@ -1,6 +1,6 @@
 {#
   移植自 http://moxfive.xyz/2016/06/14/duoshuo-disqus-comment-count/#footer
-  基于 https://github.com/theme-next/hexo-theme-next
+  基于 https://github.com/next-theme/hexo-theme-next
 #}
 
 {% set ccLicense = "署名-非商用-相同方式共享 4.0" %}
@@ -10,16 +10,16 @@
 
 {% set postURL = page.url or page.permalink %}
 
-{# 
-  设置你自己的源文件仓库信息 
+{#
+  设置你自己的源文件仓库信息
 #}
 {% set username = "lengthmin" %}
 {% set repository = "lengthmin.me" %}
 {% set branch = "hexo" %}
 
-{# 
-  设置 copyright 的文字提示 
-  __("post.xxxx") 获取 language 文件中的字段  
+{#
+  设置 copyright 的文字提示
+  __("post.xxxx") 获取 language 文件中的字段
 #}
 {% set authorText = "文章作者" %}
 {% set titleText = "文章标题" %}
@@ -75,40 +75,60 @@
 </ul>
 
 <script>
-  var x = 10;
-  var y = 20;
   var copyButton = document.querySelector('.copy-path');
   var copyTooltip = document.querySelector('.copy-tooltip');
   let timeout;
   copyButton.addEventListener('click', function (e) {
-    var ta = document.createElement('textarea');
-    ta.contentEditable = true;
-    ta.readOnly = false;
-    ta.value = "原文作者：{{ page.author or author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}";
-    ta.setAttribute('readonly', 'readonly');
-    document
-      .body
-      .appendChild(ta);
-    ta.select();
-    var result = document.execCommand('copy');
+    const text = "原文作者：{{ page.author or author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}";
+
     if (copyTooltip.hasChildNodes()) {
       copyTooltip.removeChild(copyTooltip.firstChild);
     }
-    document
-      .body
-      .removeChild(ta);
+
     if (timeout) {
       clearTimeout(timeout);
-    }
-    if (result) {
-      copyTooltip.append('复制成功');
-    } else {
-      copyTooltip.append('复制失败');
     }
     timeout = setTimeout(() => {
       while (copyTooltip.hasChildNodes()) {
         copyTooltip.removeChild(copyTooltip.firstChild);
       }
     }, 2000);
+
+    if (navigator.clipboard) {
+      navigator
+        .clipboard
+        .writeText(text)
+        .then(() => {
+          copyTooltip.append('复制成功');
+
+        }, () => {
+          copyTooltip.append('复制失败');
+
+        });
+    } else {
+      const ta = document.createElement('textarea');
+      ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = text;
+      document
+        .body
+        .append(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      ta.readOnly = false;
+      const result = document.execCommand('copy');
+      if (result) {
+        copyTooltip.append('复制成功');
+      } else {
+        copyTooltip.append('复制失败');
+      }
+      ta.blur(); // For iOS
+      button.blur();
+      document
+        .body
+        .removeChild(ta);
+    }
   });
 </script>
