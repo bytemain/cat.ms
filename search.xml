@@ -212,7 +212,7 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
     <content><![CDATA[<p>Hello everybody,long time no see.</p>
 <p>时隔数月，终于更了第二篇文章，现在我想介绍一种输入方法，不同于平时使用的全拼，叫双拼，双拼和全拼或五笔一样，是一种输入方法 。</p>
 <p>双拼是用「定义好的单字母」代替「较长的多字母韵母或声母」来进行输入的一种方法。</p>
-<p>比如说我想用拼音打 「程序员」三个字，用全拼方案就要打 <code>cheng xv yuan</code>，而用小鹤双拼方案只需要打 <code>ig xu yr</code>，比全拼的效率高了不少。</p>
+<p>比如说我想用拼音打「程序员」三个字，用全拼方案就要打 <code>cheng xv yuan</code>，而用小鹤双拼方案只需要打 <code>ig xu yr</code>，比全拼的效率高了不少。</p>
 <p>这篇文章只是介绍一下双拼入门，而我也只是个初级使用者，还有很多更高级的使用方法就靠你自己学了。</p>
 <p>文章后会给几个链接，搭配本文食用更佳。</p>
 <p>实际使用感受我只能说：比全拼打的快，比五笔学的快。</p>
@@ -227,10 +227,8 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <h2 id="学习使我快乐">学习使我快乐<a class="header-anchor" href="#学习使我快乐"></a></h2>
 <p>学双拼要记得住每个键对应的声母和韵母，这有张小鹤的码表，同学你一定要记住它。<img data-src="https://i.lengthm.in/posts/use-shuangpin/hejp.png" alt="键位图">
 当时想着能在空余时间练习一下。于是用草稿纸画了一张上面那个图，事实证明这招很有效，放在桌上慢慢打字练手感，这个表和小鹤双拼的口诀 已经是要学习的全部内容。一开始我也背了这个口诀，后来打熟练了就能记住键位了，口诀也忘了…：</p>
-<blockquote>
-<p>快 迎 两 王 软 草 走， 特 约 秋 云 为 见 面。夏 娃 怂 恿 书 痴 追， 更 待 滨 鸟 分 撇 航？</p>
-<p>Kuai ing Liang uang Ruan Cao Zou, T ue Qiu Yun Wei Jan Mian
-Xia ua Song iong shU chI zhVi, Geng Dai Bin Niao Fen Pie Hang</p>
+<blockquote><p>&nbsp;<ruby>快<rt> Kuai</rt></ruby>&nbsp; &nbsp;<ruby>迎<rt> ing</rt></ruby>&nbsp;  &nbsp;<ruby>两<rt> Liang</rt></ruby>&nbsp;  &nbsp;<ruby>王<rt> uang</rt></ruby>&nbsp;  &nbsp;<ruby>软<rt> Ruan</rt></ruby>&nbsp;  &nbsp;<ruby>草<rt> Cao</rt></ruby>&nbsp; &nbsp;<ruby>走<rt> Zou</rt></ruby>&nbsp;， &nbsp;<ruby>特<rt> T</rt></ruby>&nbsp; &nbsp;<ruby>约<rt> ue</rt></ruby>&nbsp; &nbsp;<ruby>秋<rt> Qiu</rt></ruby>&nbsp; &nbsp;<ruby>云<rt> Yun</rt></ruby>&nbsp; &nbsp;<ruby>为<rt> Wei</rt></ruby>&nbsp; &nbsp;<ruby>见<rt> Jan</rt></ruby>&nbsp; &nbsp;<ruby>面<rt> Mian</rt></ruby>&nbsp;。</p>
+<p>&nbsp;<ruby>夏<rt> Xia</rt></ruby>&nbsp;  &nbsp;<ruby>娃<rt> ua</rt></ruby>&nbsp;  &nbsp;<ruby>怂<rt> Song</rt></ruby>&nbsp;  &nbsp;<ruby>恿<rt> iong</rt></ruby>&nbsp;  &nbsp;<ruby>书<rt> shU</rt></ruby>&nbsp;  &nbsp;<ruby>痴<rt> chI</rt></ruby>&nbsp; &nbsp;<ruby>追<rt> zhVi</rt></ruby>&nbsp;， &nbsp;<ruby>更<rt> Geng</rt></ruby>&nbsp; &nbsp;<ruby>待<rt> Dai</rt></ruby>&nbsp; &nbsp;<ruby>滨<rt> Bin</rt></ruby>&nbsp; &nbsp;<ruby>鸟<rt> Niao</rt></ruby>&nbsp; &nbsp;<ruby>分<rt> Fen</rt></ruby>&nbsp; &nbsp;<ruby>撇<rt> Pie</rt></ruby>&nbsp; &nbsp;<ruby>航<rt> Hang</rt></ruby>&nbsp;？</p>
 </blockquote>
 <p>把这首小诗结合上面的键位图看一下，就能看懂了。比如说 <code>Kuai ing</code> 就是 <code>K</code> 这个键作韵母时对应两个韵母 <code>uai</code> 和 <code>ing</code>。举个例子：</p>
 <ul>
@@ -343,7 +341,7 @@ ssh 要先配置好 ssh 的权限。</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">chmod</span> -R <span class="token number">777</span> <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>保存好后就可以 push 到仓库里了，</p>
 <blockquote>
-<p>如果你创建仓库的时候勾选了 「使用 readme 初始化仓库」，那么你在 push 的时候会遇到文件冲突。<br>
+<p>如果你创建仓库的时候勾选了「使用 readme 初始化仓库」，那么你在 push 的时候会遇到文件冲突。<br>
 方法是：修改了仓库地址之后先把本地的 <a href="http://readme.md">readme.md</a> 删除掉，<br>
 然后使用 <code>git pull</code> 将远程仓库的 <a href="http://readme.md">readme.md</a> 拉回本地。</p>
 </blockquote>
@@ -378,7 +376,7 @@ ssh 要先配置好 ssh 的权限。</p>
 <p>进去之后会让你改密码。<br>
 设置中有很多选项，也有很多插件，大家可以百度一下。<br>
 你需要启用 API 访问才能使用第三方客户端登陆。<br>
-推荐关闭 「在连续模式下自动展开文章」 和 「合并信息源，使之连续显示」<br>
+推荐关闭「在连续模式下自动展开文章」和「合并信息源，使之连续显示」。<br>
 总之自己使用吧，还是很好玩的。</p>
 ]]></content>
       <categories>
@@ -630,7 +628,7 @@ nvm npm_mirror https://npm.taobao.org/mirrors/npm/<span aria-hidden="true" class
     <title>为什么我们需要配置环境变量</title>
     <url>//posts/why-do-we-need-to-configure-environment-variables/</url>
     <content><![CDATA[<p>之前学习 Java 的时候，感觉最难做的一件事情就是配置 jdk 的环境。那叫一个困难啊，Path、JAVA_HOME、CLASSPATH 印象深刻的很…（但是现在 JDK11 不用再配置 classpath 了，jre 和 jdk 合并了）。就在去年暑假，要 <a href="/posts/install-opencv-windows-vs/">配 OpenCV 的环境</a>，要调的东西还是比较多的，对环境配置的概念又加深了。</p>
-<p>现在懂的多了，配过的环境也多了，配过的平台也不算少。现在就想分享一下 「关于我对配环境这件事情的感受」。</p>
+<p>现在懂的多了，配过的环境也多了，配过的平台也不算少。现在就想分享一下「关于我对配环境这件事情的感受」。</p>
 <p>那就以 Windows 来说说环境配置的问题，Linux 下的其实差不多。</p>
 <a id="more"></a>
 <h2 id="为什么需要环境变量">为什么需要环境变量<a class="header-anchor" href="#为什么需要环境变量"></a></h2>
