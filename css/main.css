@@ -1433,77 +1433,6 @@ pre code {
 .book-mark-link-fixed {
   top: -2px;
 }
-.github-corner :hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
-}
-.github-corner svg {
-  color: #fff;
-  fill: #222;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1000;
-}
-@media (max-width: 991px) {
-  .github-corner {
-    display: none;
-  }
-  .github-corner .github-corner:hover .octo-arm {
-    animation: none;
-  }
-  .github-corner .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
-}
-@media (max-width: 767px) {
-  .github-corner svg {
-    top: inherit;
-  }
-}
-@-moz-keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0);
-  }
-  20%, 60% {
-    transform: rotate(-25deg);
-  }
-  40%, 80% {
-    transform: rotate(10deg);
-  }
-}
-@-webkit-keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0);
-  }
-  20%, 60% {
-    transform: rotate(-25deg);
-  }
-  40%, 80% {
-    transform: rotate(10deg);
-  }
-}
-@-o-keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0);
-  }
-  20%, 60% {
-    transform: rotate(-25deg);
-  }
-  40%, 80% {
-    transform: rotate(10deg);
-  }
-}
-@keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0);
-  }
-  20%, 60% {
-    transform: rotate(-25deg);
-  }
-  40%, 80% {
-    transform: rotate(10deg);
-  }
-}
 .sidebar-inner {
   color: #999;
   padding: 18px 10px;
@@ -3054,7 +2983,7 @@ hr {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #06ffb6;
+  background: #ff0dff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3080,11 +3009,6 @@ hr {
 }
 .sub-menu .menu-item {
   display: inline-block;
-}
-.footer-custom a {
-  border-bottom: none;
-  text-decoration: none;
-  line-height: 0;
 }
 .post-body img {
   border-style: none !important;
