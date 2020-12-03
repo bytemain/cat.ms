@@ -3,7 +3,7 @@ title: 来用用双拼吧
 comments: true
 toc: true
 date: 2016-12-02 22:21:26
-updated: 2020-05-03 22:10:00
+updated: 2020-12-03 14:38:00
 categories: [ 双拼 ]
 tags:
   - 双拼
@@ -17,7 +17,7 @@ Hello everybody,long time no see.
 
 双拼是用「定义好的单字母」代替「较长的多字母韵母或声母」来进行输入的一种方法。
 
-比如说我想用拼音打 「程序员」三个字，用全拼方案就要打 `cheng xv yuan`，而用小鹤双拼方案只需要打 `ig xu yr`，比全拼的效率高了不少。
+比如说我想用拼音打「程序员」三个字，用全拼方案就要打 `cheng xv yuan`，而用小鹤双拼方案只需要打 `ig xu yr`，比全拼的效率高了不少。
 
 这篇文章只是介绍一下双拼入门，而我也只是个初级使用者，还有很多更高级的使用方法就靠你自己学了。
 
@@ -44,13 +44,14 @@ Hello everybody,long time no see.
 ![键位图](https://i.lengthm.in/posts/use-shuangpin/hejp.png)
 当时想着能在空余时间练习一下。于是用草稿纸画了一张上面那个图，事实证明这招很有效，放在桌上慢慢打字练手感，这个表和小鹤双拼的口诀 已经是要学习的全部内容。一开始我也背了这个口诀，后来打熟练了就能记住键位了，口诀也忘了...：
 
+{% blockquote %}
+{% pinyin %}
+快[Kuai] 迎[ing]  两[Liang]  王[uang]  软[Ruan]  草[Cao] 走[Zou]， 特[T] 约[ue] 秋[Qiu] 云[Yun] 为[Wei] 见[Jan] 面[Mian]。
 
-> 快 迎 两 王 软 草 走， 特 约 秋 云 为 见 面。
-> 夏 娃 怂 恿 书 痴 追， 更 待 滨 鸟 分 撇 航？
->
-> Kuai ing Liang uang Ruan Cao Zou, T ue Qiu Yun Wei Jan Mian
-> Xia ua Song iong shU chI zhVi, Geng Dai Bin Niao Fen Pie Hang
->
+夏[Xia]  娃[ua]  怂[Song]  恿[iong]  书[shU]  痴[chI] 追[zhVi]， 更[Geng] 待[Dai] 滨[Bin] 鸟[Niao] 分[Fen] 撇[Pie] 航[Hang]？
+{% endpinyin %}
+{% endblockquote %}
+
 
 把这首小诗结合上面的键位图看一下，就能看懂了。
 比如说`Kuai ing`就是`K`这个键作韵母时对应两个韵母`uai`和`ing`。
