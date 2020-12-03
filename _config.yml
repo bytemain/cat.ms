@@ -94,7 +94,7 @@ symbols_count_time:
   symbols: true
   time: true
   total_symbols: true
-  total_time: true
+  total_time: false
   exclude_codeblock: true
   awl: 4
   wpm: 275
@@ -343,12 +343,6 @@ theme_config:
       enable: true
       # Available values: default | flat | mac
       style: flat
-
-  # Follow me on GitHub banner in right-top corner.
-  github_banner:
-    enable: true
-    permalink: https://github.com/lengthmin
-    title: Follow me on GitHub
 
   back2top:
     enable: true
