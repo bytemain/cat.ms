@@ -1,0 +1,29 @@
+zh-CN:
+  footer:
+    powered: "Powered by %s"
+    total_views: 总访问量
+    total_visitors: 总访客量
+  state:
+    posts: 文章
+    tags: 标签
+    categories: 分类
+  cheers:
+    um: 嗯..
+    ok: 还行
+    nice: 不错
+    good: 很好
+    great: 非常好
+    excellent: 太棒了
+  keep_on: 继续努力。
+  symbol:
+    comma: "，"
+    period: "。"
+    colon: "："
+  follow_me:
+    welcome: 欢迎关注我的其它发布渠道
+  symbols_count_time:
+    count: 本文字数
+    count_total: 总字数
+    time: 阅读时长
+    time_total: 总阅读时长
+    time_minutes: 分钟
