@@ -426,27 +426,6 @@ theme_config:
     # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
     ignores:
 
-  # Multiple Comment System Support
-  comments:
-    # Available values: tabs | buttons
-    style: tabs
-    # Choose a comment system to be displayed by default.
-    # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
-    active: disqus
-    # Setting `true` means remembering the comment system selected by the visitor.
-    storage: true
-    # Lazyload all comment systems.
-    lazyload: false
-    # Modify texts or order for any navs, here are some examples.
-    nav:
-      #disqus:
-      #  text: Load Disqus
-      #  order: -1
-      #gitalk:
-      #  order: -2
-
-  # DisqusJS
-  # For more information: https://github.com/SukkaW/DisqusJS
   disqusjs:
     enable: true
     api: https://disqus.skk.moe/disqus/
@@ -474,7 +453,7 @@ theme_config:
     # If manual, trigger search by pressing enter key or search button.
     trigger: auto
     # Show top n results per article, show all results by setting to -1
-    top_n_per_article: 3
+    top_n_per_article: 5
     # Unescape html strings to the readable one.
     unescape: true
     # Preload the search data when the page loads.
