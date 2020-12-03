@@ -3054,7 +3054,7 @@ hr {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2b363d;
+  background: #06ffb6;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3106,4 +3106,11 @@ hr {
 }
 .post-copyright i.fa {
   font-size: 15px;
+}
+.post-expired-notify {
+  margin: 0 0 0.3rem;
+  padding: 0.5rem 0.8rem;
+  background: #ffffc0;
+  border-left: 3px solid #fff000;
+  list-style: none;
 }
