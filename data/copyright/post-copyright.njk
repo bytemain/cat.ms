@@ -29,6 +29,7 @@
 {% set rawText = "源文件" %}
 {% set licenseTitle = "版权声明" %}
 {% set licenseContent = "%s  转载请保留原文链接及作者。" %}
+{% set expireText = "本文最后更新于 %s 天前，文中所描述的信息可能已发生改变" %}
 
 <ul class="post-copyright">
   <li class="post-copyright-author">
@@ -40,9 +41,7 @@
   <li class="post-copyright-title">
     <strong>{{ titleText  }}：
     </strong>
-    <a href="{{ url_for(page.path) }}">
-      {{ page.title }}
-    </a>
+    {{ page.title }}
   </li>
   <li class="post-copyright-link">
     <strong>{{ linkText  }}：</strong>
@@ -56,6 +55,9 @@
     <strong>{{ updatedText  }}：
     </strong>
     {{ page.updated.format("YYYY-MM-DD, HH:mm") }}
+    <blockquote class="post-expired-notify">
+      {{ __(expireText, '<span id="date-expire-num"></span>')  }}
+    </blockquote>
   </li>
   <li class="post-copyright-history">
     <strong>{{ historyText  }}：</strong>
@@ -73,62 +75,79 @@
     {{ __(licenseContent, next_url(ccURL, ccText, {title: ccLicenseTitle }))  }}
   </li>
 </ul>
-
-<script data-pjax>
-  var copyButton = document.querySelector('.copy-path');
-  var copyTooltip = document.querySelector('.copy-tooltip');
-  let timeout;
-  copyButton.addEventListener('click', function (e) {
-    const text = "原文作者：{{ page.author or author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}";
-
-    if (copyTooltip.hasChildNodes()) {
-      copyTooltip.removeChild(copyTooltip.firstChild);
+{% set updateDate = page.updated.format("YYYY-MM-DD") %}
+<script data-pjax="data-pjax">
+  (function () {
+    var dateUpdate = Date.parse("{{ updateDate }}");
+    var nowDate = new Date();
+    var a = nowDate.getTime();
+    var b = a - dateUpdate;
+    var daysUpdateExpire = Math.floor(b / (24 * 3600 * 1000));
+    if (daysUpdateExpire >= 120) {
+      document
+        .getElementById('date-expire-num')
+        .innerHTML = daysUpdateExpire;
+    } else {
+      document
+        .querySelector('.post-expired-notify')
+        .style
+        .display = 'none';
     }
+    var copyButton = document.querySelector('.copy-path');
+    var copyTooltip = document.querySelector('.copy-tooltip');
+    var timeout;
+    copyButton.addEventListener('click', function (e) {
+      const text = "原文作者：{{ page.author or author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}";
 
-    if (timeout) {
-      clearTimeout(timeout);
-    }
-    timeout = setTimeout(() => {
-      while (copyTooltip.hasChildNodes()) {
+      if (copyTooltip.hasChildNodes()) {
         copyTooltip.removeChild(copyTooltip.firstChild);
       }
-    }, 2000);
 
-    if (navigator.clipboard) {
-      navigator
-        .clipboard
-        .writeText(text)
-        .then(() => {
-          copyTooltip.append('复制成功');
-
-        }, () => {
-          copyTooltip.append('复制失败');
-
-        });
-    } else {
-      const ta = document.createElement('textarea');
-      ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = text;
-      document
-        .body
-        .append(ta);
-      ta.select();
-      ta.setSelectionRange(0, text.length);
-      ta.readOnly = false;
-      const result = document.execCommand('copy');
-      if (result) {
-        copyTooltip.append('复制成功');
-      } else {
-        copyTooltip.append('复制失败');
+      if (timeout) {
+        clearTimeout(timeout);
       }
-      ta.blur(); // For iOS
-      button.blur();
-      document
-        .body
-        .removeChild(ta);
-    }
-  });
+      timeout = setTimeout(() => {
+        while (copyTooltip.hasChildNodes()) {
+          copyTooltip.removeChild(copyTooltip.firstChild);
+        }
+      }, 2000);
+
+      if (navigator.clipboard) {
+        navigator
+          .clipboard
+          .writeText(text)
+          .then(() => {
+            copyTooltip.append('复制成功');
+
+          }, () => {
+            copyTooltip.append('复制失败');
+
+          });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = text;
+        document
+          .body
+          .append(ta);
+        ta.select();
+        ta.setSelectionRange(0, text.length);
+        ta.readOnly = false;
+        const result = document.execCommand('copy');
+        if (result) {
+          copyTooltip.append('复制成功');
+        } else {
+          copyTooltip.append('复制失败');
+        }
+        ta.blur(); // For iOS
+        button.blur();
+        document
+          .body
+          .removeChild(ta);
+      }
+    });
+  })();
 </script>
