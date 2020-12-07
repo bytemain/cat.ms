@@ -2432,4 +2432,78 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
         <category>Hexo</category>
       </categories>
   </entry>
+  <entry>
+    <title>VSCode 亮色主题配置 Bracket-Pair-Colorizer-2</title>
+    <url>//posts/vscode-bracket-colorizer-light-theme/</url>
+    <content><![CDATA[<p>目前使用的亮色主题（Github Light Theme - Gray）下使用 Bracket-Pair-Colorizer-2 会发现默认的金色括号太不明显。搜索了一下 issue 发现已经有 <a href="https://github.com/CoenraadS/Bracket-Pair-Colorizer-2/issues/62">解决方案</a>。</p>
+<p><img data-src="https://i.lengthm.in/posts/vscode-bracket-colorizer-light-theme/comparison.png" alt="比较"></p>
+<a id="more"></a>
+<p>Bracket-Pair-Colorizer-2 插件支持自己配置颜色，默认的颜色为：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token comment">// Scope colors</span>
+<span class="token property">"bracket-pair-colorizer-2.colors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string">"Gold"</span><span class="token punctuation">,</span> <span class="token comment">// #ffd700 金色</span>
+  <span class="token string">"Orchid"</span><span class="token punctuation">,</span> <span class="token comment">// #da70d6 粉色</span>
+  <span class="token string">"LightSkyBlue"</span> <span class="token comment">// #87cefa 天蓝色</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们可以自己更改这个列表，比如直接改成 <a href="https://github.com/CoenraadS/Bracket-Pair-Colorizer-2/issues/62#issuecomment-563248779">更鲜艳的颜色</a>：</p>
+<p>作者在这个网站上 <a href="https://www.hexcolortool.com/">hexcolortool.com</a> 调了 20 分钟的色，最后终于找到了一个在白色背景下表现接近原版配色的颜色。</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"bracket-pair-colorizer-2.colors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string">"#ff9900"</span><span class="token punctuation">,</span> <span class="token comment">// Orange-Brown</span>
+  <span class="token string">"#f500f5"</span><span class="token punctuation">,</span> <span class="token comment">// Medium-Pink</span>
+  <span class="token string">"#54b9f8"</span> <span class="token comment">// Medium-Blue</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>但这么做有一个坏处，我们切换会暗色主题的时候，又得改一遍这个值。</p>
+<p>我们可以通过修改 VSCode 的不同主题的配色值来达成这个目标。</p>
+<p>比如我们就可以使用已有的配色值的字段：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"bracket-pair-colorizer-2.colors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string">"terminal.ansiBrightMagenta"</span><span class="token punctuation">,</span>
+  <span class="token string">"terminal.ansiYellow"</span><span class="token punctuation">,</span>
+  <span class="token string">"terminal.ansiBrightCyan"</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>了解了原理之后，按照 issue 里给出的 <a href="https://github.com/CoenraadS/Bracket-Pair-Colorizer-2/issues/62#issuecomment-563248779">解决方案</a>：</p>
+<p>我们可以使用 <code>workbench.colorCustomizations</code> 来自定义覆盖当前使用主题配色的颜色。</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"workbench.colorCustomizations"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"[Github Light Theme - Gray]"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 针对相应主题配置不同的颜色</span>
+    <span class="token property">"colorizer.color-1"</span><span class="token operator">:</span> <span class="token string">"#ff9900"</span><span class="token punctuation">,</span> <span class="token comment">// Orange-Brown...</span>
+    <span class="token property">"colorizer.color-2"</span><span class="token operator">:</span> <span class="token string">"#f500f5"</span><span class="token punctuation">,</span> <span class="token comment">// Medium-Pink...</span>
+    <span class="token property">"colorizer.color-3"</span><span class="token operator">:</span> <span class="token string">"#54b9f8"</span> <span class="token comment">// Medium-Blue...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 默认配色</span>
+  <span class="token property">"colorizer.color-1"</span><span class="token operator">:</span> <span class="token string">"#ffd700"</span><span class="token punctuation">,</span> <span class="token comment">// </span><span class="token string">"Gold"</span>. (Yellow with slight Orange)
+  <span class="token property">"colorizer.color-2"</span><span class="token operator">:</span> <span class="token string">"#da70d6"</span><span class="token punctuation">,</span> <span class="token comment">// </span><span class="token string">"Orchid"</span>. (Pink)
+  <span class="token property">"colorizer.color-3"</span><span class="token operator">:</span> <span class="token string">"#87cefa"</span> <span class="token comment">// </span><span class="token string">"LightSkyBlue"</span>. (Light Blue)
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后给 Bracket-Pair-Colorizer-2 把颜色设置上：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"bracket-pair-colorizer-2.colors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string">"colorizer.color-1"</span><span class="token punctuation">,</span>
+  <span class="token string">"colorizer.color-2"</span><span class="token punctuation">,</span>
+  <span class="token string">"colorizer.color-3"</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最后就是总结以及我的 Bracket-Pair-Colorizer-2 其他配置：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"workbench.colorCustomizations"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"[Github Light Theme - Gray]"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"colorizer.color-1"</span><span class="token operator">:</span> <span class="token string">"#ff9900"</span><span class="token punctuation">,</span> <span class="token comment">// Orange-Brown...</span>
+    <span class="token property">"colorizer.color-2"</span><span class="token operator">:</span> <span class="token string">"#f500f5"</span><span class="token punctuation">,</span> <span class="token comment">// Medium-Pink...</span>
+    <span class="token property">"colorizer.color-3"</span><span class="token operator">:</span> <span class="token string">"#54b9f8"</span> <span class="token comment">// Medium-Blue...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"colorizer.color-1"</span><span class="token operator">:</span> <span class="token string">"#ffd700"</span><span class="token punctuation">,</span> <span class="token comment">// </span><span class="token string">"Gold"</span>. (Yellow with slight Orange)
+  <span class="token property">"colorizer.color-2"</span><span class="token operator">:</span> <span class="token string">"#da70d6"</span><span class="token punctuation">,</span> <span class="token comment">// </span><span class="token string">"Orchid"</span>. (Pink)
+  <span class="token property">"colorizer.color-3"</span><span class="token operator">:</span> <span class="token string">"#87cefa"</span> <span class="token comment">// </span><span class="token string">"LightSkyBlue"</span>. (Light Blue)
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token property">"bracket-pair-colorizer-2.colors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string">"colorizer.color-1"</span><span class="token punctuation">,</span>
+  <span class="token string">"colorizer.color-2"</span><span class="token punctuation">,</span>
+  <span class="token string">"colorizer.color-3"</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token property">"bracket-pair-colorizer-2.forceUniqueOpeningColor"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token property">"bracket-pair-colorizer-2.highlightActiveScope"</span><span class="token operator">:</span> <span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>VSCode</category>
+      </categories>
+      <tags>
+        <tag>VSCode</tag>
+      </tags>
+  </entry>
 </search>

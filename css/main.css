@@ -220,17 +220,14 @@ h6 {
 p {
   margin: 0 0 20px;
 }
-a,
-span.exturl {
+a {
   border-bottom: 1px solid #ccc;
   color: var(--link-color);
-  cursor: pointer;
   outline: 0;
   text-decoration: none;
   overflow-wrap: break-word;
 }
-a:hover,
-span.exturl:hover {
+a:hover {
   border-bottom-color: var(--link-hover-color);
   color: var(--link-hover-color);
 }
@@ -1367,17 +1364,14 @@ pre code {
     display: none;
   }
 }
-.menu-item a,
-.menu-item span.exturl {
+.menu-item a {
   border-bottom: 0;
   display: block;
   font-size: 0.8125em;
   transition: border-color 0.2s ease-in-out;
 }
 .menu-item a:hover,
-.menu-item span.exturl:hover,
-.menu-item a.menu-item-active,
-.menu-item span.exturl.menu-item-active {
+.menu-item a.menu-item-active {
   background: var(--menu-item-bg-color);
 }
 .menu-item .fa,
@@ -1466,8 +1460,7 @@ pre code {
   font-size: 1em;
   margin-top: 5px;
 }
-.links-of-author a,
-.links-of-author span.exturl {
+.links-of-author a {
   font-size: 0.8125em;
 }
 .links-of-author .fa,
@@ -1989,8 +1982,7 @@ pre code {
 .posts-collapse .post-content .post-title {
   display: inline;
 }
-.posts-collapse .post-content .post-title a,
-.posts-collapse .post-content .post-title span.exturl {
+.posts-collapse .post-content .post-title a {
   border-bottom: 0;
   color: var(--link-color);
 }
@@ -2825,15 +2817,13 @@ hr {
     margin-top: 5px;
   }
 }
-.menu .menu-item a,
-.menu .menu-item span.exturl {
+.menu .menu-item a {
   border-radius: 2px;
   padding: 0 10px;
   transition-property: background;
 }
 @media (max-width: 767px) {
-  .menu .menu-item a,
-  .menu .menu-item span.exturl {
+  .menu .menu-item a {
     text-align: left;
   }
 }
@@ -2959,21 +2949,18 @@ hr {
   width: 320px;
   z-index: 1200;
 }
-.sidebar a,
-.sidebar span.exturl {
+.sidebar a {
   border-bottom-color: #555;
   color: #999;
 }
-.sidebar a:hover,
-.sidebar span.exturl:hover {
+.sidebar a:hover {
   border-bottom-color: #eee;
   color: #eee;
 }
 .links-of-author:not(:first-child) {
   margin-top: 15px;
 }
-.links-of-author a,
-.links-of-author span.exturl {
+.links-of-author a {
   border-bottom-color: #555;
   display: inline-block;
   margin-bottom: 10px;
@@ -2981,9 +2968,8 @@ hr {
   vertical-align: middle;
   transition: all 0.2s ease-in-out;
 }
-.links-of-author a::before,
-.links-of-author span.exturl::before {
-  background: #ff0dff;
+.links-of-author a::before {
+  background: #ffc838;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2995,8 +2981,7 @@ hr {
 .links-of-blogroll-item {
   padding: 2px 10px;
 }
-.links-of-blogroll-item a,
-.links-of-blogroll-item span.exturl {
+.links-of-blogroll-item a {
   box-sizing: border-box;
   display: inline-block;
   max-width: 280px;
