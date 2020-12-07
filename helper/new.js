@@ -1,9 +1,9 @@
-const { transformFactory } = require("./utils.js");
+const { transformFactory, pad } = require("./utils.js");
 const execa = require("execa");
 
-const year = new Date().getFullYear();
-const month = new Date().getMonth() + 1;
-const day = new Date().getDate();
+const year = pad(new Date().getFullYear());
+const month = pad(new Date().getMonth() + 1);
+const day = pad(new Date().getDate());
 
 let prefix = `${year}${month}${day}`;
 const args = process.argv.slice(2);

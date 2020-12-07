@@ -5,6 +5,15 @@ const { Transform } = require("stream");
 
 var binaryEncoding = "binary";
 
+function pad(num, n = 2) {
+  var len = num.toString().length;
+  while (len < n) {
+    num = "0" + num;
+    len++;
+  }
+  return num;
+}
+
 const getEncoding = (data) => {
   let encoding = chardet.detect(data);
   if (encoding != "UTF-8") {
@@ -49,4 +58,5 @@ module.exports = {
   run,
   getEncoding,
   transformFactory,
+  pad,
 };
