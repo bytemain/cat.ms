@@ -41,7 +41,7 @@
 <link rel="canonical" href="https://lengthmin.me/page/3/">
 
 
-<script data-pjax class="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -427,7 +427,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>653</span>
+      <span>667</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -445,7 +445,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>hexo 的原生主题自带了谷歌分析,而谷歌分析在国内水土不服。琢磨琢磨，把 next 主题上的腾讯分析添加到了正在用的 yelee 主题上。顺带一提，腾讯分析真的是用过的最好用的站点统计软件。</p>
+          <p>hexo 的原生主题自带了谷歌分析，而谷歌分析在国内水土不服。琢磨琢磨，把 next 主题上的腾讯分析添加到了正在用的 yelee 主题上。顺带一提，腾讯分析真的是用过的最好用的站点统计软件。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/add-tencent-analytics-to-yelee/#more" rel="contents">
@@ -548,7 +548,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>一直有着想写一点东西的想法，想有个自己的博客。但是现在国内的知名博客服务（特指CSXN）好多广告= =，最后在知乎发现了 Hexo 这么个东西。自己就能搭建一个国内访问快无广告自定义颇多的炫酷博客。</p>
+          <p>一直有着想写一点东西的想法，想有个自己的博客。但是现在国内的知名博客服务（特指 CSXN）好多广告 = =，最后在知乎发现了 Hexo 这么个东西。自己就能搭建一个国内访问快无广告自定义颇多的炫酷博客。</p>
 <ul>
 <li><a href="https://hexo.io/"><code>Hexo</code></a> 是一个用 nodejs 编写的静态博客框架，可以将生成的静态博客网页托管在服务器上。</li>
 <li>国外的 <a href="https://github.com/"><code>github.com</code></a> 和国内的 <a href="https://coding.net/"><code>coding.net</code></a> 都提供免费的静态网页托管服务。</li>
@@ -561,7 +561,7 @@
 <li>有网络就可以更新博客，只需要一个浏览器。</li>
 <li>源文件在云端，可下载回本地。</li>
 <li>可实时预览 markdown 文件。</li>
-<li>完善的 linux 终端,有 root 权限。</li>
+<li>完善的 linux 终端，有 root 权限。</li>
 </ol>
 <p>我在 c9 的 workspace：<a href="https://ide.c9.io/lengthmin/hexo/">https://ide.c9.io/lengthmin/hexo/</a></p>
           <!--noindex-->
@@ -636,7 +636,7 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols：</span>
-    <span title="Symbols">51k</span>
+    <span title="Symbols">50k</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -676,44 +676,10 @@
 
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '.page-configurations',
-    '.main-inner',
-    '.post-toc-wrap',
-    '.languages',
-    '.pjax'
-  ],
-  analytics: false,
-  cacheBust: false,
-  scrollRestoration: false,
-  scrollTo: !CONFIG.bookmark.enable
-});
-
-document.addEventListener('pjax:success', () => {
-  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  const hasTOC = document.querySelector('.post-toc');
-  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
-  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
+<script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   
 
@@ -722,7 +688,7 @@ document.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
     mermaid.init({
@@ -758,12 +724,11 @@ if (document.querySelectorAll('.mermaid').length) {
   </script>
 
   
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
 
-    <div class="pjax">
 
   <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
   <script>
@@ -796,6 +761,5 @@ if (document.querySelectorAll('.mermaid').length) {
     })();
   </script>
 
-    </div>
 </body>
 </html>

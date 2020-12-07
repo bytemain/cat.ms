@@ -41,7 +41,7 @@
 <link rel="canonical" href="https://lengthmin.me/">
 
 
-<script data-pjax class="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -317,7 +317,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -336,7 +336,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>目前使用的亮色主题（Github Light Theme - Gray）下使用 Bracket-Pair-Colorizer-2 会发现默认的金色括号太不明显。搜索了一下 issue 发现已经有 <a href="https://github.com/CoenraadS/Bracket-Pair-Colorizer-2/issues/62">解决方案</a>。</p>
-<p><img src="https://i.lengthm.in/posts/vscode-bracket-colorizer-light-theme/comparison.png" alt="比较" /></p>
+<p><img src="https://i.lengthm.in/posts/vscode-bracket-colorizer-light-theme/comparison.png" alt="比较"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/vscode-bracket-colorizer-light-theme/#more" rel="contents">
@@ -433,7 +433,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>这是系列博客 《我的 Hexo》的第零篇，其他篇见：</p>
-<hr />
+<hr>
 <p>使用 Hexo 已经四年已久，四年以来对博客做了很多的优化，也积累了很多经验，现在想写一写都做了什么。</p>
 <p>可能也许大概会有这么多东西：</p>
 <ol>
@@ -445,8 +445,8 @@
 <li>使用 code snippets</li>
 </ol>
 </li>
-<li>在 <code>_config.yml</code> 中使用危险 token</li>
-<li>你不曾注意过的 <code>_config.yml</code></li>
+<li> 在 <code>_config.yml</code> 中使用危险 token</li>
+<li> 你不曾注意过的 <code>_config.yml</code></li>
 <li>在 next-theme 主题中添加自定义内容</li>
 <li>利用好 <code>package.json</code> 文件中的 <code>scripts</code> 字段</li>
 <li>利用好 Node.js 脚本</li>
@@ -546,19 +546,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>译自：<a href="https://arpitbhayani.me/blogs/function-overloading">https://arpitbhayani.me/blogs/function-overloading</a><br />
-作者：<a href="https://twitter.com/arpit_bhayani">@arpit_bhayani</a><br />
+          <p>译自：<a href="https://arpitbhayani.me/blogs/function-overloading">https://arpitbhayani.me/blogs/function-overloading</a><br>
+作者：<a href="https://twitter.com/arpit_bhayani">@arpit_bhayani</a><br>
 翻译已获原作者授权</p>
-<hr />
-<p>函数重载是指可以创建多个同名函数，但是每个函数的形参以及实现可以不一样。当一个重载函数 <code>fn</code> 被调用时，运行时会根据传入的参数/对象，来判断并调用相应的实现函数。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token keyword">int</span> length<span class="token punctuation">,</span> <span class="token keyword">int</span> breadth<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<hr>
+<p>函数重载是指可以创建多个同名函数，但是每个函数的形参以及实现可以不一样。当一个重载函数 <code>fn</code> 被调用时，运行时会根据传入的参数 / 对象，来判断并调用相应的实现函数。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token keyword">int</span> length<span class="token punctuation">,</span> <span class="token keyword">int</span> breadth<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> length <span class="token operator">*</span> breadth<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+<span class="token punctuation">}</span>
 
-<span class="token keyword">float</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token keyword">int</span> radius<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">float</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token keyword">int</span> radius<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token number">3.14</span> <span class="token operator">*</span> radius <span class="token operator">*</span> radius<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>上面这个例子中(C++实现)，函数 <code>area</code> 被两个实现重载，第一个函数允许传入两个参数(且都是整数型)，根据传入的长方形的宽高，返回长方形的面积；第二个函数需要传入一个整形参数：圆的半径。当我们调用函数 <code>area</code> 时，如调用 <code>area(7)</code> 时会使用第二个函数，而调用 <code>area(3, 4)</code> 时则会使用第一个。</p>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面这个例子中 (C++ 实现)，函数 <code>area</code> 被两个实现重载，第一个函数允许传入两个参数 (且都是整数型)，根据传入的长方形的宽高，返回长方形的面积；第二个函数需要传入一个整形参数：圆的半径。当我们调用函数 <code>area</code> 时，如调用 <code>area(7)</code> 时会使用第二个函数，而调用 <code>area(3, 4)</code> 时则会使用第一个。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/function-overloading-in-python/#more" rel="contents">
@@ -636,7 +636,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.8k</span>
+      <span>4.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -662,13 +662,13 @@
 <div class="mermaid">
 sequenceDiagram
 loop 每十分钟
-    RSS阅读器-&gt;&gt;Serverless函数: a.获取 tag 的最新 RSS 内容
-    activate Serverless函数
-    Serverless函数-&gt;&gt;testmail.app: b.请求 tag 对应的邮件列表
-    testmail.app--&gt;&gt;Serverless函数: c.返回邮件列表
-    Note right of Serverless函数:  1.处理邮件列表、内容等
-    Serverless函数--&gt;&gt;RSS阅读器: d.根据邮件列表生成 RSS 并返回
-    deactivate Serverless函数
+    RSS 阅读器 -&gt;&gt;Serverless 函数: a. 获取 tag 的最新 RSS 内容
+    activate Serverless 函数
+    Serverless 函数 -&gt;&gt;testmail.app: b. 请求 tag 对应的邮件列表
+    testmail.app--&gt;&gt;Serverless 函数: c. 返回邮件列表
+    Note right of Serverless 函数:  1. 处理邮件列表、内容等
+    Serverless 函数 --&gt;&gt;RSS 阅读器: d. 根据邮件列表生成 RSS 并返回
+    deactivate Serverless 函数
 end
 </div>
           <!--noindex-->
@@ -755,7 +755,7 @@ end
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -882,11 +882,11 @@ end
           <p>最近在学习 electron，因为在 Windows 上 electron 自带的 Notification 功能有点少，没法加按钮啥的。</p>
 <p>查了一下，发现有人已经基于 <code>NodeRT</code> 做了 <a href="https://github.com/felixrieseberg/electron-windows-notifications">electron-windows-notifications</a>，可以在 electron 展示原生的通知框。<code>NodeRT</code> 能让我们在 Node.js 中使用 Windows Runtime API。</p>
 <p>然后兴高采烈的执行 <code>yarn add electron-windows-notifications</code>, 结果报错了：</p>
-<pre class="line-numbers language-none"><code class="language-none">[4&#x2F;4] Building fresh packages...
-[1&#x2F;5] ⠈ @nodert-win10-au&#x2F;windows.applicationmodel
-[2&#x2F;5] ⠁ @nodert-win10-au&#x2F;windows.data.xml.dom
-[3&#x2F;5] ⠁ @nodert-win10-au&#x2F;windows.foundation
-[4&#x2F;5] ⠁ @nodert-win10-au&#x2F;windows.ui.notifications
+<pre class="line-numbers language-none"><code class="language-none">[4/4] Building fresh packages...
+[1/5] ⠈ @nodert-win10-au/windows.applicationmodel
+[2/5] ⠁ @nodert-win10-au/windows.data.xml.dom
+[3/5] ⠁ @nodert-win10-au/windows.foundation
+[4/5] ⠁ @nodert-win10-au/windows.ui.notifications
 error SECRETPATH\node_modules\@nodert-win10-au\windows.foundation: Command failed.
 Exit code: 1
 Command: node-gyp rebuild
@@ -899,12 +899,12 @@ Output:
   NodeRtUtils.cpp
   OpaqueWrapper.cpp
   CollectionsConverterUtils.cpp
-SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\nodertutils.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 &#x2F;AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
-SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\_nodert_generated.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 &#x2F;AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
+SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\nodertutils.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
+SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\_nodert_generated.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
   win_delay_load_hook.cc
-NPMPATH\node_modules\node-gyp\src\win_delay_load_hook.cc : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 &#x2F;AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
-SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\opaquewrapper.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 &#x2F;AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
-SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\collectionsconverterutils.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 &#x2F;AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
+NPMPATH\node_modules\node-gyp\src\win_delay_load_hook.cc : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
+SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\opaquewrapper.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
+SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\collectionsconverterutils.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
 gyp ERR! build error<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
           <!--noindex-->
             <div class="post-button">
@@ -1001,7 +1001,7 @@ gyp ERR! build error<span aria-hidden="true" class="line-numbers-rows"><span></s
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>作为一个前端开发者（，偶尔会写点用户脚本<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>增强自己的浏览体验。</p>
+          <p>作为一个前端开发者（，偶尔会写点用户脚本 <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> 增强自己的浏览体验。</p>
 <p>对于传统服务端渲染的页面可以直接在页面上执行脚本达到自己的目的，但是对于现在的数据流驱动的前端开发框架来说，原来的那种做法行不通了，需要找到一个方式参与到页面的渲染中。</p>
 <p>so how to hack(actually: modify) an angular page?</p>
           <!--noindex-->
@@ -1081,7 +1081,7 @@ gyp ERR! build error<span aria-hidden="true" class="line-numbers-rows"><span></s
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.6k</span>
+      <span>3.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1204,7 +1204,7 @@ gyp ERR! build error<span aria-hidden="true" class="line-numbers-rows"><span></s
     
     <div class="post-body" itemprop="articleBody">
           <p>暗影精灵的键盘上有一个自带的 OEM 键，按了之后可以打开 OMEN Command Center, 一个可以对笔记本的性能，网络管理的工具。</p>
-<p>但是我对这个控制中心需求很小，所以我直接把软件卸载了(●´ω｀●)。</p>
+<p>但是我对这个控制中心需求很小，所以我直接把软件卸载了 (●´ω｀●)。</p>
 <p>所以，怎么去利用这个键呢？</p>
 <p>注意：该键是没有 keycode 的，也就是不被作为键盘的输入键。</p>
           <!--noindex-->
@@ -1376,7 +1376,7 @@ gyp ERR! build error<span aria-hidden="true" class="line-numbers-rows"><span></s
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols：</span>
-    <span title="Symbols">51k</span>
+    <span title="Symbols">50k</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -1416,44 +1416,10 @@ gyp ERR! build error<span aria-hidden="true" class="line-numbers-rows"><span></s
 
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '.page-configurations',
-    '.main-inner',
-    '.post-toc-wrap',
-    '.languages',
-    '.pjax'
-  ],
-  analytics: false,
-  cacheBust: false,
-  scrollRestoration: false,
-  scrollTo: !CONFIG.bookmark.enable
-});
-
-document.addEventListener('pjax:success', () => {
-  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  const hasTOC = document.querySelector('.post-toc');
-  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
-  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
+<script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   
 
@@ -1462,7 +1428,7 @@ document.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
     mermaid.init({
@@ -1498,12 +1464,11 @@ if (document.querySelectorAll('.mermaid').length) {
   </script>
 
   
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
 
-    <div class="pjax">
 
   <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
   <script>
@@ -1536,6 +1501,5 @@ if (document.querySelectorAll('.mermaid').length) {
     })();
   </script>
 
-    </div>
 </body>
 </html>

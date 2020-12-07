@@ -19,7 +19,7 @@
       <pubDate>Mon, 07 Dec 2020 05:11:28 GMT</pubDate>
       
       <description>&lt;p&gt;目前使用的亮色主题（Github Light Theme - Gray）下使用 Bracket-Pair-Colorizer-2 会发现默认的金色括号太不明显。搜索了一下 issue 发现已经有 &lt;a href=&quot;https://github.com/CoenraadS/Bracket-Pair-Colorizer-2/issues/62&quot;&gt;解决方案&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.lengthm.in/posts/vscode-bracket-colorizer-light-theme/comparison.png&quot; alt=&quot;比较&quot; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&quot;https://i.lengthm.in/posts/vscode-bracket-colorizer-light-theme/comparison.png&quot; alt=&quot;比较&quot;&gt;&lt;/p&gt;</description>
       
       
       
@@ -43,7 +43,7 @@
       <pubDate>Thu, 26 Nov 2020 10:06:54 GMT</pubDate>
       
       <description>&lt;p&gt;这是系列博客 《我的 Hexo》的第零篇，其他篇见：&lt;/p&gt;
-&lt;hr /&gt;
+&lt;hr&gt;
 &lt;p&gt;使用 Hexo 已经四年已久，四年以来对博客做了很多的优化，也积累了很多经验，现在想写一写都做了什么。&lt;/p&gt;
 &lt;p&gt;可能也许大概会有这么多东西：&lt;/p&gt;
 &lt;ol&gt;
@@ -55,8 +55,8 @@
 &lt;li&gt;使用 code snippets&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;在 &lt;code&gt;_config.yml&lt;/code&gt; 中使用危险 token&lt;/li&gt;
-&lt;li&gt;你不曾注意过的 &lt;code&gt;_config.yml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt; 在 &lt;code&gt;_config.yml&lt;/code&gt; 中使用危险 token&lt;/li&gt;
+&lt;li&gt; 你不曾注意过的 &lt;code&gt;_config.yml&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;在 next-theme 主题中添加自定义内容&lt;/li&gt;
 &lt;li&gt;利用好 &lt;code&gt;package.json&lt;/code&gt; 文件中的 &lt;code&gt;scripts&lt;/code&gt; 字段&lt;/li&gt;
 &lt;li&gt;利用好 Node.js 脚本&lt;/li&gt;
@@ -81,19 +81,19 @@
       <guid>https://lengthmin.me/posts/function-overloading-in-python/</guid>
       <pubDate>Tue, 24 Nov 2020 08:42:00 GMT</pubDate>
       
-      <description>&lt;p&gt;译自：&lt;a href=&quot;https://arpitbhayani.me/blogs/function-overloading&quot;&gt;https://arpitbhayani.me/blogs/function-overloading&lt;/a&gt;&lt;br /&gt;
-作者：&lt;a href=&quot;https://twitter.com/arpit_bhayani&quot;&gt;@arpit_bhayani&lt;/a&gt;&lt;br /&gt;
+      <description>&lt;p&gt;译自：&lt;a href=&quot;https://arpitbhayani.me/blogs/function-overloading&quot;&gt;https://arpitbhayani.me/blogs/function-overloading&lt;/a&gt;&lt;br&gt;
+作者：&lt;a href=&quot;https://twitter.com/arpit_bhayani&quot;&gt;@arpit_bhayani&lt;/a&gt;&lt;br&gt;
 翻译已获原作者授权&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;函数重载是指可以创建多个同名函数，但是每个函数的形参以及实现可以不一样。当一个重载函数 &lt;code&gt;fn&lt;/code&gt; 被调用时，运行时会根据传入的参数/对象，来判断并调用相应的实现函数。&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-cpp&quot; data-language=&quot;cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; length&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; breadth&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;&amp;#123;&lt;/span&gt;
+&lt;hr&gt;
+&lt;p&gt;函数重载是指可以创建多个同名函数，但是每个函数的形参以及实现可以不一样。当一个重载函数 &lt;code&gt;fn&lt;/code&gt; 被调用时，运行时会根据传入的参数 / 对象，来判断并调用相应的实现函数。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-cpp&quot; data-language=&quot;cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; length&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; breadth&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; length &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; breadth&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; radius&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;&amp;#123;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; radius&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3.14&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; radius &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; radius&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;上面这个例子中(C++实现)，函数 &lt;code&gt;area&lt;/code&gt; 被两个实现重载，第一个函数允许传入两个参数(且都是整数型)，根据传入的长方形的宽高，返回长方形的面积；第二个函数需要传入一个整形参数：圆的半径。当我们调用函数 &lt;code&gt;area&lt;/code&gt; 时，如调用 &lt;code&gt;area(7)&lt;/code&gt; 时会使用第二个函数，而调用 &lt;code&gt;area(3, 4)&lt;/code&gt; 时则会使用第一个。&lt;/p&gt;</description>
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上面这个例子中 (C++ 实现)，函数 &lt;code&gt;area&lt;/code&gt; 被两个实现重载，第一个函数允许传入两个参数 (且都是整数型)，根据传入的长方形的宽高，返回长方形的面积；第二个函数需要传入一个整形参数：圆的半径。当我们调用函数 &lt;code&gt;area&lt;/code&gt; 时，如调用 &lt;code&gt;area(7)&lt;/code&gt; 时会使用第二个函数，而调用 &lt;code&gt;area(3, 4)&lt;/code&gt; 时则会使用第一个。&lt;/p&gt;</description>
       
       
       
@@ -126,13 +126,13 @@
 &lt;div class=&quot;mermaid&quot;&gt;
 sequenceDiagram
 loop 每十分钟
-    RSS阅读器-&amp;gt;&amp;gt;Serverless函数: a.获取 tag 的最新 RSS 内容
-    activate Serverless函数
-    Serverless函数-&amp;gt;&amp;gt;testmail.app: b.请求 tag 对应的邮件列表
-    testmail.app--&amp;gt;&amp;gt;Serverless函数: c.返回邮件列表
-    Note right of Serverless函数:  1.处理邮件列表、内容等
-    Serverless函数--&amp;gt;&amp;gt;RSS阅读器: d.根据邮件列表生成 RSS 并返回
-    deactivate Serverless函数
+    RSS 阅读器 -&amp;gt;&amp;gt;Serverless 函数: a. 获取 tag 的最新 RSS 内容
+    activate Serverless 函数
+    Serverless 函数 -&amp;gt;&amp;gt;testmail.app: b. 请求 tag 对应的邮件列表
+    testmail.app--&amp;gt;&amp;gt;Serverless 函数: c. 返回邮件列表
+    Note right of Serverless 函数:  1. 处理邮件列表、内容等
+    Serverless 函数 --&amp;gt;&amp;gt;RSS 阅读器: d. 根据邮件列表生成 RSS 并返回
+    deactivate Serverless 函数
 end
 &lt;/div&gt;</description>
       
@@ -192,11 +192,11 @@ end
       <description>&lt;p&gt;最近在学习 electron，因为在 Windows 上 electron 自带的 Notification 功能有点少，没法加按钮啥的。&lt;/p&gt;
 &lt;p&gt;查了一下，发现有人已经基于 &lt;code&gt;NodeRT&lt;/code&gt; 做了 &lt;a href=&quot;https://github.com/felixrieseberg/electron-windows-notifications&quot;&gt;electron-windows-notifications&lt;/a&gt;，可以在 electron 展示原生的通知框。&lt;code&gt;NodeRT&lt;/code&gt; 能让我们在 Node.js 中使用 Windows Runtime API。&lt;/p&gt;
 &lt;p&gt;然后兴高采烈的执行 &lt;code&gt;yarn add electron-windows-notifications&lt;/code&gt;, 结果报错了：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;[4&amp;#x2F;4] Building fresh packages...
-[1&amp;#x2F;5] ⠈ @nodert-win10-au&amp;#x2F;windows.applicationmodel
-[2&amp;#x2F;5] ⠁ @nodert-win10-au&amp;#x2F;windows.data.xml.dom
-[3&amp;#x2F;5] ⠁ @nodert-win10-au&amp;#x2F;windows.foundation
-[4&amp;#x2F;5] ⠁ @nodert-win10-au&amp;#x2F;windows.ui.notifications
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;[4/4] Building fresh packages...
+[1/5] ⠈ @nodert-win10-au/windows.applicationmodel
+[2/5] ⠁ @nodert-win10-au/windows.data.xml.dom
+[3/5] ⠁ @nodert-win10-au/windows.foundation
+[4/5] ⠁ @nodert-win10-au/windows.ui.notifications
 error SECRETPATH\node_modules\@nodert-win10-au\windows.foundation: Command failed.
 Exit code: 1
 Command: node-gyp rebuild
@@ -209,12 +209,12 @@ Output:
   NodeRtUtils.cpp
   OpaqueWrapper.cpp
   CollectionsConverterUtils.cpp
-SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\nodertutils.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 &amp;#x2F;AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
-SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\_nodert_generated.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 &amp;#x2F;AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
+SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\nodertutils.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
+SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\_nodert_generated.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
   win_delay_load_hook.cc
-NPMPATH\node_modules\node-gyp\src\win_delay_load_hook.cc : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 &amp;#x2F;AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
-SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\opaquewrapper.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 &amp;#x2F;AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
-SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\collectionsconverterutils.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 &amp;#x2F;AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
+NPMPATH\node_modules\node-gyp\src\win_delay_load_hook.cc : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
+SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\opaquewrapper.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
+SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\collectionsconverterutils.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
 gyp ERR! build error&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</description>
       
       
@@ -244,7 +244,7 @@ gyp ERR! build error&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbe
       <guid>https://lengthmin.me/posts/using-userscript-in-angular-page/</guid>
       <pubDate>Wed, 15 Apr 2020 01:49:01 GMT</pubDate>
       
-      <description>&lt;p&gt;作为一个前端开发者（，偶尔会写点用户脚本&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;增强自己的浏览体验。&lt;/p&gt;
+      <description>&lt;p&gt;作为一个前端开发者（，偶尔会写点用户脚本 &lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt; 增强自己的浏览体验。&lt;/p&gt;
 &lt;p&gt;对于传统服务端渲染的页面可以直接在页面上执行脚本达到自己的目的，但是对于现在的数据流驱动的前端开发框架来说，原来的那种做法行不通了，需要找到一个方式参与到页面的渲染中。&lt;/p&gt;
 &lt;p&gt;so how to hack(actually: modify) an angular page?&lt;/p&gt;</description>
       
@@ -298,7 +298,7 @@ gyp ERR! build error&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbe
       <pubDate>Wed, 26 Feb 2020 16:00:57 GMT</pubDate>
       
       <description>&lt;p&gt;暗影精灵的键盘上有一个自带的 OEM 键，按了之后可以打开 OMEN Command Center, 一个可以对笔记本的性能，网络管理的工具。&lt;/p&gt;
-&lt;p&gt;但是我对这个控制中心需求很小，所以我直接把软件卸载了(●´ω｀●)。&lt;/p&gt;
+&lt;p&gt;但是我对这个控制中心需求很小，所以我直接把软件卸载了 (●´ω｀●)。&lt;/p&gt;
 &lt;p&gt;所以，怎么去利用这个键呢？&lt;/p&gt;
 &lt;p&gt;注意：该键是没有 keycode 的，也就是不被作为键盘的输入键。&lt;/p&gt;</description>
       
@@ -391,11 +391,11 @@ gyp ERR! build error&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbe
       <guid>https://lengthmin.me/posts/install-arch-wsl/</guid>
       <pubDate>Fri, 12 Jul 2019 01:42:25 GMT</pubDate>
       
-      <description>&lt;p&gt;用 windows 写代码最想吐槽的就是 cmd 了！WSL 真的就是吾等救星。&lt;br /&gt;
+      <description>&lt;p&gt;用 windows 写代码最想吐槽的就是 cmd 了！WSL 真的就是吾等救星。&lt;br&gt;
 之前使用的是商店里的 Ubuntu WSL ，没感觉到有啥不好的，然鹅试了 Arch WSL 以后，能体会到 Ubuntu WSL 的龟速…
-Arch WSL 真的是秒开哦~
+Arch WSL 真的是秒开哦～
 链接拿去：
-&lt;a href=&quot;https://github.com/yuk7/ArchWSL&quot;&gt;&lt;img src=&quot;https://gh-card.dev/repos/yuk7/ArchWSL.svg&quot; alt=&quot;yuk7/ArchWSL&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+&lt;a href=&quot;https://github.com/yuk7/ArchWSL&quot;&gt;&lt;img src=&quot;https://gh-card.dev/repos/yuk7/ArchWSL.svg&quot; alt=&quot;yuk7/ArchWSL&quot;&gt;&lt;/a&gt;&lt;/p&gt;</description>
       
       
       
@@ -423,7 +423,7 @@ Arch WSL 真的是秒开哦~
       <pubDate>Sun, 16 Jun 2019 05:44:49 GMT</pubDate>
       
       <description>&lt;p&gt;期末复习汇编… 真的是好努力的复习…
-实验老师让我们做的那几个实验，想想还觉得谢谢了~
+实验老师让我们做的那几个实验，想想还觉得谢谢了～
 谈一下输入输出、分支流程、基本指令，再谈一下做过的几个题目。&lt;/p&gt;</description>
       
       
@@ -449,7 +449,7 @@ Arch WSL 真的是秒开哦~
       <guid>https://lengthmin.me/posts/why-do-we-need-to-configure-environment-variables/</guid>
       <pubDate>Sat, 27 Apr 2019 16:03:42 GMT</pubDate>
       
-      <description>&lt;p&gt;之前学习 Java 的时候，感觉最难做的一件事情就是配置 jdk 的环境。那叫一个困难啊，Path、JAVA_HOME、CLASSPATH 印象深刻的很…（但是现在JDK11不用再配置 classpath 了，jre 和 jdk 合并了）。就在去年暑假，要 &lt;a href=&quot;/posts/install-opencv-windows-vs/&quot;&gt;配OpenCV的环境&lt;/a&gt;，要调的东西还是比较多的，对环境配置的概念又加深了。&lt;/p&gt;
+      <description>&lt;p&gt;之前学习 Java 的时候，感觉最难做的一件事情就是配置 jdk 的环境。那叫一个困难啊，Path、JAVA_HOME、CLASSPATH 印象深刻的很…（但是现在 JDK11 不用再配置 classpath 了，jre 和 jdk 合并了）。就在去年暑假，要 &lt;a href=&quot;/posts/install-opencv-windows-vs/&quot;&gt;配 OpenCV 的环境&lt;/a&gt;，要调的东西还是比较多的，对环境配置的概念又加深了。&lt;/p&gt;
 &lt;p&gt;现在懂的多了，配过的环境也多了，配过的平台也不算少。现在就想分享一下「关于我对配环境这件事情的感受」。&lt;/p&gt;
 &lt;p&gt;那就以 Windows 来说说环境配置的问题，Linux 下的其实差不多。&lt;/p&gt;</description>
       
@@ -479,7 +479,7 @@ Arch WSL 真的是秒开哦~
       <description>&lt;p&gt;在网上看到 nvm 这个神器之后，最近装 Nodejs 都是用 nvm 来装了。刚好又装了 Linux Mint ，重新在 Linux 下安装一遍 nvm。Windows 上也有的类似工具 &lt;a href=&quot;https://github.com/coreybutler/nvm-windows&quot;&gt;nvm-windows&lt;/a&gt;，使用方法都差不多。&lt;/p&gt;
 &lt;p&gt;GitHub 链接：&lt;a href=&quot;https://github.com/creationix/nvm&quot;&gt;https://github.com/creationix/nvm&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;nvm 是 nodejs 的一个版本控制工具，也就是 “Node Version Manager” 的三个首字母。&lt;/p&gt;
-&lt;p&gt;2019-06-29更新：Windows 安装 nvm&lt;/p&gt;</description>
+&lt;p&gt;2019-06-29 更新：Windows 安装 nvm&lt;/p&gt;</description>
       
       
       
@@ -556,8 +556,8 @@ Arch WSL 真的是秒开哦~
       <guid>https://lengthmin.me/posts/to-build-a-better-hexo/</guid>
       <pubDate>Wed, 17 Jan 2018 02:24:03 GMT</pubDate>
       
-      <description>&lt;p&gt;我经常在 webide 更新博客，但这只限于有网络的情况下。想本地调试的话，在没网之前就需要把源文件同步到本地来。这个功能用 &lt;code&gt;git&lt;/code&gt; 来实现会非常好。&lt;br /&gt;
-大概的思路就是在博客的仓库创建一个分支来备份源文件。&lt;br /&gt;
+      <description>&lt;p&gt;我经常在 webide 更新博客，但这只限于有网络的情况下。想本地调试的话，在没网之前就需要把源文件同步到本地来。这个功能用 &lt;code&gt;git&lt;/code&gt; 来实现会非常好。&lt;br&gt;
+大概的思路就是在博客的仓库创建一个分支来备份源文件。&lt;br&gt;
 在部署网页之前可以先把源文件同步到备份分支，然后需要的时候本地拉取回来。&lt;/p&gt;</description>
       
       
@@ -581,24 +581,24 @@ Arch WSL 真的是秒开哦~
       <guid>https://lengthmin.me/posts/coding-pages-tinytinyrss/</guid>
       <pubDate>Mon, 15 Jan 2018 06:31:34 GMT</pubDate>
       
-      <description>&lt;p&gt;2019 年 2 月 17 日 16:20:57 更新：&lt;br /&gt;
-已经失效了！！&lt;br /&gt;
+      <description>&lt;p&gt;2019 年 2 月 17 日 16:20:57 更新：&lt;br&gt;
+已经失效了！！&lt;br&gt;
 已经失效了！！&lt;/p&gt;
 &lt;p&gt;现在部署可以一键部署了，但是已经无法获取 rss 更新了。&lt;/p&gt;
 &lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;failed to open stream: no suitable wrapper could be found&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;hr /&gt;
-&lt;p&gt;先说结论，不够好用，弃坑了，用国内的一览提供的 rss 服务。&lt;br /&gt;
+&lt;hr&gt;
+&lt;p&gt;先说结论，不够好用，弃坑了，用国内的一览提供的 rss 服务。&lt;br&gt;
 多平台支持，和 inoreader 相比速度更快，而且对于目前我订阅的源来说并没有不可阅读的，而且在 inoreader 上看不了電腦玩物的图片（因为 refer 的问题），在一览上没问题的。&lt;/p&gt;
 &lt;h2 id=&quot;关于-ttrss&quot;&gt;关于 ttrss&lt;a class=&quot;header-anchor&quot; href=&quot;#关于-ttrss&quot;&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;因为很喜欢关注科技界的新闻，需要一个聚合来看新闻的软件。&lt;br /&gt;
-说不上是 rss 重度使用者吧，但是还是每天必刷新闻的&lt;br /&gt;
-用了各种新闻软件之后，发现 rss 才是正道，不会被推荐打扰，就订阅那么几个源。每天刷一刷。&lt;br /&gt;
+&lt;p&gt;因为很喜欢关注科技界的新闻，需要一个聚合来看新闻的软件。&lt;br&gt;
+说不上是 rss 重度使用者吧，但是还是每天必刷新闻的&lt;br&gt;
+用了各种新闻软件之后，发现 rss 才是正道，不会被推荐打扰，就订阅那么几个源。每天刷一刷。&lt;br&gt;
 现在微信公众号几乎都不怎么看了，二者功能几乎重复哈哈哈哈哈&lt;/p&gt;
-&lt;p&gt;ttrss 即为 tinytinyrss(&lt;a href=&quot;https://tt-rss.org/&quot;&gt;https://tt-rss.org/&lt;/a&gt;)&lt;br /&gt;
-可以自己控制的自定义项较多的 rss 服务，&lt;br /&gt;
-多平台支持&lt;br /&gt;
-android 上推荐 feedme，最新的 3.5.1 版本支持了 tinytinyrss，体验很好。&lt;br /&gt;
-之前用 inoreader 的时候就用的 feedme，已通过 play 请开发者吃了个苹果哈哈哈哈哈，&lt;br /&gt;
+&lt;p&gt;ttrss 即为 tinytinyrss (&lt;a href=&quot;https://tt-rss.org/&quot;&gt;https://tt-rss.org/&lt;/a&gt;)&lt;br&gt;
+可以自己控制的自定义项较多的 rss 服务，&lt;br&gt;
+多平台支持&lt;br&gt;
+android 上推荐 feedme，最新的 3.5.1 版本支持了 tinytinyrss，体验很好。&lt;br&gt;
+之前用 inoreader 的时候就用的 feedme，已通过 play 请开发者吃了个苹果哈哈哈哈哈，&lt;br&gt;
 tinytinyrss 也就是在 php 环境下安装的，pc 上用浏览器打开就可以了。&lt;/p&gt;</description>
       
       
@@ -680,7 +680,7 @@ tinytinyrss 也就是在 php 环境下安装的，pc 上用浏览器打开就可
       <guid>https://lengthmin.me/posts/add-tencent-analytics-to-yelee/</guid>
       <pubDate>Fri, 15 Jul 2016 02:58:13 GMT</pubDate>
       
-      <description>&lt;p&gt;hexo 的原生主题自带了谷歌分析,而谷歌分析在国内水土不服。琢磨琢磨，把 next 主题上的腾讯分析添加到了正在用的 yelee 主题上。顺带一提，腾讯分析真的是用过的最好用的站点统计软件。&lt;/p&gt;</description>
+      <description>&lt;p&gt;hexo 的原生主题自带了谷歌分析，而谷歌分析在国内水土不服。琢磨琢磨，把 next 主题上的腾讯分析添加到了正在用的 yelee 主题上。顺带一提，腾讯分析真的是用过的最好用的站点统计软件。&lt;/p&gt;</description>
       
       
       
@@ -705,7 +705,7 @@ tinytinyrss 也就是在 php 环境下安装的，pc 上用浏览器打开就可
       <guid>https://lengthmin.me/posts/use-hexo-with-webide/</guid>
       <pubDate>Sat, 21 May 2016 08:03:00 GMT</pubDate>
       
-      <description>&lt;p&gt;一直有着想写一点东西的想法，想有个自己的博客。但是现在国内的知名博客服务（特指CSXN）好多广告= =，最后在知乎发现了 Hexo 这么个东西。自己就能搭建一个国内访问快无广告自定义颇多的炫酷博客。&lt;/p&gt;
+      <description>&lt;p&gt;一直有着想写一点东西的想法，想有个自己的博客。但是现在国内的知名博客服务（特指 CSXN）好多广告 = =，最后在知乎发现了 Hexo 这么个东西。自己就能搭建一个国内访问快无广告自定义颇多的炫酷博客。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://hexo.io/&quot;&gt;&lt;code&gt;Hexo&lt;/code&gt;&lt;/a&gt; 是一个用 nodejs 编写的静态博客框架，可以将生成的静态博客网页托管在服务器上。&lt;/li&gt;
 &lt;li&gt;国外的 &lt;a href=&quot;https://github.com/&quot;&gt;&lt;code&gt;github.com&lt;/code&gt;&lt;/a&gt; 和国内的 &lt;a href=&quot;https://coding.net/&quot;&gt;&lt;code&gt;coding.net&lt;/code&gt;&lt;/a&gt; 都提供免费的静态网页托管服务。&lt;/li&gt;
@@ -718,7 +718,7 @@ tinytinyrss 也就是在 php 环境下安装的，pc 上用浏览器打开就可
 &lt;li&gt;有网络就可以更新博客，只需要一个浏览器。&lt;/li&gt;
 &lt;li&gt;源文件在云端，可下载回本地。&lt;/li&gt;
 &lt;li&gt;可实时预览 markdown 文件。&lt;/li&gt;
-&lt;li&gt;完善的 linux 终端,有 root 权限。&lt;/li&gt;
+&lt;li&gt;完善的 linux 终端，有 root 权限。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;我在 c9 的 workspace：&lt;a href=&quot;https://ide.c9.io/lengthmin/hexo/&quot;&gt;https://ide.c9.io/lengthmin/hexo/&lt;/a&gt;&lt;/p&gt;</description>
       
