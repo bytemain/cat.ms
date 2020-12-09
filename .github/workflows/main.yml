@@ -3,14 +3,12 @@ name: deploy-hexo
 on:
   push:
     branches: [hexo]
-    paths-ignore:
-      - README.md
-      - ".vscode/*"
-      - "helper/*"
-      - ".prettierrc"
-      - ".editorconfig"
-      - ".markdownlint.json"
-      - ".gitignore"
+    paths:
+      - data/**/*
+      - helper/**/*
+      - scripts/**/*
+      - source/**/*
+      - _config.yml
 
 env:
   TZ: Asia/Shanghai
