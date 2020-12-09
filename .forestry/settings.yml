@@ -5,6 +5,11 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: directory
+  path: scaffolds
+  label: Scaffolds
+  create: all
+  match: "**/*"
+- type: directory
   path: source/_drafts
   label: Drafts
   create: all
