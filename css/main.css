@@ -737,6 +737,7 @@ pre code {
 }
 .post-body .link-grid {
   display: grid;
+  grid-gap: 1.5rem 1.5rem;
   gap: 1.5rem 1.5rem;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 20px;
@@ -2969,7 +2970,7 @@ hr {
   transition: all 0.2s ease-in-out;
 }
 .links-of-author a::before {
-  background: #9320ff;
+  background: #5cffff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

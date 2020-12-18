@@ -664,8 +664,15 @@ nvm npm_mirror https://npm.taobao.org/mirrors/npm/<span aria-hidden="true" class
 <p>然后我想打开该路径，就可以使用该字段名啦：
 <img data-src="https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccb03181acf3.png" alt="Snipaste_2019-05-02_22-47-37"></p>
 <p>简单来说！就是编程中的变量名。定义一个常量，想用的时候可以使用。</p>
-<p>在 Linux Shell 中，我们可以使用 <code>$VAR</code> 来使用一个变量。</p>
+<p>在 Windows CMD 中，我们可以使用 <code>%VAR%</code> 来使用一个变量。</p>
+<pre class="line-numbers language-bat" data-language="bat"><code class="language-bat">set VAR=hello
+echo %VAR%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>在 Unix Bash (Linux, Mac, etc.) 中，我们可以使用 <code>$VAR</code> 来使用一个变量。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">VAR</span><span class="token operator">=</span>hello
+<span class="token builtin class-name">echo</span> <span class="token variable">$VAR</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>在 PowerShell 中，我们可以使用 <code>$env:VAR</code> 来使用一个变量。</p>
+<pre class="line-numbers language-ps1" data-language="ps1"><code class="language-ps1">$env:VAR = "hello"
+Write-Output $env:VAR<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="用户变量和系统变量">用户变量和系统变量<a class="header-anchor" href="#用户变量和系统变量"></a></h2>
 <p>操作系统中有用户的概念。</p>
 <p>用户变量只对当前登录的用户生效。<br>
