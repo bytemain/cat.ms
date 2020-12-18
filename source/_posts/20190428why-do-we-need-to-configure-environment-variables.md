@@ -4,7 +4,7 @@ comments: true
 toc: true
 permalink: posts/why-do-we-need-to-configure-environment-variables/
 date: 2019-04-28 00:03:42
-updated: 2020-05-03 22:10:00
+updated: 2020-12-18 14:56:00
 categories: 
 - 思考
 tags:
@@ -79,9 +79,26 @@ tags:
 
 简单来说！就是编程中的变量名。定义一个常量，想用的时候可以使用。
 
-在 Linux Shell 中，我们可以使用 `$VAR` 来使用一个变量。
+在 Windows CMD 中，我们可以使用 `%VAR%` 来使用一个变量。
+
+```bat
+set VAR=hello
+echo %VAR%
+```
+
+在 Unix Bash (Linux, Mac, etc.) 中，我们可以使用 `$VAR` 来使用一个变量。
+
+```bash
+export VAR=hello
+echo $VAR
+```
 
 在 PowerShell 中，我们可以使用 `$env:VAR` 来使用一个变量。
+
+```ps1
+$env:VAR = "hello"
+Write-Output $env:VAR
+```
 
 ## 用户变量和系统变量
 
