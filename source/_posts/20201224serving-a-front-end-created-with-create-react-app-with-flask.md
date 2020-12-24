@@ -32,7 +32,7 @@ create-react-app 会将打包的结果放在项目根目录中的 build 文件�
 比如打包后 `index.html` 的一个链接：
 
 ```html index.html
-<link href=".static/css/2.0a6fdfd6.chunk.css" rel="stylesheet">
+<link href="/static/css/2.0a6fdfd6.chunk.css" rel="stylesheet">
 ```
 
 然后浏览器就会发出一个请求 `GET /static/css/2.0a6fdfd6.chunk.css`。
@@ -116,9 +116,11 @@ def serve(path):
         return send_from_directory(str(react_folder), "index.html")
 ```
 
-由于使用了蓝图的前缀功能，所以我们设置前端拉取静态资源的时候基本目录。
+### 设置前端 homepage
 
-举个例子，当你访问 `http://localhost:5000/front` 的时候是获取到 `index.html`，那么如果不设置基本静态资源的目录的话，请求的资源地址还是 `/static/xxxx`，我们得让浏览器往 `/front/static/xxxx` 访问才能被我们的视图函数捕捉到。
+由于使用了蓝图的前缀功能，所以我们前端拉取静态资源的时候也得有个前缀才能访问到具体文件。
+
+举个例子，当你访问 `http://localhost:5000/front` 的时候是获取到 `index.html`，然后 `index.html` 里面的资源地址还是 `/static/xxxx`，我们得让浏览器往 `/front/static/xxxx` 访问才能被我们的视图函数捕捉到。
 
 我们可以在 `package.json` 中设置 `homepage` 参数来指定基本路径。
 在 `package.json` 中设置即可：
@@ -127,8 +129,13 @@ def serve(path):
  "homepage": "."
 ```
 
-这样就会从设置的文件夹中拉取文件了。
+这样 `index.html` 里面的资源地址就会被设置为 `./static/xxxx`，浏览器访问时也就会访问 `/front` + `./static/xxx` 了。
 
+这样就会被我们的视图函数捕捉到，然后从设置的文件夹中拉取文件了。
+
+### 设置后端 API 地址
+
+还有一个小点要注意。
 前端进行开发测试的时候也要请求后端，所以发请求的时候要注意根据不同开发环境来设置不同的 BASE_URL：
 
 ```js
