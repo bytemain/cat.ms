@@ -66,6 +66,7 @@
 
 
 
+
   <noscript>
   <style>
   body { margin-top: 2rem; }
@@ -111,7 +112,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="切换导航栏" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -164,7 +165,7 @@
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
@@ -180,7 +181,7 @@
 </div>
         
   
-  <div class="toggle sidebar-toggle">
+  <div class="toggle sidebar-toggle" role="button">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -200,12 +201,12 @@
 
       <div class="sidebar-panel-container">
         <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
+        <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-Arch-WSL"><span class="nav-number">1.</span> <span class="nav-text">下载安装 Arch WSL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">配置软件仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Arch-Linux-%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F"><span class="nav-number">2.1.</span> <span class="nav-text">Arch Linux 软件仓库国内镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-ArchlinuxCN-%E6%BA%90"><span class="nav-number">2.2.</span> <span class="nav-text">添加 ArchlinuxCN 源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-AUR-%E5%8A%A9%E6%89%8B-yay"><span class="nav-number">2.3.</span> <span class="nav-text">安装 AUR 助手 yay</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-Arch-%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7"><span class="nav-number">3.</span> <span class="nav-text">创建 Arch 普通用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2-WSL-%E9%BB%98%E8%AE%A4%E7%94%A8%E6%88%B7"><span class="nav-number">4.</span> <span class="nav-text">切换 WSL 默认用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%A9%E8%BD%AC-Arch-WSL"><span class="nav-number">5.</span> <span class="nav-text">玩转 Arch WSL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pacman-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">pacman 使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="nav-number">5.2.</span> <span class="nav-text">安装网络相关的工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%9F%BA%E6%9C%AC%E7%8E%AF%E5%A2%83"><span class="nav-number">5.3.</span> <span class="nav-text">配置基本环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE-zsh"><span class="nav-number">6.</span> <span class="nav-text">安装配置 zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-zsh-%E5%92%8C-oh-my-zsh"><span class="nav-number">6.1.</span> <span class="nav-text">安装 zsh 和 oh-my-zsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-alias"><span class="nav-number">6.2.</span> <span class="nav-text">配置 alias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-PATH-%E5%8F%98%E9%87%8F"><span class="nav-number">6.3.</span> <span class="nav-text">配置 PATH 变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh-%E7%9A%84%E5%85%B6%E4%BB%96%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE"><span class="nav-number">6.4.</span> <span class="nav-text">zsh 的其他的一些配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-VSCode-%E4%B8%AD%E4%BD%BF%E7%94%A8-WSL"><span class="nav-number">7.</span> <span class="nav-text">在 VSCode 中使用 WSL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="nav-number">8.</span> <span class="nav-text">更多优化配置</span></a></li></ol></div>
-        </section>
+        </div>
         <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Artin"
       src="/images/avatar.png">
@@ -217,20 +218,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -252,7 +253,7 @@
 
 
 
-        </section>
+        </div>
       </div>
     </div>
   </aside>
@@ -262,7 +263,7 @@
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -905,7 +906,7 @@ git-config() {
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols：</span>
-    <span title="Symbols">50k</span>
+    <span title="Symbols">53k</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -993,7 +994,6 @@ if (document.querySelectorAll('.mermaid').length) {
 
   
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
 
 

@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://lengthmin.me/posts/serving-a-front-end-created-with-create-react-app-with-flask/</loc>
+        <lastmod>2020-12-24T02:56:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://lengthmin.me/posts/why-do-we-need-to-configure-environment-variables/</loc>
         <lastmod>2020-12-18T06:56:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
