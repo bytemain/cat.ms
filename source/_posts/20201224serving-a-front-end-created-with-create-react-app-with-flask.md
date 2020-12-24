@@ -12,7 +12,7 @@ tags:
 
 最近在忙一个外包，因为大屏展示页面是用 React 写的（使用 create-react-app），甲方想访问后端控制页面的网址就能直接访问这个大屏展示，而不是前后端分离部署。
 
-自己尝试了一下，发现由于 create-react-app 打包的静态资源都放在了 `static` 路径下。
+自己尝试了一下，还是遇到了点问题。
 
 create-react-app 会将打包的结果放在项目根目录中的 build 文件夹，打包后的路径结构：
 
@@ -29,13 +29,13 @@ create-react-app 会将打包的结果放在项目根目录中的 build 文件�
   - [more meta files]
 ```
 
-比如打包后 `index.html` 的一个链接：
+create-react-app 打包的静态资源都放在了 `static` 路径下。比如打包后 `index.html` 中的一个链接：
 
 ```html index.html
 <link href="/static/css/2.0a6fdfd6.chunk.css" rel="stylesheet">
 ```
 
-然后浏览器就会发出一个请求 `GET /static/css/2.0a6fdfd6.chunk.css`。
+浏览器解析后，会发出一个请求 `GET /static/css/2.0a6fdfd6.chunk.css`。
 
 如果简单的添加一个路由返回 `index.html` 文件的话，就有以下的问题出现：
 
