@@ -195,7 +195,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%88%98"><span class="nav-number">2.</span> <span class="nav-text">实战</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%88%98"><span class="nav-number">2.</span> <span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%89%8D%E7%AB%AF-homepage"><span class="nav-number">2.1.</span> <span class="nav-text">设置前端 homepage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%90%8E%E7%AB%AF-API-%E5%9C%B0%E5%9D%80"><span class="nav-number">2.2.</span> <span class="nav-text">设置后端 API 地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -330,7 +330,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.2k</span>
+      <span>3.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -362,7 +362,7 @@
   - index.html
   - [more meta files]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>比如打包后 <code>index.html</code> 的一个链接：</p>
-<pre class="line-numbers language-html" data-language="html"><div class="caption"><span>index.html</span></div><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>.static/css/2.0a6fdfd6.chunk.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-html" data-language="html"><div class="caption"><span>index.html</span></div><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/static/css/2.0a6fdfd6.chunk.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后浏览器就会发出一个请求 <code>GET /static/css/2.0a6fdfd6.chunk.css</code>。</p>
 <p>如果简单的添加一个路由返回 <code>index.html</code> 文件的话，就有以下的问题出现：</p>
 <p>因为 Flask 本身就有 <code>static_folder</code> 的概念，所有请求 <code>/static</code> 路径的请求都会从配置的 <code>static_folder</code> 中读取文件并返回。</p>
@@ -419,12 +419,15 @@ react_folder <span class="token operator">=</span> <span class="token punctuatio
         <span class="token keyword">return</span> send_from_directory<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>react_folder<span class="token punctuation">)</span><span class="token punctuation">,</span> path<span class="token punctuation">)</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> send_from_directory<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>react_folder<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"index.html"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>由于使用了蓝图的前缀功能，所以我们设置前端拉取静态资源的时候基本目录。</p>
-<p>举个例子，当你访问 <code>http://localhost:5000/front</code> 的时候是获取到 <code>index.html</code>，那么如果不设置基本静态资源的目录的话，请求的资源地址还是 <code>/static/xxxx</code>，我们得让浏览器往 <code>/front/static/xxxx</code> 访问才能被我们的视图函数捕捉到。</p>
+<h3 id="设置前端-homepage">设置前端 homepage<a class="header-anchor" href="#设置前端-homepage"></a></h3>
+<p>由于使用了蓝图的前缀功能，所以我们前端拉取静态资源的时候也得有个前缀才能访问到具体文件。</p>
+<p>举个例子，当你访问 <code>http://localhost:5000/front</code> 的时候是获取到 <code>index.html</code>，然后 <code>index.html</code> 里面的资源地址还是 <code>/static/xxxx</code>，我们得让浏览器往 <code>/front/static/xxxx</code> 访问才能被我们的视图函数捕捉到。</p>
 <p>我们可以在 <code>package.json</code> 中设置 <code>homepage</code> 参数来指定基本路径。在 <code>package.json</code> 中设置即可：</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"."</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这样就会从设置的文件夹中拉取文件了。</p>
-<p>前端进行开发测试的时候也要请求后端，所以发请求的时候要注意根据不同开发环境来设置不同的 BASE_URL：</p>
+<p>这样 <code>index.html</code> 里面的资源地址就会被设置为 <code>./static/xxxx</code>，浏览器访问时也就会访问 <code>/front</code> + <code>./static/xxx</code> 了。</p>
+<p>这样就会被我们的视图函数捕捉到，然后从设置的文件夹中拉取文件了。</p>
+<h3 id="设置后端-API-地址">设置后端 API 地址<a class="header-anchor" href="#设置后端-API-地址"></a></h3>
+<p>还有一个小点要注意。前端进行开发测试的时候也要请求后端，所以发请求的时候要注意根据不同开发环境来设置不同的 BASE_URL：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token constant">BASE_URL</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">||</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'development'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token constant">BASE_URL</span> <span class="token operator">=</span> <span class="token string">'http://127.0.0.1:5000'</span><span class="token punctuation">;</span>
