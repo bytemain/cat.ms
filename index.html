@@ -316,7 +316,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.3k</span>
+      <span>3.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -335,7 +335,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>最近在忙一个外包，因为大屏展示页面是用 React 写的（使用 create-react-app），甲方想访问后端控制页面的网址就能直接访问这个大屏展示，而不是前后端分离部署。</p>
-<p>自己尝试了一下，发现由于 create-react-app 打包的静态资源都放在了 <code>static</code> 路径下。</p>
+<p>自己尝试了一下，还是遇到了点问题。</p>
 <p>create-react-app 会将打包的结果放在项目根目录中的 build 文件夹，打包后的路径结构：</p>
 <pre class="line-numbers language-plaintext" data-language="plaintext"><div class="caption"><span>build directory structure</span><a href="https://stackoverflow.com/questions/44209978/serving-a-front-end-created-with-create-react-app-with-flask">Source</a></div><code class="language-plaintext">- build
   - static
@@ -347,9 +347,9 @@
         - main.[hash].js.map
   - index.html
   - [more meta files]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>比如打包后 <code>index.html</code> 的一个链接：</p>
+<p>create-react-app 打包的静态资源都放在了 <code>static</code> 路径下。比如打包后 <code>index.html</code> 中的一个链接：</p>
 <pre class="line-numbers language-html" data-language="html"><div class="caption"><span>index.html</span></div><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/static/css/2.0a6fdfd6.chunk.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后浏览器就会发出一个请求 <code>GET /static/css/2.0a6fdfd6.chunk.css</code>。</p>
+<p>浏览器解析后，会发出一个请求 <code>GET /static/css/2.0a6fdfd6.chunk.css</code>。</p>
 <p>如果简单的添加一个路由返回 <code>index.html</code> 文件的话，就有以下的问题出现：</p>
 <p>因为 Flask 本身就有 <code>static_folder</code> 的概念，所有请求 <code>/static</code> 路径的请求都会从配置的 <code>static_folder</code> 中读取文件并返回。</p>
 <div class="mermaid">
