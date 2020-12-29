@@ -24,27 +24,22 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"lengthmin.me","root":"/","images":"/images","scheme":"Mist","version":"8.1.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":true,"preload":true}};
   </script>
-<meta name="description" content="作为一个前端开发者（，偶尔会写点用户脚本 [1] 增强自己的浏览体验。 对于传统服务端渲染的页面可以直接在页面上执行脚本达到自己的目的，但是对于现在的数据流驱动的前端开发框架来说，原来的那种做法行不通了，需要找到一个方式参与到页面的渲染中。 so how to hack(actually: modify) an angular page?">
+<meta name="description" content="table {     word-break: keep-all; }  使用 pyodbc + sqlalchemy 连接 SQLServer 数据库的时候遇到一个报错： [IM002] [Microsoft][ODBC 驱动程序管理器] 未发现数据源名称并且未指定默认驱动程序 (0) (SQLDriverConnect)。 查阅 sqlalchemy mssql+pyodbc 数据库文档 后">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 Angular 网页中使用 UserScript">
-<meta property="og:url" content="https://lengthmin.me/posts/using-userscript-in-angular-page/">
+<meta property="og:title" content="SQLServer 不同 ODBC 驱动的区别">
+<meta property="og:url" content="https://lengthmin.me/posts/sqlserver-odbc-driver/">
 <meta property="og:site_name" content="Artin&#39;s Blog">
-<meta property="og:description" content="作为一个前端开发者（，偶尔会写点用户脚本 [1] 增强自己的浏览体验。 对于传统服务端渲染的页面可以直接在页面上执行脚本达到自己的目的，但是对于现在的数据流驱动的前端开发框架来说，原来的那种做法行不通了，需要找到一个方式参与到页面的渲染中。 so how to hack(actually: modify) an angular page?">
+<meta property="og:description" content="table {     word-break: keep-all; }  使用 pyodbc + sqlalchemy 连接 SQLServer 数据库的时候遇到一个报错： [IM002] [Microsoft][ODBC 驱动程序管理器] 未发现数据源名称并且未指定默认驱动程序 (0) (SQLDriverConnect)。 查阅 sqlalchemy mssql+pyodbc 数据库文档 后">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.lengthm.in/posts/using-userscript-in-angular-page/btn-list.png">
-<meta property="og:image" content="https://i.lengthm.in/posts/using-userscript-in-angular-page/btn-scope-info.png">
-<meta property="og:image" content="https://i.lengthm.in/posts/using-userscript-in-angular-page/btn-can-click.png">
-<meta property="article:published_time" content="2020-04-15T01:49:01.000Z">
-<meta property="article:modified_time" content="2020-04-15T01:49:01.000Z">
+<meta property="article:published_time" content="2020-12-29T05:42:31.000Z">
+<meta property="article:modified_time" content="2020-12-29T05:42:31.000Z">
 <meta property="article:author" content="Artin">
-<meta property="article:tag" content="Web">
-<meta property="article:tag" content="UserScript">
-<meta property="article:tag" content="Angular">
+<meta property="article:tag" content="ODBC">
+<meta property="article:tag" content="pyodbc">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.lengthm.in/posts/using-userscript-in-angular-page/btn-list.png">
 
 
-<link rel="canonical" href="https://lengthmin.me/posts/using-userscript-in-angular-page/">
+<link rel="canonical" href="https://lengthmin.me/posts/sqlserver-odbc-driver/">
 
 
 <script class="page-configurations">
@@ -57,7 +52,7 @@
   };
 </script><meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>在 Angular 网页中使用 UserScript | Artin's Blog</title>
+<title>SQLServer 不同 ODBC 驱动的区别 | Artin's Blog</title>
   
 
 
@@ -198,7 +193,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96-Angular-%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.</span> <span class="nav-text">获取 Angular 实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="nav-number">2.</span> <span class="nav-text">分析网页数据流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E5%90%AC%E9%A1%B5%E9%9D%A2%E5%8F%98%E5%8C%96%EF%BC%8C%E4%B8%80%E7%9B%B4%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="nav-number">3.</span> <span class="nav-text">监听页面变化，一直修改数据</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E8%BF%99%E4%B9%88%E5%A4%9A%E9%A9%B1%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">怎么这么多驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-Server-Native-Client"><span class="nav-number">2.</span> <span class="nav-text">SQL Server Native Client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Microsoft-ODBC-Driver-for-SQL-Server"><span class="nav-number">3.</span> <span class="nav-text">Microsoft ODBC Driver for SQL Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -282,7 +277,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lengthmin.me/posts/using-userscript-in-angular-page/">
+    <link itemprop="mainEntityOfPage" href="https://lengthmin.me/posts/sqlserver-odbc-driver/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -295,7 +290,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          在 Angular 网页中使用 UserScript
+          SQLServer 不同 ODBC 驱动的区别
         </h1>
 
         <div class="post-meta-container">
@@ -306,7 +301,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-04-15 09:49" itemprop="dateCreated datePublished" datetime="2020-04-15T09:49:01+08:00">2020-04-15</time>
+      <time title="创建时间：2020-12-29 13:42" itemprop="dateCreated datePublished" datetime="2020-12-29T13:42:31+08:00">2020-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -314,7 +309,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+          <a href="/categories/SQLServer/" itemprop="url" rel="index"><span itemprop="name">SQLServer</span></a>
         </span>
     </span>
 
@@ -333,7 +328,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.7k</span>
+      <span>2.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -351,74 +346,220 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>作为一个前端开发者（，偶尔会写点用户脚本 <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> 增强自己的浏览体验。</p>
-<p>对于传统服务端渲染的页面可以直接在页面上执行脚本达到自己的目的，但是对于现在的数据流驱动的前端开发框架来说，原来的那种做法行不通了，需要找到一个方式参与到页面的渲染中。</p>
-<p>so how to hack(actually: modify) an angular page?</p>
+        <style>
+table {
+    word-break: keep-all;
+}
+</style>
+<p>使用 pyodbc + sqlalchemy 连接 SQLServer 数据库的时候遇到一个报错： <code>[IM002] [Microsoft][ODBC 驱动程序管理器] 未发现数据源名称并且未指定默认驱动程序 (0) (SQLDriverConnect)</code>。</p>
+<p>查阅 <a href="https://docs.sqlalchemy.org/en/14/dialects/mssql.html#module-sqlalchemy.dialects.mssql.pyodbc">sqlalchemy mssql+pyodbc 数据库文档</a> 后发现：</p>
+<p>需要装 ODBC 驱动。并且如果你要是用 hostname 方式来连接数据库的话，还需要指定驱动名字，但是发现有好多种 driver，一个 driver 还有不同的名字。于是研究了一番。</p>
 <a id="more"></a>
-<p>先说好啊，我是写 React 的，有什么出错的地方请多指正。</p>
-<h2 id="获取-Angular-实例">获取 Angular 实例<a class="header-anchor" href="#获取-Angular-实例"></a></h2>
-<p>Google 许久，发现了下面这个 <a href="https://gist.github.com/mgol/7893061">gist</a>, 可以直接拿到 Angular 的实例。</p>
-<script src="https://gist.github.com/mgol/7893061.js" data-pjax=""></script>
-<p>解释一下代码：因为 angular 会把自己注入到 <code>window.angular</code>，所以可以调用 <code>angular.element</code> 方法生成 Angular 对象。</p>
-<p>按照 gist 里的提示执行代码片段。</p>
-<p>能拿到 Angular 的实例就好办了，来调试分析网页的数据流。在 <code>rootScope</code> 上 <code>watch</code> 后，拿到对应的 <code>scope</code> 进行修改。</p>
-<h2 id="分析网页数据流">分析网页数据流<a class="header-anchor" href="#分析网页数据流"></a></h2>
-<p><img data-src="https://i.lengthm.in/posts/using-userscript-in-angular-page/btn-list.png" alt="btn-list.png"></p>
-<p>平常我们是无法点击这个用户行为按钮的，因为属性里的 <code>disable</code> 被设置为了 <code>true</code>，选中这个按钮的 DOM，在控制台输入 <code>$scope</code>（你需要按 gist 中的注释现在网页中执行代码片段）查看信息。</p>
-<p><img data-src="https://i.lengthm.in/posts/using-userscript-in-angular-page/btn-scope-info.png" alt="btn-scope-info.png"></p>
-<p>尝试修改 <code>$scope.disabled = false</code>，再点击该按钮，可以点击了。</p>
-<p><img data-src="https://i.lengthm.in/posts/using-userscript-in-angular-page/btn-can-click.png" alt="btn-can-click.png"></p>
-<p>但是我们切换到另一页再切换回来之后，又无法点击了，究其根本就是我们没影响到最内层的数据流。</p>
-<h2 id="监听页面变化，一直修改数据">监听页面变化，一直修改数据<a class="header-anchor" href="#监听页面变化，一直修改数据"></a></h2>
+<h2 id="怎么这么多驱动">怎么这么多驱动<a class="header-anchor" href="#怎么这么多驱动"></a></h2>
+<p>引用并重新编辑一下 <a href="https://docs.microsoft.com/zh-cn/sql/connect/connect-history?view=sql-server-ver15#odbc">Microsoft SQL Server 的驱动程序历史记录 - SQL Server | Microsoft Docs</a> 中一段很清晰的描述：</p>
+<p>有三代不同的 Microsoft ODBC Driver for SQL Server。</p>
+<ul>
+<li>第一代 “SQL Server” ODBC 驱动程序仍作为 <a href="https://docs.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver15#microsoft-or-windows-data-access-components">Windows Data Access 组件</a> 的一部分提供。对于新开发的程序，不建议使用此驱动程序。</li>
+<li>从 SQL Server 2005 开始，<a href="#SQL-Server-Native-Client">SQL Server Native Client</a> 包含一个 ODBC 接口，并且它是 SQL Server 2005 至 SQL Server 2012 中随附的 ODBC 驱动程序。 对于新开发，也不建议使用此驱动程序。</li>
+<li>在 SQL Server 2012 之后，<a href="#Microsoft-ODBC-Driver-for-SQL-Server">Microsoft ODBC Driver for SQL Server</a> 驱动程序随最新的服务器功能进行更新。</li>
+</ul>
+<h2 id="SQL-Server-Native-Client">SQL Server Native Client<a class="header-anchor" href="#SQL-Server-Native-Client"></a></h2>
+<p>SQL Server 2005 引入了 SQL Server Native Client 的支持，可用于 ODBC 的连接。</p>
+<p>SQL Server 2005 至 SQL Server 2012 都在进行 SQL Server Native Client（通常缩写为 SNAC）的开发。SQL Server Native Client 10.0 跟着 SQL Server 2008 一起发版。SQL Server Native Client 11.0 跟着 SQL Server 2012 一起发版。</p>
+<p>可以在这儿下载到所有的历史版本：<a href="https://www.connectionstrings.com/download-sql-server-native-client/">Download SQL Server Native Client - ConnectionStrings.com</a></p>
+<p>想使用的话找到最新版的安装就行，驱动都是向前兼容的。需要注意的就是不同的 SQLServer 版本设置的驱动名字：</p>
+<ul>
+<li><code>Driver={SQL Server Native Client}</code> (SQL Server 2005)</li>
+<li><code>Driver={SQL Server Native Client 10.0}</code> (SQL Server 2008)</li>
+<li><code>Driver={SQL Server Native Client 11.0}</code> (SQL Server 2012 及之后)</li>
+</ul>
+<p>但是微软<a href="https://docs.microsoft.com/zh-cn/archive/blogs/sqlnativeclient/introducing-the-new-microsoft-odbc-drivers-for-sql-server">在 13 年宣布了新版的 ODBC Driver</a>，也就是下面这个。在 17 年放弃了对 SNAC 的开发，被下面这个驱动取代，新版的驱动性能更好，支持 SQLServer 2012 之后的数据库的新特性。</p>
+<h2 id="Microsoft-ODBC-Driver-for-SQL-Server">Microsoft ODBC Driver for SQL Server<a class="header-anchor" href="#Microsoft-ODBC-Driver-for-SQL-Server"></a></h2>
+<p><a href="https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server">最新版驱动下载地址</a> &nbsp; | &nbsp; <a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/release-notes-odbc-sql-server-windows?view=sql-server-ver15#previous-releases">历史版本驱动下载地址</a></p>
+<p>使用方法也是安装好驱动程序，设置驱动名字。</p>
+<p>驱动名字格式：</p>
+<ul>
+<li><code>Driver={ODBC Driver XX for SQL Server}</code> (XX 是你安装的驱动版本的名字)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th> 数据库版本&nbsp;→<br>↓ 驱动程序版本</th>
+<th> Azure SQL Database</th>
+<th>Azure Synapse Analytics</th>
+<th>Azure SQL 托管实例</th>
+<th> SQL Server 2019</th>
+<th>SQL Server 2017</th>
+<th>SQL Server 2016</th>
+<th>SQL Server 2014</th>
+<th>SQL Server 2012</th>
+<th>SQL Server 2008 R2</th>
+<th>SQL Server 2008</th>
+<th>SQL Server 2005</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17.6</td>
+<td> 是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> 17.5</td>
+<td> 是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> 17.4</td>
+<td> 是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> 17.3</td>
+<td> 是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td> 17.2</td>
+<td> 是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td> 17.1</td>
+<td> 是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td> 17.0</td>
+<td> 是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td> 13.1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td> 是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td> 13</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td> 是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td> 11</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td> 是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<p align="center">
+SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/system-requirements-installation-and-driver-files?view=sql-server-ver15#sql-version-compatibility">Microsoft</a>
+</p>
+<h2 id="总结">总结<a class="header-anchor" href="#总结"></a></h2>
+<p><code>ODBC Driver for SQL Server</code> 的性能更好，新版本有很多优化，有新特性，2021 年做开发就要选他。</p>
+<p>不同的驱动版本的支持的数据库版本也不同。请你一定要看好自己的 SQLServer 版本，去安装对应版本的驱动，然后配置好驱动名字。</p>
+<p>还发现了一个非常棒的网站：<a href="https://www.connectionstrings.com/">ConnectionStrings</a></p>
 <blockquote>
-<p>下面的脚本是当时参考了 StackOverflow 上的一个 Angular watch 有关的问题，但是找不到链接了，所以未能注明来源，非常抱歉。</p>
+<p><a href="http://ConnectionStrings.com">ConnectionStrings.com</a> helps developers connect software to data. It’s a straight to the point reference about connection strings, a <a href="https://www.connectionstrings.com/kb/">knowledge base</a> of articles and database connectivity content and a host of <a href="https://www.connectionstrings.com/questions/">Q &amp; A forums</a> where developers help each other finding solutions.</p>
 </blockquote>
-<p>那如何在用户脚本里拿到 Angular 对象呢？</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> retryCount <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>
-    maxRetry <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span>
-    timeout <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">,</span>
-    timer<span class="token punctuation">;</span>
-<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">initScript</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    window<span class="token punctuation">.</span><span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>window<span class="token punctuation">.</span>angular<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        retryCount<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>retryCount <span class="token operator">&lt;</span> maxRetry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>initScript<span class="token punctuation">,</span> timeout<span class="token punctuation">)</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">setTimeout</span><span class="token punctuation">(</span>injectScript<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>阻塞等待 angular 加载成功即可。然后执行 <code>injectScript</code> 执行我们自己的脚本。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">injectScript</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">var</span> ngAppElem <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'[ng-app]'</span><span class="token punctuation">)</span> <span class="token operator">||</span> document<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    $rootScope <span class="token operator">=</span> ngAppElem<span class="token punctuation">.</span><span class="token function">scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    $rootScope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token comment">// do something.</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>我们在 <code>rootScope</code> 上执行 <code>watch</code>，这样也不会因为切换页面而丢失 <code>watch</code>。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">injectScript</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">var</span> ngAppElem <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'[ng-app]'</span><span class="token punctuation">)</span> <span class="token operator">||</span> document<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    $rootScope <span class="token operator">=</span> ngAppElem<span class="token punctuation">.</span><span class="token function">scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    $rootScope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">var</span> elem <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"#dashboardmainpart &gt; div &gt; div.EventBottomChartsContainer &gt; div.EventDetailContainer &gt; div &gt; ul &gt; li:nth-child(3)"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">var</span> s1 <span class="token operator">=</span> elem<span class="token punctuation">.</span><span class="token function">isolateScope</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> elem<span class="token punctuation">.</span><span class="token function">scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          s1<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-          <span class="token keyword">return</span> s1<span class="token punctuation">.</span>disabled<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> s1<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>然后获取我们需要的地方的 scope，直接修改即可。每次页面修改后 <code>watch</code> 函数都会被执行。</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://en.wikipedia.org/wiki/Userscript">https://en.wikipedia.org/wiki/Userscript</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
+<p><a href="http://ConnectionStrings.com">ConnectionStrings.com</a> 帮助开发人员将软件连接到数据库。它是一个关于连接字符串的直接参考、一个数据库连接内容和文章的知识库，同时也是一个问答论坛，开发人员可以在这里互相帮助寻找解决方案。</p>
+<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/39440008/differences-between-drivers-for-odbc-drivers">sql server - Differences Between Drivers for ODBC Drivers - Stack Overflow</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/release-notes-odbc-sql-server-windows?view=sql-server-ver15#previous-releases">Windows 上的 ODBC Driver for SQL Server 发行说明 - SQL Server | Microsoft Docs</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/native-client/applications/installing-sql-server-native-client?view=sql-server-ver15">Installing - SQL Server Native Client | Microsoft Docs</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver15#odbc">Driver history for Microsoft SQL Server - SQL Server | Microsoft Docs</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/system-requirements-installation-and-driver-files?view=sql-server-ver15#sql-version-compatibility">系统要求、安装和驱动程序文件 - SQL Server | Microsoft Docs</a></li>
+</ul>
 
     </div>
 
@@ -426,12 +567,6 @@
     
     
       
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/posts/use-mathjax-in-react/" rel="bookmark">React 项目中动态加载 Mathjax</a></div>
-    </li>
-  </ul>
 
 
     <footer class="post-footer">
@@ -475,11 +610,11 @@
   <li class="post-copyright-title">
     <strong>文章标题：
     </strong>
-    在 Angular 网页中使用 UserScript
+    SQLServer 不同 ODBC 驱动的区别
   </li>
   <li class="post-copyright-link">
     <strong>文章链接：</strong>
-    <a href="https://lengthmin.me/posts/using-userscript-in-angular-page/" title="在 Angular 网页中使用 UserScript">https://lengthmin.me/posts/using-userscript-in-angular-page/</a>
+    <a href="https://lengthmin.me/posts/sqlserver-odbc-driver/" title="SQLServer 不同 ODBC 驱动的区别">https://lengthmin.me/posts/sqlserver-odbc-driver/</a>
     <span class="copy-path" title="点击复制文章链接">
       <i class="fa fa-clipboard"></i>
     </span>
@@ -488,7 +623,7 @@
   <li class="post-copyright-updated">
     <strong>更新时间：
     </strong>
-    2020-04-15, 09:49
+    2020-12-29, 13:42
     <blockquote class="post-expired-notify">
       本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变
     </blockquote>
@@ -496,11 +631,11 @@
   <li class="post-copyright-history">
     <strong>更新历史：</strong>
     <i class="fab fa-github"></i>
-    <a href="https://github.com/lengthmin/lengthmin.me/blame/hexo/source/_posts/20200415using-greasemonkey-in-angular-page.md" title="顺序查看文章各部分修改记录" target="_blank">Blame</a>,
-    <a href="https://github.com/lengthmin/lengthmin.me/commits/hexo/source/_posts/20200415using-greasemonkey-in-angular-page.md" title="查看文章有关更新记录" target="_blank">History</a>
+    <a href="https://github.com/lengthmin/lengthmin.me/blame/hexo/source/_posts/20201229sqlserver-odbc-driver.md" title="顺序查看文章各部分修改记录" target="_blank">Blame</a>,
+    <a href="https://github.com/lengthmin/lengthmin.me/commits/hexo/source/_posts/20201229sqlserver-odbc-driver.md" title="查看文章有关更新记录" target="_blank">History</a>
     <strong style="margin-left: 1em">源文件：</strong>
     <i class="fas fa-file-alt"></i>
-    <a href="https://raw.githubusercontent.com/lengthmin/lengthmin.me/hexo/source/_posts/20200415using-greasemonkey-in-angular-page.md" title="查看 & 下载文章 Markdown 原始文件" target="_blank">.md Raw</a>
+    <a href="https://raw.githubusercontent.com/lengthmin/lengthmin.me/hexo/source/_posts/20201229sqlserver-odbc-driver.md" title="查看 & 下载文章 Markdown 原始文件" target="_blank">.md Raw</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明：
@@ -512,7 +647,7 @@
 
 <script data-pjax="data-pjax">
   (function () {
-    var dateUpdate = Date.parse("2020-04-15");
+    var dateUpdate = Date.parse("2020-12-29");
     var nowDate = new Date();
     var a = nowDate.getTime();
     var b = a - dateUpdate;
@@ -531,7 +666,7 @@
     var copyTooltip = document.querySelector('.copy-tooltip');
     var timeout;
     copyButton.addEventListener('click', function (e) {
-      const text = "原文作者：Artin\n原文标题：在 Angular 网页中使用 UserScript\n原文链接：https://lengthmin.me/posts/using-userscript-in-angular-page/";
+      const text = "原文作者：Artin\n原文标题：SQLServer 不同 ODBC 驱动的区别\n原文链接：https://lengthmin.me/posts/sqlserver-odbc-driver/";
 
       if (copyTooltip.hasChildNodes()) {
         copyTooltip.removeChild(copyTooltip.firstChild);
@@ -587,22 +722,18 @@
 </script>
 
           <div class="post-tags">
-              <a href="/tags/Web/" rel="tag"># Web</a>
-              <a href="/tags/UserScript/" rel="tag"># UserScript</a>
-              <a href="/tags/Angular/" rel="tag"># Angular</a>
+              <a href="/tags/ODBC/" rel="tag"># ODBC</a>
+              <a href="/tags/pyodbc/" rel="tag"># pyodbc</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/windows-install-nodert/" rel="prev" title="Windows 安装 NodeRT 踩坑">
-                  <i class="fa fa-chevron-left"></i> Windows 安装 NodeRT 踩坑
-                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/use-mathjax-in-react/" rel="next" title="React 项目中动态加载 Mathjax">
-                  React 项目中动态加载 Mathjax <i class="fa fa-chevron-right"></i>
+                <a href="/posts/serving-a-front-end-created-with-create-react-app-with-flask/" rel="next" title="使用 Flask 加载打包后的 React 前端页面">
+                  使用 Flask 加载打包后的 React 前端页面 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -761,7 +892,7 @@ if (document.querySelectorAll('.mermaid').length) {
       quicklink.listen({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://lengthmin.me/posts/using-userscript-in-angular-page/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://lengthmin.me/posts/sqlserver-odbc-driver/',]
       });
       });
   </script>
@@ -775,9 +906,9 @@ NexT.utils.loadComments('#disqus_thread', () => {
       api       : 'https://disqus.skk.moe/disqus/' || 'https://disqus.com/api/',
       apikey    : 'Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR',
       shortname : 'hexo-1',
-      url       : "https://lengthmin.me/posts/using-userscript-in-angular-page/",
-      identifier: "/posts/using-userscript-in-angular-page/",
-      title     : "在 Angular 网页中使用 UserScript",
+      url       : "https://lengthmin.me/posts/sqlserver-odbc-driver/",
+      identifier: "/posts/sqlserver-odbc-driver/",
+      title     : "SQLServer 不同 ODBC 驱动的区别",
     });
   }, window.DisqusJS);
 });

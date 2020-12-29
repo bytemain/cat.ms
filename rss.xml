@@ -9,8 +9,40 @@
     <atom:link href="https://lengthmin.me/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Python / React / Nodejs / ML</description>
-    <pubDate>Thu, 24 Dec 2020 02:56:58 GMT</pubDate>
+    <pubDate>Tue, 29 Dec 2020 05:42:31 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>SQLServer 不同 ODBC 驱动的区别</title>
+      <link>https://lengthmin.me/posts/sqlserver-odbc-driver/</link>
+      <guid>https://lengthmin.me/posts/sqlserver-odbc-driver/</guid>
+      <pubDate>Tue, 29 Dec 2020 05:42:31 GMT</pubDate>
+      
+      <description>&lt;style&gt;
+table {
+    word-break: keep-all;
+}
+&lt;/style&gt;
+&lt;p&gt;使用 pyodbc + sqlalchemy 连接 SQLServer 数据库的时候遇到一个报错： &lt;code&gt;[IM002] [Microsoft][ODBC 驱动程序管理器] 未发现数据源名称并且未指定默认驱动程序 (0) (SQLDriverConnect)&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;查阅 &lt;a href=&quot;https://docs.sqlalchemy.org/en/14/dialects/mssql.html#module-sqlalchemy.dialects.mssql.pyodbc&quot;&gt;sqlalchemy mssql+pyodbc 数据库文档&lt;/a&gt; 后发现：&lt;/p&gt;
+&lt;p&gt;需要装 ODBC 驱动。并且如果你要是用 hostname 方式来连接数据库的话，还需要指定驱动名字，但是发现有好多种 driver，一个 driver 还有不同的名字。于是研究了一番。&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<style>table {    word-break: keep-all;}</style><p>使用 pyodbc + sqlalchemy 连接 SQLServer 数据库的时候遇到一个报错： <code>[IM002] [Microsoft][ODBC 驱动程序管理器] 未发现数据源名称并且未指定默认驱动程序 (0) (SQLDriverConnect)</code>。</p><p>查阅 <a href="https://docs.sqlalchemy.org/en/14/dialects/mssql.html#module-sqlalchemy.dialects.mssql.pyodbc">sqlalchemy mssql+pyodbc 数据库文档</a> 后发现：</p><p>需要装 ODBC 驱动。并且如果你要是用 hostname 方式来连接数据库的话，还需要指定驱动名字，但是发现有好多种 driver，一个 driver 还有不同的名字。于是研究了一番。</p><a id="more"></a><h2 id="怎么这么多驱动">怎么这么多驱动<a class="header-anchor" href="#怎么这么多驱动"></a></h2><p>引用并重新编辑一下 <a href="https://docs.microsoft.com/zh-cn/sql/connect/connect-history?view=sql-server-ver15#odbc">Microsoft SQL Server 的驱动程序历史记录 - SQL Server | Microsoft Docs</a> 中一段很清晰的描述：</p><p>有三代不同的 Microsoft ODBC Driver for SQL Server。</p><ul><li>第一代 “SQL Server” ODBC 驱动程序仍作为 <a href="https://docs.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver15#microsoft-or-windows-data-access-components">Windows Data Access 组件</a> 的一部分提供。对于新开发的程序，不建议使用此驱动程序。</li><li>从 SQL Server 2005 开始，<a href="#SQL-Server-Native-Client">SQL Server Native Client</a> 包含一个 ODBC 接口，并且它是 SQL Server 2005 至 SQL Server 2012 中随附的 ODBC 驱动程序。 对于新开发，也不建议使用此驱动程序。</li><li>在 SQL Server 2012 之后，<a href="#Microsoft-ODBC-Driver-for-SQL-Server">Microsoft ODBC Driver for SQL Server</a> 驱动程序随最新的服务器功能进行更新。</li></ul><h2 id="SQL-Server-Native-Client">SQL Server Native Client<a class="header-anchor" href="#SQL-Server-Native-Client"></a></h2><p>SQL Server 2005 引入了 SQL Server Native Client 的支持，可用于 ODBC 的连接。</p><p>SQL Server 2005 至 SQL Server 2012 都在进行 SQL Server Native Client（通常缩写为 SNAC）的开发。SQL Server Native Client 10.0 跟着 SQL Server 2008 一起发版。SQL Server Native Client 11.0 跟着 SQL Server 2012 一起发版。</p><p>可以在这儿下载到所有的历史版本：<a href="https://www.connectionstrings.com/download-sql-server-native-client/">Download SQL Server Native Client - ConnectionStrings.com</a></p><p>想使用的话找到最新版的安装就行，驱动都是向前兼容的。需要注意的就是不同的 SQLServer 版本设置的驱动名字：</p><ul><li><code>Driver={SQL Server Native Client}</code> (SQL Server 2005)</li><li><code>Driver={SQL Server Native Client 10.0}</code> (SQL Server 2008)</li><li><code>Driver={SQL Server Native Client 11.0}</code> (SQL Server 2012 及之后)</li></ul><p>但是微软<a href="https://docs.microsoft.com/zh-cn/archive/blogs/sqlnativeclient/introducing-the-new-microsoft-odbc-drivers-for-sql-server">在 13 年宣布了新版的 ODBC Driver</a>，也就是下面这个。在 17 年放弃了对 SNAC 的开发，被下面这个驱动取代，新版的驱动性能更好，支持 SQLServer 2012 之后的数据库的新特性。</p><h2 id="Microsoft-ODBC-Driver-for-SQL-Server">Microsoft ODBC Driver for SQL Server<a class="header-anchor" href="#Microsoft-ODBC-Driver-for-SQL-Server"></a></h2><p><a href="https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server">最新版驱动下载地址</a> &nbsp; | &nbsp; <a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/release-notes-odbc-sql-server-windows?view=sql-server-ver15#previous-releases">历史版本驱动下载地址</a></p><p>使用方法也是安装好驱动程序，设置驱动名字。</p><p>驱动名字格式：</p><ul><li><code>Driver={ODBC Driver XX for SQL Server}</code> (XX 是你安装的驱动版本的名字)</li></ul><table><thead><tr><th> 数据库版本&nbsp;→<br>↓ 驱动程序版本</th><th> Azure SQL Database</th><th>Azure Synapse Analytics</th><th>Azure SQL 托管实例</th><th> SQL Server 2019</th><th>SQL Server 2017</th><th>SQL Server 2016</th><th>SQL Server 2014</th><th>SQL Server 2012</th><th>SQL Server 2008 R2</th><th>SQL Server 2008</th><th>SQL Server 2005</th></tr></thead><tbody><tr><td>17.6</td><td> 是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td></td><td></td><td></td></tr><tr><td> 17.5</td><td> 是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td></td><td></td><td></td></tr><tr><td> 17.4</td><td> 是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td></td><td></td><td></td></tr><tr><td> 17.3</td><td> 是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td></td></tr><tr><td> 17.2</td><td> 是</td><td>是</td><td>是</td><td></td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td></td></tr><tr><td> 17.1</td><td> 是</td><td>是</td><td>是</td><td></td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td></td></tr><tr><td> 17.0</td><td> 是</td><td>是</td><td>是</td><td></td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td></td></tr><tr><td> 13.1</td><td></td><td></td><td></td><td></td><td> 是</td><td>是</td><td>是</td><td>是</td><td>是</td><td>是</td><td></td></tr><tr><td> 13</td><td></td><td></td><td></td><td></td><td></td><td> 是</td><td>是</td><td>是</td><td>是</td><td>是</td><td></td></tr><tr><td> 11</td><td></td><td></td><td></td><td></td><td></td><td></td><td> 是</td><td>是</td><td>是</td><td>是</td><td>是</td></tr></tbody></table><p align="center">SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/system-requirements-installation-and-driver-files?view=sql-server-ver15#sql-version-compatibility">Microsoft</a></p><h2 id="总结">总结<a class="header-anchor" href="#总结"></a></h2><p><code>ODBC Driver for SQL Server</code> 的性能更好，新版本有很多优化，有新特性，2021 年做开发就要选他。</p><p>不同的驱动版本的支持的数据库版本也不同。请你一定要看好自己的 SQLServer 版本，去安装对应版本的驱动，然后配置好驱动名字。</p><p>还发现了一个非常棒的网站：<a href="https://www.connectionstrings.com/">ConnectionStrings</a></p><blockquote><p><a href="http://ConnectionStrings.com">ConnectionStrings.com</a> helps developers connect software to data. It’s a straight to the point reference about connection strings, a <a href="https://www.connectionstrings.com/kb/">knowledge base</a> of articles and database connectivity content and a host of <a href="https://www.connectionstrings.com/questions/">Q &amp; A forums</a> where developers help each other finding solutions.</p></blockquote><p><a href="http://ConnectionStrings.com">ConnectionStrings.com</a> 帮助开发人员将软件连接到数据库。它是一个关于连接字符串的直接参考、一个数据库连接内容和文章的知识库，同时也是一个问答论坛，开发人员可以在这里互相帮助寻找解决方案。</p><h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2><ul><li><a href="https://stackoverflow.com/questions/39440008/differences-between-drivers-for-odbc-drivers">sql server - Differences Between Drivers for ODBC Drivers - Stack Overflow</a></li><li><a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/release-notes-odbc-sql-server-windows?view=sql-server-ver15#previous-releases">Windows 上的 ODBC Driver for SQL Server 发行说明 - SQL Server | Microsoft Docs</a></li><li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/native-client/applications/installing-sql-server-native-client?view=sql-server-ver15">Installing - SQL Server Native Client | Microsoft Docs</a></li><li><a href="https://docs.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver15#odbc">Driver history for Microsoft SQL Server - SQL Server | Microsoft Docs</a></li><li><a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/system-requirements-installation-and-driver-files?view=sql-server-ver15#sql-version-compatibility">系统要求、安装和驱动程序文件 - SQL Server | Microsoft Docs</a></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://lengthmin.me/categories/SQLServer/">SQLServer</category>
+      
+      
+      <category domain="https://lengthmin.me/tags/ODBC/">ODBC</category>
+      
+      <category domain="https://lengthmin.me/tags/pyodbc/">pyodbc</category>
+      
+      
+      <comments>https://lengthmin.me/posts/sqlserver-odbc-driver/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>使用 Flask 加载打包后的 React 前端页面</title>
@@ -385,8 +417,6 @@ gyp ERR! build error&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbe
       
       <category domain="https://lengthmin.me/categories/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/">年终总结</category>
       
-      
-      <category domain="https://lengthmin.me/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/">年终总结</category>
       
       
       <comments>https://lengthmin.me/posts/2019/#disqus_thread</comments>
