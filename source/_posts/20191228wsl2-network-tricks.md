@@ -30,7 +30,6 @@ tags:
 3. WSL2 内有些微软特意做的东西：
    1. 向 **WSL2 的 IP** 发送的请求都会被转发到 **Windows 的 IP** 上，但是这个时灵时不灵。
 
-
 <!-- more -->
 
 ## WSL2 连接到主机代理
@@ -69,7 +68,6 @@ Windows 的 IP 都已经拿到了，比如说我的代理软件是监听在 7890
 
 直接放开网卡名的防火墙：
 
-
 ```ps1
 New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow
 ```
@@ -85,6 +83,24 @@ New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthe
 顺着作者的思路，我也实现了我自己的一个 **「一键」设置代理** 的脚本：
 
 [「一键」设置代理](#一键设置代理)
+
+### 使用网卡代理
+
+当然，还有一个更方便的就是使用网卡代理，不用再设置什么 `HTTP_PROXY` 了，直接网卡级别的代理。
+
+我使用的是 Clash 提供的 [TUN 模式](https://docs.cfw.lbyczf.com/contents/tun.html)。
+
+Clash 会创建一张网卡，接管系统的流量。
+
+![image.png](https://i.lengthm.in/posts/wsl2-network-tricks/clash_tun.png)
+
+这样就不用设置任何东西了，开启网卡代理后，整个系统的流量都会走网卡。
+
+你也可以使用下面这些：
+
+- cfw 提供的 [TAP 模式](https://docs.cfw.lbyczf.com/contents/tap.html)
+- [Netch](https://github.com/NetchX/Netch/)  
+  Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现类似 SocksCap64 那样的进程代理，也可以实现 SSTap 那样的全局 TUN/TAP 代理，和 Shadowsocks-Windows 那样的本地 Socks5，HTTP 和系统代理
 
 ## 主机访问 WSL2
 
@@ -166,7 +182,6 @@ expose_local(){
     sudo iptables -t nat -I PREROUTING -p tcp -j DNAT --to-destination 127.0.0.1
 }
 ```
-
 
 ### Windows 局域网内其他机器访问 WSL2
 
