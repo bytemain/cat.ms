@@ -1448,6 +1448,18 @@ git-config() {
 <p>作者详细的介绍了自己是怎么在 WSL 中使用代理的。</p>
 <p>顺着作者的思路，我也实现了我自己的一个 <strong>「一键」设置代理</strong> 的脚本：</p>
 <p><a href="#%E4%B8%80%E9%94%AE%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86">「一键」设置代理</a></p>
+<h3 id="使用网卡代理">使用网卡代理<a class="header-anchor" href="#使用网卡代理"></a></h3>
+<p>当然，还有一个更方便的就是使用网卡代理，不用再设置什么 <code>HTTP_PROXY</code> 了，直接网卡级别的代理。</p>
+<p>我使用的是 Clash 提供的 <a href="https://docs.cfw.lbyczf.com/contents/tun.html">TUN 模式</a>。</p>
+<p>Clash 会创建一张网卡，接管系统的流量。</p>
+<p><img data-src="https://i.lengthm.in/posts/wsl2-network-tricks/clash_tun.png" alt="image.png"></p>
+<p>这样就不用设置任何东西了，开启网卡代理后，整个系统的流量都会走网卡。</p>
+<p>你也可以使用下面这些：</p>
+<ul>
+<li>cfw 提供的 <a href="https://docs.cfw.lbyczf.com/contents/tap.html">TAP 模式</a></li>
+<li><a href="https://github.com/NetchX/Netch/">Netch</a><br>
+Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现类似 SocksCap64 那样的进程代理，也可以实现 SSTap 那样的全局 TUN/TAP 代理，和 Shadowsocks-Windows 那样的本地 Socks5，HTTP 和系统代理</li>
+</ul>
 <h2 id="主机访问-WSL2">主机访问 WSL2<a class="header-anchor" href="#主机访问-WSL2"></a></h2>
 <p>WSL2 的 IP 会变，所以怎么随时随地的都能访问到 WSL2 呢？看了很多 issue，解决方案各种各样。</p>
 <p>这个问题困扰了我好久，因为在 WSL2 中开发，有时候就启动一些 web 应用，然后 localhost 又没法访问到… 官方说 Windows 版本更新到 18945 之后的，程序 listen 到 <code>0.0.0.0</code> 上之后，在 Windows 中就可以通过 localhost 访问了，而我在测试的时候发现很多时候还是不生效，也许需要看脸吧。</p>

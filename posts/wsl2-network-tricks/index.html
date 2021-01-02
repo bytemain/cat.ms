@@ -32,6 +32,7 @@
 <meta property="og:description" content="快考完试了，这个学期一直在使用 WSL 在进行开发，无论是 Python&#x2F;C&#x2F;React 都是用 VSCode Remote WSL 进行开发的，体验非常好。  无特别说明，本文以下内容所提到的 WSL 皆指 WSL2。  这篇文章大概有以下内容：  WSL2 中连接到主机代理让 WSL2 里能连上 Windows 上的代理软件 主机访问 WSL2 这里主要是靠设置 hosts，让一个域名一直解析">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.lengthm.in/posts/wsl2-network-tricks/get_wsl_ip.png">
+<meta property="og:image" content="https://i.lengthm.in/posts/wsl2-network-tricks/clash_tun.png">
 <meta property="og:image" content="https://i.lengthm.in/posts/wsl2-network-tricks/wsl_http_server.png">
 <meta property="og:image" content="https://i.lengthm.in/posts/wsl2-network-tricks/curl_wsl.png">
 <meta property="og:image" content="https://gh-card.dev/repos/shayne/go-wsl2-host.svg">
@@ -200,7 +201,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL2-%E8%BF%9E%E6%8E%A5%E5%88%B0%E4%B8%BB%E6%9C%BA%E4%BB%A3%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">WSL2 连接到主机代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E4%B8%BB%E6%9C%BA%E7%9A%84-ip"><span class="nav-number">1.1.</span> <span class="nav-text">获取主机的 ip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">设置代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E6%9C%BA%E8%AE%BF%E9%97%AE-WSL2"><span class="nav-number">2.</span> <span class="nav-text">主机访问 WSL2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E8%AE%BE%E7%BD%AE-hosts-%E5%85%B3%E8%81%94%E5%88%B0-WSL-%E7%9A%84-IP"><span class="nav-number">2.1.</span> <span class="nav-text">自动设置 hosts 关联到 WSL 的 IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A9-Windows-%E8%AE%BF%E9%97%AE%E5%88%B0-WSL-%E4%B8%AD%E7%9B%91%E5%90%AC%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">2.2.</span> <span class="nav-text">让 Windows 访问到 WSL 中监听本地的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E5%85%B6%E4%BB%96%E6%9C%BA%E5%99%A8%E8%AE%BF%E9%97%AE-WSL2"><span class="nav-number">2.3.</span> <span class="nav-text">Windows 局域网内其他机器访问 WSL2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">一键设置代理</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL2-%E8%BF%9E%E6%8E%A5%E5%88%B0%E4%B8%BB%E6%9C%BA%E4%BB%A3%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">WSL2 连接到主机代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E4%B8%BB%E6%9C%BA%E7%9A%84-ip"><span class="nav-number">1.1.</span> <span class="nav-text">获取主机的 ip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">设置代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%BD%91%E5%8D%A1%E4%BB%A3%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">使用网卡代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E6%9C%BA%E8%AE%BF%E9%97%AE-WSL2"><span class="nav-number">2.</span> <span class="nav-text">主机访问 WSL2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E8%AE%BE%E7%BD%AE-hosts-%E5%85%B3%E8%81%94%E5%88%B0-WSL-%E7%9A%84-IP"><span class="nav-number">2.1.</span> <span class="nav-text">自动设置 hosts 关联到 WSL 的 IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A9-Windows-%E8%AE%BF%E9%97%AE%E5%88%B0-WSL-%E4%B8%AD%E7%9B%91%E5%90%AC%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">2.2.</span> <span class="nav-text">让 Windows 访问到 WSL 中监听本地的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E5%85%B6%E4%BB%96%E6%9C%BA%E5%99%A8%E8%AE%BF%E9%97%AE-WSL2"><span class="nav-number">2.3.</span> <span class="nav-text">Windows 局域网内其他机器访问 WSL2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">一键设置代理</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -341,7 +342,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.4k</span>
+      <span>4.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -412,6 +413,18 @@
 <p>作者详细的介绍了自己是怎么在 WSL 中使用代理的。</p>
 <p>顺着作者的思路，我也实现了我自己的一个 <strong>「一键」设置代理</strong> 的脚本：</p>
 <p><a href="#%E4%B8%80%E9%94%AE%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86">「一键」设置代理</a></p>
+<h3 id="使用网卡代理">使用网卡代理<a class="header-anchor" href="#使用网卡代理"></a></h3>
+<p>当然，还有一个更方便的就是使用网卡代理，不用再设置什么 <code>HTTP_PROXY</code> 了，直接网卡级别的代理。</p>
+<p>我使用的是 Clash 提供的 <a href="https://docs.cfw.lbyczf.com/contents/tun.html">TUN 模式</a>。</p>
+<p>Clash 会创建一张网卡，接管系统的流量。</p>
+<p><img data-src="https://i.lengthm.in/posts/wsl2-network-tricks/clash_tun.png" alt="image.png"></p>
+<p>这样就不用设置任何东西了，开启网卡代理后，整个系统的流量都会走网卡。</p>
+<p>你也可以使用下面这些：</p>
+<ul>
+<li>cfw 提供的 <a href="https://docs.cfw.lbyczf.com/contents/tap.html">TAP 模式</a></li>
+<li><a href="https://github.com/NetchX/Netch/">Netch</a><br>
+Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现类似 SocksCap64 那样的进程代理，也可以实现 SSTap 那样的全局 TUN/TAP 代理，和 Shadowsocks-Windows 那样的本地 Socks5，HTTP 和系统代理</li>
+</ul>
 <h2 id="主机访问-WSL2">主机访问 WSL2<a class="header-anchor" href="#主机访问-WSL2"></a></h2>
 <p>WSL2 的 IP 会变，所以怎么随时随地的都能访问到 WSL2 呢？看了很多 issue，解决方案各种各样。</p>
 <p>这个问题困扰了我好久，因为在 WSL2 中开发，有时候就启动一些 web 应用，然后 localhost 又没法访问到… 官方说 Windows 版本更新到 18945 之后的，程序 listen 到 <code>0.0.0.0</code> 上之后，在 Windows 中就可以通过 localhost 访问了，而我在测试的时候发现很多时候还是不生效，也许需要看脸吧。</p>
@@ -762,7 +775,7 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols：</span>
-    <span title="Symbols">57k</span>
+    <span title="Symbols">58k</span>
   </span>
 </div>
 <div class="busuanzi-count">
