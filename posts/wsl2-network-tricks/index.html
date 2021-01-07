@@ -40,9 +40,10 @@
 <meta property="og:image" content="https://i.lengthm.in/posts/wsl2-network-tricks/win_wsl_request_now.png">
 <meta property="og:image" content="https://i.lengthm.in/posts/wsl2-network-tricks/proxy.png">
 <meta property="article:published_time" content="2019-12-28T12:39:31.000Z">
-<meta property="article:modified_time" content="2020-11-12T11:54:00.000Z">
+<meta property="article:modified_time" content="2021-01-07T10:32:00.000Z">
 <meta property="article:author" content="Artin">
 <meta property="article:tag" content="Linux">
+<meta property="article:tag" content="代理">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.lengthm.in/posts/wsl2-network-tricks/get_wsl_ip.png">
 
@@ -230,7 +231,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-count">41</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -315,7 +316,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-11-12 19:54" itemprop="dateModified" datetime="2020-11-12T19:54:00+08:00">2020-11-12</time>
+        <time title="修改时间：2021-01-07 18:32" itemprop="dateModified" datetime="2021-01-07T18:32:00+08:00">2021-01-07</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -342,7 +343,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.7k</span>
+      <span>4.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -402,9 +403,10 @@
 <p>如果无法连接的话，请你检查一下你 Windows 上的代理软件允许局域网访问了吗。</p>
 <p>还是没法连接的话有可能是 <strong>Windows 防火墙</strong>的原因，我是把防火墙关了的。</p>
 <hr>
-<p>感谢评论区 Xing Fang 给了<a href="https://github.com/microsoft/WSL/issues/4585">一个链接</a> 以及开放防火墙的一句命令。</p>
-<p>直接放开网卡名的防火墙：</p>
-<pre class="line-numbers language-ps1" data-language="ps1"><code class="language-ps1">New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>感谢评论区 <a href="https://disqus.com/by/xing_fang/">Xing Fang</a> 以及 <a href="https://disqus.com/by/twinmegami/">twinmegami</a> 给的开放防火墙的命令。</p>
+<p>命令来源：<a href="https://github.com/microsoft/WSL/issues/4585">https://github.com/microsoft/WSL/issues/4585</a></p>
+<pre class="line-numbers language-ps1" data-language="ps1"><code class="language-ps1"># 直接放开 `vEthernet (WSL)` 这张网卡的防火墙
+New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <hr>
 <p>还有这篇<strong>必读</strong>的文章：</p>
 <ul>
@@ -602,7 +604,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
   <li class="post-copyright-updated">
     <strong>更新时间：
     </strong>
-    2020-11-12, 19:54
+    2021-01-07, 18:32
     <blockquote class="post-expired-notify">
       本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变
     </blockquote>
@@ -626,7 +628,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 
 <script data-pjax="data-pjax">
   (function () {
-    var dateUpdate = Date.parse("2020-11-12");
+    var dateUpdate = Date.parse("2021-01-07");
     var nowDate = new Date();
     var a = nowDate.getTime();
     var b = a - dateUpdate;
@@ -702,6 +704,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 
           <div class="post-tags">
               <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/%E4%BB%A3%E7%90%86/" rel="tag"># 代理</a>
           </div>
 
         

@@ -223,6 +223,7 @@ p {
 a {
   border-bottom: 1px solid #ccc;
   color: var(--link-color);
+  cursor: pointer;
   outline: 0;
   text-decoration: none;
   overflow-wrap: break-word;
@@ -2941,7 +2942,7 @@ hr {
   transition: all 0.2s ease-in-out;
 }
 .links-of-author a::before {
-  background: #0d942a;
+  background: #1d20e2;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
