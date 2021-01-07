@@ -554,10 +554,12 @@ w <span class="token operator">=</span> <span class="token builtin">map</span><s
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">curl</span> -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>或者 wget:</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">wget</span> -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果你的机器在国内，<code>raw.githubusercontent.com</code> 已经被墙，你可以使用 <code>fastgit.org</code> 提供的反代：<a href="https://raw.fastgit.org/">https://raw.fastgit.org/</a>。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">wget</span> -qO- https://raw.fastgit.org/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>官方目前的版本号是 <code>v0.34.0</code>。<br>
 你可以去上面给的链接里去安装最新的。<br>
 这个脚本会克隆 nvm 的远程仓库到 <code>~/.nvm</code> 路径下，并且会将添加激活代码到你终端的配置文件中。</p>
-<p>执行完这条命令之后，一切就安装好了。但是在国内，你还需要配置一下代理。</p>
+<p>执行完这条命令之后，一切就安装好了。但是在国内，你还需要配置一下代理，不需要的可以跳过。</p>
 <h3 id="配置-git-代理">配置 git 代理<a class="header-anchor" href="#配置-git-代理"></a></h3>
 <p>我本地使用的是 electron-ssr，代理的地址是 <code>socks5://127.0.0.1:1080</code>。执行下面这个命令，就可以针对 GitHub 设置代理了。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 只对 github.com</span>
