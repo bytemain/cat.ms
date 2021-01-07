@@ -24,21 +24,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"lengthmin.me","root":"/","images":"/images","scheme":"Mist","version":"8.2.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":true,"preload":true}};
   </script>
-<meta name="description" content="24 点终结者                      &#x2F;&#x2F; copyright sliang 1999.2.11       &#x2F;&#x2F; artin 2018.2.5       var O &#x3D; [         {           name: &quot;-&quot;,           f: function (m, n) {             return m - n;">
+<meta name="description" content="&#x2F;&#x2F; copyright sliang 1999.2.11   &#x2F;&#x2F; artin 2018.2.5   var O &#x3D; [     {       name: &quot;-&quot;,       f: function (m, n) {         return m - n;       },     },     {       name: &quot;+&quot;,       f: function (m, n)">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Artin&#39;s Blog">
-<meta property="og:url" content="https://lengthmin.me/tools/24%E7%82%B9">
+<meta property="og:title" content="24 点终结者">
+<meta property="og:url" content="https://lengthmin.me/tools/24Points">
 <meta property="og:site_name" content="Artin&#39;s Blog">
-<meta property="og:description" content="24 点终结者                      &#x2F;&#x2F; copyright sliang 1999.2.11       &#x2F;&#x2F; artin 2018.2.5       var O &#x3D; [         {           name: &quot;-&quot;,           f: function (m, n) {             return m - n;">
+<meta property="og:description" content="&#x2F;&#x2F; copyright sliang 1999.2.11   &#x2F;&#x2F; artin 2018.2.5   var O &#x3D; [     {       name: &quot;-&quot;,       f: function (m, n) {         return m - n;       },     },     {       name: &quot;+&quot;,       f: function (m, n)">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-07T10:33:29.813Z">
-<meta property="article:modified_time" content="2021-01-07T10:33:29.813Z">
+<meta property="article:published_time" content="2021-01-07T10:48:10.095Z">
+<meta property="article:modified_time" content="2021-01-07T10:48:10.095Z">
 <meta property="article:author" content="Artin">
 <meta property="article:tag" content="Python,ML,React,Nodejs">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://lengthmin.me/tools/24%E7%82%B9">
+<link rel="canonical" href="https://lengthmin.me/tools/24Points">
 
 
 <script class="page-configurations">
@@ -51,7 +51,7 @@
   };
 </script><meta name="referrer" content="no-referrer-when-downgrade">
 
-<title> | Artin's Blog
+<title>24 点终结者 | Artin's Blog
 </title>
   
 
@@ -274,7 +274,7 @@
     
     <div class="post-block" lang="zh-CN"><header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">
+<h1 class="post-title" itemprop="name headline">24 点终结者
 </h1>
 
 <div class="post-meta-container">
@@ -285,139 +285,131 @@
       
       
       <div class="post-body">
-          
+          <script>
+  // copyright sliang 1999.2.11
+  // artin 2018.2.5
+  var O = [
+    {
+      name: "-",
+      f: function (m, n) {
+        return m - n;
+      },
+    },
+    {
+      name: "+",
+      f: function (m, n) {
+        return m + n;
+      },
+    },
+    {
+      name: "/",
+      f: function (m, n) {
+        return m / n;
+      },
+    },
+    {
+      name: "*",
+      f: function (m, n) {
+        return m * n;
+      },
+    },
+  ];
 
-  
-    <title>24 点终结者</title>
-    <meta name="viewport" ;=";" content="initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script data-pjax="">
-      // copyright sliang 1999.2.11
-      // artin 2018.2.5
-      var O = [
-        {
-          name: "-",
-          f: function (m, n) {
-            return m - n;
-          },
-        },
-        {
-          name: "+",
-          f: function (m, n) {
-            return m + n;
-          },
-        },
-        {
-          name: "/",
-          f: function (m, n) {
-            return m / n;
-          },
-        },
-        {
-          name: "*",
-          f: function (m, n) {
-            return m * n;
-          },
-        },
-      ];
+  function valid(F) {
+    var s = F.a.value.replace(/^\D+|\D+$/g, "").split(/\D+/g);
+    if (s.length != 4) {
+      alert("必须输入4个整数！");
+      F.a.focus();
+      return false;
+    }
+    //格式化输入
+    if (s.join(" ") != F.a.value) F.a.value = s.join(" ");
 
-      function valid(F) {
-        var s = F.a.value.replace(/^\D+|\D+$/g, "").split(/\D+/g);
-        if (s.length != 4) {
-          alert("必须输入4个整数！");
-          F.a.focus();
-          return false;
-        }
-        //格式化输入
-        if (s.join(" ") != F.a.value) F.a.value = s.join(" ");
+    var b = []; //四个数字保存在b[1] b[2] b[4] b[8]中
+    for (var i in s) b[1 << i] = parseInt(s[i]);
 
-        var b = []; //四个数字保存在b[1] b[2] b[4] b[8]中
-        for (var i in s) b[1 << i] = parseInt(s[i]);
+    var n = F.count1.options[F.count1.selectedIndex].value; //需要计算的答案数
+    var k = 0; //已经算出的答案数
+    var result = {}; //保存已经算出的答案,去掉重复
+    F.text.value = "";
 
-        var n = F.count1.options[F.count1.selectedIndex].value; //需要计算的答案数
-        var k = 0; //已经算出的答案数
-        var result = {}; //保存已经算出的答案,去掉重复
-        F.text.value = "";
+    //输出结果,找满答案返回true
+    var writeResult = function (s) {
+      //按顺序替换符号与数字
+      s = s
+        .replace("%", O[f1].name)
+        .replace("%", O[f2].name)
+        .replace("%", O[f3].name);
+      s = s
+        .replace("N", b[i1])
+        .replace("N", b[i2])
+        .replace("N", b[i3])
+        .replace("N", b[i4]);
+      if (result[s]) return; //已经重复了
+      result[s] = 1; //记录
+      F.text.value += s + "\n";
 
-        //输出结果,找满答案返回true
-        var writeResult = function (s) {
-          //按顺序替换符号与数字
-          s = s
-            .replace("%", O[f1].name)
-            .replace("%", O[f2].name)
-            .replace("%", O[f3].name);
-          s = s
-            .replace("N", b[i1])
-            .replace("N", b[i2])
-            .replace("N", b[i3])
-            .replace("N", b[i4]);
-          if (result[s]) return; //已经重复了
-          result[s] = 1; //记录
-          F.text.value += s + "\n";
+      return ++k >= n;
+    };
 
-          return ++k >= n;
-        };
+    for (var i1 = 1; i1 <= 8; i1 <<= 1)
+      for (var i2 = 1; i2 <= 8; i2 <<= 1)
+        for (var i3 = 1; i3 <= 8; i3 <<= 1)
+          for (var i4 = 1; i4 <= 8; i4 <<= 1) {
+            //所有数字排列组合，简单去掉重复数字
+            if ((i1 | i2 | i3 | i4) != 0xf) continue;
+            for (var f1 = 0; f1 <= 3; f1++)
+              for (var f2 = 0; f2 <= 3; f2++)
+                for (var f3 = 0; f3 <= 3; f3++) {
+                  var of1 = O[f1],
+                    of2 = O[f2],
+                    of3 = O[f3];
+                  // ((1,2)3)4
+                  var m = of3.f(of2.f(of1.f(b[i1], b[i2]), b[i3]), b[i4]);
+                  if (Math.abs(m - 24) < 1e-5)
+                    if (writeResult("((N%N)%N)%N")) return false;
 
-        for (var i1 = 1; i1 <= 8; i1 <<= 1)
-          for (var i2 = 1; i2 <= 8; i2 <<= 1)
-            for (var i3 = 1; i3 <= 8; i3 <<= 1)
-              for (var i4 = 1; i4 <= 8; i4 <<= 1) {
-                //所有数字排列组合，简单去掉重复数字
-                if ((i1 | i2 | i3 | i4) != 0xf) continue;
-                for (var f1 = 0; f1 <= 3; f1++)
-                  for (var f2 = 0; f2 <= 3; f2++)
-                    for (var f3 = 0; f3 <= 3; f3++) {
-                      var of1 = O[f1],
-                        of2 = O[f2],
-                        of3 = O[f3];
-                      // ((1,2)3)4
-                      var m = of3.f(of2.f(of1.f(b[i1], b[i2]), b[i3]), b[i4]);
-                      if (Math.abs(m - 24) < 1e-5)
-                        if (writeResult("((N%N)%N)%N")) return false;
+                  // 1((2,3)4)
+                  m = of1.f(b[i1], of3.f(of2.f(b[i2], b[i3]), b[i4]));
+                  if (Math.abs(m - 24) < 1e-5)
+                    if (writeResult("N%((N%N)%N)")) return false;
 
-                      // 1((2,3)4)
-                      m = of1.f(b[i1], of3.f(of2.f(b[i2], b[i3]), b[i4]));
-                      if (Math.abs(m - 24) < 1e-5)
-                        if (writeResult("N%((N%N)%N)")) return false;
+                  // (1(2,3))4
+                  m = of3.f(of1.f(b[i1], of2.f(b[i2], b[i3])), b[i4]);
+                  if (Math.abs(m - 24) < 1e-5)
+                    if (writeResult("(N%(N%N))%N")) return false;
 
-                      // (1(2,3))4
-                      m = of3.f(of1.f(b[i1], of2.f(b[i2], b[i3])), b[i4]);
-                      if (Math.abs(m - 24) < 1e-5)
-                        if (writeResult("(N%(N%N))%N")) return false;
+                  //1(2(3,4))
+                  m = of1.f(b[i1], of2.f(b[i2], of3.f(b[i3], b[i4])));
+                  if (Math.abs(m - 24) < 1e-5)
+                    if (writeResult("N%(N%(N%N))")) return false;
 
-                      //1(2(3,4))
-                      m = of1.f(b[i1], of2.f(b[i2], of3.f(b[i3], b[i4])));
-                      if (Math.abs(m - 24) < 1e-5)
-                        if (writeResult("N%(N%(N%N))")) return false;
+                  //(1,2)(3,4)
+                  m = of2.f(of1.f(b[i1], b[i2]), of3.f(b[i3], b[i4]));
+                  if (Math.abs(m - 24) < 1e-5)
+                    if (writeResult("(N%N)%(N%N)")) return false;
+                }
+          }
+    F.text.value += "----END----\n";
+    return false;
+  }
+</script>
 
-                      //(1,2)(3,4)
-                      m = of2.f(of1.f(b[i1], b[i2]), of3.f(b[i3], b[i4]));
-                      if (Math.abs(m - 24) < 1e-5)
-                        if (writeResult("(N%N)%(N%N)")) return false;
-                    }
-              }
-        F.text.value += "----END----\n";
-        return false;
-      }
-    </script>
-  
-  
-    <font color="red" size="+3">计算 24 点</font>
+  <font color="red" size="+3">计算 24 点</font>
+  <hr>
+  <form onsubmit="return valid(this)">
+    请输入四个整数空格分开：<br>
+    <input type="text" name="a" size="20" value="3 3 8 8">
+    <select name="count1">
+      <option value="1" selected="on"> 只找一个答案 </option><option value="5"> 最多找 5 个 </option><option value="10"> 最多找 10 个 </option><option value="999">
+        找全部答案
+      </option></select>
+    <br>
+    <input type="submit" value="计算24点"><br>
     <hr>
-    <form onsubmit="return valid(this)">
-      请输入四个整数空格分开：<br>
-      <input type="text" name="a" size="20" value="3 3 8 8">
-      <select name="count1">
-        <option value="1" selected="on"> 只找一个答案 </option><option value="5"> 最多找 5 个 </option><option value="10"> 最多找 10 个 </option><option value="999">
-          找全部答案
-        </option></select>
-      <br>
-      <input type="submit" value="计算24点"><br>
-      <hr>
-      <textarea name="text" rows="15" cols="30"></textarea>
-    </form>
-    <hr>
-  
+    <textarea name="text" rows="15" cols="30"></textarea>
+  </form>
+  <hr>
 
 
       </div>
@@ -430,11 +422,6 @@
     
 
 
-    
-  <div class="comments" id="disqus_thread">
-    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-  </div>
-  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -576,27 +563,11 @@ if (document.querySelectorAll('.mermaid').length) {
       quicklink.listen({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://lengthmin.me/tools/24%E7%82%B9.html',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://lengthmin.me/tools/24Points.html',]
       });
       });
   </script>
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css">
-
-<script>
-NexT.utils.loadComments('#disqus_thread', () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqus.js', () => {
-    window.dsqjs = new DisqusJS({
-      api       : 'https://disqus.skk.moe/disqus/' || 'https://disqus.com/api/',
-      apikey    : 'Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR',
-      shortname : 'hexo-1',
-      url       : "https://lengthmin.me/tools/24%E7%82%B9",
-      identifier: "tools/24点.html",
-      title     : "",
-    });
-  }, window.DisqusJS);
-});
-</script>
 
   <script data-pjax>
     window.ga_tid = "UA-144727481-1";
