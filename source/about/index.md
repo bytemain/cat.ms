@@ -15,3 +15,7 @@ toc: false
 JavaScript 是一门神奇的语言，对大前端充满信心。
 
 人生苦短， 我也热爱 Python。
+
+---
+
+- [tools](/tools)
