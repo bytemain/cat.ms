@@ -4,12 +4,14 @@ comments: true
 toc: true
 permalink: posts/wsl2-network-tricks/
 date: 2019-12-28 20:39:31
-updated: 2020-11-12 19:54:00
+updated: 2021-01-07 18:32:00
 categories:
   - WSL
 tags:
   - Linux
+  - 代理
 ---
+
 快考完试了，这个学期一直在使用 WSL 在进行开发，无论是 Python/C/React 都是用 VSCode Remote WSL 进行开发的，体验非常好。
 
 > 无特别说明，本文以下内容所提到的 WSL 皆指 WSL2。
@@ -64,11 +66,12 @@ Windows 的 IP 都已经拿到了，比如说我的代理软件是监听在 7890
 
 ---
 
-感谢评论区 Xing Fang 给了[一个链接](https://github.com/microsoft/WSL/issues/4585) 以及开放防火墙的一句命令。
+感谢评论区 [Xing Fang](https://disqus.com/by/xing_fang/) 以及 [twinmegami](https://disqus.com/by/twinmegami/) 给的开放防火墙的命令。
 
-直接放开网卡名的防火墙：
+命令来源：<https://github.com/microsoft/WSL/issues/4585>
 
 ```ps1
+# 直接放开 `vEthernet (WSL)` 这张网卡的防火墙
 New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow
 ```
 
