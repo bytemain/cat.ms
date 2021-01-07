@@ -4,7 +4,7 @@ comments: true
 toc: true
 permalink: posts/install-nvm/
 date: 2019-04-19 17:17:33
-updated: 2019-07-04 11:00:00
+updated: 2021-01-07 19:33:00
 categories: 
     - Nodejs
 tags:
@@ -15,25 +15,35 @@ tags:
 在网上看到 nvm 这个神器之后，最近装 Nodejs 都是用 nvm 来装了。
 刚好又装了 Linux Mint ，重新在 Linux 下安装一遍 nvm。Windows 上也有的类似工具 [nvm-windows](https://github.com/coreybutler/nvm-windows)，使用方法都差不多。
 
-GitHub 链接：[https://github.com/creationix/nvm](https://github.com/creationix/nvm)
+GitHub 链接：<https://github.com/creationix/nvm>
 
 nvm 是 nodejs 的一个版本控制工具，也就是 "Node Version Manager" 的三个首字母。
 
-2019-06-29更新：Windows 安装 nvm
+2019-06-29 更新：Windows 安装 nvm
+
 <!-- more -->
 ## Linux 安装 nvm
+
 ### 安装和升级 nvm
 
 要安装或升级 nvm, 可以使用官方给的一个脚本。  
 
 可以使用curl：
+
 ```shell
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 ```
 
 或者 wget:
+
 ```shell
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+```
+
+如果你的机器在国内，`raw.githubusercontent.com` 已经被墙，你可以使用 `fastgit.org` 提供的反代：<https://raw.fastgit.org/>。
+
+```shell
+wget -qO- https://raw.fastgit.org/creationix/nvm/v0.34.0/install.sh | bash
 ```
 
 官方目前的版本号是 `v0.34.0`。  
@@ -41,7 +51,7 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | 
 这个脚本会克隆 nvm 的远程仓库到 `~/.nvm` 路径下，并且会将添加激活代码到你终端的配置文件中。
 
 执行完这条命令之后，一切就安装好了。
-但是在国内, 你还需要配置一下代理。
+但是在国内, 你还需要配置一下代理，不需要的可以跳过。
 
 ### 配置 git 代理
 
@@ -76,6 +86,7 @@ git config --global --unset http.https://github.com.proxy
 ```bash
 proxychains4 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 ```
+
 就安装好了。
 
 ### 配置 zsh
@@ -95,6 +106,7 @@ export NVM_DIR="$HOME/.nvm"
 ### 配置 nvm 下载来源
 
 执行：
+
 ```bash
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 ```
@@ -102,6 +114,7 @@ export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 将下载来源设置为国内淘宝镜像。
 
 ### nvm 安装 nodejs
+
 执行：
 
 ```shell
@@ -118,6 +131,7 @@ nvm install node
 详见：[https://github.com/creationix/nvm#usage](https://github.com/creationix/nvm#usage)
 
 我自己使用的就几个命令，其实也就掌握这几个命令就够用了：
+
 ```shell
 nvm list # 展示可下载的版本
 nvm install 10.10.0 # 安装对应版本
@@ -150,5 +164,6 @@ That's All.
 nvm node_mirror https://npm.taobao.org/mirrors/node/
 nvm npm_mirror https://npm.taobao.org/mirrors/npm/
 ```
+
 可设置 nvm 从国内下载安装。
 安装 nodejs 可见上一节：[配置 npm 国内源](#配置-npm-国内源)
