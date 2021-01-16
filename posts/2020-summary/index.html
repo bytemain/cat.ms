@@ -774,25 +774,9 @@ NexT.utils.loadComments('#disqus_thread', () => {
   }, window.DisqusJS);
 });
 </script>
-
-  <script data-pjax>
-    window.ga_tid = "UA-144727481-1";
-    window.ga_api = "https://lengthm.in/jquery.js";
-    (function () {
-      function loadcfga() {
-        var js = document.createElement('script');
-        js.src = 'https://cdn.jsdelivr.net/npm/cfga@1.0.3';
-        js.async = true;
-        document
-          .head
-          .appendChild(js);
-      }
-      var host = window.location.hostname;
-      if (host !== "localhost" || !true) {
-        loadcfga();
-      }
-    })();
-  </script>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cfb18eeb71043868c5654e780198190"}'></script>
+<!-- End Cloudflare Web Analytics -->
 
 </body>
 </html>
