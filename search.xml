@@ -112,11 +112,10 @@ ssh 密钥在～/.ssh/id_rsa.pub <br>
 <blockquote>
 <p>一定要注意改成你自己的 ssh 地址，注意是 ssh 地址。而且 <code>coding:</code> 后面是有个空格的，这就是 yaml 语言的格式，以后编辑<code>_config.yml</code> 也要注意的。</p>
 </blockquote>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+<h2 id="code￼7"><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
   <span class="token key atrule">type</span><span class="token punctuation">:</span> git
   <span class="token key atrule">repo</span><span class="token punctuation">:</span>
-    <span class="token key atrule">coding</span><span class="token punctuation">:</span> git@git.coding.net<span class="token punctuation">:</span>Artin/Artin.git<span class="token punctuation">,</span>master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
+    <span class="token key atrule">coding</span><span class="token punctuation">:</span> git@git.coding.net<span class="token punctuation">:</span>Artin/Artin.git<span class="token punctuation">,</span>master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><a class="header-anchor" href="#code￼7"></a></h2>
 <h3 id="部署到-Coding-Pages-上">部署到 Coding Pages 上<a class="header-anchor" href="#部署到-Coding-Pages-上"></a></h3>
 <p>这是 Coding 关于 Pages 的介绍。</p>
 <blockquote>
@@ -197,8 +196,7 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> .git/objects
 <span class="token function">ls</span> -al
 <span class="token function">sudo</span> <span class="token function">chown</span> -R uid:groups *
-<span class="token comment"># 将 uid 和 groups 换成你自己的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
+<span class="token comment"># 将 uid 和 groups 换成你自己的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>Git</category>
       </categories>
@@ -276,8 +274,7 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 已经失效了！！<br>
 已经失效了！！</p>
 <p>现在部署可以一键部署了，但是已经无法获取 rss 更新了。</p>
-<pre class="line-numbers language-none"><code class="language-none">failed to open stream: no suitable wrapper could be found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<hr>
+<h2 id="code￼0"><pre class="line-numbers language-none"><code class="language-none">failed to open stream: no suitable wrapper could be found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><a class="header-anchor" href="#code￼0"></a></h2>
 <p>先说结论，不够好用，弃坑了，用国内的一览提供的 rss 服务。<br>
 多平台支持，和 inoreader 相比速度更快，而且对于目前我订阅的源来说并没有不可阅读的，而且在 inoreader 上看不了電腦玩物的图片（因为 refer 的问题），在一览上没问题的。</p>
 <h2 id="关于-ttrss">关于 ttrss<a class="header-anchor" href="#关于-ttrss"></a></h2>
@@ -431,8 +428,7 @@ hexo clean
 hexo g -d
 <span class="token builtin class-name">echo</span> <span class="token string">"hexo g -d 执行完毕"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以后想要更新博客，直接在博客根目录下输入:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> git.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-]]></content>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> git.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
@@ -483,8 +479,7 @@ int main()
     cvReleaseImage(&amp;src);
     cvDestroyWindow("showImage");
     return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>OpenCV</category>
       </categories>
@@ -529,8 +524,7 @@ w <span class="token operator">=</span> <span class="token builtin">map</span><s
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="C-中在OJ上怎么实现多组输入">C++ 中在 OJ 上怎么实现多组输入<a class="header-anchor" href="#C-中在OJ上怎么实现多组输入"></a></h2>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">while</span><span class="token punctuation">(</span>cin <span class="token operator">&gt;&gt;</span> a <span class="token operator">&gt;&gt;</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-]]></content>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>ACM</category>
       </categories>
@@ -1076,8 +1070,7 @@ FF:
   POP  DX  
 RET
 CODE ENDS
-END GO<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
+END GO<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>汇编</category>
       </categories>
@@ -1441,9 +1434,8 @@ git-config() {
 <hr>
 <p>感谢评论区 <a href="https://disqus.com/by/xing_fang/">Xing Fang</a> 以及 <a href="https://disqus.com/by/twinmegami/">twinmegami</a> 给的开放防火墙的命令。</p>
 <p>命令来源：<a href="https://github.com/microsoft/WSL/issues/4585">https://github.com/microsoft/WSL/issues/4585</a></p>
-<pre class="line-numbers language-ps1" data-language="ps1"><code class="language-ps1"># 直接放开 `vEthernet (WSL)` 这张网卡的防火墙
-New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<hr>
+<h2 id="code￼1"><pre class="line-numbers language-ps1" data-language="ps1"><code class="language-ps1"># 直接放开 `vEthernet (WSL)` 这张网卡的防火墙
+New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><a class="header-anchor" href="#code￼1"></a></h2>
 <p>还有这篇<strong>必读</strong>的文章：</p>
 <ul>
 <li><a href="https://blog.skk.moe/post/enable-proxy-on-ubuntu/">Ubuntu「一键」设置代理</a></li>
@@ -2517,8 +2509,7 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
   <span class="token string">"colorizer.color-3"</span>
 <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token property">"bracket-pair-colorizer-2.forceUniqueOpeningColor"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-<span class="token property">"bracket-pair-colorizer-2.highlightActiveScope"</span><span class="token operator">:</span> <span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
+<span class="token property">"bracket-pair-colorizer-2.highlightActiveScope"</span><span class="token operator">:</span> <span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>VSCode</category>
       </categories>
@@ -2905,6 +2896,11 @@ Dart 作为一个集众家之所长的语言，还是不错的，有印象的就
 <p>这里印象最深的一下面 WXG 遇到的面试官 <a href="https://github.com/alsotang">alsotang</a>，开始也不知道是大佬，后来搜索了一下才发现真的是大佬。在 Nodejs 开源社区看到了好多他的身影，可惜在 WXG 二面挂了～然后后来还在一直保持联络。</p>
 <p>在这之后还有一个新尝试就是上了一次捕蛇者说聊了聊校招，去丢人了。是大佬们的绿叶。</p>
 <p>最终选择了蚂蚁的 offer，去做 IDE，工程化相关这一块。</p>
+<h3 id="QQ-机器人">QQ 机器人<a class="header-anchor" href="#QQ-机器人"></a></h3>
+<p>六月十九号，加入了 NoneBot 的 organization。</p>
+<p>我平常就在使用 QQ 机器人，比较有趣的一件事是：8 月份 CoolQ 停运了，原因是晨风机器人的作者进局子了，然后大量的机器人框架都停止开发。</p>
+<p>然后开源的 mirai 躲了一段时间的风声又重新开始开发，同时又有大手子使用 Go 重新写了一版，现在社区还算兴盛。</p>
+<p>也是最近在忙的是就是给 NoneBot2 加上了钉钉的支持，整个逻辑也有很大的改变。</p>
 <h3 id="写代码">写代码<a class="header-anchor" href="#写代码"></a></h3>
 <p>看完了《第一行代码》，跟着写了一下里面的天气应用。</p>
 <p>又学了 kotlin，感觉这是一门非常甜的语言，用起来也挺舒服的，类型系统玩出了花。</p>
@@ -2918,11 +2914,6 @@ Dart 作为一个集众家之所长的语言，还是不错的，有印象的就
 <li>感觉 flask 都用熟练了</li>
 </ul>
 <p>最近又在写毕设，感觉 C 语言也熟练了 orz</p>
-<h3 id="QQ-机器人">QQ 机器人<a class="header-anchor" href="#QQ-机器人"></a></h3>
-<p>六月十九号，加入了 NoneBot 的 organization。</p>
-<p>我平常就在使用 QQ 机器人，比较有趣的一件事是：8 月份 CoolQ 停运了，原因是晨风机器人的作者进局子了，然后大量的机器人框架都停止开发。</p>
-<p>然后开源的 mirai 躲了一段时间的风声又重新开始开发，同时又有大手子使用 Go 重新写了一版，现在社区还算兴盛。</p>
-<p>也是最近在忙的是就是给 NoneBot2 加上了钉钉的支持，整个逻辑也有很大的改变。</p>
 <h3 id="其他">其他<a class="header-anchor" href="#其他"></a></h3>
 <p>自己也在学日语，五十音都背完了，词汇语法也在慢慢学习中。</p>
 <p>前段时间拿到了一个 Coding 的抱枕，挺开心的。</p>
@@ -2935,16 +2926,19 @@ Dart 作为一个集众家之所长的语言，还是不错的，有印象的就
 <p>说一些很有印象的编程书吧</p>
 <ul>
 <li>JavaScript 语言精粹</li>
-<li>第一行代码第三版基于安卓 10 和 kotlin，看完了对安卓系统的开发有了一个整体的概念。</li>
-<li>Flask Web 开发 - 基于 Python 的 Web 应用开发实战这本很不错啊，例子合适，作者也是 flask_sqlalchemy 的开发者，使用了很多技巧，很有收获。</li>
+<li>第一行代码<br>
+第三版基于安卓 10 和 kotlin，看完了对安卓系统的开发有了一个整体的概念。</li>
+<li>Flask Web 开发 - 基于 Python 的 Web 应用开发实战<br>
+这本很不错啊，例子合适，作者也是 flask_sqlalchemy 的开发者，使用了很多技巧，很有收获。</li>
 </ul>
 <p>把习大大的七年知青岁月看完了。</p>
 <p>紫金陈的几部推理都很好看。</p>
 <h2 id="看的剧">看的剧<a class="header-anchor" href="#看的剧"></a></h2>
 <p>年初的时候看的《爱情公寓 5》，印象深刻的是诸葛大力，狗哥。</p>
 <p>年中吧，又有一部小众剧《我的刺猬女孩》真的爱了，庄达菲真好看。</p>
-<p>年中跟同学去看了《八佰》，不评论</p>
-<p>看完了 《隐秘的角落》</p>
+<p>年中跟同学去看了《八佰》</p>
+<p>《隐秘的角落》</p>
+<p>《后翼弃兵》</p>
 <p>在小破站看了《信条》，《姜子牙》。</p>
 <p>最近在看《巡回检查组》，还不错。</p>
 <h2 id="去哪了">去哪了<a class="header-anchor" href="#去哪了"></a></h2>
