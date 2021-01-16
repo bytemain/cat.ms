@@ -1,20 +1,3 @@
-{%- if theme.cfga.tracking_id %}
-  <script data-pjax>
-    window.ga_tid = "{{ theme.cfga.tracking_id }}";
-    window.ga_api = "https://lengthm.in/jquery.js";
-    (function () {
-      function loadcfga() {
-        var js = document.createElement('script');
-        js.src = 'https://cdn.jsdelivr.net/npm/cfga@1.0.3';
-        js.async = true;
-        document
-          .head
-          .appendChild(js);
-      }
-      var host = window.location.hostname;
-      if (host !== "localhost" || !{{theme.cfga.localhost_ignored}}) {
-        loadcfga();
-      }
-    })();
-  </script>
-{%- endif %}
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cfb18eeb71043868c5654e780198190"}'></script>
+<!-- End Cloudflare Web Analytics -->
