@@ -1467,14 +1467,10 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>脚本的功能大概是：</p>
 <ol>
 <li>读取 WSL 和 Windows 的 IP</li>
-<li> 将 IP 和想设定的域名组合起来，如：<code>{wsl_ip} wsl.local # wsl_ip</code></li>
-<li>将具体内容写入 Windows 的 <code>hosts</code> 中。</li>
+<li> 将 IP 和想设定的域名写入 Windows 的 <code>hosts</code> 文件中。</li>
 </ol>
 <p>这样你就能用自己定义的域名来访问两个系统了，wsl2 能访问 <code>win.local</code> 是因为它会向主机查询 dns（因为 wsl2 默认的 nameserver 指向了 windows 主机），主机会把 hosts 中的域名直接缓存起来然后直接作为一个 dns 记录。</p>
 <p>关键来了，我们要使用<strong>任务计划程序</strong>在 <code>WSL</code> 要更新 IP 的时候执行这个脚本。</p>
-<p><a href="https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534">English version here</a>
-<a href="https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534">English version here</a>
-<a href="https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534">English version here</a></p>
 <p>具体<strong>在 <code>WSL</code> 要更新 IP 时运行特定脚本</strong>步骤如下：</p>
 <ol>
 <li>将<a href="https://github.com/lengthmin/dotfiles/blob/master/windows/wsl2.ps1">链接</a>中的代码保存到本地文件中，文件名后缀设为 <code>.ps1</code>。</li>
@@ -1487,11 +1483,11 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 </ol>
 <p>看看效果：</p>
 <p>在 WSL 中启动一个 http 服务器：
-<img data-src="https://i.lengthm.in/posts/wsl2-network-tricks/wsl_http_server.png" alt="image.png"></p>
+<img data-src="https://i.lengthm.in/posts/wsl2-network-tricks/wsl_http_server.png" alt="wsl_http_server.png"></p>
 <p>我们在 win 下请求一下：
-<img data-src="https://i.lengthm.in/posts/wsl2-network-tricks/curl_wsl.png" alt="image.png"></p>
+<img data-src="https://i.lengthm.in/posts/wsl2-network-tricks/curl_wsl.png" alt="curl_wsl.png"></p>
 <p>Awesome! 成功啦</p>
-<p>你也可以使用下面这个小工具来实现一样的功能：
+<p>你也可以使用下面这个小工具来实现类似的功能：
 <a href="https://github.com/shayne/go-wsl2-host"><img data-src="https://gh-card.dev/repos/shayne/go-wsl2-host.svg" alt="shayne/go-wsl2-host"></a></p>
 <p>这是一个用 Go 写的小工具，会创建一个 Windows 服务，Automatically update your Windows hosts file with the WSL2 VM IP address.</p>
 <h3 id="让-Windows-访问到-WSL-中监听本地的应用">让 Windows 访问到 WSL 中监听本地的应用<a class="header-anchor" href="#让-Windows-访问到-WSL-中监听本地的应用"></a></h3>
@@ -1518,8 +1514,8 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>关键代码如下：</p>
 <p>不懂的请看注释。</p>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 获取 Windows 和 WSL2 的 ip</span>
-<span class="token variable">$winip</span> = bash<span class="token punctuation">.</span>exe <span class="token operator">-</span>c <span class="token string">"ip route | grep default | awk '{print \`<span class="token variable">$3</span>}'"</span>
-<span class="token variable">$wslip</span> = bash<span class="token punctuation">.</span>exe <span class="token operator">-</span>c <span class="token string">"hostname -I | awk '{print \`<span class="token variable">$1</span>}'"</span>
+<span class="token variable">$winip</span> = bash<span class="token punctuation">.</span>exe <span class="token operator">-</span>c <span class="token string">"ip route | grep default | awk '{print `<span class="token variable">$3</span>}'"</span>
+<span class="token variable">$wslip</span> = bash<span class="token punctuation">.</span>exe <span class="token operator">-</span>c <span class="token string">"hostname -I | awk '{print `<span class="token variable">$1</span>}'"</span>
 <span class="token variable">$found1</span> = <span class="token variable">$winip</span> <span class="token operator">-match</span> <span class="token string">'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'</span><span class="token punctuation">;</span>
 <span class="token variable">$found2</span> = <span class="token variable">$wslip</span> <span class="token operator">-match</span> <span class="token string">'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'</span><span class="token punctuation">;</span>
 
@@ -1551,6 +1547,8 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
   <span class="token function">iex</span> <span class="token string">"netsh interface portproxy delete v4tov4 listenport=<span class="token variable">$port</span> listenaddress=<span class="token variable">$addr</span>"</span>  <span class="token punctuation">|</span> <span class="token function">Out-Null</span>
   <span class="token function">iex</span> <span class="token string">"netsh interface portproxy add v4tov4 listenport=<span class="token variable">$port</span> listenaddress=<span class="token variable">$addr</span> connectport=<span class="token variable">$port</span> connectaddress=<span class="token variable">$wslip</span>"</span>  <span class="token punctuation">|</span> <span class="token function">Out-Null</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>代码里第 2、3 行的 <code> `$</code> 的意思是让 Powershell 执行脚本时不转义 <code>$</code>。<br>
+如果你执行代码报错，可以试试在 <code> `$</code> 前面加上一个 <code>\</code>：<code>\`$</code>。</p>
 <p>Powershell 语法里 <code>@()</code> 就是数组的意思，这个脚本遍历你设置的想暴露到局域网的端口的数组，然后用 portproxy 反代 Windows 的端口到 WSL 中。</p>
 <h2 id="一键设置代理">一键设置代理<a class="header-anchor" href="#一键设置代理"></a></h2>
 <p>先上效果：<img data-src="https://i.lengthm.in/posts/wsl2-network-tricks/proxy.png" alt="image.png">
