@@ -4,7 +4,7 @@ comments: true
 toc: true
 permalink: posts/wsl2-network-tricks/
 date: 2019-12-28 20:39:31
-updated: 2021-01-07 18:32:00
+updated: 2021-01-31 16:34:00
 categories:
   - WSL
 tags:
@@ -126,16 +126,11 @@ WSL2 的 IP 会变，所以怎么随时随地的都能访问到 WSL2 呢？看�
 脚本的功能大概是：
 
 1. 读取 WSL 和 Windows 的 IP
-2. 将 IP 和想设定的域名组合起来，如：`{wsl_ip} wsl.local # wsl_ip`
-3. 将具体内容写入 Windows 的 `hosts` 中。
+2. 将 IP 和想设定的域名写入 Windows 的 `hosts` 文件中。
 
 这样你就能用自己定义的域名来访问两个系统了，wsl2 能访问 `win.local` 是因为它会向主机查询 dns（因为 wsl2 默认的 nameserver 指向了 windows 主机），主机会把 hosts 中的域名直接缓存起来然后直接作为一个 dns 记录。
 
 关键来了，我们要使用**任务计划程序**在 `WSL` 要更新 IP 的时候执行这个脚本。
-
-[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)
-[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)
-[English version here](https://github.com/microsoft/WSL/issues/4210#issuecomment-606381534)
 
 具体**在 `WSL` 要更新 IP 时运行特定脚本**步骤如下：
 
@@ -150,14 +145,14 @@ WSL2 的 IP 会变，所以怎么随时随地的都能访问到 WSL2 呢？看�
 看看效果：
 
 在 WSL 中启动一个 http 服务器：
-![image.png](https://i.lengthm.in/posts/wsl2-network-tricks/wsl_http_server.png)
+![wsl_http_server.png](https://i.lengthm.in/posts/wsl2-network-tricks/wsl_http_server.png)
 
 我们在 win 下请求一下：
-![image.png](https://i.lengthm.in/posts/wsl2-network-tricks/curl_wsl.png)
+![curl_wsl.png](https://i.lengthm.in/posts/wsl2-network-tricks/curl_wsl.png)
 
 Awesome! 成功啦
 
-你也可以使用下面这个小工具来实现一样的功能：
+你也可以使用下面这个小工具来实现类似的功能：
 [![shayne/go-wsl2-host](https://gh-card.dev/repos/shayne/go-wsl2-host.svg)](https://github.com/shayne/go-wsl2-host)
 
 这是一个用 Go 写的小工具，会创建一个 Windows 服务，Automatically update your Windows hosts file with the WSL2 VM IP address.
@@ -201,8 +196,8 @@ expose_local(){
 
 ```powershell
 # 获取 Windows 和 WSL2 的 ip
-$winip = bash.exe -c "ip route | grep default | awk '{print \`$3}'"
-$wslip = bash.exe -c "hostname -I | awk '{print \`$1}'"
+$winip = bash.exe -c "ip route | grep default | awk '{print `$3}'"
+$wslip = bash.exe -c "hostname -I | awk '{print `$1}'"
 $found1 = $winip -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
 $found2 = $wslip -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
 
@@ -235,6 +230,9 @@ for( $i = 0; $i -lt $ports.length; $i++ ){
   iex "netsh interface portproxy add v4tov4 listenport=$port listenaddress=$addr connectport=$port connectaddress=$wslip"  | Out-Null
 }
 ```
+
+代码里第 2、3 行的 `` `$`` 的意思是让 Powershell 执行脚本时不转义 `$`。  
+如果你执行代码报错，可以试试在 `` `$`` 前面加上一个 `\`：``\`$``。
 
 Powershell 语法里 `@()` 就是数组的意思，这个脚本遍历你设置的想暴露到局域网的端口的数组，然后用 portproxy 反代 Windows 的端口到 WSL 中。
 
