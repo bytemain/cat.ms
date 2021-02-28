@@ -2982,14 +2982,15 @@ fatal: failed to write commit object<span aria-hidden="true" class="line-numbers
 <p>gpg 会缓存你输入的密码，一段时间内你多次 sign 数据不需要重复输入密码，所以我们可以写一个 shell 函数，每次先登录好了 gpg，再使用 vscode 提交 commit。</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">gpg-login() {
     export GPG_TTY=$TTY
-    # 对 "test" 这个字段进行 gpg 加密，这时候就要输密码才行。
+    # 对 "test" 这个字符串进行 gpg 签名，这时候需要输密码。
     # 然后密码就会被缓存，下次就不用输密码了。
+    # 重定向输出到 null，就不会显示到终端中。
     echo "test" | gpg --clearsign &gt; /dev/null 2&gt;&amp;1
 }
 
 gpg-logout() {
     echo RELOADAGENT | gpg-connect-agent
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在终端中输入 <code>gpg-login</code>，就会弹出输密码的框，输入完密码之后该密码会被缓存，所以你就可以在 VSCode 使用 gpg 时候不用输密码了。</p>
 <p>输入 <code>gpg-logout</code> 就可以清除你 <code>gpg</code> 密码的缓存。</p>
 <p>虽然不是解决办法，但使用起来也还算方便，也能忍。</p>
