@@ -2966,9 +2966,9 @@ Dart 作为一个集众家之所长的语言，还是不错的，有印象的就
       </categories>
   </entry>
   <entry>
-    <title>在 WSL2 中使用 GPG 对 Git 记录进行签名</title>
+    <title>VSCode WSL 中使用 GPG 对 Git 记录进行签名</title>
     <url>//posts/wsl2-gpg/</url>
-    <content><![CDATA[<p>最近配置了一下 git 的 GPG，但是在使用 VSCode 进行 git commit 的时候就提示：</p>
+    <content><![CDATA[<p>最近配置了一下 git 的 GPG，但是在使用 VSCode WSL 进行 git commit 的时候就提示：</p>
 <pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">Git: gpg failed to sign the data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>详细输出如下：</p>
 <pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">&gt; git -c user.useConfigOnly=true commit --quiet --allow-empty-message --file -
@@ -2976,10 +2976,12 @@ error: gpg failed to sign the data
 fatal: failed to write commit object<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <a id="more"></a>
 <h2 id="原因">原因<a class="header-anchor" href="#原因"></a></h2>
-<p>原因是你没有 「输入」 你设置的 gpg key 的密码，因为使用 VSCode WSL 的时候，没有一个图形界面让你输密码的，所以 gpg 无法 sign 你的 commit。</p>
+<p>原因是你没有 「输入」 你设置的 gpg key 的密码，因为使用 VSCode WSL 的时候，没有一个图形界面让你输密码，所以 gpg 无法 sign 你的 commit。</p>
+<p>在 Windows 图形界面下，gpg 会弹出一个 Pinentry 的 dialog 框让你输密码。而我们在使用 VSCode WSL 时，WSL 并没有使用到图形界面（XServer）。</p>
 <h2 id="解决方法">解决方法<a class="header-anchor" href="#解决方法"></a></h2>
 <p>解决方法很简单：</p>
-<p>gpg 会缓存你输入的密码，一段时间内你多次 sign 数据不需要重复输入密码，所以我们可以写一个 shell 函数，每次先登录好了 gpg，再使用 vscode 提交 commit。</p>
+<p>gpg 会缓存我们第一次输入的密码，一段时间内我们多次对数据签名不需要重复输入密码，所以我们可以写一个 shell 函数，每次手动输入好了 gpg 的密码后，再使用 vsc 提交 commit。</p>
+<p>如下两个函数：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">gpg-login() {
     export GPG_TTY=$TTY
     # 对 "test" 这个字符串进行 gpg 签名，这时候需要输密码。
@@ -2991,7 +2993,7 @@ fatal: failed to write commit object<span aria-hidden="true" class="line-numbers
 gpg-logout() {
     echo RELOADAGENT | gpg-connect-agent
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在终端中输入 <code>gpg-login</code>，就会弹出输密码的框，输入完密码之后该密码会被缓存，所以你就可以在 VSCode 使用 gpg 时候不用输密码了。</p>
+<p>在终端中输入 <code>gpg-login</code>，就会出现输密码的框，输入完密码之后该密码会被缓存，之后在 VSCode 进行 commit 的时候不用输密码了。</p>
 <p>输入 <code>gpg-logout</code> 就可以清除你 <code>gpg</code> 密码的缓存。</p>
 <p>虽然不是解决办法，但使用起来也还算方便，也能忍。</p>
 <p>关于我 Shell 的一些其他配置，可见：<a href="https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc">ubuntu_wsl/zshrc</a>。</p>
