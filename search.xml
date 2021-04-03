@@ -2020,18 +2020,17 @@ gyp ERR! build error<span aria-hidden="true" class="line-numbers-rows"><span></s
 <p>有一天偶然看到 testmail.app 这个可以让开发者测试邮件服务的网站，每个用户可以有一个 namespace，然后可以构造出无限个邮件地址，也有相应的 API 用来过滤邮件等等。</p>
 <p>testmail 免费版每个月可以接收 100 封邮件，邮件能保存一天。但是只需要设置 RSS 阅读器请求频率低于一天，肯定就能接收到所有邮件了。</p>
 <p>那么项目思路就有了，使用 serverless 实现一个函数，这个函数每次接受 RSS 阅读器请求时都去抓取最新的邮件列表，然后响应一个 RSS 格式的 XML 文档即可。</p>
-<div class="mermaid">
-sequenceDiagram
+<pre class="mermaid">sequenceDiagram
 loop 每十分钟
-    RSS 阅读器 -&gt;&gt;Serverless 函数: a. 获取 tag 的最新 RSS 内容
-    activate Serverless 函数
-    Serverless 函数 -&gt;&gt;testmail.app: b. 请求 tag 对应的邮件列表
-    testmail.app--&gt;&gt;Serverless 函数: c. 返回邮件列表
-    Note right of Serverless 函数:  1. 处理邮件列表、内容等
-    Serverless 函数 --&gt;&gt;RSS 阅读器: d. 根据邮件列表生成 RSS 并返回
-    deactivate Serverless 函数
+    RSS阅读器-&gt;&gt;Serverless函数: a.获取 tag 的最新 RSS 内容
+    activate Serverless函数
+    Serverless函数-&gt;&gt;testmail.app: b.请求 tag 对应的邮件列表
+    testmail.app--&gt;&gt;Serverless函数: c.返回邮件列表
+    Note right of Serverless函数:  1.处理邮件列表、内容等
+    Serverless函数--&gt;&gt;RSS阅读器: d.根据邮件列表生成 RSS 并返回
+    deactivate Serverless函数
 end
-</div>
+</pre>
 <a id="more"></a>
 <p>有了整个项目的思路之后，现在就开始根据 <code>testmail.app</code> 的 API 来写功能就行了，Serverless 选择使用 Cloudflare workers，每天十万次请求数，I/O 时间不限。</p>
 <ul>
@@ -2536,14 +2535,13 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
 <p>浏览器解析后，会发出一个请求 <code>GET /static/css/2.0a6fdfd6.chunk.css</code>。</p>
 <p>如果简单的添加一个路由返回 <code>index.html</code> 文件的话，就有以下的问题出现：</p>
 <p>因为 Flask 本身就有 <code>static_folder</code> 的概念，所有请求 <code>/static</code> 路径的请求都会从配置的 <code>static_folder</code> 中读取文件并返回。</p>
-<div class="mermaid">
-graph LR
+<pre class="mermaid">graph LR
 A(Browser) --&gt;|GET /index.html| app(Flask app)
 A(Browser) --&gt;|GET /static/css/style.css| app(Flask app)
 app --&gt; C{endpoints}
 C --&gt;|/index.html| view[Handled by `View` Function]
 C --&gt;|/static/*| static[Load files from `static_folder`]
-</div>
+</pre>
 <p>index.html 中请求的资源都会从 <code>static_folder</code> 中拉取，那你说把打包后的文件直接放在 <code>static_folder</code> 不就好了？</p>
 <p>因为本身 <code>static_folder</code> 中就有一些后台页面需要的静态资源，也是按类型建立了文件夹：css/js 等，如果直接把 React 打包后的资源直接复制到 <code>static_folder</code> 中，那么不同的 js 文件都混杂在一起了。React 每次重新打包生成的 js 文件都不一样的话，每次更新起来还要把原来的删除再复制过去。</p>
 <a id="more"></a>
@@ -3018,5 +3016,25 @@ max-cache-ttl 3600<span aria-hidden="true" class="line-numbers-rows"><span></spa
         <tag>WSL</tag>
         <tag>GPG</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>MacOS &quot;重新生成&quot; /etc/resolv.conf</title>
+    <url>//posts/macos-regenerate-resolv-dot-conf/</url>
+    <content><![CDATA[<p>想自己本地架个 DNS 服务器，中途不小心把 <code>/etc/resolv.conf</code> 删除了，想着重启恢复还是怎么样，重启多遍发现没有什么用。</p>
+<p>于是搜索了一下，发现其实 <code>/etc/resolv.conf</code> 只是 <code>/var/run/resolv.conf</code> 的一个软链接。</p>
+<p><img data-src="https://i.lengthm.in/uPic/2rrWP7.png" alt="soft link"></p>
+<a id="more"></a>
+<h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
+<p>所以解决办法就很简单了：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">ln</span> -s /var/run/resolv.conf /etc/resolv.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="参考">参考<a class="header-anchor" href="#参考"></a></h2>
+<ol>
+<li><a href="https://apple.stackexchange.com/questions/264165/how-to-force-macos-to-regenerate-etc-resolv-conf-file">How to force MacOS to regenerate /etc/resolv.conf file?
+</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>MacOS</category>
+      </categories>
   </entry>
 </search>
