@@ -31,16 +31,20 @@ if (!typeArray.includes(type)) {
 
 console.log(`type:`, type);
 console.log(`title:`, title);
-let exec;
-if (type !== "page") {
-  if (title[0] >= "0" && title[0] <= "9") {
-    prefix = prefix + "-";
-  }
-  let slug = `${prefix}${title}`;
-  exec = execa(`yarn hexo new ${type} ${title} -s ${slug}`);
-} else {
-  exec = execa(`yarn hexo new page ${title}`);
-}
 
-exec.stdout.pipe(transformFactory()).pipe(process.stdout);
-exec.stderr.pipe(transformFactory()).pipe(process.stderr);
+try {
+  let exec;
+  if (type !== "page") {
+    if (title[0] >= "0" && title[0] <= "9") {
+      prefix = prefix + "-";
+    }
+    let slug = `${prefix}${title}`;
+    exec = execa("yarn", ["hexo", "new", type, title, "-s", slug]);
+  } else {
+    exec = execa("yarn", ["hexo", "new", "page", title]);
+  }
+  exec.stdout.pipe(transformFactory()).pipe(process.stdout);
+  exec.stderr.pipe(transformFactory()).pipe(process.stderr);
+} catch (error) {
+  console.log(error);
+}
