@@ -186,7 +186,7 @@ body {
   line-height: 2;
   min-height: 100%;
   position: relative;
-  transition: all 0.2s ease-in-out;
+  transition: padding 0.2s ease-in-out;
 }
 h1,
 h2,
@@ -2916,7 +2916,7 @@ hr {
 }
 @media (min-width: 992px) {
   .sidebar-active {
-    margin-right: 320px;
+    padding-right: 320px;
   }
 }
 .sidebar {
@@ -2955,7 +2955,7 @@ hr {
   transition: all 0.2s ease-in-out;
 }
 .links-of-author a::before {
-  background: #e44a66;
+  background: #592824;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

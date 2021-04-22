@@ -19,7 +19,7 @@
 <li>完善的 linux 终端，有 root 权限。</li>
 </ol>
 <p>我在 c9 的 workspace：<a href="https://ide.c9.io/lengthmin/hexo/">https://ide.c9.io/lengthmin/hexo/</a></p>
-<a id="more"></a>
+<span id="more"></span>
 <hr>
 <h2 id="安装">安装<a class="header-anchor" href="#安装"></a></h2>
 <h3 id="关于-Hexo">关于 Hexo<a class="header-anchor" href="#关于-Hexo"></a></h3>
@@ -112,10 +112,11 @@ ssh 密钥在～/.ssh/id_rsa.pub <br>
 <blockquote>
 <p>一定要注意改成你自己的 ssh 地址，注意是 ssh 地址。而且 <code>coding:</code> 后面是有个空格的，这就是 yaml 语言的格式，以后编辑<code>_config.yml</code> 也要注意的。</p>
 </blockquote>
-<h2 id="code￼7"><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
   <span class="token key atrule">type</span><span class="token punctuation">:</span> git
   <span class="token key atrule">repo</span><span class="token punctuation">:</span>
-    <span class="token key atrule">coding</span><span class="token punctuation">:</span> git@git.coding.net<span class="token punctuation">:</span>Artin/Artin.git<span class="token punctuation">,</span>master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><a class="header-anchor" href="#code￼7"></a></h2>
+    <span class="token key atrule">coding</span><span class="token punctuation">:</span> git@git.coding.net<span class="token punctuation">:</span>Artin/Artin.git<span class="token punctuation">,</span>master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
 <h3 id="部署到-Coding-Pages-上">部署到 Coding Pages 上<a class="header-anchor" href="#部署到-Coding-Pages-上"></a></h3>
 <p>这是 Coding 关于 Pages 的介绍。</p>
 <blockquote>
@@ -154,7 +155,7 @@ Universal Time is now:  Sat Aug  <span class="token number">6</span> <span class
     <title>为 yelee 主题加入腾讯分析</title>
     <url>//posts/add-tencent-analytics-to-yelee/</url>
     <content><![CDATA[<p>hexo 的原生主题自带了谷歌分析，而谷歌分析在国内水土不服。琢磨琢磨，把 next 主题上的腾讯分析添加到了正在用的 yelee 主题上。顺带一提，腾讯分析真的是用过的最好用的站点统计软件。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p>用的主题是 yelee，没有腾讯分析，自己加了一个。在 <code>主题目录</code> 下操作。在 <code>_config.yml</code> 中添加</p>
 <pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">tencent-analytics</span><span class="token punctuation">:</span>
 <span class="token comment"># 在冒号后面配置你的腾讯分析 id，id 就是获取到的代码的数字部分</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -187,7 +188,7 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
     <title>关于手贱执行了 sudo git 之后那些事</title>
     <url>//posts/sudo-git-fix/</url>
     <content><![CDATA[<p>在 Ubuntu 下用 git 的时候使用了 <code>sudo git add</code> 命令，导致每次不使用 <code>sudo</code> 前缀都无法对仓库进行操作。因为用了 sudo 之后普通用户组就没有操作的权限了。在 stackoverflow 找到了解决办法。</p>
- <a id="more"></a>
+ <span id="more"></span>
 <p>首先我们要知道自己的用户和用户组的 id，在终端输入</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">id</span> -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>就能显示出来用户跟组的 id：</p>
@@ -196,7 +197,8 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> .git/objects
 <span class="token function">ls</span> -al
 <span class="token function">sudo</span> <span class="token function">chown</span> -R uid:groups *
-<span class="token comment"># 将 uid 和 groups 换成你自己的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+<span class="token comment"># 将 uid 和 groups 换成你自己的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
       <categories>
         <category>Git</category>
       </categories>
@@ -214,7 +216,7 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <p>这篇文章只是介绍一下双拼入门，而我也只是个初级使用者，还有很多更高级的使用方法就靠你自己学了。</p>
 <p>文章后会给几个链接，搭配本文食用更佳。</p>
 <p>实际使用感受我只能说：比全拼打的快，比五笔学的快。</p>
-<a id="more"></a>
+<span id="more"></span>
 <hr>
 <h2 id="概念">概念<a class="header-anchor" href="#概念"></a></h2>
 <p>先来一段百科上的：</p>
@@ -274,7 +276,8 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 已经失效了！！<br>
 已经失效了！！</p>
 <p>现在部署可以一键部署了，但是已经无法获取 rss 更新了。</p>
-<h2 id="code￼0"><pre class="line-numbers language-none"><code class="language-none">failed to open stream: no suitable wrapper could be found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><a class="header-anchor" href="#code￼0"></a></h2>
+<pre class="line-numbers language-none"><code class="language-none">failed to open stream: no suitable wrapper could be found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
 <p>先说结论，不够好用，弃坑了，用国内的一览提供的 rss 服务。<br>
 多平台支持，和 inoreader 相比速度更快，而且对于目前我订阅的源来说并没有不可阅读的，而且在 inoreader 上看不了電腦玩物的图片（因为 refer 的问题），在一览上没问题的。</p>
 <h2 id="关于-ttrss">关于 ttrss<a class="header-anchor" href="#关于-ttrss"></a></h2>
@@ -288,7 +291,7 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 android 上推荐 feedme，最新的 3.5.1 版本支持了 tinytinyrss，体验很好。<br>
 之前用 inoreader 的时候就用的 feedme，已通过 play 请开发者吃了个苹果哈哈哈哈哈，<br>
 tinytinyrss 也就是在 php 环境下安装的，pc 上用浏览器打开就可以了。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="关于-coding-的动态-pages">关于 coding 的动态 pages<a class="header-anchor" href="#关于-coding-的动态-pages"></a></h2>
 <p>coding 提供了免费的动态 pages，可以用来架设自己的个人动态博客。<br>
 但是我最近在 rss 服务选择上犯了选择困难证，刚好想到之前看到过 ttrss<br>
@@ -391,7 +394,7 @@ ssh 要先配置好 ssh 的权限。</p>
     <content><![CDATA[<p>我经常在 webide 更新博客，但这只限于有网络的情况下。想本地调试的话，在没网之前就需要把源文件同步到本地来。这个功能用 <code>git</code> 来实现会非常好。<br>
 大概的思路就是在博客的仓库创建一个分支来备份源文件。<br>
 在部署网页之前可以先把源文件同步到备份分支，然后需要的时候本地拉取回来。</p>
-<a id="more"></a>
+<span id="more"></span>
 <hr>
 <h2 id="备份到仓库">备份到仓库<a class="header-anchor" href="#备份到仓库"></a></h2>
 <p>你需要安装好 git。<br>
@@ -428,7 +431,8 @@ hexo clean
 hexo g -d
 <span class="token builtin class-name">echo</span> <span class="token string">"hexo g -d 执行完毕"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以后想要更新博客，直接在博客根目录下输入:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> git.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> git.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
@@ -440,7 +444,7 @@ hexo g -d
     <title>Windows10 配置 OpenCV3.4.1 + Visual Studio</title>
     <url>//posts/install-opencv-windows-vs/</url>
     <content><![CDATA[<p>Windows 下安装 OpenCV 以及配环境的事情，对于 VS 来说一点都不麻烦，简单几步就可以在 VS 中使用 OpenCV 这个库。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="下载-OpenCV">下载 OpenCV<a class="header-anchor" href="#下载-OpenCV"></a></h2>
 <p>OpenCV 的下载链接：<a href="https://opencv.org/releases.html">https://opencv.org/releases.html</a></p>
 <p>选择 Windows 版本的下载。</p>
@@ -479,7 +483,8 @@ int main()
     cvReleaseImage(&amp;src);
     cvDestroyWindow("showImage");
     return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
       <categories>
         <category>OpenCV</category>
       </categories>
@@ -493,7 +498,7 @@ int main()
     <title>ACM 输入输出语句</title>
     <url>//posts/acm-io/</url>
     <content><![CDATA[<p>一些自己用的输入输出语句。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="Python-输入">Python 输入<a class="header-anchor" href="#Python-输入"></a></h2>
 <h3 id="输入一行由空格切分的值">输入一行由空格切分的值<a class="header-anchor" href="#输入一行由空格切分的值"></a></h3>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># py2</span>
@@ -524,7 +529,8 @@ w <span class="token operator">=</span> <span class="token builtin">map</span><s
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="C-中在OJ上怎么实现多组输入">C++ 中在 OJ 上怎么实现多组输入<a class="header-anchor" href="#C-中在OJ上怎么实现多组输入"></a></h2>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">while</span><span class="token punctuation">(</span>cin <span class="token operator">&gt;&gt;</span> a <span class="token operator">&gt;&gt;</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+]]></content>
       <categories>
         <category>ACM</category>
       </categories>
@@ -540,7 +546,7 @@ w <span class="token operator">=</span> <span class="token builtin">map</span><s
 <p>GitHub 链接：<a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a></p>
 <p>nvm 是 nodejs 的一个版本控制工具，也就是 “Node Version Manager” 的三个首字母。</p>
 <p>2019-06-29 更新：Windows 安装 nvm</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="Linux-安装-nvm">Linux 安装 nvm<a class="header-anchor" href="#Linux-安装-nvm"></a></h2>
 <h3 id="安装和升级-nvm">安装和升级 nvm<a class="header-anchor" href="#安装和升级-nvm"></a></h3>
 <p>要安装或升级 nvm, 可以使用官方给的一个脚本。</p>
@@ -626,7 +632,7 @@ nvm npm_mirror https://npm.taobao.org/mirrors/npm/<span aria-hidden="true" class
     <content><![CDATA[<p>之前学习 Java 的时候，感觉最难做的一件事情就是配置 jdk 的环境。那叫一个困难啊，Path、JAVA_HOME、CLASSPATH 印象深刻的很…（但是现在 JDK11 不用再配置 classpath 了，jre 和 jdk 合并了）。就在去年暑假，要 <a href="/posts/install-opencv-windows-vs/">配 OpenCV 的环境</a>，要调的东西还是比较多的，对环境配置的概念又加深了。</p>
 <p>现在懂的多了，配过的环境也多了，配过的平台也不算少。现在就想分享一下「关于我对配环境这件事情的感受」。</p>
 <p>那就以 Windows 来说说环境配置的问题，Linux 下的其实差不多。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="为什么需要环境变量">为什么需要环境变量<a class="header-anchor" href="#为什么需要环境变量"></a></h2>
 <p>我记得计算机网络的老师在给我们讲 ip/mac 地址的时候提过一个例子：</p>
 <p>** 问：** 你刚到这个班，班里都是新同学，你想找班里的小明同学该怎么办？<br>
@@ -688,7 +694,7 @@ Write-Output $env:VAR<span aria-hidden="true" class="line-numbers-rows"><span></
     <content><![CDATA[<p>期末复习汇编… 真的是好努力的复习…
 实验老师让我们做的那几个实验，想想还觉得谢谢了～
 谈一下输入输出、分支流程、基本指令，再谈一下做过的几个题目。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="输入输出">输入输出<a class="header-anchor" href="#输入输出"></a></h2>
 <h3 id="整数的-ASCII-码值转为数值">整数的 ASCII 码值转为数值<a class="header-anchor" href="#整数的-ASCII-码值转为数值"></a></h3>
 <ul>
@@ -1070,7 +1076,8 @@ FF:
   POP  DX  
 RET
 CODE ENDS
-END GO<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+END GO<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
       <categories>
         <category>汇编</category>
       </categories>
@@ -1087,7 +1094,7 @@ END GO<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 Arch WSL 真的是秒开哦～
 链接拿去：
 <a href="https://github.com/yuk7/ArchWSL"><img data-src="https://gh-card.dev/repos/yuk7/ArchWSL.svg" alt="yuk7/ArchWSL"></a></p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="下载安装-Arch-WSL">下载安装 Arch WSL<a class="header-anchor" href="#下载安装-Arch-WSL"></a></h2>
 <p>这里是作者的安装教程：<a href="https://github.com/yuk7/ArchWSL/wiki">https://github.com/yuk7/ArchWSL/wiki</a></p>
 <p>我选择的是传统方式安装（不使用 AppX 方式）：</p>
@@ -1412,7 +1419,7 @@ git-config() {
 </ol>
 </li>
 </ol>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="WSL2-连接到主机代理">WSL2 连接到主机代理<a class="header-anchor" href="#WSL2-连接到主机代理"></a></h2>
 <p>其实这个问题我在之前那篇<a href="/posts/install-arch-wsl/#zsh-%E7%9A%84%E5%85%B6%E4%BB%96%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE">配置 ArchWSL 的文章</a>里简单提了一下，大概流程如下：</p>
 <ol>
@@ -1434,8 +1441,9 @@ git-config() {
 <hr>
 <p>感谢评论区 <a href="https://disqus.com/by/xing_fang/">Xing Fang</a> 以及 <a href="https://disqus.com/by/twinmegami/">twinmegami</a> 给的开放防火墙的命令。</p>
 <p>命令来源：<a href="https://github.com/microsoft/WSL/issues/4585">https://github.com/microsoft/WSL/issues/4585</a></p>
-<h2 id="code￼1"><pre class="line-numbers language-ps1" data-language="ps1"><code class="language-ps1"># 直接放开 `vEthernet (WSL)` 这张网卡的防火墙
-New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><a class="header-anchor" href="#code￼1"></a></h2>
+<pre class="line-numbers language-ps1" data-language="ps1"><code class="language-ps1"># 直接放开 `vEthernet (WSL)` 这张网卡的防火墙
+New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<hr>
 <p>还有这篇<strong>必读</strong>的文章：</p>
 <ul>
 <li><a href="https://blog.skk.moe/post/enable-proxy-on-ubuntu/">Ubuntu「一键」设置代理</a></li>
@@ -1572,7 +1580,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
     <url>//posts/2019/</url>
     <content><![CDATA[<p>2019 年结束了，还真是快啊…
 所以我做了啥呢？想到啥写点啥吧…</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="沿着时间线说起">沿着时间线说起<a class="header-anchor" href="#沿着时间线说起"></a></h2>
 <p>去年跟老师提了一下，想做一个 QQ 机器人，能够提醒出成绩，提醒课表什么的。今年拿这个申请了一个项目，虽然只有 600 块… 但也是钱～</p>
 <p>使用了 nonebot 这个 QQ 机器人框架，写了一个 iswust_nonebot，直接放在了 github 上面，现在已经可以查课表了，其他功能暂时还没怎么写。</p>
@@ -1628,7 +1636,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>但是我对这个控制中心需求很小，所以我直接把软件卸载了 (●´ω｀●)。</p>
 <p>所以，怎么去利用这个键呢？</p>
 <p>注意：该键是没有 keycode 的，也就是不被作为键盘的输入键。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="如果你按这个键没有效果">如果你按这个键没有效果<a class="header-anchor" href="#如果你按这个键没有效果"></a></h2>
 <p>参考惠普官方文档：<a href="https://support.hp.com/cn-zh/document/c01198500">https://support.hp.com/cn-zh/document/c01198500</a></p>
 <p>对于我的暗影精灵 3，装一个惠普的 SystemEvent 即可：</p>
@@ -1670,7 +1678,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
     <url>//posts/use-mathjax-in-react/</url>
     <content><![CDATA[<p>做一个 React 项目的时候，想在网页上渲染数学公式，不想用别人封装好的 React 组件，采用动态加载的方式直接渲染 DOM。</p>
 <p>Mathjax@3 做了很大的一个更新，使用方式也和 2.x 版本不同。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="React-动态加载-js">React 动态加载 js<a class="header-anchor" href="#React-动态加载-js"></a></h2>
 <p>首先需要知道的一件事就是如何动态加载 js，用 js 将一个新的 script 节点挂载到 dom 上即可。</p>
 <p>创建一个 dom 元素 <code>script</code>，设置 <code>src</code> 属性为要加载的链接，然后将节点添加到 body 元素内。</p>
@@ -1805,7 +1813,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
     <content><![CDATA[<p>作为一个前端开发者（，偶尔会写点用户脚本 <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> 增强自己的浏览体验。</p>
 <p>对于传统服务端渲染的页面可以直接在页面上执行脚本达到自己的目的，但是对于现在的数据流驱动的前端开发框架来说，原来的那种做法行不通了，需要找到一个方式参与到页面的渲染中。</p>
 <p>so how to hack(actually: modify) an angular page?</p>
-<a id="more"></a>
+<span id="more"></span>
 <p>先说好啊，我是写 React 的，有什么出错的地方请多指正。</p>
 <h2 id="获取-Angular-实例">获取 Angular 实例<a class="header-anchor" href="#获取-Angular-实例"></a></h2>
 <p>Google 许久，发现了下面这个 <a href="https://gist.github.com/mgol/7893061">gist</a>, 可以直接拿到 Angular 的实例。</p>
@@ -1910,7 +1918,7 @@ NPMPATH\node_modules\node-gyp\src\win_delay_load_hook.cc : fatal error C1107: �
 SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\opaquewrapper.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
 SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\collectionsconverterutils.cpp : fatal error C1107: 未能找到程序集“Windows.winmd”: 请使用 /AI 或通过设置 LIBPATH 环境变量指定程序集搜索路径 [SECRETPATH\node_modules\@nodert-win10-au\windows.foundation\build\binding.vcxproj]
 gyp ERR! build error<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<a id="more"></a>
+<span id="more"></span>
 <p>啊，这熟悉的 msvc 工具链报错。错误原因是 <a href="https://docs.microsoft.com/zh-cn/cpp/error-messages/compiler-errors-1/fatal-error-c1107?view=vs-2019">fatal error C1107: 未能找到程序集 “Windows.winmd”</a>，提示说可以用 LIBPATH 设置这个文件的位置。使用 listary 查了一下本机的 <code>Windows.winmd</code> 的 位置，然后就开始了第一次的错误尝试，设置了 <code>LIBPATH</code>，依然报错。</p>
 <p>想想以前使用 VS 的时候，需要在项目中配置一下引用的库的位置才能正确编译，所以这很有可能还是找不到库的位置所以报的错。中间的摸索过程就不写了，直接写怎么解决。</p>
 <h2 id="配置-node-gyp">配置 node-gyp<a class="header-anchor" href="#配置-node-gyp"></a></h2>
@@ -1970,7 +1978,7 @@ gyp ERR! build error<span aria-hidden="true" class="line-numbers-rows"><span></s
 <p>自己也用了蛮久了，真的十分好用，有很多场景都需要用到：</p>
 <p>想写一个验证想法的小 case，或者验证一下某个函数的用处，或者 clone 一下某个仓库查看一下相关内容。直接 <code>cdtmp</code> 打开一个临时文件夹，在里面直接做你想做的事情，而且完全不需要担心这些文件后续的清理问题，Windows 来说使用清理软件清理垃圾时一般都会删除临时文件，Linux 下也有相应的清除 tmp 目录的逻辑和方法。</p>
 <p>简单介绍一下这个命令，给出 zsh 中的实现以及一个 Windows 下 <code>PowerShell</code> 里的同样功能的函数。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p>命令的作用就是：在系统的临时目录创建一个文件夹然后跳转过去。</p>
 <h2 id="zsh">zsh<a class="header-anchor" href="#zsh"></a></h2>
 <p>sorrycc 提到的 <code>cdtmp</code>：</p>
@@ -2031,7 +2039,7 @@ loop 每十分钟
     deactivate Serverless函数
 end
 </pre>
-<a id="more"></a>
+<span id="more"></span>
 <p>有了整个项目的思路之后，现在就开始根据 <code>testmail.app</code> 的 API 来写功能就行了，Serverless 选择使用 Cloudflare workers，每天十万次请求数，I/O 时间不限。</p>
 <ul>
 <li>testmail.app：<a href="https://testmail.app/">https://testmail.app/</a></li>
@@ -2206,7 +2214,7 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
   <span class="token keyword">return</span> <span class="token number">3.14</span> <span class="token operator">*</span> radius <span class="token operator">*</span> radius<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上面这个例子中 (C++ 实现)，函数 <code>area</code> 被两个实现重载，第一个函数允许传入两个参数 (且都是整数型)，根据传入的长方形的宽高，返回长方形的面积；第二个函数需要传入一个整形参数：圆的半径。当我们调用函数 <code>area</code> 时，如调用 <code>area(7)</code> 时会使用第二个函数，而调用 <code>area(3, 4)</code> 时则会使用第一个。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="为什么-Python-中没有函数重载？">为什么 Python 中没有函数重载？<a class="header-anchor" href="#为什么-Python-中没有函数重载？"></a></h2>
 <p>Python 默认不支持函数重载。当我们定义多个同名函数时，后一个总会覆盖掉前一个函数，因此在同一个命名空间内，每个函数名总是只有一个函数执行入口。我们可以调用函数 <code>locals()</code> 和 <code>globals()</code> 来查看命名空间中有什么， 这两个函数分别返回本地命名空间和全局命名空间。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">area</span><span class="token punctuation">(</span>radius<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -2433,7 +2441,7 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
 <li>利用好 <code>package.json</code> 文件中的 <code>scripts</code> 字段</li>
 <li>利用好 Node.js 脚本</li>
 </ol>
-<a id="more"></a>
+<span id="more"></span>
 <p>想了想，也许写下去之后就是个 hexo 高级教程？</p>
 <p>可能还有一些其他的东西会提到，比如我的图床实现之类的，敬请期待～</p>
 ]]></content>
@@ -2446,7 +2454,7 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
     <url>//posts/vscode-bracket-colorizer-light-theme/</url>
     <content><![CDATA[<p>目前使用的亮色主题（Github Light Theme - Gray）下使用 Bracket-Pair-Colorizer-2 会发现默认的金色括号太不明显。搜索了一下 issue 发现已经有 <a href="https://github.com/CoenraadS/Bracket-Pair-Colorizer-2/issues/62">解决方案</a>。</p>
 <p><img data-src="https://i.lengthm.in/posts/vscode-bracket-colorizer-light-theme/comparison.png" alt="比较"></p>
-<a id="more"></a>
+<span id="more"></span>
 <p>Bracket-Pair-Colorizer-2 插件支持自己配置颜色，默认的颜色为：</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token comment">// Scope colors</span>
 <span class="token property">"bracket-pair-colorizer-2.colors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
@@ -2506,7 +2514,8 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
   <span class="token string">"colorizer.color-3"</span>
 <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token property">"bracket-pair-colorizer-2.forceUniqueOpeningColor"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-<span class="token property">"bracket-pair-colorizer-2.highlightActiveScope"</span><span class="token operator">:</span> <span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+<span class="token property">"bracket-pair-colorizer-2.highlightActiveScope"</span><span class="token operator">:</span> <span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
       <categories>
         <category>VSCode</category>
       </categories>
@@ -2544,7 +2553,7 @@ C --&gt;|/static/*| static[Load files from `static_folder`]
 </pre>
 <p>index.html 中请求的资源都会从 <code>static_folder</code> 中拉取，那你说把打包后的文件直接放在 <code>static_folder</code> 不就好了？</p>
 <p>因为本身 <code>static_folder</code> 中就有一些后台页面需要的静态资源，也是按类型建立了文件夹：css/js 等，如果直接把 React 打包后的资源直接复制到 <code>static_folder</code> 中，那么不同的 js 文件都混杂在一起了。React 每次重新打包生成的 js 文件都不一样的话，每次更新起来还要把原来的删除再复制过去。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
 <p>搜了一下解决方案，发现了 Stackoverflow 的 <a href="https://stackoverflow.com/questions/44209978/serving-a-front-end-created-with-create-react-app-with-flask">讨论</a>，顺利应用，记录一下过程。</p>
 <p>顺便一提，一般前后端分离的部署是使用 Nginx 等 Server 来返回静态资源，也方便做缓存之类的。</p>
@@ -2646,7 +2655,7 @@ table {
 <p>使用 pyodbc + sqlalchemy 连接 SQLServer 数据库的时候遇到一个报错： <code>[IM002] [Microsoft][ODBC 驱动程序管理器] 未发现数据源名称并且未指定默认驱动程序 (0) (SQLDriverConnect)</code>。</p>
 <p>查阅 <a href="https://docs.sqlalchemy.org/en/14/dialects/mssql.html#module-sqlalchemy.dialects.mssql.pyodbc">sqlalchemy mssql+pyodbc 数据库文档</a> 后发现：</p>
 <p>需要装 ODBC 驱动。并且如果你要是用 hostname 方式来连接数据库的话，还需要指定驱动名字，但是发现有好多种 driver，一个 driver 还有不同的名字。于是研究了一番。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="怎么这么多驱动">怎么这么多驱动<a class="header-anchor" href="#怎么这么多驱动"></a></h2>
 <p>引用并重新编辑一下 <a href="https://docs.microsoft.com/zh-cn/sql/connect/connect-history?view=sql-server-ver15#odbc">Microsoft SQL Server 的驱动程序历史记录 - SQL Server | Microsoft Docs</a> 中一段很清晰的描述：</p>
 <p>有三代不同的 Microsoft ODBC Driver for SQL Server。</p>
@@ -2867,7 +2876,7 @@ SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql
     <content><![CDATA[<p>2020/01/14，离开学校回家，那时候是很难想象到这一年会是这个样子的。</p>
 <p>今年大四，选择了工作，也不知道会不会后悔没有保研。</p>
 <p>感觉这一年学了很多东西，但也感觉自己还是会的太少。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="先上图">先上图<a class="header-anchor" href="#先上图"></a></h2>
 <p><img data-src="https://i.lengthm.in/posts/2020-summary/github_contributions.png" alt="github_contributions.png"></p>
 <p><img data-src="https://i.lengthm.in/posts/2020-summary/wakatime.png" alt="wakatime.png"></p>
@@ -2973,7 +2982,7 @@ Dart 作为一个集众家之所长的语言，还是不错的，有印象的就
 <pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">&gt; git -c user.useConfigOnly=true commit --quiet --allow-empty-message --file -
 error: gpg failed to sign the data
 fatal: failed to write commit object<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="原因">原因<a class="header-anchor" href="#原因"></a></h2>
 <p>原因是你没有 「输入」 你设置的 gpg key 的密码，因为使用 VSCode WSL 的时候，没有一个图形界面让你输密码，所以 gpg 无法 sign 你的 commit。</p>
 <p>在 Windows 图形界面下，gpg 会弹出一个 Pinentry 的 dialog 框让你输密码。而我们在使用 VSCode WSL 时，WSL 并没有使用到图形界面（XServer）。</p>
@@ -3023,7 +3032,7 @@ max-cache-ttl 3600<span aria-hidden="true" class="line-numbers-rows"><span></spa
     <content><![CDATA[<p>想自己本地架个 DNS 服务器，中途不小心把 <code>/etc/resolv.conf</code> 删除了，想着重启恢复还是怎么样，重启多遍发现没有什么用。</p>
 <p>于是搜索了一下，发现其实 <code>/etc/resolv.conf</code> 只是 <code>/var/run/resolv.conf</code> 的一个软链接。</p>
 <p><img data-src="https://i.lengthm.in/uPic/2rrWP7.png" alt="soft link"></p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
 <p>所以解决办法就很简单了：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">ln</span> -s /var/run/resolv.conf /etc/resolv.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -3036,5 +3045,31 @@ max-cache-ttl 3600<span aria-hidden="true" class="line-numbers-rows"><span></spa
       <categories>
         <category>MacOS</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Flask-Migrate migrate 不生效</title>
+    <url>//posts/flask-migrate-no-change/</url>
+    <content><![CDATA[<p>耗费了一个晚上，把这个坑趟平了。</p>
+<p>想使用 flask-migrate 插件做数据库版本管理，但是一直遇到这个问题。</p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">INFO  [alembic.runtime.migration] Context impl MySQLImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.env] No changes in schema detected.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>各种方法都尝试过了，在每个地方都试了引入了 <code>models</code> 里的内容、调整使用 flask script 等等等等…</p>
+<span id="more"></span>
+<h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
+<p>因为我的数据库已经启动了，我的数据库和我的 <code>models</code> 内容是一致的。所以这句话不会生效…</p>
+<p>所以 migrate 最好的时机是没有建立数据库之前…</p>
+<p>然后我就删库重来了，删库之后 migrate 果然成功了。</p>
+<h2 id="其他踩坑">其他踩坑<a class="header-anchor" href="#其他踩坑"></a></h2>
+<p>看了一下大部分网友的坑都是没有引入 <code>models</code> 的内容，这个需要注意一下就好。</p>
+<p>注意不要循环引用。</p>
+<p>migrate 要在 <code>db.init</code> 之后。</p>
+]]></content>
+      <categories>
+        <category>flask</category>
+      </categories>
+      <tags>
+        <tag>Flask</tag>
+      </tags>
   </entry>
 </search>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
   <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
 
-<meta name="hexo-config" content="{&quot;hostname&quot;:&quot;lengthmin.me&quot;,&quot;root&quot;:&quot;/&quot;,&quot;images&quot;:&quot;/images&quot;,&quot;scheme&quot;:&quot;Mist&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;right&quot;,&quot;display&quot;:&quot;always&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12,&quot;onmobile&quot;:false},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:true,&quot;lazyload&quot;:true,&quot;pangu&quot;:true,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:false,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;slideDownIn&quot;,&quot;post_body&quot;:&quot;slideDownIn&quot;,&quot;coll_header&quot;:&quot;slideLeftIn&quot;,&quot;sidebar&quot;:&quot;slideUpIn&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;/search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:5,&quot;unescape&quot;:true,&quot;preload&quot;:true}}">
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;lengthmin.me&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Mist&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;right&quot;,&quot;display&quot;:&quot;always&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12,&quot;onmobile&quot;:false},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:true,&quot;lazyload&quot;:true,&quot;pangu&quot;:true,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:false,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;slideDownIn&quot;,&quot;post_body&quot;:&quot;slideDownIn&quot;,&quot;coll_header&quot;:&quot;slideLeftIn&quot;,&quot;sidebar&quot;:&quot;slideUpIn&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:5,&quot;unescape&quot;:true,&quot;preload&quot;:true}}</script>
 <meta name="description" content="译自：https:&#x2F;&#x2F;arpitbhayani.me&#x2F;blogs&#x2F;function-overloading 作者：@arpit_bhayani 翻译已获原作者授权  函数重载是指可以创建多个同名函数，但是每个函数的形参以及实现可以不一样。当一个重载函数 fn 被调用时，运行时会根据传入的参数 &#x2F; 对象，来判断并调用相应的实现函数。 int area(int length, int breadth)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[译] 在 Python 中实现函数重载">
@@ -40,11 +40,11 @@
 
 
 
-<meta name="hexo-config-page" content="{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;}">
-<meta name="hexo-config-calendar" content=""><meta name="referrer" content="no-referrer-when-downgrade">
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;lengthmin.me&#x2F;posts&#x2F;function-overloading-in-python&#x2F;&quot;,&quot;path&quot;:&quot;&#x2F;posts&#x2F;function-overloading-in-python&#x2F;&quot;,&quot;title&quot;:&quot;[译] 在 Python 中实现函数重载&quot;}</script>
 
-<script data-pjax src="/js/load-config.js"></script>
-  <title>[译] 在 Python 中实现函数重载 | Artin's Blog</title>
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>[译] 在 Python 中实现函数重载 | Artin's Blog</title><script src="/js/config.js"></script><meta name="referrer" content="no-referrer-when-downgrade">
+
   
 
 
@@ -169,14 +169,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -318,7 +318,7 @@
   <span class="token keyword">return</span> <span class="token number">3.14</span> <span class="token operator">*</span> radius <span class="token operator">*</span> radius<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上面这个例子中 (C++ 实现)，函数 <code>area</code> 被两个实现重载，第一个函数允许传入两个参数 (且都是整数型)，根据传入的长方形的宽高，返回长方形的面积；第二个函数需要传入一个整形参数：圆的半径。当我们调用函数 <code>area</code> 时，如调用 <code>area(7)</code> 时会使用第二个函数，而调用 <code>area(3, 4)</code> 时则会使用第一个。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="为什么-Python-中没有函数重载？">为什么 Python 中没有函数重载？<a class="header-anchor" href="#为什么-Python-中没有函数重载？"></a></h2>
 <p>Python 默认不支持函数重载。当我们定义多个同名函数时，后一个总会覆盖掉前一个函数，因此在同一个命名空间内，每个函数名总是只有一个函数执行入口。我们可以调用函数 <code>locals()</code> 和 <code>globals()</code> 来查看命名空间中有什么， 这两个函数分别返回本地命名空间和全局命名空间。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">area</span><span class="token punctuation">(</span>radius<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -735,7 +735,7 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Symbols：</span>
-    <span title="Symbols">59k</span>
+    <span title="Symbols">60k</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -781,53 +781,16 @@
 <script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
-<script src="/js/local-search.js"></script>
+<script src="/js/third-party/search/local-search.js"></script>
 
 
 
 
-<script>
-var mermaidElements = document.querySelectorAll('.mermaid');
-if (mermaidElements.length) {
-  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js', () => {
-    mermaidElements.forEach(element => {
-      const newElement = document.createElement('div');
-      newElement.innerHTML = element.innerHTML;
-      newElement.className = element.className;
-      element.parentNode.replaceChild(newElement, element);
-    });
+  <script class="next-config" data-name="mermaid" type="application/json">{&quot;enable&quot;:true,&quot;theme&quot;:&quot;neutral&quot;,&quot;js&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;mermaid@8.9.2&#x2F;dist&#x2F;mermaid.min.js&quot;}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
 
-    mermaid.init({
-      theme    : 'neutral',
-      logLevel : 3,
-      flowchart: { curve     : 'linear' },
-      gantt    : { axisFormat: '%m/%d/%Y' },
-      sequence : { actorMargin: 50 }
-    }, '.mermaid');
-  }, window.mermaid);
-}
-</script>
-
-  <script>
-    NProgress.configure({
-      showSpinner: true
-    });
-    NProgress.start();
-    document.addEventListener('readystatechange', () => {
-      if (document.readyState === 'interactive') {
-        NProgress.inc(0.8);
-      }
-      if (document.readyState === 'complete') {
-        NProgress.done();
-      }
-    });
-    document.addEventListener('pjax:send', () => {
-      NProgress.start();
-    });
-    document.addEventListener('pjax:success', () => {
-      NProgress.done();
-    });
-  </script>
+  <script class="next-config" data-name="nprogress" type="application/json">{&quot;enable&quot;:true,&quot;spinner&quot;:true}</script>
+  <script src="/js/third-party/nprogress.js"></script>
 
   
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -836,32 +799,12 @@ if (mermaidElements.length) {
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.1.0/dist/quicklink.umd.js"></script>
-  <script>
-      window.addEventListener('load', () => {
-      quicklink.listen({
-        timeout : 3000,
-        priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://lengthmin.me/posts/function-overloading-in-python/',]
-      });
-      });
-  </script>
-
+  <script class="next-config" data-name="quicklink" type="application/json">{&quot;enable&quot;:true,&quot;home&quot;:true,&quot;archive&quot;:true,&quot;delay&quot;:true,&quot;timeout&quot;:3000,&quot;priority&quot;:true,&quot;ignores&quot;:null,&quot;url&quot;:&quot;https:&#x2F;&#x2F;lengthmin.me&#x2F;posts&#x2F;function-overloading-in-python&#x2F;&quot;}</script>
+  <script src="/js/third-party/quicklink.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css">
 
-<script>
-NexT.utils.loadComments('#disqus_thread', () => {
-  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqus.js', () => {
-    window.dsqjs = new DisqusJS({
-      api       : 'https://disqus.skk.moe/disqus/' || 'https://disqus.com/api/',
-      apikey    : 'Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR',
-      shortname : 'hexo-1',
-      url       : "https://lengthmin.me/posts/function-overloading-in-python/",
-      identifier: "/posts/function-overloading-in-python/",
-      title     : "[译] 在 Python 中实现函数重载",
-    });
-  }, window.DisqusJS);
-});
-</script>
+<script class="next-config" data-name="disqusjs" type="application/json">{&quot;enable&quot;:true,&quot;api&quot;:&quot;https:&#x2F;&#x2F;disqus.skk.moe&#x2F;disqus&#x2F;&quot;,&quot;apikey&quot;:&quot;Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR&quot;,&quot;shortname&quot;:&quot;hexo-1&quot;,&quot;js&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;disqusjs@1.3.0&#x2F;dist&#x2F;disqus.js&quot;}</script>
+<script src="/js/third-party/comments/disqusjs.js"></script>
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cfb18eeb71043868c5654e780198190"}'></script>
 <!-- End Cloudflare Web Analytics -->
