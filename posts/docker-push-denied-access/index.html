@@ -21,26 +21,29 @@
   <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;lengthmin.me&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Mist&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;right&quot;,&quot;display&quot;:&quot;always&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12,&quot;onmobile&quot;:false},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:true,&quot;lazyload&quot;:true,&quot;pangu&quot;:true,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:false,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;slideDownIn&quot;,&quot;post_body&quot;:&quot;slideDownIn&quot;,&quot;coll_header&quot;:&quot;slideLeftIn&quot;,&quot;sidebar&quot;:&quot;slideUpIn&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:5,&quot;unescape&quot;:true,&quot;preload&quot;:true}}</script>
-<meta name="description" content="Python &#x2F; React &#x2F; Nodejs">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Artin&#39;s Blog">
-<meta property="og:url" content="https://lengthmin.me/tags/Angular/">
+<meta name="description" content="在 Ubuntu 上使用 docker push 的时候一直报 access denied: denied: requested access to the resource is denied 使用 docker login 之后也不行，给镜像打的标签也是正常的，就很奇怪。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker push 时显示 access denied">
+<meta property="og:url" content="https://lengthmin.me/posts/docker-push-denied-access/">
 <meta property="og:site_name" content="Artin&#39;s Blog">
-<meta property="og:description" content="Python &#x2F; React &#x2F; Nodejs">
+<meta property="og:description" content="在 Ubuntu 上使用 docker push 的时候一直报 access denied: denied: requested access to the resource is denied 使用 docker login 之后也不行，给镜像打的标签也是正常的，就很奇怪。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-23T10:11:55.000Z">
+<meta property="article:modified_time" content="2021-04-23T10:11:55.000Z">
 <meta property="article:author" content="Artin">
-<meta property="article:tag" content="Python,React,Nodejs">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://lengthmin.me/tags/Angular/">
+<link rel="canonical" href="https://lengthmin.me/posts/docker-push-denied-access/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:false,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:&quot;&quot;,&quot;permalink&quot;:&quot;&quot;,&quot;path&quot;:&quot;tags&#x2F;Angular&#x2F;index.html&quot;,&quot;title&quot;:&quot;&quot;}</script>
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;lengthmin.me&#x2F;posts&#x2F;docker-push-denied-access&#x2F;&quot;,&quot;path&quot;:&quot;&#x2F;posts&#x2F;docker-push-denied-access&#x2F;&quot;,&quot;title&quot;:&quot;docker push 时显示 access denied&quot;}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
-<title>标签: Angular | Artin's Blog</title><script src="/js/config.js"></script><meta name="referrer" content="no-referrer-when-downgrade">
+<title>docker push 时显示 access denied | Artin's Blog</title><script src="/js/config.js"></script><meta name="referrer" content="no-referrer-when-downgrade">
 
   
 
@@ -137,7 +140,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -150,6 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">相关问题</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -221,51 +225,306 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">Angular
-          <small>标签</small>
-        </h2>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lengthmin.me/posts/docker-push-denied-access/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Artin">
+      <meta itemprop="description" content="Python / React / Nodejs">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artin's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          docker push 时显示 access denied
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-04-23 18:11" itemprop="dateCreated datePublished" datetime="2021-04-23T18:11:55+08:00">2021-04-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
       </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>606</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>在 Ubuntu 上使用 docker push 的时候一直报 access denied:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">denied: requested access to the resource is denied<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>使用 docker login 之后也不行，给镜像打的标签也是正常的，就很奇怪。</p>
+<span id="more"></span>
+<h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
+<p>其实这也是个很神奇的问题，你会发现这篇文章有个 tag 是 Linux。</p>
+<p>因为 docker login 会把用户信息保存在当前的用户路径下，从 login 后会有一个『你是使用明文密码登录』的提示可以看出这一点。</p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">WARNING! Your password will be stored unencrypted in /home/xxxx/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我在一个普通账户下，而且 docker login 没加 sudo，但后面我却使用了 sudo docker push…</p>
+<p>so 在 root 账户下，docker 是没有登录信息的，所以就一直推不上去。</p>
+<p>所以大家要检查的是自己当前的操作系统的登录用户是否有 docker 登录信息。</p>
+<h2 id="相关问题">相关问题<a class="header-anchor" href="#相关问题"></a></h2>
+<p>在搜索过程中发现大家推不上去几乎都是同一个问题，推镜像的时候没有加 scope。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-04-15T09:49:01+08:00"
-              content="2020-04-15">
-          04-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/posts/using-userscript-in-angular-page/" itemprop="url">
-            <span itemprop="name">在 Angular 网页中使用 UserScript</span>
-          </a>
-      </div>
-
+    
+    
+    
       
-    </header>
-  </article>
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/sudo-git-fix/" rel="bookmark">关于手贱执行了 sudo git 之后那些事</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/install-arch-wsl/" rel="bookmark">安装 Arch WSL 并配置</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/wsl2-network-tricks/" rel="bookmark">WSL2 的一些网络访问问题</a></div>
+    </li>
+  </ul>
 
-    </div>
+
+    <footer class="post-footer">
+  <div style="text-align:center;color: #ccc;font-size:14px;user-select:none">
+    总得有个结尾吧
+    <i class="fa fa-paw" style="margin-left:3px;"></i>
   </div>
-  
-  
-  
-<script src="/js/comments.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>文章作者：
+    </strong>
+    Artin
+
+  </li>
+  <li class="post-copyright-title">
+    <strong>文章标题：
+    </strong>
+    docker push 时显示 access denied
+  </li>
+  <li class="post-copyright-link">
+    <strong>文章链接：</strong>
+    <a href="https://lengthmin.me/posts/docker-push-denied-access/" title="docker push 时显示 access denied">https://lengthmin.me/posts/docker-push-denied-access/</a>
+    <span class="copy-path" title="点击复制文章链接">
+      <i class="fa fa-clipboard"></i>
+    </span>
+    <span class="copy-tooltip"></span>
+  </li>
+  <li class="post-copyright-updated">
+    <strong>更新时间：
+    </strong>
+    2021-04-23, 18:11
+    <blockquote class="post-expired-notify">
+      本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变
+    </blockquote>
+  </li>
+  <li class="post-copyright-history">
+    <strong>更新历史：</strong>
+    <i class="fab fa-github"></i>
+    <a href="https://github.com/lengthmin/lengthmin.me/blame/hexo/source/_posts/20210423docker-push-denied-access.md" title="顺序查看文章各部分修改记录" target="_blank">Blame</a>,
+    <a href="https://github.com/lengthmin/lengthmin.me/commits/hexo/source/_posts/20210423docker-push-denied-access.md" title="查看文章有关更新记录" target="_blank">History</a>
+    <strong style="margin-left: 1em">源文件：</strong>
+    <i class="fas fa-file-alt"></i>
+    <a href="https://raw.githubusercontent.com/lengthmin/lengthmin.me/hexo/source/_posts/20210423docker-push-denied-access.md" title="查看 & 下载文章 Markdown 原始文件" target="_blank">.md Raw</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明：
+    </strong>
+    <i class="fab fa-creative-commons"></i>
+    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" rel="noopener" target="_blank">署名-非商用-相同方式共享 4.0</a>  转载请保留原文链接及作者。
+  </li>
+</ul>
+
+<script data-pjax="data-pjax">
+  (function () {
+    var dateUpdate = Date.parse("2021-04-23");
+    var nowDate = new Date();
+    var a = nowDate.getTime();
+    var b = a - dateUpdate;
+    var daysUpdateExpire = Math.floor(b / (24 * 3600 * 1000));
+    if (daysUpdateExpire >= 120) {
+      document
+        .getElementById('date-expire-num')
+        .innerHTML = daysUpdateExpire;
+    } else {
+      document
+        .querySelector('.post-expired-notify')
+        .style
+        .display = 'none';
+    }
+    var copyButton = document.querySelector('.copy-path');
+    var copyTooltip = document.querySelector('.copy-tooltip');
+    var timeout;
+    copyButton.addEventListener('click', function (e) {
+      const text = "原文作者：Artin\n原文标题：docker push 时显示 access denied\n原文链接：https://lengthmin.me/posts/docker-push-denied-access/";
+
+      if (copyTooltip.hasChildNodes()) {
+        copyTooltip.removeChild(copyTooltip.firstChild);
+      }
+
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+      timeout = setTimeout(() => {
+        while (copyTooltip.hasChildNodes()) {
+          copyTooltip.removeChild(copyTooltip.firstChild);
+        }
+      }, 2000);
+
+      if (navigator.clipboard) {
+        navigator
+          .clipboard
+          .writeText(text)
+          .then(() => {
+            copyTooltip.append('复制成功');
+
+          }, () => {
+            copyTooltip.append('复制失败');
+
+          });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = text;
+        document
+          .body
+          .append(ta);
+        ta.select();
+        ta.setSelectionRange(0, text.length);
+        ta.readOnly = false;
+        const result = document.execCommand('copy');
+        if (result) {
+          copyTooltip.append('复制成功');
+        } else {
+          copyTooltip.append('复制失败');
+        }
+        ta.blur(); // For iOS
+        button.blur();
+        document
+          .body
+          .removeChild(ta);
+      }
+    });
+  })();
+</script>
+
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/Docker/" rel="tag"># Docker</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/flask-migrate-no-change/" rel="next" title="Flask-Migrate migrate 不生效">
+                  Flask-Migrate migrate 不生效 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  <script src="/js/comments.js"></script>
 </div>
   </main>
 
@@ -351,7 +610,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.1.0/dist/quicklink.umd.js"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{&quot;enable&quot;:true,&quot;home&quot;:true,&quot;archive&quot;:true,&quot;delay&quot;:true,&quot;timeout&quot;:3000,&quot;priority&quot;:true,&quot;ignores&quot;:null,&quot;url&quot;:&quot;https:&#x2F;&#x2F;lengthmin.me&#x2F;tags&#x2F;Angular&#x2F;&quot;}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{&quot;enable&quot;:true,&quot;home&quot;:true,&quot;archive&quot;:true,&quot;delay&quot;:true,&quot;timeout&quot;:3000,&quot;priority&quot;:true,&quot;ignores&quot;:null,&quot;url&quot;:&quot;https:&#x2F;&#x2F;lengthmin.me&#x2F;posts&#x2F;docker-push-denied-access&#x2F;&quot;}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css">
 
