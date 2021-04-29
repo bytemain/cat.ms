@@ -3027,7 +3027,7 @@ max-cache-ttl 3600<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </tags>
   </entry>
   <entry>
-    <title>MacOS &quot;重新生成&quot; /etc/resolv.conf</title>
+    <title>MacOS 『重新生成』 /etc/resolv.conf</title>
     <url>//posts/macos-regenerate-resolv-dot-conf/</url>
     <content><![CDATA[<p>想自己本地架个 DNS 服务器，中途不小心把 <code>/etc/resolv.conf</code> 删除了，想着重启恢复还是怎么样，重启多遍发现没有什么用。</p>
 <p>于是搜索了一下，发现其实 <code>/etc/resolv.conf</code> 只是 <code>/var/run/resolv.conf</code> 的一个软链接。</p>
