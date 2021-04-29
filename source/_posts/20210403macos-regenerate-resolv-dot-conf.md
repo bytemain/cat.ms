@@ -1,5 +1,5 @@
 ---
-title: MacOS "重新生成" /etc/resolv.conf
+title: MacOS 『重新生成』 /etc/resolv.conf
 comments: true
 toc: true
 permalink: posts/macos-regenerate-resolv-dot-conf/
