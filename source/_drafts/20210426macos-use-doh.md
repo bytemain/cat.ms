@@ -360,3 +360,7 @@ reject_ttl = 600
 
 - https://page.codespaper.com/2019/dnsmasq-cloudflare-doh/
 - https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation-macOS
+- https://linux.cn/article-9438-1.html
+- https://www.scriptjc.com/article/1128
+- https://studygolang.com/articles/844
+- https://dnscrypt.info/public-servers/
