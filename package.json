@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "hexo server --draft",
-    "dev:clean": "yarn clean && yarn start",
+    "dev:clean": "yarn clean && yarn dev",
     "build": "hexo generate -f",
     "new": "node ./helper/new.js",
     "update": "node ./helper/update_lib.js",

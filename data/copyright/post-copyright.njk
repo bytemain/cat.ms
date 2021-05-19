@@ -97,7 +97,7 @@
     var copyTooltip = document.querySelector('.copy-tooltip');
     var timeout;
     copyButton.addEventListener('click', function (e) {
-      const text = "原文作者：{{ page.author or author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}";
+      const text = `原文作者：{{ page.author or author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}`;
 
       if (copyTooltip.hasChildNodes()) {
         copyTooltip.removeChild(copyTooltip.firstChild);
