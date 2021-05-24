@@ -11,7 +11,8 @@
     "build": "hexo generate -f",
     "new": "node ./helper/new.js",
     "update": "node ./helper/update_lib.js",
-    "clean": "hexo clean"
+    "clean": "hexo clean",
+    "postinstall": "yarn update"
   },
   "dependencies": {
     "hexo": "^5.4.0",
