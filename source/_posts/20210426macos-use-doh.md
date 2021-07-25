@@ -1,12 +1,13 @@
 ---
-title: MacOS 使用 DNS Over HTTPS
+title: MacOS 配置 DNS Over HTTPS
 comments: true
 toc: true
 permalink: posts/macos-use-doh/
 date: 2021-04-26 13:09:22
+updated: 2021-07-25 21:33:00
 categories: DNS
 tags:
-- DOH
+- DoH
 - MacOS
 ---
 
@@ -78,40 +79,39 @@ echo "nameserver $DNS" > "$HOME/upstream.conf"
 
 然后我们手动执行一遍 `locationchanger`，将这个文件生成出来。
 
+## 配置
+
 ### 配置 dnsmasq
 
 看 brew 提示你的配置文件在哪里，像我的 m1 的 brew 就提示配置文件在 `/opt/homebrew/etc/dnsmasq.conf`：
+然后修改这个配置文件的内容：
 
 ```ini
 domain-needed
 bogus-priv
-
-# Change this line if you want dns to get its upstream servers from
-# somewhere other that /etc/resolv.conf
-resolv-file=/Users/xxx/upstream.conf
-
 all-servers
 
-# Add other name servers here, with domain specs if they are for
-# non-public domains.
+resolv-file=/Users/xxx/upstream.conf
 server=127.0.0.1#5553
-
 listen-address=127.0.0.1
 
-# For debugging purposes, log each DNS query as it passes through
-# dnsmasq.
-log-facility=/var/log/dnsmasq.log
 log-queries
+log-facility=/var/log/dnsmasq.log
 ```
 
-## 配置 dnscrypt-proxy
+### 配置 dnscrypt-proxy
 
-其实根本不用配置个啥，只需要设置好这个 listen_addresses 就好了，然后我们就可以往这个地址上发送 DNS 请求了。
+这里主要是我个人的配置，我只保留一个阿里云的 DoH，然后把 sources 下的所有内容都注释掉，这样启动会快很多。
+
+如果保留 sources 下的内容的话，每次启动软件都要去找一个最快的 DNS，要遍历很久。
 
 ```toml
 listen_addresses = ['127.0.0.1:5553']
-
 log_file = '/var/log/dnscrypt-proxy.log'
+
+[static]
+  [static.'alidns-doh']
+  stamp = 'sdns://AgAAAAAAAAAACTIyMy41LjUuNSCoF6cUD2dwqtorNi96I2e3nkHPSJH1ka3xbdOglmOVkQ5kbnMuYWxpZG5zLmNvbQovZG5zLXF1ZXJ5'
 ```
 
 ## 参考
