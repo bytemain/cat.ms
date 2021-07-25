@@ -22,7 +22,7 @@ if (typeof DOMTokenList.prototype.replace !== 'function') {
   );
 
   if (document.readyState === 'loading') {
-    document.addEventListener('readystatechange', onPageLoaded, {once: true});
+    document.addEventListener('readystatechange', onPageLoaded, { once: true });
   } else {
     onPageLoaded();
   }
@@ -181,7 +181,7 @@ NexT.utils = {
       }
       if (!Array.isArray(NexT.utils.sections)) return;
       let index = NexT.utils.sections.findIndex(element => {
-        return element && element.getBoundingClientRect().top > 0;
+        return element && element.getBoundingClientRect().top > 10;
       });
       if (index === -1) {
         index = NexT.utils.sections.length - 1;
@@ -189,7 +189,7 @@ NexT.utils = {
         index--;
       }
       this.activateNavByIndex(index);
-    });
+    }, { passive: true });
 
     backToTop && backToTop.addEventListener('click', () => {
       window.anime({
@@ -275,10 +275,21 @@ NexT.utils = {
           targets  : document.scrollingElement,
           duration : 500,
           easing   : 'linear',
-          scrollTop: offset + 10
+          scrollTop: offset,
+          complete : () => {
+            history.pushState(null, document.title, element.href);
+          }
         });
       });
       return target;
+    });
+  },
+
+  registerPostReward: function() {
+    const button = document.querySelector('.reward-container button');
+    if (!button) return;
+    button.addEventListener('click', () => {
+      document.querySelector('.post-reward').classList.toggle('active');
     });
   },
 
@@ -392,7 +403,7 @@ NexT.utils = {
     if (legacyCallback) {
       return this.loadComments(selector).then(legacyCallback);
     }
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const element = document.querySelector(selector);
       if (!CONFIG.comments.lazyload || !element) {
         resolve();
