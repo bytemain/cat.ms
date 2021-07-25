@@ -10,11 +10,13 @@ tags:
 - MacOS
 ---
 
-最近折腾了一下在 MacOS 本地搭建 DOH，把折腾过程记录一下。
+最近折腾了一下在 MacOS 本地搭建 DoH，把折腾过程记录一下。
 
-使用工具为 dnscrypt-proxy + dnsmasq
+使用工具为 dnscrypt-proxy + dnsmasq。
 
-dnscrypt-proxy 只负责帮我们发起 DOH 请求。dnsmasq 帮我们把普通 DNS 请求转发到 dnscrypt-proxy。
+dnscrypt-proxy 只负责帮我们发起 DoH 请求。
+
+dnsmasq 是一个轻量级的域名解析服务器，帮我们把 DNS 请求转发到 dnscrypt-proxy，而把一些公司域内的域名转发到路由器分发的上游 DNS。
 
 还写了个 [uTools 插件](https://github.com/lengthmin/utools-dns) 来快速切换 DNS。
 
@@ -24,19 +26,27 @@ dnscrypt-proxy 只负责帮我们发起 DOH 请求。dnsmasq 帮我们把普通 
 
 什么是 DoH，我现在就带你研究。
 
-## dnsmasq
+## 准备工作
 
-这是一个轻量级的域名解析服务器，提供 DNS 缓存功能。
+### 安装 dnsmasq、dnscrypt-proxy
 
 安装很简单，使用 brew：
 
 ```sh
-brew install dnsmasq
+brew install dnsmasq dnscrypt-proxy
 ```
 
-### locationchanger
+### 安装 locationchanger
 
-我们要添加一句 `default` 到 location changer 脚本里：
+<https://github.com/eprev/locationchanger>
+
+执行：
+
+```bash
+curl -L https://github.com/eprev/locationchanger/raw/master/locationchanger.sh | bash
+```
+
+然后将下面这段代码粘贴到 location changer 脚本 `/usr/local/bin/locationchanger` 末尾：
 
 ```bash
 DEFAULT_SCRIPT="$HOME/.locations/default"
@@ -46,7 +56,15 @@ if [ -f "$DEFAULT_SCRIPT" ]; then
 fi
 ```
 
-这样我们切换网络的时候就会运行这个脚本，`$HOME/.locations/default` 的内容如下：
+这样我们连接网络的时候就会运行这个脚本。
+
+然后我们创建一个文件 `$HOME/.locations/default` ：
+
+```bash
+mkdir -p $HOME/.locations && touch $HOME/.locations/default
+```
+
+内容如下：
 
 ```bash
 #!/usr/bin/env bash
@@ -58,7 +76,11 @@ echo "nameserver $DNS" > "$HOME/upstream.conf"
 
 这个命令会把路由器下发的 DNS 写入到 `$HOME/upstream.conf` 文件中。
 
+然后我们手动执行一遍 `locationchanger`，将这个文件生成出来。
+
 ### 配置 dnsmasq
+
+看 brew 提示你的配置文件在哪里，像我的 m1 的 brew 就提示配置文件在 `/opt/homebrew/etc/dnsmasq.conf`：
 
 ```ini
 domain-needed
@@ -87,29 +109,7 @@ log-queries
 其实根本不用配置个啥，只需要设置好这个 listen_addresses 就好了，然后我们就可以往这个地址上发送 DNS 请求了。
 
 ```toml
-## List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
-## Example with both IPv4 and IPv6:
 listen_addresses = ['127.0.0.1:5553']
-
-## Require servers (from static + remote sources) to satisfy specific properties
-
-# Use servers reachable over IPv4
-ipv4_servers = true
-
-# Use servers reachable over IPv6 -- Do not enable if you don't have IPv6 connectivity
-ipv6_servers = false
-
-# Use servers implementing the DNSCrypt protocol
-dnscrypt_servers = true
-
-# Use servers implementing the DNS-over-HTTPS protocol
-doh_servers = true
-
-## Log file for the application, as an alternative to sending logs to
-## the standard system logging service (syslog/Windows event log).
-##
-## This file is different from other log files, and will not be
-## automatically rotated by the application.
 
 log_file = '/var/log/dnscrypt-proxy.log'
 ```
