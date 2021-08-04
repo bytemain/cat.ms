@@ -87,14 +87,18 @@ echo "nameserver $DNS" > "$HOME/upstream.conf"
 然后修改这个配置文件的内容：
 
 ```ini
+# 设置只解析域名
 domain-needed
 bogus-priv
-all-servers
 
+# 我们刚刚生成的路由器分发的上游 DNS 地址
 resolv-file=/Users/xxx/upstream.conf
+# 下文配置的 dnscrypt-proxy 监听地址
 server=127.0.0.1#5553
+# dnsmasq 的监听地址
 listen-address=127.0.0.1
 
+# 打日志出来，好排查问题
 log-queries
 log-facility=/var/log/dnsmasq.log
 ```
@@ -106,9 +110,12 @@ log-facility=/var/log/dnsmasq.log
 如果保留 sources 下的内容的话，每次启动软件都要去找一个最快的 DNS，要遍历很久。
 
 ```toml
+# 监听地址
 listen_addresses = ['127.0.0.1:5553']
+# 打日志出来，好排查问题
 log_file = '/var/log/dnscrypt-proxy.log'
 
+# 配置 alidns
 [static]
   [static.'alidns-doh']
   stamp = 'sdns://AgAAAAAAAAAACTIyMy41LjUuNSCoF6cUD2dwqtorNi96I2e3nkHPSJH1ka3xbdOglmOVkQ5kbnMuYWxpZG5zLmNvbQovZG5zLXF1ZXJ5'
@@ -116,9 +123,9 @@ log_file = '/var/log/dnscrypt-proxy.log'
 
 ## 参考
 
-- https://page.codespaper.com/2019/dnsmasq-cloudflare-doh/
-- https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation-macOS
-- https://linux.cn/article-9438-1.html
-- https://www.scriptjc.com/article/1128
-- https://studygolang.com/articles/844
-- https://dnscrypt.info/public-servers/
+- <https://page.codespaper.com/2019/dnsmasq-cloudflare-doh/>
+- <https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation-macOS>
+- <https://linux.cn/article-9438-1.html>
+- <https://www.scriptjc.com/article/1128>
+- <https://studygolang.com/articles/844>
+- <https://dnscrypt.info/public-servers/>
