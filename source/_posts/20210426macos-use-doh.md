@@ -25,7 +25,7 @@ dnsmasq 是一个轻量级的域名解析服务器，帮我们把 DNS 请求转�
 
 ## 什么是 DoH
 
-什么是 DoH，我现在就带你研究。
+什么是 DoH，可以看：<https://zh.wikipedia.org/zh-cn/DNS_over_HTTPS>。
 
 ## 准备工作
 

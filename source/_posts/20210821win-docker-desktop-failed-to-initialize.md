@@ -23,10 +23,9 @@ tags:
 
 删除 Docker 的几个数据文件就可以了:
 
-C:\Users\\[USER]\AppData\Local\Docker
-C:\Users\\[USER]\AppData\Roaming\Docker
-C:\Users\\[USER]\AppData\Roaming\Docker Desktop
-
+- C:\Users\\[USER]\AppData\Local\Docker
+- C:\Users\\[USER]\AppData\Roaming\Docker
+- C:\Users\\[USER]\AppData\Roaming\Docker Desktop
 
 ## 参考链接
 
