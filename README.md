@@ -4,4 +4,4 @@
 
 - Powered by [Hexo](https://hexo.io/zh-cn/)
 - Theme - [hexo-theme-next](https://github.com/theme-next/hexo-theme-next)
-- Hosted by [GitHub Pages](https://github.com/)
+- Hosted by [Cloudflare Pages](https://pages.dev/)

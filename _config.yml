@@ -7,7 +7,7 @@ language: zh-CN
 timezone: Asia/Shanghai
 
 meta_generator: true
-updated_option: 'date'
+updated_option: "date"
 
 url: https://lengthmin.me
 root: /
@@ -101,14 +101,14 @@ symbols_count_time:
   suffix: "mins."
 
 markdown:
-  preset: 'default'
+  preset: "default"
   render:
     html: true
     xhtmlOut: true
     breaks: false
     linkify: true
     typographer: true
-    quotes: '“”‘’'
+    quotes: "“”‘’"
   enable_rules:
   disable_rules:
   plugins:
@@ -120,17 +120,17 @@ markdown:
     - markdown-it-container
   anchors:
     level: 2
-    collisionSuffix: ''
+    collisionSuffix: ""
     case: 0
-    separator: '-'
+    separator: "-"
     # If `true`, creates an anchor tag with a permalink besides the heading.
     permalink: true
     # Class used for the permalink anchor tag.
     permalinkClass: header-anchor
     # Set to 'right' to add permalink after heading
-    permalinkSide: 'right'
+    permalinkSide: "right"
     # The symbol used to make the permalink
-    permalinkSymbol: ''
+    permalinkSymbol: ""
 
 theme_config:
   preconnect: true
@@ -146,7 +146,7 @@ theme_config:
     # postMeta: data/post-meta.njk
     postBodyEnd: data/post-body-end.njk
     footer: data/footer.njk
-    bodyEnd: data/body-end.njk
+    # bodyEnd: data/body-end.njk
     # variable: data/variables.styl
     # mixin: data/mixins.styl
     style: data/styles.styl
