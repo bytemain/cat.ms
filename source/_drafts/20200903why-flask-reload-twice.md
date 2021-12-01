@@ -9,7 +9,7 @@ toc: true
 permalink: posts/why-does-running-the-flask-dev-server-run-itself-twice/
 ---
 
-之前遇到过一个问题，flask 开发过程中，自动 reload 每次都会 reload 两次，研究了一下到底是怎么回事。
+在刚接触 flask 的时候，就观察到这样一个现象：flask 在开发环境下，开启自动 reload，每次都会 reload 两次，导致重启就很慢。。。
 
 flask 开启 debug 模式之后就会自动检测文件是否有改动，有改动则重启服务。
 
