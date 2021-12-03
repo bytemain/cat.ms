@@ -20,10 +20,10 @@
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^3.0.0",
     "hexo-generator-index": "^2.0.0",
-    "hexo-generator-searchdb": "^1.3.3",
+    "hexo-generator-searchdb": "^1.4.0",
     "hexo-generator-seo-friendly-sitemap": "^0.2.1",
     "hexo-generator-tag": "^1.0.0",
-    "hexo-pangu": "^0.2.0",
+    "hexo-pangu": "^0.2.1",
     "hexo-related-popular-posts": "^5.0.1",
     "hexo-renderer-markdown-it": "^5.0.0",
     "hexo-renderer-stylus": "^2.0.1",
@@ -31,9 +31,9 @@
     "hexo-symbols-count-time": "^0.7.1"
   },
   "devDependencies": {
-    "chardet": "^1.3.0",
-    "dotenv": "^8.2.0",
+    "chardet": "^1.4.0",
+    "dotenv": "^10.0.0",
     "execa": "^5.0.0",
-    "npm-check-updates": "^11.5.1"
+    "npm-check-updates": "^12.0.2"
   }
 }
