@@ -162,9 +162,9 @@ Universal Time is now:  Sat Aug  <span class="token number">6</span> <span class
 <p>在 <code>layout/_partial/</code> 中创建一个新的 <code>tencent-analytics.ejs</code> 文件，
 加入如下代码：</p>
 <pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs"><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>tencent_analytics<span class="token punctuation">)</span><span class="token punctuation">{</span> </span><span class="token delimiter punctuation">%&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://tajs.qq.com/stats?sId=<span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%=</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>tencent_analytics </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://tajs.qq.com/stats?sId=<span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%=</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>tencent_analytics </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
     <span class="token keyword">var</span> _speedMark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 <span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token punctuation">}</span> </span><span class="token delimiter punctuation">%&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -276,7 +276,7 @@ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 已经失效了！！<br>
 已经失效了！！</p>
 <p>现在部署可以一键部署了，但是已经无法获取 rss 更新了。</p>
-<pre class="line-numbers language-none"><code class="language-none">failed to open stream: no suitable wrapper could be found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-plain" data-language="plain"><code class="language-plain">failed to open stream: no suitable wrapper could be found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <hr>
 <p>先说结论，不够好用，弃坑了，用国内的一览提供的 rss 服务。<br>
 多平台支持，和 inoreader 相比速度更快，而且对于目前我订阅的源来说并没有不可阅读的，而且在 inoreader 上看不了電腦玩物的图片（因为 refer 的问题），在一览上没问题的。</p>
@@ -511,7 +511,7 @@ w <span class="token operator">=</span> <span class="token builtin">map</span><s
 <span class="token comment"># py3</span>
 w <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="JAVA中在OJ上怎么实现多组输入">JAVA 中在 OJ 上怎么实现多组输入<a class="header-anchor" href="#JAVA中在OJ上怎么实现多组输入"></a></h2>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Scanner</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span><span class="token punctuation">;</span>
 
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
 	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -572,8 +572,8 @@ w <span class="token operator">=</span> <span class="token builtin">map</span><s
 </blockquote>
 <p>使用命令行的配置也会修改个人目录下的 <code>.gitconfig</code> 文件。 Windows/Linux 都是这样。</p>
 <p>也就是说，可以通过修改 <code>~/.gitconfig</code> 达到一样的效果：</p>
-<pre class="line-numbers language-ini" data-language="ini"><div class="caption"><span>.gitconfig</span></div><code class="language-ini"><span class="token selector">[http "https://github.com"]</span>
-<span class="token constant">        proxy</span> <span class="token attr-value"><span class="token punctuation">=</span> socks5://127.0.0.1:1080</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-ini" data-language="ini"><div class="caption"><span>.gitconfig</span></div><code class="language-ini"><span class="token header"><span class="token punctuation">[</span><span class="token section-name selector">http "https://github.com"</span><span class="token punctuation">]</span></span>
+        <span class="token key attr-name">proxy</span> <span class="token punctuation">=</span> <span class="token value attr-value">socks5://127.0.0.1:1080</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="配置终端代理">配置终端代理<a class="header-anchor" href="#配置终端代理"></a></h3>
 <p>因为终端里的命令是不走系统代理的，可以使用 proxychains4 等软件代理命令。</p>
 <p>配置好 proxychains4 后，使用:</p>
@@ -869,14 +869,14 @@ L = less than</li>
 </ul>
 <h3 id="二进制转十六进制">二进制转十六进制<a class="header-anchor" href="#二进制转十六进制"></a></h3>
 <p>我们都知道，一位十六进制可以表示四位二进制，所以要把二进制转为十六进制的画，得每四位每四位的转换。大概流程如下</p>
-<pre class="line-numbers language-dot" data-language="dot"><code class="language-dot">digraph g {
-循环左移四位二进制 
-	-&gt; 取低四位 
-	-&gt; "低四位+30H"
-	-&gt; 输出低四位;
+<pre class="line-numbers language-dot" data-language="dot"><code class="language-dot"><span class="token keyword">digraph</span> <span class="token graph-name class-name">g</span> <span class="token punctuation">{</span>
+<span class="token node">循环左移四位二进制</span> 
+	<span class="token operator">-&gt;</span> <span class="token node">取低四位</span> 
+	<span class="token operator">-&gt;</span> <span class="token node">"低四位+30H"</span>
+	<span class="token operator">-&gt;</span> <span class="token node">输出低四位</span><span class="token punctuation">;</span>
 
-输出低四位 -&gt;循环左移四位二进制 [label="如果位数不为0"]
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token node">输出低四位</span> <span class="token operator">-&gt;</span><span class="token node">循环左移四位二进制</span> <span class="token punctuation">[</span><span class="token attr-name">label</span><span class="token operator">=</span><span class="token attr-value">"如果位数不为0"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="控制转移指令">控制转移指令<a class="header-anchor" href="#控制转移指令"></a></h3>
 <p>书上 P85</p>
 <h2 id="题目">题目<a class="header-anchor" href="#题目"></a></h2>
@@ -1429,9 +1429,9 @@ git-config() {
 </ol>
 <h3 id="获取主机的-ip">获取主机的 ip<a class="header-anchor" href="#获取主机的-ip"></a></h3>
 <p>由于 WSL2 是使用 Hyper-V 虚拟机实现的，也就不能跟 Windows 共享同一个 localhost 了，而且每次重启 ip 都会变。目前在 WSL 中可以用以下两个命令来获取主机的 ip:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ip</span> route <span class="token operator">|</span> <span class="token function">grep</span> default <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print <span class="token variable">$3</span>}'</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ip</span> route <span class="token operator">|</span> <span class="token function">grep</span> default <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $3}'</span>
 <span class="token comment"># 或者</span>
-<span class="token function">cat</span> /etc/resolv.conf <span class="token operator">|</span> <span class="token function">grep</span> nameserver <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{ print <span class="token variable">$2</span> }'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token function">cat</span> /etc/resolv.conf <span class="token operator">|</span> <span class="token function">grep</span> nameserver <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{ print $2 }'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>原理可见: <a href="https://docs.microsoft.com/en-us/windows/wsl/wsl2-ux-changes#accessing-network-applications">User Experience Changes Between WSL 1 and WSL 2</a></p>
 <p><img data-src="https://i.lengthm.in/posts/wsl2-network-tricks/get_wsl_ip.png" alt="image.png"></p>
 <h3 id="设置代理">设置代理<a class="header-anchor" href="#设置代理"></a></h3>
@@ -1683,10 +1683,10 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>首先需要知道的一件事就是如何动态加载 js，用 js 将一个新的 script 节点挂载到 dom 上即可。</p>
 <p>创建一个 dom 元素 <code>script</code>，设置 <code>src</code> 属性为要加载的链接，然后将节点添加到 body 元素内。</p>
 <p>封装成函数如下，只需要传入需要加载的 js 链接，然后使用 <code>.then</code> 方法进行后续操作。</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">loadJS</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">url<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
-  <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">loadJS</span> <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+  <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span></span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> script <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    script<span class="token punctuation">.</span><span class="token keyword">type</span> <span class="token operator">=</span> <span class="token string">'text/javascript'</span><span class="token punctuation">;</span>
+    script<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">'text/javascript'</span><span class="token punctuation">;</span>
     script<span class="token punctuation">.</span>src <span class="token operator">=</span> url<span class="token punctuation">;</span>
     document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span>
     script<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1699,7 +1699,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>在需要使用的地方：</p>
 <pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token function">loadJS</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token comment">// do something</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token comment">// do something</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="mathjax-2-x-版本">mathjax@2.x 版本<a class="header-anchor" href="#mathjax-2-x-版本"></a></h2>
@@ -1894,7 +1894,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
     <content><![CDATA[<p>最近在学习 electron，因为在 Windows 上 electron 自带的 Notification 功能有点少，没法加按钮啥的。</p>
 <p>查了一下，发现有人已经基于 <code>NodeRT</code> 做了 <a href="https://github.com/felixrieseberg/electron-windows-notifications">electron-windows-notifications</a>，可以在 electron 展示原生的通知框。<code>NodeRT</code> 能让我们在 Node.js 中使用 Windows Runtime API。</p>
 <p>然后兴高采烈的执行 <code>yarn add electron-windows-notifications</code>, 结果报错了：</p>
-<pre class="line-numbers language-none"><code class="language-none">[4/4] Building fresh packages...
+<pre class="line-numbers language-plain" data-language="plain"><code class="language-plain">[4/4] Building fresh packages...
 [1/5] ⠈ @nodert-win10-au/windows.applicationmodel
 [2/5] ⠁ @nodert-win10-au/windows.data.xml.dom
 [3/5] ⠁ @nodert-win10-au/windows.foundation
@@ -1986,7 +1986,7 @@ gyp ERR! build error<span aria-hidden="true" class="line-numbers-rows"><span></s
 <footer><strong>sorrycc</strong><cite><a href="https://github.com/sorrycc/zaobao/issues/2">github.com/sorrycc/zaobao/issues/2</a></cite></footer></blockquote>
 <p><a href="http://frantic.im/cdtmp">原文</a> 中给出了 zsh 中的实现的链接。</p>
 <p>把下面这行代码添加到你的 <code>.zshrc</code> 文件即可：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">cdtmp</span><span class="token operator">=</span><span class="token string">'cd <span class="token variable"><span class="token variable">`</span>mktemp -d /tmp/artin-XXXXXX<span class="token variable">`</span></span>'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">cdtmp</span><span class="token operator">=</span><span class="token string">'cd `mktemp -d /tmp/artin-XXXXXX`'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这条命令会在系统临时目录下创建一个名为 <code>artin-XXXXXX</code> 的文件夹，然后跳转过去。</p>
 <h2 id="PowerShell">PowerShell<a class="header-anchor" href="#PowerShell"></a></h2>
 <blockquote>
@@ -2487,9 +2487,9 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
     <span class="token property">"colorizer.color-3"</span><span class="token operator">:</span> <span class="token string">"#54b9f8"</span> <span class="token comment">// Medium-Blue...</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token comment">// 默认配色</span>
-  <span class="token property">"colorizer.color-1"</span><span class="token operator">:</span> <span class="token string">"#ffd700"</span><span class="token punctuation">,</span> <span class="token comment">// </span><span class="token string">"Gold"</span>. (Yellow with slight Orange)
-  <span class="token property">"colorizer.color-2"</span><span class="token operator">:</span> <span class="token string">"#da70d6"</span><span class="token punctuation">,</span> <span class="token comment">// </span><span class="token string">"Orchid"</span>. (Pink)
-  <span class="token property">"colorizer.color-3"</span><span class="token operator">:</span> <span class="token string">"#87cefa"</span> <span class="token comment">// </span><span class="token string">"LightSkyBlue"</span>. (Light Blue)
+  <span class="token property">"colorizer.color-1"</span><span class="token operator">:</span> <span class="token string">"#ffd700"</span><span class="token punctuation">,</span> <span class="token comment">// "Gold". (Yellow with slight Orange)</span>
+  <span class="token property">"colorizer.color-2"</span><span class="token operator">:</span> <span class="token string">"#da70d6"</span><span class="token punctuation">,</span> <span class="token comment">// "Orchid". (Pink)</span>
+  <span class="token property">"colorizer.color-3"</span><span class="token operator">:</span> <span class="token string">"#87cefa"</span> <span class="token comment">// "LightSkyBlue". (Light Blue)</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后给 Bracket-Pair-Colorizer-2 把颜色设置上：</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"bracket-pair-colorizer-2.colors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
@@ -2504,9 +2504,9 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
     <span class="token property">"colorizer.color-2"</span><span class="token operator">:</span> <span class="token string">"#f500f5"</span><span class="token punctuation">,</span> <span class="token comment">// Medium-Pink...</span>
     <span class="token property">"colorizer.color-3"</span><span class="token operator">:</span> <span class="token string">"#54b9f8"</span> <span class="token comment">// Medium-Blue...</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"colorizer.color-1"</span><span class="token operator">:</span> <span class="token string">"#ffd700"</span><span class="token punctuation">,</span> <span class="token comment">// </span><span class="token string">"Gold"</span>. (Yellow with slight Orange)
-  <span class="token property">"colorizer.color-2"</span><span class="token operator">:</span> <span class="token string">"#da70d6"</span><span class="token punctuation">,</span> <span class="token comment">// </span><span class="token string">"Orchid"</span>. (Pink)
-  <span class="token property">"colorizer.color-3"</span><span class="token operator">:</span> <span class="token string">"#87cefa"</span> <span class="token comment">// </span><span class="token string">"LightSkyBlue"</span>. (Light Blue)
+  <span class="token property">"colorizer.color-1"</span><span class="token operator">:</span> <span class="token string">"#ffd700"</span><span class="token punctuation">,</span> <span class="token comment">// "Gold". (Yellow with slight Orange)</span>
+  <span class="token property">"colorizer.color-2"</span><span class="token operator">:</span> <span class="token string">"#da70d6"</span><span class="token punctuation">,</span> <span class="token comment">// "Orchid". (Pink)</span>
+  <span class="token property">"colorizer.color-3"</span><span class="token operator">:</span> <span class="token string">"#87cefa"</span> <span class="token comment">// "LightSkyBlue". (Light Blue)</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token property">"bracket-pair-colorizer-2.colors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
   <span class="token string">"colorizer.color-1"</span><span class="token punctuation">,</span>
@@ -2529,7 +2529,7 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
     <content><![CDATA[<p>最近在忙一个外包，因为大屏展示页面是用 React 写的（使用 create-react-app），甲方想访问后端控制页面的网址就能直接访问这个大屏展示，而不是前后端分离部署。</p>
 <p>自己尝试了一下，还是遇到了点问题。</p>
 <p>create-react-app 会将打包的结果放在项目根目录中的 build 文件夹，打包后的路径结构：</p>
-<pre class="line-numbers language-plaintext" data-language="plaintext"><div class="caption"><span>build directory structure</span><a href="https://stackoverflow.com/questions/44209978/serving-a-front-end-created-with-create-react-app-with-flask">Source</a></div><code class="language-plaintext">- build
+<pre class="line-numbers language-none"><div class="caption"><span>build directory structure</span><a href="https://stackoverflow.com/questions/44209978/serving-a-front-end-created-with-create-react-app-with-flask">Source</a></div><code class="language-none">- build
   - static
     - css
         - style.[hash].css
@@ -2540,7 +2540,7 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
   - index.html
   - [more meta files]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>create-react-app 打包的静态资源都放在了 <code>static</code> 路径下。比如打包后 <code>index.html</code> 中的一个链接：</p>
-<pre class="line-numbers language-html" data-language="html"><div class="caption"><span>index.html</span></div><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/static/css/2.0a6fdfd6.chunk.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-html" data-language="html"><div class="caption"><span>index.html</span></div><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/css/2.0a6fdfd6.chunk.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>浏览器解析后，会发出一个请求 <code>GET /static/css/2.0a6fdfd6.chunk.css</code>。</p>
 <p>如果简单的添加一个路由返回 <code>index.html</code> 文件的话，就有以下的问题出现：</p>
 <p>因为 Flask 本身就有 <code>static_folder</code> 的概念，所有请求 <code>/static</code> 路径的请求都会从配置的 <code>static_folder</code> 中读取文件并返回。</p>
@@ -3132,7 +3132,7 @@ Login Succeeded<span aria-hidden="true" class="line-numbers-rows"><span></span><
 <p>内容如下：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/usr/bin/env bash</span>
 
-<span class="token assign-left variable">DNS</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span>ipconfig getpacket en0<span class="token operator">|</span><span class="token function">grep</span> domain_name_server<span class="token operator">|</span><span class="token function">awk</span> -F<span class="token string">"[{,}]"</span> <span class="token string">'{print <span class="token variable">$2</span>}'</span><span class="token variable">`</span></span>
+<span class="token assign-left variable">DNS</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span>ipconfig getpacket en0<span class="token operator">|</span><span class="token function">grep</span> domain_name_server<span class="token operator">|</span><span class="token function">awk</span> -F<span class="token string">"[{,}]"</span> <span class="token string">'{print $2}'</span><span class="token variable">`</span></span>
 <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$DNS</span>"</span>
 <span class="token builtin class-name">echo</span> <span class="token string">"nameserver <span class="token variable">$DNS</span>"</span> <span class="token operator">&gt;</span> <span class="token string">"<span class="token environment constant">$HOME</span>/upstream.conf"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这个命令会把路由器下发的 DNS 写入到 <code>$HOME/upstream.conf</code> 文件中。</p>
@@ -3145,15 +3145,15 @@ domain-needed
 bogus-priv
 
 <span class="token comment"># 我们刚刚生成的路由器分发的上游 DNS 地址</span>
-<span class="token constant">resolv-file</span><span class="token attr-value"><span class="token punctuation">=</span>/Users/xxx/upstream.conf</span>
+<span class="token key attr-name">resolv-file</span><span class="token punctuation">=</span><span class="token value attr-value">/Users/xxx/upstream.conf</span>
 <span class="token comment"># 下文配置的 dnscrypt-proxy 监听地址</span>
-<span class="token constant">server</span><span class="token attr-value"><span class="token punctuation">=</span>127.0.0.1#5553</span>
+<span class="token key attr-name">server</span><span class="token punctuation">=</span><span class="token value attr-value">127.0.0.1#5553</span>
 <span class="token comment"># dnsmasq 的监听地址</span>
-<span class="token constant">listen-address</span><span class="token attr-value"><span class="token punctuation">=</span>127.0.0.1</span>
+<span class="token key attr-name">listen-address</span><span class="token punctuation">=</span><span class="token value attr-value">127.0.0.1</span>
 
 <span class="token comment"># 打日志出来，好排查问题</span>
 log-queries
-<span class="token constant">log-facility</span><span class="token attr-value"><span class="token punctuation">=</span>/var/log/dnsmasq.log</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key attr-name">log-facility</span><span class="token punctuation">=</span><span class="token value attr-value">/var/log/dnsmasq.log</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="配置-dnscrypt-proxy">配置 dnscrypt-proxy<a class="header-anchor" href="#配置-dnscrypt-proxy"></a></h3>
 <p>这里主要是我个人的配置，我只保留一个阿里云的 DoH，然后把 sources 下的所有内容都注释掉，这样启动会快很多。</p>
 <p>如果保留 sources 下的内容的话，每次启动软件都要去找一个最快的 DNS，要遍历很久。</p>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 6.0.0">
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -258,13 +258,13 @@
 
       <time title="创建时间：2020-08-21 15:14" itemprop="dateCreated datePublished" datetime="2020-08-21T15:14:50+08:00">2020-08-21</time>
     </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-26 20:51" itemprop="dateModified" datetime="2020-11-26T20:51:00+08:00">2020-11-26</time>
       </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2020-11-26 20:51" itemprop="dateModified" datetime="2020-11-26T20:51:00+08:00">2020-11-26</time>
-    </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -319,7 +319,7 @@
 <footer><strong>sorrycc</strong><cite><a href="https://github.com/sorrycc/zaobao/issues/2">github.com/sorrycc/zaobao/issues/2</a></cite></footer></blockquote>
 <p><a href="http://frantic.im/cdtmp">原文</a> 中给出了 zsh 中的实现的链接。</p>
 <p>把下面这行代码添加到你的 <code>.zshrc</code> 文件即可：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">cdtmp</span><span class="token operator">=</span><span class="token string">'cd <span class="token variable"><span class="token variable">`</span>mktemp -d /tmp/artin-XXXXXX<span class="token variable">`</span></span>'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">cdtmp</span><span class="token operator">=</span><span class="token string">'cd `mktemp -d /tmp/artin-XXXXXX`'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这条命令会在系统临时目录下创建一个名为 <code>artin-XXXXXX</code> 的文件夹，然后跳转过去。</p>
 <h2 id="PowerShell">PowerShell<a class="header-anchor" href="#PowerShell"></a></h2>
 <blockquote>

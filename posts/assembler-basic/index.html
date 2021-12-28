@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 6.0.0">
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -257,13 +257,13 @@
 
       <time title="创建时间：2019-06-16 13:44" itemprop="dateCreated datePublished" datetime="2019-06-16T13:44:49+08:00">2019-06-16</time>
     </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-07-04 11:00" itemprop="dateModified" datetime="2019-07-04T11:00:00+08:00">2019-07-04</time>
       </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2019-07-04 11:00" itemprop="dateModified" datetime="2019-07-04T11:00:00+08:00">2019-07-04</time>
-    </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -484,14 +484,14 @@ L = less than</li>
 </ul>
 <h3 id="二进制转十六进制">二进制转十六进制<a class="header-anchor" href="#二进制转十六进制"></a></h3>
 <p>我们都知道，一位十六进制可以表示四位二进制，所以要把二进制转为十六进制的画，得每四位每四位的转换。大概流程如下</p>
-<pre class="line-numbers language-dot" data-language="dot"><code class="language-dot">digraph g {
-循环左移四位二进制 
-	-&gt; 取低四位 
-	-&gt; "低四位+30H"
-	-&gt; 输出低四位;
+<pre class="line-numbers language-dot" data-language="dot"><code class="language-dot"><span class="token keyword">digraph</span> <span class="token graph-name class-name">g</span> <span class="token punctuation">{</span>
+<span class="token node">循环左移四位二进制</span> 
+	<span class="token operator">-&gt;</span> <span class="token node">取低四位</span> 
+	<span class="token operator">-&gt;</span> <span class="token node">"低四位+30H"</span>
+	<span class="token operator">-&gt;</span> <span class="token node">输出低四位</span><span class="token punctuation">;</span>
 
-输出低四位 -&gt;循环左移四位二进制 [label="如果位数不为0"]
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token node">输出低四位</span> <span class="token operator">-&gt;</span><span class="token node">循环左移四位二进制</span> <span class="token punctuation">[</span><span class="token attr-name">label</span><span class="token operator">=</span><span class="token attr-value">"如果位数不为0"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="控制转移指令">控制转移指令<a class="header-anchor" href="#控制转移指令"></a></h3>
 <p>书上 P85</p>
 <h2 id="题目">题目<a class="header-anchor" href="#题目"></a></h2>

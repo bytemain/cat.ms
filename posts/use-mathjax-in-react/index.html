@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 6.0.0">
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -305,10 +305,10 @@
 <p>首先需要知道的一件事就是如何动态加载 js，用 js 将一个新的 script 节点挂载到 dom 上即可。</p>
 <p>创建一个 dom 元素 <code>script</code>，设置 <code>src</code> 属性为要加载的链接，然后将节点添加到 body 元素内。</p>
 <p>封装成函数如下，只需要传入需要加载的 js 链接，然后使用 <code>.then</code> 方法进行后续操作。</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">loadJS</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">url<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
-  <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">loadJS</span> <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+  <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span></span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> script <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    script<span class="token punctuation">.</span><span class="token keyword">type</span> <span class="token operator">=</span> <span class="token string">'text/javascript'</span><span class="token punctuation">;</span>
+    script<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">'text/javascript'</span><span class="token punctuation">;</span>
     script<span class="token punctuation">.</span>src <span class="token operator">=</span> url<span class="token punctuation">;</span>
     document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span>
     script<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -321,7 +321,7 @@
 <p>在需要使用的地方：</p>
 <pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token function">loadJS</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token comment">// do something</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token comment">// do something</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="mathjax-2-x-版本">mathjax@2.x 版本<a class="header-anchor" href="#mathjax-2-x-版本"></a></h2>
