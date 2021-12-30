@@ -9,8 +9,30 @@
     <atom:link href="https://lengthmin.me/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Python / React / Nodejs</description>
-    <pubDate>Fri, 20 Aug 2021 22:09:28 GMT</pubDate>
+    <pubDate>Fri, 31 Dec 2021 04:00:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>2021 回顾</title>
+      <link>https://lengthmin.me/posts/2021-summary/</link>
+      <guid>https://lengthmin.me/posts/2021-summary/</guid>
+      <pubDate>Fri, 31 Dec 2021 04:00:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;是刚毕业的一年，也是开始工作的一年，也是吃喝玩乐的一年，也是自我成长的一年。&lt;/p&gt;
+&lt;p&gt;上班真累啊，在学校的时候还想着工作的时候要趁周六周末学习各种东西，工作之后才发现周六周末两天都玩不够。。。已经写了五天代码了，回到家，连电脑都不想打开…&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>是刚毕业的一年，也是开始工作的一年，也是吃喝玩乐的一年，也是自我成长的一年。</p><p>上班真累啊，在学校的时候还想着工作的时候要趁周六周末学习各种东西，工作之后才发现周六周末两天都玩不够。。。已经写了五天代码了，回到家，连电脑都不想打开…</p><span id="more"></span><h2 id="工作">工作<a class="header-anchor" href="#工作"></a></h2><p>今年三月份开始的实习，实习的大概内容就是做 IDE 周边，基于 VSCode 这一套，感觉还是挺有意思的。</p><p>学习了 Electron 的周边。</p><p>正式入职之后开始做一些 DSL / 编译原理 / 静态分析 相关的内容，还是很有挑战的。</p><p>最近对 TypeScript Compiler 深入理解了一番，还是蛮有意思的，之后有空的时候希望输出几篇文章。</p><p>在众多大佬附近学到了非常多的东西。</p><p>在互联网公司，职场氛围其实挺好的，但还是学会了职场的一些技巧，成长了。</p><p>目前在做的一款 IDE 框架也已经开源了：<a href="https://github.com/opensumi/core">https://github.com/opensumi/core</a></p><p><a href="https://github.com/opensumi/core"><img data-src="https://gh-card.dev/repos/opensumi/core.svg" alt="opensumi/core"></a></p><p>提供了 VSCode API 的兼容，各种丰富的配置项，提供了快速集成 Electron 的能力，提供了开箱即用的 WebIDE 能力。在集团内已经上线了不少真实应用了。</p><h2 id="毕设">毕设<a class="header-anchor" href="#毕设"></a></h2><p>学了 Rust/Go，毕设先选择了 Rust，发现写不太动，换成了 Go。</p><p>写了一个 Online Judge 判题的东西，本来想写成基于 K8S 的多容器判题，结果最后还是没有实现。</p><p>最后就是实现了一个简化版本：接收判题请求，然后通过 docker 启动相应语言的容器，等待容器返回，然后判断用户的代码运行结果。</p><p>在这个过程中了解了 Linux 中很多进程管理，容器化的知识。</p><h2 id="精神">精神<a class="header-anchor" href="#精神"></a></h2><p>有自己能支配的小钱钱了，买了很多书，买了很多课程。。。</p><p>很有印象的综艺的是《再见爱人》，看完就很想研究一下爱这种东西。然后又去听了一些沈奕斐的课程。</p><p>听了一次陈海贤老师的亲密关系讲座，然后在得到上听完了他的《亲密关系 30 讲》和《自我发展心理学》，非常推荐。</p><p>同时也推荐一下得到上的《心理学基础 30 讲》。</p><p>心理学是一门科学，它不仅是告诉我们一些人类心理活动，还会研究这些心理从何而来，我们的基因中存在着什么样的东西，现代社会形成的规范等。</p><p>我觉得我很需要这些知识。</p><p>中间也把《乌合之众》看了个大半，之后再看社会上的一些群体表现，总会有种奇妙的感觉。在看《误杀 2》的时候，我又感受到了群体心理研究的力量…</p><p>《圆桌派》还是值得听一听的，听文科生对世界的理解，听各路大佬分享一些内容。</p><p>上半年还是有在关注台湾，听一些蓝媒的节目。下半年感觉有点听累了，上下班就改成听一些播客和课程，或者就听歌。</p><p>今年真的也看了很多电影，节目。</p><p>然后就啥也想不起来了，这里也有一个心理学现象：人们总是对记忆的开头和结尾特别有印象，而对中间的记忆不太明确。</p><h2 id="生活">生活<a class="header-anchor" href="#生活"></a></h2><p>生活方面就多姿多彩了很多，几乎每周都会和同事同学出去玩，体验一些新东西，各种买买买。</p><p>有了自己的一辆小电动车，有了年轻人的第一台 iPad，第一个降噪耳机，第一个智能手表。</p><p>跟朋友们吃了很多店，逛了杭州的很多地方。</p><p>我真的很喜欢去西湖，几乎每周都要去，跟朋友一起走着，聊聊天，很美好。</p><p>第一次看了话剧，东野圭吾《回廊亭杀人事件》，买到了前排的票～感觉还不错，后面又听了硬核电台对他们的采访，还是蛮有意思的。</p><p>第一次玩剧本杀、第一次玩密室、跟同事们吃了各种没吃过的。</p><p>进城的感觉真好～</p><p>有了自己的一个小空间，买了各种各样的东西，衣服鞋子买买买，买了各种厨具，家居用品。</p><p>开始健身了，几乎是每天都去健身房，周六末偶尔会休息一下或者出去玩了。只能说是很有效果～卧推能上 30KG 了（加上杆也就是 100 斤）。</p><h2 id="That’s-All">That’s All<a class="header-anchor" href="#That’s-All"></a></h2><p>每天到点上班，下班玩一会。</p><p>这就是社畜的生活吧～</p><p>每天都很累，但每天也会有一些生活中的小美好让你开心起来。</p><p>感觉活着还是充满希望的～</p>]]></content:encoded>
+      
+      
+      <category domain="https://lengthmin.me/categories/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/">年终总结</category>
+      
+      
+      
+      <comments>https://lengthmin.me/posts/2021-summary/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Windows Docker Desktop 启动失败</title>
