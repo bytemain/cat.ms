@@ -19,7 +19,7 @@ dnscrypt-proxy 只负责帮我们发起 DoH 请求。
 
 dnsmasq 是一个轻量级的域名解析服务器，帮我们把 DNS 请求转发到 dnscrypt-proxy，而把一些公司域内的域名转发到路由器分发的上游 DNS。
 
-还写了个 [uTools 插件](https://github.com/lengthmin/utools-dns) 来快速切换 DNS。
+还写了个 [uTools 插件](https://github.com/bytemain/utools-dns) 来快速切换 DNS。
 
 <!-- more -->
 

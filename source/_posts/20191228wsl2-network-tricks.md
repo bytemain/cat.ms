@@ -121,7 +121,7 @@ WSL2 的 IP 会变，所以怎么随时随地的都能访问到 WSL2 呢？看�
 
 思路就是使用**任务计划程序**执行 powershell 脚本，来做一些事。
 
-我们需要写一个脚本（[地址](https://github.com/lengthmin/dotfiles/blob/master/windows/wsl2.ps1)）实现我们想要的功能。
+我们需要写一个脚本（[地址](https://github.com/bytemain/dotfiles/blob/master/windows/wsl2.ps1)）实现我们想要的功能。
 
 脚本的功能大概是：
 
@@ -134,7 +134,7 @@ WSL2 的 IP 会变，所以怎么随时随地的都能访问到 WSL2 呢？看�
 
 具体**在 `WSL` 要更新 IP 时运行特定脚本**步骤如下：
 
-1. 将[链接](https://github.com/lengthmin/dotfiles/blob/master/windows/wsl2.ps1)中的代码保存到本地文件中，文件名后缀设为 `.ps1`。
+1. 将[链接](https://github.com/bytemain/dotfiles/blob/master/windows/wsl2.ps1)中的代码保存到本地文件中，文件名后缀设为 `.ps1`。
 2. 打开**事件查看器**。在小娜的搜索框里搜一下就能打开了。
 3. 点击 **Windows 日志** -> **系统**。
 4. 找到 `Hyper-V-VmSwith` 事件，查看有没有内容类似 `Port ... (Friendly Name: ...) successfully created on switch ... (Friendly Name: WSL).`的事件。
@@ -243,7 +243,7 @@ Powershell 语法里 `@()` 就是数组的意思，这个脚本遍历你设置�
 而且还可以为 git 以及 ssh 同时设置代理。
 
 代码见:
-<https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc>
+<https://github.com/bytemain/dotfiles/blob/master/ubuntu_wsl/zshrc>
 
 重点见里面的 `proxy`, `unpro`, `getIp`, `proxy_git`, `proxy_npm` 等函数。
 

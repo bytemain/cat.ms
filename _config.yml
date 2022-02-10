@@ -9,7 +9,7 @@ timezone: Asia/Shanghai
 meta_generator: true
 updated_option: "date"
 
-url: https://lengthmin.me
+url: https://bytem.io
 root: /
 permalink: posts/:title/
 permalink_defaults:
@@ -255,7 +255,7 @@ theme_config:
 
   social:
     E-Mail: mailto:lengthmin@gmail.com || fa fa-envelope
-    GitHub: https://github.com/lengthmin || fab fa-github
+    GitHub: https://github.com/bytemain || fab fa-github
     Telegram: https://telegram.me/lengthmin || fab fa-telegram
     RSS: /rss.xml || fas fa-rss
 

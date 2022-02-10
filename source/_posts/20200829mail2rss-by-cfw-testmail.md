@@ -218,7 +218,7 @@ return response;
 
 其实思路也很简单，代码也很简单。
 
-完整代码见：<https://github.com/lengthmin/mail2rss>
+完整代码见：<https://github.com/bytemain/mail2rss>
 
 ## 参考链接
 
