@@ -2,14 +2,14 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://lengthmin.me/</loc>
+        <loc>https://bytem.io/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
 
     <url>
-        <loc>https://lengthmin.me/posts/2021-summary/</loc>
+        <loc>https://bytem.io/posts/2021-summary/</loc>
         <lastmod>2021-12-31T04:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -17,7 +17,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/win-docker-desktop-failed-to-initialize/</loc>
+        <loc>https://bytem.io/posts/win-docker-desktop-failed-to-initialize/</loc>
         <lastmod>2021-08-20T22:09:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -25,7 +25,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/yapi-vulnerability-review/</loc>
+        <loc>https://bytem.io/posts/yapi-vulnerability-review/</loc>
         <lastmod>2021-07-26T22:40:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -33,7 +33,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/macos-use-doh/</loc>
+        <loc>https://bytem.io/posts/macos-use-doh/</loc>
         <lastmod>2021-07-25T13:33:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -41,7 +41,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/docker-push-denied-access/</loc>
+        <loc>https://bytem.io/posts/docker-push-denied-access/</loc>
         <lastmod>2021-04-23T10:11:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -49,7 +49,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/flask-migrate-no-change/</loc>
+        <loc>https://bytem.io/posts/flask-migrate-no-change/</loc>
         <lastmod>2021-04-22T03:46:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -57,7 +57,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/macos-regenerate-resolv-dot-conf/</loc>
+        <loc>https://bytem.io/posts/macos-regenerate-resolv-dot-conf/</loc>
         <lastmod>2021-04-03T08:57:34.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -65,7 +65,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/wsl2-gpg/</loc>
+        <loc>https://bytem.io/posts/wsl2-gpg/</loc>
         <lastmod>2021-02-28T03:02:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -73,7 +73,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/wsl2-network-tricks/</loc>
+        <loc>https://bytem.io/posts/wsl2-network-tricks/</loc>
         <lastmod>2021-01-31T08:34:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -81,7 +81,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/install-nvm/</loc>
+        <loc>https://bytem.io/posts/install-nvm/</loc>
         <lastmod>2021-01-07T11:33:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -89,7 +89,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/2020-summary/</loc>
+        <loc>https://bytem.io/posts/2020-summary/</loc>
         <lastmod>2020-12-31T14:10:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -97,7 +97,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/sqlserver-odbc-driver/</loc>
+        <loc>https://bytem.io/posts/sqlserver-odbc-driver/</loc>
         <lastmod>2020-12-29T05:42:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -105,7 +105,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/serving-a-front-end-created-with-create-react-app-with-flask/</loc>
+        <loc>https://bytem.io/posts/serving-a-front-end-created-with-create-react-app-with-flask/</loc>
         <lastmod>2020-12-24T02:56:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -113,7 +113,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/why-do-we-need-to-configure-environment-variables/</loc>
+        <loc>https://bytem.io/posts/why-do-we-need-to-configure-environment-variables/</loc>
         <lastmod>2020-12-18T06:56:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -121,7 +121,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/vscode-bracket-colorizer-light-theme/</loc>
+        <loc>https://bytem.io/posts/vscode-bracket-colorizer-light-theme/</loc>
         <lastmod>2020-12-07T05:11:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -129,7 +129,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/use-shuangpin/</loc>
+        <loc>https://bytem.io/posts/use-shuangpin/</loc>
         <lastmod>2020-12-03T06:38:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -137,7 +137,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/use-hexo-with-webide/</loc>
+        <loc>https://bytem.io/posts/use-hexo-with-webide/</loc>
         <lastmod>2020-11-29T06:59:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -145,7 +145,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/cdtmp/</loc>
+        <loc>https://bytem.io/posts/cdtmp/</loc>
         <lastmod>2020-11-26T12:51:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -153,7 +153,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/my-hexo-0/</loc>
+        <loc>https://bytem.io/posts/my-hexo-0/</loc>
         <lastmod>2020-11-26T10:06:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -161,7 +161,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/function-overloading-in-python/</loc>
+        <loc>https://bytem.io/posts/function-overloading-in-python/</loc>
         <lastmod>2020-11-24T08:42:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -169,7 +169,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/mod-omencommandcenter-key/</loc>
+        <loc>https://bytem.io/posts/mod-omencommandcenter-key/</loc>
         <lastmod>2020-10-31T13:55:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -177,7 +177,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/mail2rss-by-testmail-and-cfworkers/</loc>
+        <loc>https://bytem.io/posts/mail2rss-by-testmail-and-cfworkers/</loc>
         <lastmod>2020-08-29T07:13:03.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -185,7 +185,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/windows-install-nodert/</loc>
+        <loc>https://bytem.io/posts/windows-install-nodert/</loc>
         <lastmod>2020-08-24T08:44:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -193,7 +193,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/install-arch-wsl/</loc>
+        <loc>https://bytem.io/posts/install-arch-wsl/</loc>
         <lastmod>2020-05-03T14:12:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -201,7 +201,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/using-userscript-in-angular-page/</loc>
+        <loc>https://bytem.io/posts/using-userscript-in-angular-page/</loc>
         <lastmod>2020-04-15T01:49:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -209,7 +209,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/use-mathjax-in-react/</loc>
+        <loc>https://bytem.io/posts/use-mathjax-in-react/</loc>
         <lastmod>2020-04-13T07:35:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -217,7 +217,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/2019/</loc>
+        <loc>https://bytem.io/posts/2019/</loc>
         <lastmod>2020-01-06T11:11:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -225,7 +225,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/coding-pages-tinytinyrss/</loc>
+        <loc>https://bytem.io/posts/coding-pages-tinytinyrss/</loc>
         <lastmod>2019-07-28T13:10:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -233,7 +233,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/acm-io/</loc>
+        <loc>https://bytem.io/posts/acm-io/</loc>
         <lastmod>2019-07-22T10:48:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -241,7 +241,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/add-tencent-analytics-to-yelee/</loc>
+        <loc>https://bytem.io/posts/add-tencent-analytics-to-yelee/</loc>
         <lastmod>2019-07-18T06:03:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -249,7 +249,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/to-build-a-better-hexo/</loc>
+        <loc>https://bytem.io/posts/to-build-a-better-hexo/</loc>
         <lastmod>2019-07-18T06:03:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -257,7 +257,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/install-opencv-windows-vs/</loc>
+        <loc>https://bytem.io/posts/install-opencv-windows-vs/</loc>
         <lastmod>2019-07-18T06:03:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -265,7 +265,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/assembler-basic/</loc>
+        <loc>https://bytem.io/posts/assembler-basic/</loc>
         <lastmod>2019-07-04T03:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -273,7 +273,7 @@
     </url>
 
     <url>
-        <loc>https://lengthmin.me/posts/sudo-git-fix/</loc>
+        <loc>https://bytem.io/posts/sudo-git-fix/</loc>
         <lastmod>2019-04-27T16:12:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

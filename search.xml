@@ -1471,7 +1471,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>请看：</p>
 <p>在 GitHub 上找到了这个 issue：<a href="https://github.com/microsoft/WSL/issues/4150">[WSL 2] NIC Bridge mode 🖧 (Has Workaround🔨) #4150</a>，根据回复有了思路。</p>
 <p>思路就是使用<strong>任务计划程序</strong>执行 powershell 脚本，来做一些事。</p>
-<p>我们需要写一个脚本（<a href="https://github.com/lengthmin/dotfiles/blob/master/windows/wsl2.ps1">地址</a>）实现我们想要的功能。</p>
+<p>我们需要写一个脚本（<a href="https://github.com/bytemain/dotfiles/blob/master/windows/wsl2.ps1">地址</a>）实现我们想要的功能。</p>
 <p>脚本的功能大概是：</p>
 <ol>
 <li>读取 WSL 和 Windows 的 IP</li>
@@ -1481,7 +1481,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>关键来了，我们要使用<strong>任务计划程序</strong>在 <code>WSL</code> 要更新 IP 的时候执行这个脚本。</p>
 <p>具体<strong>在 <code>WSL</code> 要更新 IP 时运行特定脚本</strong>步骤如下：</p>
 <ol>
-<li>将<a href="https://github.com/lengthmin/dotfiles/blob/master/windows/wsl2.ps1">链接</a>中的代码保存到本地文件中，文件名后缀设为 <code>.ps1</code>。</li>
+<li>将<a href="https://github.com/bytemain/dotfiles/blob/master/windows/wsl2.ps1">链接</a>中的代码保存到本地文件中，文件名后缀设为 <code>.ps1</code>。</li>
 <li>打开<strong>事件查看器</strong>。在小娜的搜索框里搜一下就能打开了。</li>
 <li>点击 <strong>Windows 日志</strong> -&gt; <strong>系统</strong>。</li>
 <li>找到 <code>Hyper-V-VmSwith</code> 事件，查看有没有内容类似 <code>Port ... (Friendly Name: ...) successfully created on switch ... (Friendly Name: WSL).</code> 的事件。</li>
@@ -1562,7 +1562,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>先上效果：<img data-src="https://i.lengthm.in/posts/wsl2-network-tricks/proxy.png" alt="image.png">
 而且还可以为 git 以及 ssh 同时设置代理。</p>
 <p>代码见:
-<a href="https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc">https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc</a></p>
+<a href="https://github.com/bytemain/dotfiles/blob/master/ubuntu_wsl/zshrc">https://github.com/bytemain/dotfiles/blob/master/ubuntu_wsl/zshrc</a></p>
 <p>重点见里面的 <code>proxy</code>, <code>unpro</code>, <code>getIp</code>, <code>proxy_git</code>, <code>proxy_npm</code> 等函数。</p>
 <p>这样我们执行 proxy 的时候，就能一键连接到主机的代理上了。</p>
 <p>有用的话别忘了给个 star，谢谢～</p>
@@ -2177,7 +2177,7 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
 <span class="token keyword">return</span> response<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="总结">总结<a class="header-anchor" href="#总结"></a></h2>
 <p>其实思路也很简单，代码也很简单。</p>
-<p>完整代码见：<a href="https://github.com/lengthmin/mail2rss">https://github.com/lengthmin/mail2rss</a></p>
+<p>完整代码见：<a href="https://github.com/bytemain/mail2rss">https://github.com/bytemain/mail2rss</a></p>
 <h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
 <ol>
 <li>DIYgod/RSSHub
@@ -3004,7 +3004,7 @@ gpg-logout() {
 <p>在终端中输入 <code>gpg-login</code>，就会出现输密码的框，输入完密码之后该密码会被缓存，之后在 VSCode 进行 commit 的时候不用输密码了。</p>
 <p>输入 <code>gpg-logout</code> 就可以清除你 <code>gpg</code> 密码的缓存。</p>
 <p>虽然不是解决办法，但使用起来也还算方便，也能忍。</p>
-<p>关于我 Shell 的一些其他配置，可见：<a href="https://github.com/lengthmin/dotfiles/blob/master/ubuntu_wsl/zshrc">ubuntu_wsl/zshrc</a>。</p>
+<p>关于我 Shell 的一些其他配置，可见：<a href="https://github.com/bytemain/dotfiles/blob/master/ubuntu_wsl/zshrc">ubuntu_wsl/zshrc</a>。</p>
 <h2 id="配置-gpg-缓存时间">配置 gpg 缓存时间<a class="header-anchor" href="#配置-gpg-缓存时间"></a></h2>
 <p>编辑这个文件 <code>~/.gnupg/gpg-agent.conf</code>：</p>
 <p>添加如下内容，就可以将密码缓存 1 小时。</p>
@@ -3108,7 +3108,7 @@ Login Succeeded<span aria-hidden="true" class="line-numbers-rows"><span></span><
 <p>使用工具为 dnscrypt-proxy + dnsmasq。</p>
 <p>dnscrypt-proxy 只负责帮我们发起 DoH 请求。</p>
 <p>dnsmasq 是一个轻量级的域名解析服务器，帮我们把 DNS 请求转发到 dnscrypt-proxy，而把一些公司域内的域名转发到路由器分发的上游 DNS。</p>
-<p>还写了个 <a href="https://github.com/lengthmin/utools-dns">uTools 插件</a> 来快速切换 DNS。</p>
+<p>还写了个 <a href="https://github.com/bytemain/utools-dns">uTools 插件</a> 来快速切换 DNS。</p>
 <span id="more"></span>
 <h2 id="什么是-DoH">什么是 DoH<a class="header-anchor" href="#什么是-DoH"></a></h2>
 <p>什么是 DoH，可以看：<a href="https://zh.wikipedia.org/zh-cn/DNS_over_HTTPS">https://zh.wikipedia.org/zh-cn/DNS_over_HTTPS</a>。</p>

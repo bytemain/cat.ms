@@ -1,3 +1,3 @@
 # Blog
 
-[Artin's Blog](https://lengthmin.me/)
+[Artin's Blog](https://bytem.io/)
