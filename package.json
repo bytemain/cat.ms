@@ -6,11 +6,13 @@
     "version": "6.0.0"
   },
   "scripts": {
+    "prepare": "husky install",
     "dev": "hexo server --draft",
     "dev:clean": "yarn clean && yarn dev",
     "build": "hexo generate -f",
     "new": "node ./helper/new.js",
-    "clean": "hexo clean"
+    "clean": "hexo clean",
+    "update:date": "echo update"
   },
   "dependencies": {
     "hexo": "^6.0.0",
@@ -33,6 +35,7 @@
     "chardet": "^1.4.0",
     "dotenv": "^10.0.0",
     "execa": "^6.0.0",
+    "husky": "^7.0.4",
     "npm-check-updates": "^12.0.5"
   }
 }
