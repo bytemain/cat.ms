@@ -3155,6 +3155,7 @@ bogus-priv
 log-queries
 <span class="token key attr-name">log-facility</span><span class="token punctuation">=</span><span class="token value attr-value">/var/log/dnsmasq.log</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="配置-dnscrypt-proxy">配置 dnscrypt-proxy<a class="header-anchor" href="#配置-dnscrypt-proxy"></a></h3>
+<p>M1 系统的配置文件地址在：/opt/homebrew/etc/dnscrypt-proxy.toml</p>
 <p>这里主要是我个人的配置，我只保留一个阿里云的 DoH，然后把 sources 下的所有内容都注释掉，这样启动会快很多。</p>
 <p>如果保留 sources 下的内容的话，每次启动软件都要去找一个最快的 DNS，要遍历很久。</p>
 <pre class="line-numbers language-toml" data-language="toml"><code class="language-toml"><span class="token comment"># 监听地址</span>
