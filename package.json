@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "6.0.0"
+    "version": "6.2.0"
   },
   "scripts": {
     "prepare": "husky install",
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "chardet": "^1.4.0",
+    "dayjs": "^1.11.3",
     "dotenv": "^16.0.1",
     "esno": "^0.16.3",
     "execa": "^6.1.0",

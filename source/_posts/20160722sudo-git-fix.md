@@ -1,13 +1,13 @@
 ---
-title: 关于手贱执行了sudo git之后那些事
+title: 关于手贱执行了 sudo git 之后那些事
 comments: true
 toc: true
-date: 2016-07-22 09:45:38
-updated: 2019-04-28 00:12:04
+date: '2016-07-22 09:45:38'
+updated: '2022-07-10 09:56:48'
 categories:
-    - Git
+  - Git
 tags:
-    - Linux
+  - Linux
 permalink: posts/sudo-git-fix/
 ---
 
