@@ -15,7 +15,7 @@
     "updated": "esno ./helper/article-updated.ts"
   },
   "dependencies": {
-    "hexo": "^6.0.0",
+    "hexo": "^6.2.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^3.0.0",
@@ -25,24 +25,20 @@
     "hexo-generator-tag": "^1.0.0",
     "hexo-pangu": "^0.2.1",
     "hexo-related-popular-posts": "^5.0.1",
-    "hexo-renderer-markdown-it": "^5.0.0",
-    "hexo-renderer-stylus": "^2.0.1",
-    "hexo-server": "^2.0.0",
+    "hexo-renderer-markdown-it": "^6.0.1",
+    "hexo-renderer-stylus": "^2.1.0",
+    "hexo-server": "^3.0.0",
     "hexo-symbols-count-time": "^0.7.1",
-    "hexo-theme-next": "^8.8.2"
+    "hexo-theme-next": "^8.12.2"
   },
   "devDependencies": {
-    "@types/marked": "^4.0.3",
-    "@types/nodegit": "^0.27.9",
     "chardet": "^1.4.0",
-    "dotenv": "^10.0.0",
-    "esno": "^0.14.1",
-    "execa": "^6.0.0",
+    "dotenv": "^16.0.1",
+    "esno": "^0.16.3",
+    "execa": "^6.1.0",
     "gray-matter": "^4.0.3",
-    "husky": "^7.0.4",
-    "marked": "^4.0.17",
-    "nodegit": "^0.27.0",
-    "npm-check-updates": "^12.0.5",
+    "husky": "^8.0.1",
+    "npm-check-updates": "^15.2.6",
     "staged-git-files": "^1.3.0"
   }
 }
