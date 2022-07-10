@@ -105,6 +105,8 @@ log-facility=/var/log/dnsmasq.log
 
 ### 配置 dnscrypt-proxy
 
+M1 系统的配置文件地址在：/opt/homebrew/etc/dnscrypt-proxy.toml
+
 这里主要是我个人的配置，我只保留一个阿里云的 DoH，然后把 sources 下的所有内容都注释掉，这样启动会快很多。
 
 如果保留 sources 下的内容的话，每次启动软件都要去找一个最快的 DNS，要遍历很久。
