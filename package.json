@@ -12,7 +12,7 @@
     "build": "hexo generate -f",
     "new": "node ./helper/new.js",
     "clean": "hexo clean",
-    "updated": "esno ./scripts/article-updated.ts"
+    "updated": "esno ./helper/article-updated.ts"
   },
   "dependencies": {
     "hexo": "^6.0.0",
