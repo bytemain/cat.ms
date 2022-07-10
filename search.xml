@@ -112,7 +112,7 @@ ssh 密钥在～/.ssh/id_rsa.pub <br>
 <blockquote>
 <p>一定要注意改成你自己的 ssh 地址，注意是 ssh 地址。而且 <code>coding:</code> 后面是有个空格的，这就是 yaml 语言的格式，以后编辑<code>_config.yml</code> 也要注意的。</p>
 </blockquote>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
   <span class="token key atrule">type</span><span class="token punctuation">:</span> git
   <span class="token key atrule">repo</span><span class="token punctuation">:</span>
     <span class="token key atrule">coding</span><span class="token punctuation">:</span> git@git.coding.net<span class="token punctuation">:</span>Artin/Artin.git<span class="token punctuation">,</span>master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
@@ -157,7 +157,7 @@ Universal Time is now:  Sat Aug  <span class="token number">6</span> <span class
     <content><![CDATA[<p>hexo 的原生主题自带了谷歌分析，而谷歌分析在国内水土不服。琢磨琢磨，把 next 主题上的腾讯分析添加到了正在用的 yelee 主题上。顺带一提，腾讯分析真的是用过的最好用的站点统计软件。</p>
 <span id="more"></span>
 <p>用的主题是 yelee，没有腾讯分析，自己加了一个。在 <code>主题目录</code> 下操作。在 <code>_config.yml</code> 中添加</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">tencent-analytics</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">tencent-analytics</span><span class="token punctuation">:</span>
 <span class="token comment"># 在冒号后面配置你的腾讯分析 id，id 就是获取到的代码的数字部分</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>在 <code>layout/_partial/</code> 中创建一个新的 <code>tencent-analytics.ejs</code> 文件，
 加入如下代码：</p>
@@ -326,7 +326,7 @@ ssh 要先配置好 ssh 的权限。</p>
 <p>在这里下载最新的版本。</p>
 <p><a href="https://git.tt-rss.org/fox/tt-rss/releases">https://git.tt-rss.org/fox/tt-rss/releases</a></p>
 <p>解压之后可以看到本地多了一个 <code>tt-rss</code> 的文件夹，打开文件夹。输入：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">git</span> init
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> init
 <span class="token function">git</span> remote <span class="token function">add</span> 你创建的仓库地址
 <span class="token function">git</span> <span class="token function">add</span> -A <span class="token builtin class-name">.</span>
 <span class="token function">git</span> commit -am <span class="token string">"upload tt-rss"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
@@ -338,7 +338,7 @@ ssh 要先配置好 ssh 的权限。</p>
 出现一堆 <code>create mode xxx</code> 的提示就可以了。</p>
 <h4 id="设置文件权限">设置文件权限<a class="header-anchor" href="#设置文件权限"></a></h4>
 <p>在这步有一个小问题，需要把目录下的每个文件的权限都设置成 777, 否则后面会遇到文件无法读写导致站点无法访问的问题。在终端输入</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">chmod</span> -R <span class="token number">777</span> <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">chmod</span> -R <span class="token number">777</span> <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>保存好后就可以 push 到仓库里了，</p>
 <blockquote>
 <p>如果你创建仓库的时候勾选了「使用 readme 初始化仓库」，那么你在 push 的时候会遇到文件冲突。<br>
@@ -551,11 +551,11 @@ w <span class="token operator">=</span> <span class="token builtin">map</span><s
 <h3 id="安装和升级-nvm">安装和升级 nvm<a class="header-anchor" href="#安装和升级-nvm"></a></h3>
 <p>要安装或升级 nvm, 可以使用官方给的一个脚本。</p>
 <p>可以使用 curl：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">curl</span> -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>或者 wget:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">wget</span> -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>如果你的机器在国内，<code>raw.githubusercontent.com</code> 已经被墙，你可以使用 <code>fastgit.org</code> 提供的反代：<a href="https://raw.fastgit.org/">https://raw.fastgit.org/</a>。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">wget</span> -qO- https://raw.fastgit.org/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -qO- https://raw.fastgit.org/creationix/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>官方目前的版本号是 <code>v0.34.0</code>。<br>
 你可以去上面给的链接里去安装最新的。<br>
 这个脚本会克隆 nvm 的远程仓库到 <code>~/.nvm</code> 路径下，并且会将添加激活代码到你终端的配置文件中。</p>
@@ -592,7 +592,7 @@ w <span class="token operator">=</span> <span class="token builtin">map</span><s
 <p>将下载来源设置为国内淘宝镜像。</p>
 <h3 id="nvm-安装-nodejs">nvm 安装 nodejs<a class="header-anchor" href="#nvm-安装-nodejs"></a></h3>
 <p>执行：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 安装node稳定版</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装node稳定版</span>
 nvm <span class="token function">install</span> stable
 <span class="token comment"># 安装node最新版</span>
 nvm <span class="token function">install</span> node<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
@@ -600,12 +600,12 @@ nvm <span class="token function">install</span> node<span aria-hidden="true" cla
 <h3 id="nvm-基本使用">nvm 基本使用<a class="header-anchor" href="#nvm-基本使用"></a></h3>
 <p>详见：<a href="https://github.com/creationix/nvm#usage">https://github.com/creationix/nvm#usage</a></p>
 <p>我自己使用的就几个命令，其实也就掌握这几个命令就够用了：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">nvm list <span class="token comment"># 展示可下载的版本</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm list <span class="token comment"># 展示可下载的版本</span>
 nvm <span class="token function">install</span> <span class="token number">10.10</span>.0 <span class="token comment"># 安装对应版本</span>
 nvm use <span class="token number">10.10</span>.0 <span class="token comment"># 使用对应版本</span>
 nvm <span class="token function">which</span> <span class="token number">10.10</span>.0 <span class="token comment"># 查看对应版本的安装目录</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="配置-npm-国内源">配置 npm 国内源<a class="header-anchor" href="#配置-npm-国内源"></a></h3>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">npm</span> <span class="token function">install</span> -g mirror-config-china --registry<span class="token operator">=</span>http://registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g mirror-config-china --registry<span class="token operator">=</span>http://registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>一下就可以配置好 好几个国内源～</p>
 <p>That’s All.</p>
 <h2 id="Windows-安装-nvm">Windows 安装 nvm<a class="header-anchor" href="#Windows-安装-nvm"></a></h2>
@@ -1252,11 +1252,11 @@ yay --save --aururl https://aur.tuna.tsinghua.edu.cn<span aria-hidden="true" cla
 <td> 在本地包数据库搜索 (查询) 指定软件包并列出相关信息</td>
 </tr>
 <tr>
-<td> pacman -Q <code>|</code> wc -l</td>
-<td> 统计当前系统中的包数量</td>
+<td> pacman -Q `</td>
+<td>` wc -l</td>
 </tr>
 <tr>
-<td> pacman -Qdt</td>
+<td>pacman -Qdt</td>
 <td> 找出孤立包</td>
 </tr>
 <tr>
@@ -1658,7 +1658,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>在 omencommandcenter 下依次添加 <code>Shell</code>、 <code>Open</code>、 <code>Command</code>，大小写不敏感，然后修改 <code>Command</code> 的 <code>(Default)</code> 值为想打开的应用程序。</p>
 <p>这里的 <code>Open</code> 的意思就是你在资源管理器中双击一个类型的文件就打开某个软件那样。</p>
 <p>比如说像我就设置成了 <code>wt.exe</code>，就是打开 Windows Terminal。</p>
-<h2 id="一些-Tips">一些 Tips<a class="header-anchor" href="#一些-Tips"></a></h2>
+<h2 id="一些-Tips-2">一些 Tips<a class="header-anchor" href="#一些-Tips-2"></a></h2>
 <p>windows 还提供了 执行 vbs 的工具：</p>
 <pre class="line-numbers language-bat" data-language="bat"><code class="language-bat">mshta vbscript:clipboarddata.setdata(\"text\",\"%1\")(close)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>参考： <a href="https://lolbas-project.github.io/lolbas/Binaries/Mshta/">https://lolbas-project.github.io/lolbas/Binaries/Mshta/</a></p>
@@ -1697,7 +1697,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在需要使用的地方：</p>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token function">loadJS</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token function">loadJS</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token comment">// do something</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token comment">// do something</span>
@@ -1714,7 +1714,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 </ul>
 <p>加载了 mathjax 之后，我们只要在合适的时机让 mathjax 渲染 dom 即可。</p>
 <p>举个例子：</p>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> mathjaxUrl <span class="token operator">=</span> <span class="token string">'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML'</span><span class="token punctuation">;</span>
   <span class="token function">loadJS</span><span class="token punctuation">(</span>mathjaxUrl<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">showMathjax</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1769,7 +1769,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>官方还提供一个一键转换配置的链接： <a href="https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html">MathJax Configuration Converter</a></p>
 </blockquote>
 <p>还是给出我的配置：</p>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token punctuation">(</span>window <span class="token keyword">as</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token punctuation">.</span>MathJax <span class="token operator">=</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token punctuation">(</span>window <span class="token keyword">as</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token punctuation">.</span>MathJax <span class="token operator">=</span> <span class="token punctuation">{</span>
   tex<span class="token operator">:</span> <span class="token punctuation">{</span>
     inlineMath<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'$'</span><span class="token punctuation">,</span> <span class="token string">'$'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     displayMath<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'$$'</span><span class="token punctuation">,</span> <span class="token string">'$$'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -1792,7 +1792,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p><code>Mathjax</code> 脚本加载好之后会读取 <code>window.Mathjax</code> 为配置并且替换为 <code>Mathjax</code> 对象，然后你就可以调用相关函数了。</p>
 <p><code>Mathjax</code> 初始化时会调用配置中的 <code>startup.ready</code> 方法，你可以在里面做一下提示或者其他配置。</p>
 <p>还是那个问题，<code>Mathjax</code> 在 DOM 更新时不会重新渲染，需要使用 <code>MathJax.typesetPromise()</code> 方法。也在 <code>componentDidUpdate</code> 中设置即可。</p>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts"><span class="token function">componentDidUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token function">componentDidUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> MathJax <span class="token operator">=</span> <span class="token punctuation">(</span>window <span class="token keyword">as</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token punctuation">.</span>MathJax<span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>MathJax<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     MathJax<span class="token punctuation">.</span>typesetPromise <span class="token operator">&amp;&amp;</span> MathJax<span class="token punctuation">.</span><span class="token function">typesetPromise</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1833,7 +1833,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>下面的脚本是当时参考了 StackOverflow 上的一个 Angular watch 有关的问题，但是找不到链接了，所以未能注明来源，非常抱歉。</p>
 </blockquote>
 <p>那如何在用户脚本里拿到 Angular 对象呢？</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> retryCount <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> retryCount <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>
     maxRetry <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span>
     timeout <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">,</span>
     timer<span class="token punctuation">;</span>
@@ -1849,7 +1849,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
     <span class="token function">setTimeout</span><span class="token punctuation">(</span>injectScript<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>阻塞等待 angular 加载成功即可。然后执行 <code>injectScript</code> 执行我们自己的脚本。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">injectScript</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">injectScript</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">var</span> ngAppElem <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'[ng-app]'</span><span class="token punctuation">)</span> <span class="token operator">||</span> document<span class="token punctuation">)</span><span class="token punctuation">;</span>
     $rootScope <span class="token operator">=</span> ngAppElem<span class="token punctuation">.</span><span class="token function">scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     $rootScope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1857,7 +1857,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>我们在 <code>rootScope</code> 上执行 <code>watch</code>，这样也不会因为切换页面而丢失 <code>watch</code>。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">injectScript</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">injectScript</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">var</span> ngAppElem <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">element</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'[ng-app]'</span><span class="token punctuation">)</span> <span class="token operator">||</span> document<span class="token punctuation">)</span><span class="token punctuation">;</span>
     $rootScope <span class="token operator">=</span> ngAppElem<span class="token punctuation">.</span><span class="token function">scope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     $rootScope<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -2064,7 +2064,7 @@ testmail.app 会接收发送到 <code>{namespace}.{tag}@inbox.testmail.app</code
 <p>进行查询之前要获取一个 API Key，也是登录之后在网页上就能看到了，把 API Key 填到 headers 的 <code>Authorization</code> 即可。</p>
 <p>这里就不详细说了，就是查 API 获取想要的邮件的内容，比如我们使用 quartz 这个 tag 订阅 QuartZ，那我们就只查这个 tag 的邮件即可。</p>
 <p>js 实现的请求邮件：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> testmailNamespace <span class="token operator">=</span> <span class="token string">"xxxxx"</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> testmailNamespace <span class="token operator">=</span> <span class="token string">"xxxxx"</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> testmailToken <span class="token operator">=</span> <span class="token string">"xxxxxxxxxxxxxxx"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">class</span> <span class="token class-name">TestMail</span> <span class="token punctuation">{</span>
@@ -2120,7 +2120,7 @@ testmail.app 会接收发送到 <code>{namespace}.{tag}@inbox.testmail.app</code
 </ol>
 <p>第一步就是解析用户请求的地址，然后获取出 tag 就行。比如用户请求的 <code>mail2rss.test.workers.dev/tenjs</code>，我们就要把 <code>tenjs</code> 提取出来即可。</p>
 <p>Cloudflare Workers 中可以通过 <code>event.request.url</code> 拿到用户请求的完整 URL，如果你使用的是其他的 Serverless 服务，如果是 <code>koa-like</code> 的话，一般都是也是通过 Request 拿到 url。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> request <span class="token punctuation">}</span> <span class="token operator">=</span> event<span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> request <span class="token punctuation">}</span> <span class="token operator">=</span> event<span class="token punctuation">;</span>
 <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// parse tag</span>
 <span class="token keyword">const</span> requestTag <span class="token operator">=</span> url<span class="token punctuation">.</span>pathname<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
@@ -2129,7 +2129,7 @@ testmail.app 会接收发送到 <code>{namespace}.{tag}@inbox.testmail.app</code
 <h3 id="实现生成-XML">实现生成 XML<a class="header-anchor" href="#实现生成-XML"></a></h3>
 <p>这里我们没有使用模板引擎，直接拼接字符串就行了。</p>
 <p>首先我们得知道 RSS 的文件格式，这里参考了 <a href="https://github.com/DIYgod/RSSHub/blob/master/lib/views/rss.art">RSSHub 的文件内容</a>。然后写一个 <code>makeRss</code> 函数，拼接生成字符串就行。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">makeRss</span><span class="token punctuation">(</span><span class="token parameter">emails<span class="token punctuation">,</span> tag</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">makeRss</span><span class="token punctuation">(</span><span class="token parameter">emails<span class="token punctuation">,</span> tag</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">let</span> items <span class="token operator">=</span> emails<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">.</span>attachments<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">of</span> value<span class="token punctuation">.</span>attachments<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -2166,7 +2166,7 @@ testmail.app 会接收发送到 <code>{namespace}.{tag}@inbox.testmail.app</code
 &lt;/rss&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后返回响应：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> responseXML <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">makeRss</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>data<span class="token punctuation">.</span>inbox<span class="token punctuation">.</span>emails<span class="token punctuation">,</span> requestTag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> responseXML <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">makeRss</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>data<span class="token punctuation">.</span>inbox<span class="token punctuation">.</span>emails<span class="token punctuation">,</span> requestTag<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> response <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span>responseXML<span class="token punctuation">,</span> <span class="token punctuation">{</span>
   status<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
   headers<span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -2178,7 +2178,7 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
 <h2 id="总结">总结<a class="header-anchor" href="#总结"></a></h2>
 <p>其实思路也很简单，代码也很简单。</p>
 <p>完整代码见：<a href="https://github.com/bytemain/mail2rss">https://github.com/bytemain/mail2rss</a></p>
-<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
+<h2 id="参考链接-2">参考链接<a class="header-anchor" href="#参考链接-2"></a></h2>
 <ol>
 <li>DIYgod/RSSHub
 <a href="https://github.com/DIYgod/RSSHub">https://github.com/DIYgod/RSSHub</a></li>
@@ -2372,7 +2372,7 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
 <p><code>get</code> 方法在内部创建了一个 <code>Function</code> 的实例，然后通过该实例的 <code>key</code> 方法获取函数的唯一键。然后使用该键从函数注册表中获取相应的函数。</p>
 <h3 id="函数调用">函数调用<a class="header-anchor" href="#函数调用"></a></h3>
 <p>如上所述，每次调用被 <code>overload</code> 装饰过的函数时，都会调用 <code>Function</code> 类中的 <code>__call__</code> 方法。我们要在这个方法里通过虚拟命名空间的 <code>get</code> 方法找到并调用正确的重载函数实现。<code>__call__</code> 方法的实现如下：</p>
-<pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
   <span class="token triple-quoted-string string">"""覆盖类的 `__call__` 方法可以让一个实例可被调用
   """</span>
   <span class="token comment"># 从虚拟命名空间中获取真正的要被调用的函数</span>
@@ -2540,7 +2540,7 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
   - index.html
   - [more meta files]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>create-react-app 打包的静态资源都放在了 <code>static</code> 路径下。比如打包后 <code>index.html</code> 中的一个链接：</p>
-<pre class="line-numbers language-html" data-language="html"><div class="caption"><span>index.html</span></div><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/css/2.0a6fdfd6.chunk.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><div class="caption"><span>index.html</span></div><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/css/2.0a6fdfd6.chunk.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>浏览器解析后，会发出一个请求 <code>GET /static/css/2.0a6fdfd6.chunk.css</code>。</p>
 <p>如果简单的添加一个路由返回 <code>index.html</code> 文件的话，就有以下的问题出现：</p>
 <p>因为 Flask 本身就有 <code>static_folder</code> 的概念，所有请求 <code>/static</code> 路径的请求都会从配置的 <code>static_folder</code> 中读取文件并返回。</p>
@@ -2573,13 +2573,13 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> send_from_directory<span class="token punctuation">(</span>app<span class="token punctuation">.</span>static_folder<span class="token punctuation">,</span> <span class="token string">'index.html'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>就是根据请求的  <code>path</code> 来从不同的文件夹返回内容。测试路径是否要请求一个文件 =&gt; 发送相应的文件 =&gt; 否则发送 index.html。</p>
-<h2 id="实战">实战<a class="header-anchor" href="#实战"></a></h2>
+<h2 id="实战-2">实战<a class="header-anchor" href="#实战-2"></a></h2>
 <p>根据思路，我们也要捕获所有的路径:</p>
 <p>业务的关系，我这里使用一个 <code>front</code> 蓝图来 serve 静态网站，路径在 <code>app/front_api/__init__.py</code>。</p>
 <p>把静态资源放在 <code>app/react_app</code> 下：</p>
 <p><img data-src="https://i.lengthm.in/posts/serving-a-front-end-created-with-create-react-app-with-flask/app_struct.png" alt="文件夹结构"></p>
 <p>然后设置 <code>react_folder</code> 这个变量为静态资源的路径就好。</p>
-<pre class="line-numbers language-py" data-language="py"><code class="language-py"><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
 <span class="token keyword">from</span> flask <span class="token keyword">import</span> Blueprint<span class="token punctuation">,</span> send_from_directory
 
 front <span class="token operator">=</span> Blueprint<span class="token punctuation">(</span><span class="token string">"front"</span><span class="token punctuation">,</span> __name__<span class="token punctuation">,</span> url_prefix<span class="token operator">=</span><span class="token string">"/front"</span><span class="token punctuation">)</span>
@@ -2605,7 +2605,7 @@ react_folder <span class="token operator">=</span> <span class="token punctuatio
 <p>这样就会被我们的视图函数捕捉到，然后从设置的文件夹中拉取文件了。</p>
 <h3 id="设置后端-API-地址">设置后端 API 地址<a class="header-anchor" href="#设置后端-API-地址"></a></h3>
 <p>还有一个小点要注意。前端进行开发测试的时候也要请求后端，所以发请求的时候要注意根据不同开发环境来设置不同的 BASE_URL：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token constant">BASE_URL</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> <span class="token constant">BASE_URL</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">||</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'development'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token constant">BASE_URL</span> <span class="token operator">=</span> <span class="token string">'http://127.0.0.1:5000'</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
@@ -2629,7 +2629,7 @@ react_folder <span class="token operator">=</span> <span class="token punctuatio
 <p>使用了 <a href="https://github.com/isaacs/rimraf">rimraf</a> 和 <a href="https://github.com/mysticatea/cpx">cpx</a> 两个跨平台的 cli 工具包。</p>
 <p>这里还有一些其他的跨平台的 cli 工具包：<a href="https://github.com/pandawing/awesome-nodejs-cross-platform-cli">
 awesome-nodejs-cross-platform-cli</a></p>
-<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
+<h2 id="参考链接-3">参考链接<a class="header-anchor" href="#参考链接-3"></a></h2>
 <ul>
 <li><a href="https://www.jianshu.com/p/b348926fa628">React 创建项目并打包到 Flask 后端</a></li>
 <li><a href="https://stackoverflow.com/questions/44209978/serving-a-front-end-created-with-create-react-app-with-flask">Serving a front end created with create-react-app with Flask</a></li>
@@ -2845,7 +2845,7 @@ table {
 <p align="center">
 SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/system-requirements-installation-and-driver-files?view=sql-server-ver15#sql-version-compatibility">Microsoft</a>
 </p>
-<h2 id="总结">总结<a class="header-anchor" href="#总结"></a></h2>
+<h2 id="总结-2">总结<a class="header-anchor" href="#总结-2"></a></h2>
 <p><code>ODBC Driver for SQL Server</code> 的性能更好，新版本有很多优化，有新特性，2021 年做开发就要选他。</p>
 <p>不同的驱动版本的支持的数据库版本也不同。请你一定要看好自己的 SQLServer 版本，去安装对应版本的驱动，然后配置好驱动名字。</p>
 <p>还发现了一个非常棒的网站：<a href="https://www.connectionstrings.com/">ConnectionStrings</a></p>
@@ -2853,7 +2853,7 @@ SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql
 <p><a href="http://ConnectionStrings.com">ConnectionStrings.com</a> helps developers connect software to data. It’s a straight to the point reference about connection strings, a <a href="https://www.connectionstrings.com/kb/">knowledge base</a> of articles and database connectivity content and a host of <a href="https://www.connectionstrings.com/questions/">Q &amp; A forums</a> where developers help each other finding solutions.</p>
 </blockquote>
 <p><a href="http://ConnectionStrings.com">ConnectionStrings.com</a> 帮助开发人员将软件连接到数据库。它是一个关于连接字符串的直接参考、一个数据库连接内容和文章的知识库，同时也是一个问答论坛，开发人员可以在这里互相帮助寻找解决方案。</p>
-<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
+<h2 id="参考链接-4">参考链接<a class="header-anchor" href="#参考链接-4"></a></h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/39440008/differences-between-drivers-for-odbc-drivers">sql server - Differences Between Drivers for ODBC Drivers - Stack Overflow</a></li>
 <li><a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/release-notes-odbc-sql-server-windows?view=sql-server-ver15#previous-releases">Windows 上的 ODBC Driver for SQL Server 发行说明 - SQL Server | Microsoft Docs</a></li>
@@ -2939,12 +2939,12 @@ Dart 作为一个集众家之所长的语言，还是不错的，有印象的就
 <h3 id="其他">其他<a class="header-anchor" href="#其他"></a></h3>
 <p>自己也在学日语，五十音都背完了，词汇语法也在慢慢学习中。</p>
 <p>前段时间拿到了一个 Coding 的抱枕，挺开心的。</p>
-<h2 id="今年最有成就感的事情是什么？">今年最有成就感的事情是什么？<a class="header-anchor" href="#今年最有成就感的事情是什么？"></a></h2>
+<h2 id="今年最有成就感的事情是什么？-2">今年最有成就感的事情是什么？<a class="header-anchor" href="#今年最有成就感的事情是什么？-2"></a></h2>
 <ol>
 <li>能保研没保。</li>
 <li>拿了蚂蚁腾讯的校招 Offer。</li>
 </ol>
-<h2 id="看的书">看的书<a class="header-anchor" href="#看的书"></a></h2>
+<h2 id="看的书-2">看的书<a class="header-anchor" href="#看的书-2"></a></h2>
 <p>说一些很有印象的编程书吧</p>
 <ul>
 <li>JavaScript 语言精粹</li>
@@ -2955,7 +2955,7 @@ Dart 作为一个集众家之所长的语言，还是不错的，有印象的就
 </ul>
 <p>把习大大的七年知青岁月看完了。</p>
 <p>紫金陈的几部推理都很好看。</p>
-<h2 id="看的剧">看的剧<a class="header-anchor" href="#看的剧"></a></h2>
+<h2 id="看的剧-2">看的剧<a class="header-anchor" href="#看的剧-2"></a></h2>
 <p>年初的时候看的《爱情公寓 5》，印象深刻的是诸葛大力，狗哥。</p>
 <p>年中吧，又有一部小众剧《我的刺猬女孩》真的爱了，庄达菲真好看。</p>
 <p>年中跟同学去看了《八佰》</p>
@@ -2963,10 +2963,10 @@ Dart 作为一个集众家之所长的语言，还是不错的，有印象的就
 <p>《后翼弃兵》</p>
 <p>在小破站看了《信条》，《姜子牙》。</p>
 <p>最近在看《巡回检查组》，还不错。</p>
-<h2 id="去哪了">去哪了<a class="header-anchor" href="#去哪了"></a></h2>
+<h2 id="去哪了-2">去哪了<a class="header-anchor" href="#去哪了-2"></a></h2>
 <p>2020 的春节本来打算去珠海澳门玩玩的，港澳通行证都办好了，计划都写得好好的。然后因为疫情就取消了计划。</p>
 <p>不过今年的机票真便宜。</p>
-<h2 id="总的来说">总的来说<a class="header-anchor" href="#总的来说"></a></h2>
+<h2 id="总的来说-2">总的来说<a class="header-anchor" href="#总的来说-2"></a></h2>
 <p>又是在计算机上摸爬打滚的一年。</p>
 ]]></content>
       <categories>
@@ -3011,7 +3011,7 @@ gpg-logout() {
 <pre class="line-numbers language-conf" data-language="conf"><code class="language-conf">default-cache-ttl 3600
 max-cache-ttl 3600<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>单位是秒。</p>
-<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
+<h2 id="参考链接-5">参考链接<a class="header-anchor" href="#参考链接-5"></a></h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/61939216/vscode-with-ubuntu-wsl-2-never-prompts-for-gpg-passphrase-even-after-configura">vscode with ubuntu + wsl 2 never prompts for gpg passphrase even after configuration just “failed to write commit data”</a></li>
 <li><a href="https://askubuntu.com/questions/349238/how-can-i-clear-my-cached-gpg-password">How can I clear my cached gpg password?</a></li>
@@ -3033,7 +3033,7 @@ max-cache-ttl 3600<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <p>于是搜索了一下，发现其实 <code>/etc/resolv.conf</code> 只是 <code>/var/run/resolv.conf</code> 的一个软链接。</p>
 <p><img data-src="https://i.lengthm.in/uPic/2rrWP7.png" alt="soft link"></p>
 <span id="more"></span>
-<h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
+<h2 id="解决方案-2">解决方案<a class="header-anchor" href="#解决方案-2"></a></h2>
 <p>所以解决办法就很简单了：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">ln</span> -s /var/run/resolv.conf /etc/resolv.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="参考">参考<a class="header-anchor" href="#参考"></a></h2>
@@ -3056,7 +3056,7 @@ INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
 INFO  [alembic.env] No changes in schema detected.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>各种方法都尝试过了，在每个地方都试了引入了 <code>models</code> 里的内容、调整使用 flask script 等等等等…</p>
 <span id="more"></span>
-<h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
+<h2 id="解决方案-3">解决方案<a class="header-anchor" href="#解决方案-3"></a></h2>
 <p>因为我的数据库已经启动了，我的数据库和我的 <code>models</code> 内容是一致的。所以这句话不会生效…</p>
 <p>所以 migrate 最好的时机是没有建立数据库之前…</p>
 <p>然后我就删库重来了，删库之后 migrate 果然成功了。</p>
@@ -3079,7 +3079,7 @@ INFO  [alembic.env] No changes in schema detected.<span aria-hidden="true" class
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">denied: requested access to the resource is denied<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>使用 docker login 之后也不行，给镜像打的标签也是正常的，就很奇怪。</p>
 <span id="more"></span>
-<h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
+<h2 id="解决方案-4">解决方案<a class="header-anchor" href="#解决方案-4"></a></h2>
 <p>其实这也是个很神奇的问题，你会发现这篇文章有个 tag 是 Linux。</p>
 <p>因为 docker login 会把用户信息保存在当前的用户路径下，从 login 后会有一个『你是使用明文密码登录』的提示可以看出这一点。</p>
 <pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">WARNING! Your password will be stored unencrypted in /home/xxxx/.docker/config.json.
@@ -3167,7 +3167,7 @@ log-queries
 <span class="token punctuation">[</span><span class="token table class-name">static</span><span class="token punctuation">]</span>
   <span class="token punctuation">[</span><span class="token table class-name">static.'alidns-doh'</span><span class="token punctuation">]</span>
   <span class="token key property">stamp</span> <span class="token punctuation">=</span> <span class="token string">'sdns://AgAAAAAAAAAACTIyMy41LjUuNSCoF6cUD2dwqtorNi96I2e3nkHPSJH1ka3xbdOglmOVkQ5kbnMuYWxpZG5zLmNvbQovZG5zLXF1ZXJ5'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="参考">参考<a class="header-anchor" href="#参考"></a></h2>
+<h2 id="参考-2">参考<a class="header-anchor" href="#参考-2"></a></h2>
 <ul>
 <li><a href="https://page.codespaper.com/2019/dnsmasq-cloudflare-doh/">https://page.codespaper.com/2019/dnsmasq-cloudflare-doh/</a></li>
 <li><a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation-macOS">https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation-macOS</a></li>
@@ -3304,7 +3304,7 @@ rm cron.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <p>这个漏洞很早之前就看过相关新闻，但没联想到会发生在自己身上…
 看记录，6.4 号就有人注册了新的 yapi 帐号，止血太晚～</p>
 <p>还好是执行在容器里的服务，没有造成太大的损失。</p>
-<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
+<h2 id="参考链接-6">参考链接<a class="header-anchor" href="#参考链接-6"></a></h2>
 <ul>
 <li><a href="https://github.com/fjc0k/docker-YApi">https://github.com/fjc0k/docker-YApi</a></li>
 <li><a href="https://paper.seebug.org/1639/">https://paper.seebug.org/1639/</a></li>
@@ -3326,7 +3326,7 @@ rm cron.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <p><img data-src="https://i.lengthm.in/uimages/1629526988050-1629526988031-afaa3675ccc17c8f48c136af73aa4d2f7b8c2ba4.png" alt="弹框"></p>
 <p>中文提示的应该是：操作已超时。</p>
 <span id="more"></span>
-<h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
+<h2 id="解决方案-5">解决方案<a class="header-anchor" href="#解决方案-5"></a></h2>
 <p>可能是因为在 Windows 的更新中 Docker 还没退出？然后计算机重新启动后 Docker 检测到某个文件还在，但发现一直请求都请求不到。</p>
 <p>删除 Docker 的几个数据文件就可以了:</p>
 <ul>
@@ -3334,7 +3334,7 @@ rm cron.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <li>C:\Users\[USER]\AppData\Roaming\Docker</li>
 <li>C:\Users\[USER]\AppData\Roaming\Docker Desktop</li>
 </ul>
-<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
+<h2 id="参考链接-7">参考链接<a class="header-anchor" href="#参考链接-7"></a></h2>
 <ul>
 <li><a href="https://forums.docker.com/t/docker-failed-to-initialize/111341/8">Docker failed to initialize</a></li>
 <li><a href="https://forums.docker.com/t/docker-failed-to-initialize-operation-timed-out/111321/3">Docker failed to initialize.Operation timed out</a></li>

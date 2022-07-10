@@ -546,6 +546,9 @@ pre[class*="language-"].line-numbers > code {
 pre:hover .copy-btn {
   opacity: 1;
 }
+figure.highlight .table-container {
+  position: relative;
+}
 .copy-btn {
   color: #333;
   cursor: pointer;
@@ -644,6 +647,9 @@ figure.highlight .gutter pre {
 figure.highlight .code pre {
   padding-left: 10px;
   width: 100%;
+}
+figure.highlight .marked {
+  background: rgba(0,0,0,0.3);
 }
 pre .caption,
 pre figcaption {
@@ -1062,6 +1068,7 @@ pre code {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 5;
 }
 @media (max-width: 413px) {
   .post-body .tabs ul.nav-tabs,
@@ -1250,7 +1257,7 @@ pre code {
     display: none;
   }
 }
-.header {
+header.header {
   background: var(--content-bg-color);
 }
 .header-inner {
@@ -1272,7 +1279,7 @@ pre code {
   flex-shrink: 0;
   padding: 0 10px;
 }
-.use-motion .header,
+.use-motion header.header,
 .use-motion .site-brand-container .toggle {
   opacity: 0;
 }
@@ -2080,7 +2087,7 @@ pre code {
   font-size: 0.875em;
   font-weight: bold;
   line-height: 1;
-  margin: -20px auto 15px;
+  margin: -15px auto 15px;
   text-align: center;
 }
 .post-body iframe,
@@ -2789,7 +2796,12 @@ hr {
 }
 @media (max-width: 767px) {
   .site-nav {
-    padding: 10px 10px 0;
+    padding: 0 10px 0;
+  }
+}
+@media (max-width: 767px) {
+  .main-menu {
+    padding-top: 10px;
   }
 }
 .menu {
@@ -2842,7 +2854,7 @@ hr {
 .posts-expand .post-eof {
   display: none;
 }
-.posts-expand .post-block:not(:first-child) {
+.posts-expand .post-block:not(:first-of-type) {
   margin-top: 120px;
 }
 .posts-expand .post-header {
@@ -2955,7 +2967,7 @@ hr {
   transition: all 0.2s ease-in-out;
 }
 .links-of-author a::before {
-  background: #287009;
+  background: #f7ff2e;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
