@@ -254,9 +254,7 @@ theme_config:
     rotated: false
 
   social:
-    E-Mail: mailto:lengthmin@gmail.com || fa fa-envelope
     GitHub: https://github.com/bytemain || fab fa-github
-    Telegram: https://telegram.me/lengthmin || fab fa-telegram
     RSS: /rss.xml || fas fa-rss
 
   social_icons:
