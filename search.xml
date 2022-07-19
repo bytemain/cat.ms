@@ -1817,7 +1817,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>先说好啊，我是写 React 的，有什么出错的地方请多指正。</p>
 <h2 id="获取-Angular-实例">获取 Angular 实例<a class="header-anchor" href="#获取-Angular-实例"></a></h2>
 <p>Google 许久，发现了下面这个 <a href="https://gist.github.com/mgol/7893061">gist</a>, 可以直接拿到 Angular 的实例。</p>
-<script src="https://gist.github.com/mgol/7893061.js" data-pjax=""></script>
+<script src="https://gist.github.com/mgol/7893061.js"></script>
 <p>解释一下代码：因为 angular 会把自己注入到 <code>window.angular</code>，所以可以调用 <code>angular.element</code> 方法生成 Angular 对象。</p>
 <p>按照 gist 里的提示执行代码片段。</p>
 <p>能拿到 Angular 的实例就好办了，来调试分析网页的数据流。在 <code>rootScope</code> 上 <code>watch</code> 后，拿到对应的 <code>scope</code> 进行修改。</p>
@@ -1871,6 +1871,8 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后获取我们需要的地方的 scope，直接修改即可。每次页面修改后 <code>watch</code> 函数都会被执行。</p>
+<p>完整 DEMO 可参考：</p>
+<script src="https://gist.github.com/bytemain/10576db26d3addbdcbac2397f4b60f24.js"></script>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
