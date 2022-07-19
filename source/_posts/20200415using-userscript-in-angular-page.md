@@ -1,15 +1,16 @@
 ---
 title: 在 Angular 网页中使用 UserScript
-date: 2020-04-15 09:49:01
+date: '2020-04-15 09:49:01'
 categories:
-    - Web
+  - Web
 tags:
-    - Web
-    - UserScript
-    - Angular
+  - Web
+  - UserScript
+  - Angular
 comments: true
 toc: true
 permalink: posts/using-userscript-in-angular-page/
+updated: '2022-07-19 14:38:55'
 ---
 
 作为一个前端开发者（，偶尔会写点用户脚本[^1]增强自己的浏览体验。
@@ -28,7 +29,7 @@ so how to hack(actually: modify) an angular page?
 
 Google 许久，发现了下面这个 [gist](https://gist.github.com/mgol/7893061), 可以直接拿到 Angular 的实例。
 
-<script src="https://gist.github.com/mgol/7893061.js" data-pjax></script>
+<script src="https://gist.github.com/mgol/7893061.js"></script>
 
 解释一下代码：
 因为 angular 会把自己注入到 `window.angular`，所以可以调用 `angular.element` 方法生成 Angular 对象。
@@ -107,3 +108,7 @@ function injectScript(){
 
 然后获取我们需要的地方的 scope，直接修改即可。
 每次页面修改后 `watch` 函数都会被执行。
+
+完整 DEMO 可参考：
+
+<script src="https://gist.github.com/bytemain/10576db26d3addbdcbac2397f4b60f24.js"></script>
