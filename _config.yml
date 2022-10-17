@@ -513,7 +513,7 @@ theme_config:
     quicklink: //${cdnUrl}/quicklink/2.3.0/dist/quicklink.umd.js
     disqusjs_js: //${cdnUrl}/disqusjs/3.0.2/dist/browser/disqusjs.es2015.umd.min.js
     disqusjs_css: //${cdnUrl}/disqusjs/3.0.2/dist/browser/styles/disqusjs.css
-
+    mermaid: //${cdnUrl}/mermaid/9.1.7/dist/mermaid.min.js
   # Use velocity to animate everything.
   # For more information: http://velocityjs.org
   motion:
