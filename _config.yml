@@ -392,7 +392,7 @@ theme_config:
 
   # For more information: https://github.com/CodeByZach/pace
   pace:
-    enable: true
+    enable: false
     # All available colors:
     # black | blue | green | orange | pink | purple | red | silver | white | yellow
     color: blue
