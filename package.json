@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "6.2.0"
+    "version": "6.3.0"
   },
   "scripts": {
     "prepare": "husky install",
@@ -15,7 +15,10 @@
     "updated": "tsx ./helper/article-updated.ts"
   },
   "dependencies": {
+    "@next-theme/plugins": "^8.13.1",
     "hexo": "^6.3.0",
+    "hexo-all-minifier": "^0.5.7",
+    "hexo-filter-optimize": "^0.3.1",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-feed": "^3.0.0",

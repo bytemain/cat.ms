@@ -100,6 +100,37 @@ symbols_count_time:
   wpm: 275
   suffix: "mins."
 
+js_concator:
+  enable: true
+  bundle_path: '/js/bundle.js'
+  front: false
+  silent: false
+html_minifier:
+  enable: true
+  ignore_error: false
+  silent: false
+  exclude:
+css_minifier:
+  enable: true
+  silent: false
+  exclude: 
+    - '*.min.css'
+js_minifier:
+  enable: true
+  mangle: true
+  silent: false
+  output:
+  compress:
+  exclude: 
+    - '*.min.js'
+image_minifier:
+  enable: false
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+  silent: false
 markdown:
   preset: "default"
   render:
@@ -137,8 +168,10 @@ theme_config:
   cache:
     enable: false
   minify: true
-  darkmode: false
-
+  darkmode: true
+  body_scrollbar:
+    # Place the scrollbar over the content.
+    overlay: true
   custom_file_path:
     head: data/head.njk
     # header: data/header.njk
@@ -526,5 +559,5 @@ theme_config:
       family:
 
   vendors:
-    _internal: lib
+    internal: local
     plugins: jsdelivr
