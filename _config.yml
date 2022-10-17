@@ -169,9 +169,6 @@ theme_config:
     enable: false
   minify: true
   darkmode: true
-  body_scrollbar:
-    # Place the scrollbar over the content.
-    overlay: true
   custom_file_path:
     head: data/head.njk
     # header: data/header.njk
@@ -447,7 +444,7 @@ theme_config:
     # Unescape html strings to the readable one.
     unescape: true
     # Preload the search data when the page loads.
-    preload: true
+    preload: false
 
   # Tabs tag
   tabs:
