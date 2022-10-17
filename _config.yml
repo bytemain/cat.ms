@@ -505,6 +505,15 @@ theme_config:
   vendors:
     internal: jsdelivr
     plugins: jsdelivr
+    anime: //${cdnUrl}/animejs/3.2.1/lib/anime.min.js
+    fontawesome: //${cdnUrl}/fortawesome/fontawesome-free/6.2.0/css/all.min.css
+    mathjax: //${cdnUrl}/mathjax/3.2.2/es5/tex-mml-chtml.js
+    mediumzoom: //${cdnUrl}/mathjax/1.0.6/dist/medium-zoom.min.js
+    lazyload: //${cdnUrl}/lozad/1.16.0/dist/lozad.min.js
+    quicklink: //${cdnUrl}/quicklink/2.3.0/dist/quicklink.umd.js
+    disqusjs_js: //${cdnUrl}/disqusjs/3.0.2/dist/browser/disqusjs.es2015.umd.min.js
+    disqusjs_css: //${cdnUrl}/disqusjs/3.0.2/dist/browser/styles/disqusjs.css
+
   # Use velocity to animate everything.
   # For more information: http://velocityjs.org
   motion:
