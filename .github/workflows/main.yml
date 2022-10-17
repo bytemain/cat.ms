@@ -1,8 +1,8 @@
-name: deploy-hexo
+name: deploy-blog
 
 on:
   push:
-    branches: [hexo]
+    branches: [main]
     paths:
       - data/**/*
       - helper/**/*
