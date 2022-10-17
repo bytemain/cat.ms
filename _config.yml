@@ -99,7 +99,6 @@ symbols_count_time:
   awl: 4
   wpm: 275
   suffix: 'mins.'
-
 js_concator:
   enable: true
   bundle_path: '/js/bundle.js'
@@ -168,7 +167,7 @@ theme_config:
   cache:
     enable: false
   minify: true
-  darkmode: true
+  darkmode: false
   custom_file_path:
     head: data/head.njk
     # header: data/header.njk
