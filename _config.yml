@@ -505,7 +505,7 @@ theme_config:
   vendors:
     internal: custom
     plugins: custom
-    custom_cdn_url: https://cdn.staticfile.org/${cdnjs_name}/${version}/${cdnjs_file}
+    custom_cdn_url: https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/${cdnjs_name}/${version}/${cdnjs_file}
 
   # Use velocity to animate everything.
   # For more information: http://velocityjs.org
