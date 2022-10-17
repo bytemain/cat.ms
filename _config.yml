@@ -322,7 +322,7 @@ theme_config:
     mobile: justify
 
   # Reduce padding / margin indents on devices with narrow width.
-  mobile_layout_economy: false
+  mobile_layout_economy: true
 
   # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
   android_chrome_color: "#222"
@@ -393,7 +393,7 @@ theme_config:
 
   lazyload: true
 
-  pangu: true
+  pangu: false
 
   quicklink:
     enable: true
@@ -419,10 +419,6 @@ theme_config:
     api: https://disqus.skk.moe/disqus/
     apikey: Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR
     shortname: hexo-1
-
-  cfga:
-    tracking_id: UA-144727481-1
-    localhost_ignored: true
 
   # Show Views / Visitors of the website / page with busuanzi.
   # Get more information on http://ibruce.info/2015/04/04/busuanzi
