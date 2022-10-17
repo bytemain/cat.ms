@@ -15,7 +15,6 @@
     "updated": "tsx ./helper/article-updated.ts"
   },
   "dependencies": {
-    "@next-theme/plugins": "^8.13.1",
     "hexo": "^6.3.0",
     "hexo-all-minifier": "^0.5.7",
     "hexo-filter-optimize": "^0.3.1",
