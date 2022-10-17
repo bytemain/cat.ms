@@ -9,7 +9,7 @@ timezone: Asia/Shanghai
 meta_generator: true
 updated_option: "date"
 
-url: https://bytem.io
+url: https://cat.ms
 root: /
 permalink: posts/:title/
 permalink_defaults:
