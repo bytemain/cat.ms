@@ -1,5 +1,5 @@
-const { transformFactory, pad } = require("./utils.js");
-const execa = require("execa");
+const { transformFactory, pad } = require('./utils.js');
+const execa = require('execa');
 
 const year = pad(new Date().getFullYear());
 const month = pad(new Date().getMonth() + 1);
@@ -8,21 +8,21 @@ const day = pad(new Date().getDate());
 let prefix = `${year}${month}${day}`;
 const args = process.argv.slice(2);
 
-let type = "post";
+let type = 'post';
 let title = args[0];
 if (args.length !== 1) {
   type = args[0];
   title = args[1];
 }
 
-if (type === "d") {
-  type = "draft";
+if (type === 'd') {
+  type = 'draft';
 }
-if (type === "p") {
-  type = "page";
+if (type === 'p') {
+  type = 'page';
 }
 
-const typeArray = ["post", "page", "draft"];
+const typeArray = ['post', 'page', 'draft'];
 
 if (!typeArray.includes(type)) {
   console.error(`${type} is not valid type.`);
@@ -34,14 +34,14 @@ console.log(`title:`, title);
 
 try {
   let exec;
-  if (type !== "page") {
-    if (title[0] >= "0" && title[0] <= "9") {
-      prefix = prefix + "-";
+  if (type !== 'page') {
+    if (title[0] >= '0' && title[0] <= '9') {
+      prefix = prefix + '-';
     }
     let slug = `${prefix}${title}`;
-    exec = execa("yarn", ["hexo", "new", type, title, "-s", slug]);
+    exec = execa('yarn', ['hexo', 'new', type, title, '-s', slug]);
   } else {
-    exec = execa("yarn", ["hexo", "new", "page", title]);
+    exec = execa('yarn', ['hexo', 'new', 'page', title]);
   }
   exec.stdout.pipe(transformFactory()).pipe(process.stdout);
   exec.stderr.pipe(transformFactory()).pipe(process.stderr);

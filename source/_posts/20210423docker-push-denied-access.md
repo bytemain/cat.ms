@@ -6,8 +6,8 @@ permalink: posts/docker-push-denied-access/
 date: 2021-04-23 18:11:55
 categories: Docker
 tags:
-- Docker
-- Linux
+  - Docker
+  - Linux
 ---
 
 在 Ubuntu 上使用 docker push 的时候一直报 access denied:

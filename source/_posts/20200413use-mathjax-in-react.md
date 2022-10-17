@@ -1,10 +1,10 @@
 ---
 title: React 项目中动态加载 Mathjax
 date: 2020-04-13 15:35:24
-categories: 
-- React
+categories:
+  - React
 tags:
-- Web
+  - Web
 comments: true
 toc: true
 permalink: posts/use-mathjax-in-react/
@@ -43,11 +43,13 @@ export const loadJS = (url: string) =>
 在需要使用的地方：
 
 ```ts
-loadJS(url).then(() => {
-  // do something
-}).catch(() => {
-  // do something
-});
+loadJS(url)
+  .then(() => {
+    // do something
+  })
+  .catch(() => {
+    // do something
+  });
 ```
 
 ## mathjax@2.x 版本
@@ -106,7 +108,7 @@ showMathjax = () => {
 设置了行内公式用 `$...$` 包裹，多行公式用 `$$...$$` 来包裹，对于什么什么标签内的则不渲染。  
 然后就是设置好几种模式下渲染的表现怎么样，上面我们加载的 js 时候后面有一个 query `?config=TeX-AMS_CHTML`，说明我们加载的是 CHTML 的配置，各种配置显示效果不同。参见 <https://docs.mathjax.org/en/v2.7-latest/config-files.html>
 
-`Mathjax` 加载好之后就会渲染页面，但是对于单页面应用来说， `Mathjax` 并不会在页面 DOM 更新的时候重新渲染，我们需要使用 `MathJax.Hub.Queue(['Typeset', MathJax.Hub, ReactDOM.findDOMNode(this)]);` 来让  `Mathjax` 手动渲染 DOM。添加在 `componentDidUpdate` 中即可。
+`Mathjax` 加载好之后就会渲染页面，但是对于单页面应用来说， `Mathjax` 并不会在页面 DOM 更新的时候重新渲染，我们需要使用 `MathJax.Hub.Queue(['Typeset', MathJax.Hub, ReactDOM.findDOMNode(this)]);` 来让 `Mathjax` 手动渲染 DOM。添加在 `componentDidUpdate` 中即可。
 
 ## mathjax@3 版本
 

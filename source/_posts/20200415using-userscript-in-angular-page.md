@@ -60,49 +60,57 @@ Google 许久，发现了下面这个 [gist](https://gist.github.com/mgol/789306
 
 ```js
 var retryCount = -1,
-    maxRetry = 5,
-    timeout = 1000,
-    timer;
-(function initScript () {
-    window.clearTimeout(timer)
-    if (!window.angular) {
-        retryCount++;
-        if (retryCount < maxRetry) {
-            timer = setTimeout(initScript, timeout)
-        }
-        return;
+  maxRetry = 5,
+  timeout = 1000,
+  timer;
+(function initScript() {
+  window.clearTimeout(timer);
+  if (!window.angular) {
+    retryCount++;
+    if (retryCount < maxRetry) {
+      timer = setTimeout(initScript, timeout);
     }
-    setTimeout(injectScript, 1000);
+    return;
+  }
+  setTimeout(injectScript, 1000);
 })();
 ```
 
 阻塞等待 angular 加载成功即可。然后执行 `injectScript` 执行我们自己的脚本。
 
 ```js
-function injectScript(){
-    var ngAppElem = angular.element(document.querySelector('[ng-app]') || document);
-    $rootScope = ngAppElem.scope();
-    $rootScope.$watch(function() {
-      // do something.
-    });
+function injectScript() {
+  var ngAppElem = angular.element(
+    document.querySelector('[ng-app]') || document
+  );
+  $rootScope = ngAppElem.scope();
+  $rootScope.$watch(function () {
+    // do something.
+  });
 }
 ```
 
 我们在 `rootScope` 上执行 `watch`，这样也不会因为切换页面而丢失 `watch`。
 
 ```js
-function injectScript(){
-    var ngAppElem = angular.element(document.querySelector('[ng-app]') || document);
-    $rootScope = ngAppElem.scope();
-    $rootScope.$watch(function() {
-        var elem = angular.element(document.querySelector("#dashboardmainpart > div > div.EventBottomChartsContainer > div.EventDetailContainer > div > ul > li:nth-child(3)"));
-        var s1 = elem.isolateScope() || elem.scope();
-        if (s1) {
-          s1.disabled = false;
-          return s1.disabled;
-        }
-        return s1;
-    });
+function injectScript() {
+  var ngAppElem = angular.element(
+    document.querySelector('[ng-app]') || document
+  );
+  $rootScope = ngAppElem.scope();
+  $rootScope.$watch(function () {
+    var elem = angular.element(
+      document.querySelector(
+        '#dashboardmainpart > div > div.EventBottomChartsContainer > div.EventDetailContainer > div > ul > li:nth-child(3)'
+      )
+    );
+    var s1 = elem.isolateScope() || elem.scope();
+    if (s1) {
+      s1.disabled = false;
+      return s1.disabled;
+    }
+    return s1;
+  });
 }
 ```
 

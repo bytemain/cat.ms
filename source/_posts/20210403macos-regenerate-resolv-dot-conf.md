@@ -27,4 +27,4 @@ sudo ln -s /var/run/resolv.conf /etc/resolv.conf
 ## 参考
 
 1. [How to force MacOS to regenerate /etc/resolv.conf file?
-](https://apple.stackexchange.com/questions/264165/how-to-force-macos-to-regenerate-etc-resolv-conf-file)
+   ](https://apple.stackexchange.com/questions/264165/how-to-force-macos-to-regenerate-etc-resolv-conf-file)

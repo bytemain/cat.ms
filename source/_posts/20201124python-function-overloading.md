@@ -1,20 +1,20 @@
 ---
-title: "[译] 在 Python 中实现函数重载"
+title: '[译] 在 Python 中实现函数重载'
 comments: true
 toc: true
 permalink: posts/function-overloading-in-python/
 date: 2020-11-24 16:42:00
 updated: 2020-11-24 16:42:00
-categories: 
-- Python
-tags: 
-- Python
-- 翻译
+categories:
+  - Python
+tags:
+  - Python
+  - 翻译
 ---
 
 译自：<https://arpitbhayani.me/blogs/function-overloading>  
 作者：[@arpit_bhayani](https://twitter.com/arpit_bhayani)  
-翻译已获原作者授权  
+翻译已获原作者授权
 
 ---
 
@@ -213,7 +213,7 @@ def area(l, b):
 
 ```python
 def overload(fn):
-  """overload 是我们用来包装函数的装饰器，会返回一个 
+  """overload 是我们用来包装函数的装饰器，会返回一个
   能被调用的 `Function` 实例。
   """
   return Namespace.get_instance().register(fn)
@@ -293,8 +293,7 @@ Python 默认不支持函数重载，但通过简单的语言结构我们整出�
 
 你也可以通过上述内容自己整一个更整洁、更干净、更高效的实现，所以请随意实现一个，并发推给我 [@arpit_bhayani](https://twitter.com/arpit_bhayani)，我会很高兴学习你的实现。
 
->   
 > 从 Python 3.4 开始，可以使用 [functools.singledispatch](https://docs.python.org/3/library/functools.html#functools.singledispatch) 实现函数的重载。  
 > 从 Python 3.8 开始，可以使用 [functools.singledispatchmethod](https://docs.python.org/3/library/functools.html#functools.singledispatchmethod) 实现实例方法的重载。
-> 
->   感谢 [Harry Percival](https://twitter.com/hjwp) 的更正
+>
+> 感谢 [Harry Percival](https://twitter.com/hjwp) 的更正

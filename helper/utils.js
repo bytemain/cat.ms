@@ -1,14 +1,14 @@
-const { exec } = require("child_process");
-var iconv = require("iconv-lite");
-const chardet = require("chardet");
-const { Transform } = require("stream");
+const { exec } = require('child_process');
+var iconv = require('iconv-lite');
+const chardet = require('chardet');
+const { Transform } = require('stream');
 
-var binaryEncoding = "binary";
+var binaryEncoding = 'binary';
 
 function pad(num, n = 2) {
   var len = num.toString().length;
   while (len < n) {
-    num = "0" + num;
+    num = '0' + num;
     len++;
   }
   return num;
@@ -16,8 +16,8 @@ function pad(num, n = 2) {
 
 const getEncoding = (data) => {
   let encoding = chardet.detect(data);
-  if (encoding != "UTF-8") {
-    return "GB18030";
+  if (encoding != 'UTF-8') {
+    return 'GB18030';
   }
   return encoding;
 };

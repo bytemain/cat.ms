@@ -4,7 +4,7 @@ comments: true
 toc: true
 date: 2016-12-02 22:21:26
 updated: 2020-12-03 14:38:00
-categories: [ 双拼 ]
+categories: [双拼]
 tags:
   - 双拼
   - 效率
@@ -35,7 +35,6 @@ Hello everybody,long time no see.
 
 > 双拼是一种建立在拼音输入法基础上的输入方法，可视为全拼的一种改进，它通过将汉语拼音中每个含多个字母的声母或韵母各自映射到某个按键上，使得每个音都可以用最多两次按键打出，极大地提高了拼音输入法的输入速度。(此处说的只是拼音输入法...)
 
-
 第一次知道双拼是看了少数派的一篇文章 [做少数派中的少数派：双拼输入快速入门][1]，里面推荐的是用**小鹤双拼**，就一直在用 (其实也就学习了这么一种...)。很多输入法都支持小鹤双拼的。
 
 ## 学习使我快乐
@@ -46,12 +45,11 @@ Hello everybody,long time no see.
 
 {% blockquote %}
 {% pinyin %}
-快[Kuai] 迎[ing]  两[Liang]  王[uang]  软[Ruan]  草[Cao] 走[Zou]， 特[T] 约[ue] 秋[Qiu] 云[Yun] 为[Wei] 见[Jan] 面[Mian]。
+快[Kuai] 迎[ing] 两[Liang] 王[uang] 软[Ruan] 草[Cao] 走[Zou]， 特[T] 约[ue] 秋[Qiu] 云[Yun] 为[Wei] 见[Jan] 面[Mian]。
 
-夏[Xia]  娃[ua]  怂[Song]  恿[iong]  书[shU]  痴[chI] 追[zhVi]， 更[Geng] 待[Dai] 滨[Bin] 鸟[Niao] 分[Fen] 撇[Pie] 航[Hang]？
+夏[Xia] 娃[ua] 怂[Song] 恿[iong] 书[shU] 痴[chI] 追[zhVi]， 更[Geng] 待[Dai] 滨[Bin] 鸟[Niao] 分[Fen] 撇[Pie] 航[Hang]？
 {% endpinyin %}
 {% endblockquote %}
-
 
 把这首小诗结合上面的键位图看一下，就能看懂了。
 比如说`Kuai ing`就是`K`这个键作韵母时对应两个韵母`uai`和`ing`。

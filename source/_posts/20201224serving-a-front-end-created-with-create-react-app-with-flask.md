@@ -5,7 +5,7 @@ toc: true
 permalink: posts/serving-a-front-end-created-with-create-react-app-with-flask/
 date: 2020-12-24 10:56:58
 categories: Flask
-tags: 
+tags:
   - Flask
   - React
 ---
@@ -32,7 +32,7 @@ create-react-app 会将打包的结果放在项目根目录中的 build 文件�
 create-react-app 打包的静态资源都放在了 `static` 路径下。比如打包后 `index.html` 中的一个链接：
 
 ```html index.html
-<link href="/static/css/2.0a6fdfd6.chunk.css" rel="stylesheet">
+<link href="/static/css/2.0a6fdfd6.chunk.css" rel="stylesheet" />
 ```
 
 浏览器解析后，会发出一个请求 `GET /static/css/2.0a6fdfd6.chunk.css`。
@@ -42,11 +42,11 @@ create-react-app 打包的静态资源都放在了 `static` 路径下。比如�
 因为 Flask 本身就有 `static_folder` 的概念，所有请求 `/static` 路径的请求都会从配置的 `static_folder` 中读取文件并返回。
 
 {% mermaid graph LR %}
-  A(Browser) -->|GET /index.html| app(Flask app)
-  A(Browser) -->|GET /static/css/style.css| app(Flask app)
-  app --> C{endpoints}
-  C -->|/index.html| view[Handled by `View` Function]
-  C -->|/static/*| static[Load files from `static_folder`]
+A(Browser) -->|GET /index.html| app(Flask app)
+A(Browser) -->|GET /static/css/style.css| app(Flask app)
+app --> C{endpoints}
+C -->|/index.html| view[Handled by `View` Function]
+C -->|/static/\*| static[Load files from `static_folder`]
 {% endmermaid %}
 
 index.html 中请求的资源都会从 `static_folder` 中拉取，那你说把打包后的文件直接放在 `static_folder` 不就好了？
@@ -81,7 +81,7 @@ def serve(path):
         return send_from_directory(app.static_folder, 'index.html')
 ```
 
-就是根据请求的  `path` 来从不同的文件夹返回内容。
+就是根据请求的 `path` 来从不同的文件夹返回内容。
 测试路径是否要请求一个文件 => 发送相应的文件 => 否则发送 index.html。
 
 ## 实战
@@ -177,6 +177,6 @@ awesome-nodejs-cross-platform-cli](https://github.com/pandawing/awesome-nodejs-c
 
 ## 参考链接
 
-- [React 创建项目并打包到Flask 后端](https://www.jianshu.com/p/b348926fa628)
+- [React 创建项目并打包到 Flask 后端](https://www.jianshu.com/p/b348926fa628)
 - [Serving a front end created with create-react-app with Flask](https://stackoverflow.com/questions/44209978/serving-a-front-end-created-with-create-react-app-with-flask)
 - [How To Create a React + Flask Project](https://blog.miguelgrinberg.com/post/how-to-create-a-react--flask-project)

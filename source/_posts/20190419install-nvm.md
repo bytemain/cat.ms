@@ -5,11 +5,11 @@ toc: true
 permalink: posts/install-nvm/
 date: 2019-04-19 17:17:33
 updated: 2021-01-07 19:33:00
-categories: 
-    - Nodejs
+categories:
+  - Nodejs
 tags:
-    - Nodejs
-    - nvm
+  - Nodejs
+  - nvm
 ---
 
 在网上看到 nvm 这个神器之后，最近装 Nodejs 都是用 nvm 来装了。
@@ -22,13 +22,14 @@ nvm 是 nodejs 的一个版本控制工具，也就是 "Node Version Manager" �
 2019-06-29 更新：Windows 安装 nvm
 
 <!-- more -->
+
 ## Linux 安装 nvm
 
 ### 安装和升级 nvm
 
-要安装或升级 nvm, 可以使用官方给的一个脚本。  
+要安装或升级 nvm, 可以使用官方给的一个脚本。
 
-可以使用curl：
+可以使用 curl：
 
 ```shell
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
@@ -70,7 +71,7 @@ git config --global --unset http.https://github.com.proxy
 
 使用命令行的配置也会修改个人目录下的 `.gitconfig` 文件。 Windows/Linux 都是这样。
 
-也就是说，可以通过修改 `~/.gitconfig` 达到一样的效果：  
+也就是说，可以通过修改 `~/.gitconfig` 达到一样的效果：
 
 ```ini .gitconfig
 [http "https://github.com"]

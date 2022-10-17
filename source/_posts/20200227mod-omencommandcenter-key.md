@@ -2,10 +2,10 @@
 title: 暗影精灵修改 OMEN 键
 date: 2020-02-27 00:00:57
 updated: 2020-10-31 21:55:00
-categories: 
-    - Windows
+categories:
+  - Windows
 tags:
-    - tricks
+  - tricks
 comments: true
 toc: true
 permalink: posts/mod-omencommandcenter-key/
@@ -13,7 +13,7 @@ permalink: posts/mod-omencommandcenter-key/
 
 暗影精灵的键盘上有一个自带的 OEM 键，按了之后可以打开 OMEN Command Center, 一个可以对笔记本的性能，网络管理的工具。
 
-但是我对这个控制中心需求很小，所以我直接把软件卸载了(●´ω｀●)。
+但是我对这个控制中心需求很小，所以我直接把软件卸载了(●´ω ｀ ●)。
 
 所以，怎么去利用这个键呢？
 
@@ -25,7 +25,7 @@ permalink: posts/mod-omencommandcenter-key/
 
 参考惠普官方文档：<https://support.hp.com/cn-zh/document/c01198500>
 
-对于我的暗影精灵3，装一个惠普的 SystemEvent 即可：
+对于我的暗影精灵 3，装一个惠普的 SystemEvent 即可：
 
 - <https://www.microsoft.com/store/productId/9P4W8RFN9M2T>
 

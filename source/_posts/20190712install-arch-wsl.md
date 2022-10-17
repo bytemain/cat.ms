@@ -5,12 +5,12 @@ toc: true
 permalink: posts/install-arch-wsl/
 date: 2019-07-12 09:42:25
 updated: 2020-05-03 22:12:00
-categories: 
-    - WSL
+categories:
+  - WSL
 tags:
-    - Arch Linux
-    - Linux
-    - ZSH
+  - Arch Linux
+  - Linux
+  - ZSH
 ---
 
 用 windows 写代码最想吐槽的就是 cmd 了！WSL 真的就是吾等救星。  
@@ -20,15 +20,16 @@ Arch WSL 真的是秒开哦~
 [![yuk7/ArchWSL](https://gh-card.dev/repos/yuk7/ArchWSL.svg)](https://github.com/yuk7/ArchWSL)
 
 <!-- more -->
+
 ## 下载安装 Arch WSL
 
 这里是作者的安装教程：<https://github.com/yuk7/ArchWSL/wiki>
 
-我选择的是传统方式安装（不使用AppX方式）：
+我选择的是传统方式安装（不使用 AppX 方式）：
 
 1. 在 [Release](https://github.com/yuk7/ArchWSL/releases) 下载最新版的 `Arch.zip`
 2. 解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 `Program Files` 等目录中。
-3. 双击解压好的 `Arch.exe` 进行安装，这个 **.exe 的名字** 就是要创建的 **WSL实例的名字**，改不同的名字就能创建多个 Arch WSL。
+3. 双击解压好的 `Arch.exe` 进行安装，这个 **.exe 的名字** 就是要创建的 **WSL 实例的名字**，改不同的名字就能创建多个 Arch WSL。
 
 安装好之后，进行配置。
 
@@ -39,7 +40,7 @@ Arch WSL 真的是秒开哦~
 编辑 `/etc/pacman.d/mirrorlist`，里面有注释了的 `China` 的镜像，选一个你喜欢的取消注释就可以了。
 然后更新软件包缓存，执行： `pacman -Syyu`
 
-其他跟镜像有关的可以看这里：  
+其他跟镜像有关的可以看这里：
 
 <https://wiki.archlinux.org/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>
 
@@ -69,7 +70,7 @@ pacman -Syy && pacman -S archlinuxcn-keyring
 
 ### 安装 AUR 助手 yay
 
-> Arch User Repository（常被称作 AUR），是一个为 Arch 用户而生的社区驱动软件仓库。Debian/Ubuntu 用户的对应类比是 PPA。  
+> Arch User Repository（常被称作 AUR），是一个为 Arch 用户而生的社区驱动软件仓库。Debian/Ubuntu 用户的对应类比是 PPA。
 >
 > AUR 包含了不直接被 Arch Linux 官方所背书的软件。如果有人想在 Arch 上发布软件或者包，它可以通过这个社区仓库提供。这让最终用户们可以使用到比默认仓库里更多的软件。
 >
@@ -171,33 +172,33 @@ Arch.exe config --default-user artin
 
 ### pacman 使用方法
 
-> ArchLinux必备命令记录(manjaro) - weixin_42408100的博客 - CSDN博客
+> ArchLinux 必备命令记录(manjaro) - weixin_42408100 的博客 - CSDN 博客
 > <https://blog.csdn.net/weixin_42408100/article/details/82526087>
 
 | 常用命令                   | 解释                                             |
-| -------------------------- | ------------------------------------------------ |
-| pacman -Sy abc             | 和源同步后安装名为abc的包                        |
-| pacman -S abc              | 从本地数据库中得到abc的信息，下载安装abc包       |
-| pacman -Sf abc             | 强制安装包abc                                    |
-| pacman -Ss abc             | 搜索有关abc信息的包                              |
-| pacman -Si abc             | 从数据库中搜索包abc的信息                        |
+| -------------------------- | ------------------------------------------------ | ---------------------- |
+| pacman -Sy abc             | 和源同步后安装名为 abc 的包                      |
+| pacman -S abc              | 从本地数据库中得到 abc 的信息，下载安装 abc 包   |
+| pacman -Sf abc             | 强制安装包 abc                                   |
+| pacman -Ss abc             | 搜索有关 abc 信息的包                            |
+| pacman -Si abc             | 从数据库中搜索包 abc 的信息                      |
 | pacman -Syu                | 同步源，并更新系统                               |
 | pacman -Sy                 | 仅同步源                                         |
-| pacman -R abc              | 删除abc包                                        |
-| pacman -Rc abc             | 删除abc包和依赖abc的包                           |
+| pacman -R abc              | 删除 abc 包                                      |
+| pacman -Rc abc             | 删除 abc 包和依赖 abc 的包                       |
 | pacman -Rsn abc            | 移除包所有不需要的依赖包并删除其配置文件         |
-| pacman -Sc                 | 清理/var/cache/pacman/pkg目录下的旧包            |
+| pacman -Sc                 | 清理/var/cache/pacman/pkg 目录下的旧包           |
 | pacman -Scc                | 清除所有下载的包和数据库                         |
-| pacman -Sd abc             | 忽略依赖性问题，安装包abc                        |
-| pacman -Su --ignore foo    | 升级时不升级包foo                                |
-| pacman -Sg abc             | 查询abc这个包组包含的软件包                      |
+| pacman -Sd abc             | 忽略依赖性问题，安装包 abc                       |
+| pacman -Su --ignore foo    | 升级时不升级包 foo                               |
+| pacman -Sg abc             | 查询 abc 这个包组包含的软件包                    |
 | pacman -Q                  | 列出系统中所有的包                               |
 | pacman -Q package          | 在本地包数据库搜索(查询)指定软件包               |
 | pacman -Qi package         | 在本地包数据库搜索(查询)指定软件包并列出相关信息 |
-| pacman -Q `|` wc -l        | 统计当前系统中的包数量                           |
+| pacman -Q `                | ` wc -l                                          | 统计当前系统中的包数量 |
 | pacman -Qdt                | 找出孤立包                                       |
 | pacman -Rs $(pacman -Qtdq) | 删除孤立软件包（递归的,小心用)                   |
-| pacman -U   abc.pkg.tar.gz | 安装下载的abs包，或新编译的本地abc包             |
+| pacman -U abc.pkg.tar.gz   | 安装下载的 abs 包，或新编译的本地 abc 包         |
 | pacman-optimize && sync    | 提高数据库访问速度                               |
 
 ### 安装网络相关的工具
@@ -241,7 +242,7 @@ export all_proxy="http://127.0.0.1:7890"
 
 先安装 `zsh`，再装 `oh-my-zsh`。
 
-- [Zsh (简体中文) - ArchWiki](https://wiki.archlinux.org/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
+- [Zsh (简体中文) - ArchWiki](<https://wiki.archlinux.org/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)
 - [Oh My ZSH!](https://ohmyz.sh/)
 - [Zsh Web Pages](http://zsh.sourceforge.net/)
 
@@ -318,7 +319,7 @@ export PATH="/mnt/c/Users/withw/AppData/Local/Programs/Microsoft VS Code/bin:$PA
 配置 `oh-my-zsh` 的自带几个插件：
 
 - 自带插件列表：<https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins>
-- 插件Wiki：<https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins>
+- 插件 Wiki：<https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins>
 
 找到下面这一行，填入即可。
 
@@ -363,7 +364,7 @@ git-config() {
     read email
     echo -n "Done!"
     git config --global user.name "${username}"
-    git config --global user.email "${email}"  
+    git config --global user.email "${email}"
 }
 # 参考自：
 # 链接：https://github.com/SukkaW/dotfiles
@@ -382,6 +383,6 @@ pacman -S httpie
 
 ## 更多优化配置
 
-可参考知乎这篇：[利用WSL打造Arch开发环境](https://zhuanlan.zhihu.com/p/51270874#三、使用优化配置)
+可参考知乎这篇：[利用 WSL 打造 Arch 开发环境](https://zhuanlan.zhihu.com/p/51270874#三、使用优化配置)
 
 大概就先写这么多吧~

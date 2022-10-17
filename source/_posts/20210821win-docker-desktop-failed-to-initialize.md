@@ -4,9 +4,9 @@ comments: true
 toc: true
 permalink: posts/win-docker-desktop-failed-to-initialize/
 date: 2021-08-21 06:09:28
-categories: "Docker Desktop"
+categories: 'Docker Desktop'
 tags:
-- Docker
+  - Docker
 ---
 
 在 Windows 上遇到一个 Docker Desktop 无法启动的问题，表现就是点击 Docker 图标，但是就是不启动，过了一会弹了一个框：

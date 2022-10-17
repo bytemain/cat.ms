@@ -1,10 +1,10 @@
 ---
-title: "[译] 值得学习的 Python 内置方法"
+title: '[译] 值得学习的 Python 内置方法'
 comments: true
 toc: true
 permalink: posts/python-builtins-worth-learning/
 date: 2019-07-13 13:52:04
-categories: 
+categories:
   - Python
 tags:
   - Python
@@ -36,6 +36,7 @@ tags:
 这将是一篇非常长的文章，如果你时间比较紧，或者你只想看其中一节的话，我将全篇 5 节的链接和 20 个专门介绍的内置函数的链接都放在了下一部分，你可以很方便的点击链接查看相应的内容。
 
 <!-- more -->
+
 ## 你应该知道哪些内置函数
 
 我估计**大多数 Python 开发者只需要大约 30 个内置函数**，但是这取决于你实际使用 Python 做什么。

@@ -13,7 +13,6 @@ permalink: posts/why-does-running-the-flask-dev-server-run-itself-twice/
 
 flask 开启 debug 模式之后就会自动检测文件是否有改动，有改动则重启服务。
 
-
-
 <!-- more -->
+
 https://flask.palletsprojects.com/en/1.1.x/server/

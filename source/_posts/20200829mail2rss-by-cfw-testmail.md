@@ -23,13 +23,13 @@ testmail 免费版每个月可以接收 100 封邮件，邮件能保存一天。
 
 {% mermaid sequenceDiagram %}
 loop 每十分钟
-    RSS阅读器->>Serverless函数: a.获取 tag 的最新 RSS 内容
-    activate Serverless函数
-    Serverless函数->>testmail.app: b.请求 tag 对应的邮件列表
-    testmail.app-->>Serverless函数: c.返回邮件列表
-    Note right of Serverless函数:  1.处理邮件列表、内容等
-    Serverless函数-->>RSS阅读器: d.根据邮件列表生成 RSS 并返回
-    deactivate Serverless函数
+RSS 阅读器->>Serverless 函数: a.获取 tag 的最新 RSS 内容
+activate Serverless 函数
+Serverless 函数->>testmail.app: b.请求 tag 对应的邮件列表
+testmail.app-->>Serverless 函数: c.返回邮件列表
+Note right of Serverless 函数: 1.处理邮件列表、内容等
+Serverless 函数-->>RSS 阅读器: d.根据邮件列表生成 RSS 并返回
+deactivate Serverless 函数
 end
 {% endmermaid %}
 
@@ -79,11 +79,11 @@ testmail.app 支持直接参数查询和 graphql 两种查询方式。
 js 实现的请求邮件：
 
 ```js
-const testmailNamespace = "xxxxx";
-const testmailToken = "xxxxxxxxxxxxxxx";
+const testmailNamespace = 'xxxxx';
+const testmailToken = 'xxxxxxxxxxxxxxx';
 
 class TestMail {
-  static testmailApi = "https://api.testmail.app/api/graphql";
+  static testmailApi = 'https://api.testmail.app/api/graphql';
 
   static async getMails(tag) {
     const query = `{
@@ -108,11 +108,11 @@ class TestMail {
     }`;
 
     const init = {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "content-type": "application/json;charset=UTF-8",
+        'content-type': 'application/json;charset=UTF-8',
         Authorization: `Bearer ${testmailToken}`,
-        Accept: "application/json",
+        Accept: 'application/json',
       },
 
       body: JSON.stringify({
@@ -144,7 +144,7 @@ class TestMail {
 Cloudflare Workers 中可以通过 `event.request.url` 拿到用户请求的完整 URL，如果你使用的是其他的 Serverless 服务，如果是 `koa-like` 的话，一般都是也是通过 Request 拿到 url。
 
 ```js
-const { request } = event;
+const {request} = event;
 let url = new URL(request.url);
 // parse tag
 const requestTag = url.pathname.substring(1);
@@ -194,7 +194,7 @@ async function makeRss(emails, tag) {
         <language>zh-cn</language>
         <lastBuildDate>${new Date().toGMTString()}</lastBuildDate>
         <ttl>300</ttl>
-        ${items.join("\n")}
+        ${items.join('\n')}
     </channel>
 </rss>`;
 }
@@ -207,10 +207,10 @@ let responseXML = await makeRss(data.data.inbox.emails, requestTag);
 let response = new Response(responseXML, {
   status: 200,
   headers: {
-    "content-type": "application/xml; charset=utf-8",
+    'content-type': 'application/xml; charset=utf-8',
   },
 });
-response.headers.append("Cache-Control", "max-age=600");
+response.headers.append('Cache-Control', 'max-age=600');
 return response;
 ```
 
@@ -223,10 +223,10 @@ return response;
 ## 参考链接
 
 1. DIYgod/RSSHub
-  <https://github.com/DIYgod/RSSHub>
+   <https://github.com/DIYgod/RSSHub>
 2. testmail.app
-  <https://testmail.app/>
+   <https://testmail.app/>
 3. testmail.app Documentation
-  <https://testmail.app/docs/>
+   <https://testmail.app/docs/>
 4. Cloudflare Workers
-  <https://workers.cloudflare.com/>
+   <https://workers.cloudflare.com/>

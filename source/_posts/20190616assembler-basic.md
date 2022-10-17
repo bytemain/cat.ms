@@ -5,9 +5,9 @@ toc: true
 permalink: posts/assembler-basic/
 date: 2019-06-16 13:44:49
 updated: 2019-07-04 11:00:00
-categories: 
+categories:
   - 汇编
-tags: 
+tags:
   - 汇编
   - 复习
 ---
@@ -22,13 +22,12 @@ tags:
 
 ### 整数的 ASCII 码值转为数值
 
-- 0-9  30H-39H  
-	可以减去 30H 或者 与上 1111(15)
-- A-F  41H-46H  
-	减去 37H(55)
-- a-z  61H-66H  
-	减去 57H(75)
-
+- 0-9 30H-39H  
+  可以减去 30H 或者 与上 1111(15)
+- A-F 41H-46H  
+  减去 37H(55)
+- a-z 61H-66H  
+  减去 57H(75)
 
 ### 输入一位十六进制整数
 
@@ -60,6 +59,7 @@ IN_2_HEX:
 ### 输入一位十进制整数
 
 实际使用的时候记得要保护之前的数据，先 PUSH 再 POP
+
 ```asm
 IN_1_DEC:
 	MOV AH, 01H ;AL
@@ -88,41 +88,46 @@ DISP_1_HEX:
   ADD DL, 07H
 L1:
   ADD DL, 30H
-  
+
   MOV AH, 02H
   INT 21H
 ```
 
 ### 输出两位十六进制整数
+
 ```asm
 DISP_2_HEX:
   MOV AL, DL
   MOV AH, 0
   MOV DL, 10H
-  DIV DL        ; 除数是 8 位 AL 存商， AH 存余数 
+  DIV DL        ; 除数是 8 位 AL 存商， AH 存余数
   MOV DL, AL
   CALL DISP_1_HEX
   MOV DL, AH
   CALL DISP_1_HEX
 ```
+
 ### 输出一位十进制整数
+
 ```asm
 DISP_1_DEC:
   PUSH AX
-  ADD DL,30H 
+  ADD DL,30H
   MOV AH,02H
   INT 21H
   POP AX
 RET
 ```
+
 ### 输出两位十进制整数
+
 ```asm
 DISP_2_DEC:    ; DL 除十取余法
   PUSH AX
   MOV AL,DL
   MOV AH,0
   MOV DL,10
-  DIV DL        ; 除数是 8 位 AL 存商， AH 存余数 
+  DIV DL        ; 除数是 8 位 AL 存商， AH 存余数
   MOV DL,AL
   CALL DISP_1_DEC
   MOV DL,AH
@@ -132,6 +137,7 @@ RET
 ```
 
 ### 带符号位的输出多位十进制整数
+
 ```asm
 DISP:            ; 用十进制出AX中的数
   PUSHF
@@ -139,16 +145,16 @@ DISP:            ; 用十进制出AX中的数
   PUSH AX
   PUSH BX
   PUSH CX
-  
+
   MOV  CX, 0
   MOV  BX, 10    ; 除 10 取余法
 
   TEST AX, 8000H ; 检测AX首位是1还是0
   JE   DISP1     ; 如果上一句的结果为0，就跳
   CALL FF        ; 输出负号
-  NEG  AX        ; 取反+1 
+  NEG  AX        ; 取反+1
 
-DISP1: 
+DISP1:
   MOV  DX, 0
   DIV  BX        ;除数是 16 位 AX,商；DX,余数
   PUSH DX
@@ -156,10 +162,10 @@ DISP1:
   OR   AX, AX    ; 是否商完
   JNE  DISP1     ; 没商完继续商
 
-DISP2: 
+DISP2:
   POP  DX
   ADD  DL, 30H   ; 以ascii码输出
-  MOV  AH, 02H 
+  MOV  AH, 02H
   INT  21H
   LOOP DISP2
 
@@ -176,13 +182,16 @@ FF:
   MOV  DL, '-'
   MOV  AH, 02H
   INT  21H
-  
+
   POP  AX
-  POP  DX  
+  POP  DX
 RET
 ```
+
 ## 循环分支结构
+
 ### 比较
+
 最重要的就是 比较，
 
 `TEST`，`AND`，`CMP`，`SUB` 还有等等等等...都可以拿来做比较。
@@ -192,9 +201,10 @@ RET
 指令格式：`TEST DST, SRC`
 `TEST` 指令可以被用来检测某一位是否为 1，因为其本质就是与运算，也就是 `DST & SRC`，但是不改变源操作数和目标操作数。
 
-如 `00010000 & X` 的结果就表示 X 的倒数第五位是否为 1，要是与出来为 0，就说明这一位为0，否则为1。
+如 `00010000 & X` 的结果就表示 X 的倒数第五位是否为 1，要是与出来为 0，就说明这一位为 0，否则为 1。
 
 #### CMP 指令
+
 指令格式：`CMP DST, SRC`
 
 可以比较两个数的大小，本质就是减法运算，也就是 `DST - SRC`，但是不改变源操作数和目标操作数。
@@ -225,6 +235,7 @@ AGB:
 
 上面的 `JA` 就是一个跳转指令，再详细的各种指令我就不说了，看书~
 下面稍微说几个记得牢的~
+
 - JE 两个数相等
 - JNE 两个数不相等
 - JA 无符号 前者大于后者
@@ -239,15 +250,15 @@ AGB:
 - JBE 无符号小于等于
 - JLE 有符号小于等于
 
-
 ### 二进制转十六进制
 
 我们都知道，一位十六进制可以表示四位二进制，所以要把二进制转为十六进制的画，得每四位每四位的转换。
 大概流程如下
+
 ```dot
 digraph g {
-循环左移四位二进制 
-	-> 取低四位 
+循环左移四位二进制
+	-> 取低四位
 	-> "低四位+30H"
 	-> 输出低四位;
 
@@ -256,10 +267,13 @@ digraph g {
 ```
 
 ### 控制转移指令
-书上P85
+
+书上 P85
 
 ## 题目
+
 ### 输入二十位带符号十六进制数，排序后输出十进制最大数、最小数、次大数、次小数
+
 ```asm
 DATA SEGMENT
   X  DW 20 DUP(?)
@@ -312,18 +326,18 @@ CONTINUE:
   MOV cx, NUM
   MOV si,offset X
   CALL HR
-  
+
 dispdec2:
   MOV AX,[si]
   call DISP
   call SPACE
   add si,2
-  loop dispdec2 
+  loop dispdec2
   CALL HR
-  
+
   MOV si,offset X
   CALL HR
-  
+
   ; 最小数
   DEC NUM
   SHL NUM, 1
@@ -344,13 +358,13 @@ dispdec2:
   MOV AX,[SI-2]
   call DISP
   call SPACE
-  
+
   ; 次大数
   MOV si,offset X
   MOV AX,[SI+2]
   call DISP
   call HR
-  
+
   MOV AH,4CH
   INT 21H
 
@@ -358,7 +372,7 @@ IN_2_HEX:
   PUSHF
   PUSH BX
   MOV BH,AH
-  CALL IN_1_HEX  ;AL  high 
+  CALL IN_1_HEX  ;AL  high
   MOV AH,10H
   MUL AH ;
   MOV AH,AL
@@ -376,7 +390,7 @@ IN_1_HEX:
 
   MOV AH,01H
   INT 21H
-  
+
   cmp AL,'9'
   JBE IN_B
   SUB AL,07H
@@ -394,7 +408,7 @@ DISP:
   PUSH AX
   PUSH BX
   PUSH CX
-  
+
   MOV CX,0
   MOV BX,10
 
@@ -403,15 +417,15 @@ DISP:
   CALL FF
   ;AND  AX,7FFFH
   NEG  AX
-  
-DISP1: 
+
+DISP1:
   MOV DX,0
   DIV BX     ;AX,商；DX,余数
   PUSH DX
   INC CX
   OR AX,AX   ;是否为0
-  JNE DISP1  
-DISP2: 
+  JNE DISP1
+DISP2:
   MOV AH,2
   POP DX
   ADD DL,30H
@@ -423,7 +437,7 @@ DISP2:
   POP DX
   POPF
 RET
-   
+
 
 SPACE:
   PUSH DX
@@ -432,7 +446,7 @@ SPACE:
   MOV  AH,02H
   INT  21H
   POP  AX
-  POP  DX  
+  POP  DX
 RET
 
 HR:
@@ -444,7 +458,7 @@ HR:
   MOV  DL,0DH
   INT  21H
   POP  DX
-  POP  AX 
+  POP  AX
 RET
 FF:
   PUSH DX
@@ -453,7 +467,7 @@ FF:
   MOV  AH,02H
   INT  21H
   POP  AX
-  POP  DX  
+  POP  DX
 RET
 CODE ENDS
 END GO

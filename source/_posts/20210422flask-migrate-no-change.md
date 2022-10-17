@@ -6,7 +6,7 @@ permalink: posts/flask-migrate-no-change/
 date: 2021-04-22 11:46:40
 categories: flask
 tags:
-- Flask
+  - Flask
 ---
 
 耗费了一个晚上，把这个坑趟平了。

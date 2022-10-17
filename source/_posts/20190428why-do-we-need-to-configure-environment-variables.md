@@ -5,15 +5,15 @@ toc: true
 permalink: posts/why-do-we-need-to-configure-environment-variables/
 date: 2019-04-28 00:03:42
 updated: 2020-12-18 14:56:00
-categories: 
-- 思考
+categories:
+  - 思考
 tags:
-- Python
-- 思考
+  - Python
+  - 思考
 ---
 
-之前学习 Java 的时候，感觉最难做的一件事情就是配置 jdk 的环境。那叫一个困难啊，Path、JAVA_HOME、CLASSPATH 印象深刻的很...（但是现在JDK11不用再配置 classpath 了，jre 和 jdk 合并了）。
-就在去年暑假，要 [配OpenCV的环境](/posts/install-opencv-windows-vs/)，要调的东西还是比较多的，对环境配置的概念又加深了。
+之前学习 Java 的时候，感觉最难做的一件事情就是配置 jdk 的环境。那叫一个困难啊，Path、JAVA_HOME、CLASSPATH 印象深刻的很...（但是现在 JDK11 不用再配置 classpath 了，jre 和 jdk 合并了）。
+就在去年暑假，要 [配 OpenCV 的环境](/posts/install-opencv-windows-vs/)，要调的东西还是比较多的，对环境配置的概念又加深了。
 
 现在懂的多了，配过的环境也多了，配过的平台也不算少。现在就想分享一下「关于我对配环境这件事情的感受」。
 
@@ -34,7 +34,7 @@ tags:
 那么是去哪里找可执行的命令呢？两个地方：
 
 - 当前路径下的可执行文件
-- 环境变量Path中保存的路径下的可执行文件（包括系统变量和用户变量）
+- 环境变量 Path 中保存的路径下的可执行文件（包括系统变量和用户变量）
 
 ## 举个例子
 
@@ -50,7 +50,7 @@ tags:
 
 能看到 `cmd.exe` 是在 `C:\Windows\System32\`和 `C:\Windows\SysWOW64\` 这两个路径下都有的，那就是说，电脑是去这两个路径之一打开的 `cmd.exe`，那我们来看一下，系统环境变量里到底有没有这两个路径的其中一个呢？
 
-查看一下系统的环境变量中的Path是不是有这个路径：
+查看一下系统的环境变量中的 Path 是不是有这个路径：
 在小娜的输入框里输入 `path` 或者「环境」可以直接跳转到修改环境变量的地方，不行的话只能在计算机图标右键属性了。
 
 ![我的环境变量](https://i.lengthm.in/posts/why-do-we-need-to-configure-environment-variables/5ccb0002c8879.png)

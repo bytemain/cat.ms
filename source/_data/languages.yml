@@ -1,6 +1,6 @@
 zh-CN:
   footer:
-    powered: "Powered by %s"
+    powered: 'Powered by %s'
     total_views: 总访问量
     total_visitors: 总访客量
   state:
@@ -16,9 +16,9 @@ zh-CN:
     excellent: 太棒了
   keep_on: 继续努力。
   symbol:
-    comma: "，"
-    period: "。"
-    colon: "："
+    comma: '，'
+    period: '。'
+    colon: '：'
   follow_me:
     welcome: 欢迎关注我的其它发布渠道
   symbols_count_time:

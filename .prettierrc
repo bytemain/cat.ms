@@ -2,7 +2,7 @@
   "semi": true,
   "tabWidth": 2,
   "useTabs": false,
-  "singleQuote": false,
+  "singleQuote": true,
   "overrides": [
     {
       "files": ".prettierrc",

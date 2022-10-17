@@ -7,8 +7,8 @@ date: 2021-04-26 13:09:22
 updated: 2021-07-25 21:33:00
 categories: DNS
 tags:
-- DoH
-- MacOS
+  - DoH
+  - MacOS
 ---
 
 最近折腾了一下在 MacOS 本地搭建 DoH，把折腾过程记录一下。

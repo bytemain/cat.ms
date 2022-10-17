@@ -16,7 +16,7 @@ permalink: posts/coding-pages-tinytinyrss/
 
 2019 年 2 月 17 日 16:20:57 更新：  
 已经失效了！！  
-已经失效了！！  
+已经失效了！！
 
 现在部署可以一键部署了，但是已经无法获取 rss 更新了。
 
@@ -41,7 +41,7 @@ ttrss 即为 tinytinyrss(<https://tt-rss.org/>)
 多平台支持  
 android 上推荐 feedme，最新的 3.5.1 版本支持了 tinytinyrss，体验很好。  
 之前用 inoreader 的时候就用的 feedme，已通过 play 请开发者吃了个苹果哈哈哈哈哈，  
-tinytinyrss 也就是在 php 环境下安装的，pc 上用浏览器打开就可以了。  
+tinytinyrss 也就是在 php 环境下安装的，pc 上用浏览器打开就可以了。
 
 <!-- more -->
 
@@ -50,7 +50,7 @@ tinytinyrss 也就是在 php 环境下安装的，pc 上用浏览器打开就可
 coding 提供了免费的动态 pages，可以用来架设自己的个人动态博客。  
 但是我最近在 rss 服务选择上犯了选择困难证，刚好想到之前看到过 ttrss  
 coding 提供了 php+mysql 的环境，于是想试一试。
-要准备的东西：  
+要准备的东西：
 
 - coding webide
 - coding pages
@@ -128,7 +128,7 @@ chmod -R 777 .
 
 保存好后就可以 push 到仓库里了，
 
-> 如果你创建仓库的时候勾选了「使用readme初始化仓库」，那么你在 push 的时候会遇到文件冲突。  
+> 如果你创建仓库的时候勾选了「使用 readme 初始化仓库」，那么你在 push 的时候会遇到文件冲突。  
 > 方法是：修改了仓库地址之后先把本地的 readme.md 删除掉，  
 > 然后使用 `git pull` 将远程仓库的 readme.md 拉回本地。
 
@@ -157,7 +157,7 @@ git push -u origin master
 
 部署完成后打开上面给的链接，会来到
 <http://969983a8-xxxx-xxxx-xxxx-2ac8183353ad.coding.io/install/>  
-要开始对 tiny 的配置了，在仓库的 pages 页面有数据库的连接信息，按相应的填到框中就可以了。  
+要开始对 tiny 的配置了，在仓库的 pages 页面有数据库的连接信息，按相应的填到框中就可以了。
 
 ![5a5c435383b2d.png](https://i.lengthm.in/posts/coding-pages-tinytinyrss/5a5c435383b2d.png)
 
@@ -186,4 +186,4 @@ git push origin master
 设置中有很多选项，也有很多插件，大家可以百度一下。  
 你需要启用 API 访问才能使用第三方客户端登陆。  
 推荐关闭「在连续模式下自动展开文章」和「合并信息源，使之连续显示」。  
-总之自己使用吧，还是很好玩的。  
+总之自己使用吧，还是很好玩的。

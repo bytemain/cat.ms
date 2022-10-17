@@ -61,7 +61,7 @@ gyp ERR! build error
 
 强烈建议去看原教程后再看本教程。  
 强烈建议去看原教程后再看本教程。  
-强烈建议去看原教程后再看本教程。  
+强烈建议去看原教程后再看本教程。
 
 首先需要安装 Python，如果你本地没有，最简单的方法就是从微软商店直接安装，直接打开 Microsoft Store，搜索安装即可。  
 [Python Microsoft Store package](https://docs.python.org/3/using/windows.html#the-microsoft-store-package)
@@ -102,6 +102,7 @@ gyp ERR! build error
 比如说我就把 `C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd` 这个文件往上移动了一级，也就是移动到了 `..` 文件夹。现在再去安装，就已经可以了。
 
 ---
+
 从此以后，遇到打包 Native 的场景，我再也不怕了！
 
 ![安装成功](https://i.lengthm.in/posts/windows-install-nodert/succ.png)

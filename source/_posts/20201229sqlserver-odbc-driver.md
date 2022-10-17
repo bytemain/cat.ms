@@ -60,18 +60,18 @@ SQL Server 2005 至 SQL Server 2012 都在进行 SQL Server Native Client（通�
 
 - `Driver={ODBC Driver XX for SQL Server}` (XX 是你安装的驱动版本的名字)
 
-|数据库版本&nbsp;&#8594;<br />&#8595; 驱动程序版本|Azure SQL Database|Azure Synapse Analytics|Azure SQL 托管实例|SQL Server 2019|SQL Server 2017|SQL Server 2016|SQL Server 2014|SQL Server 2012|SQL Server 2008 R2|SQL Server 2008|SQL Server 2005|
-|----|---|---|---|---|---|---|---|---|---|---|---|
-|17.6|是|是|是|是|是|是|是|是|   |   |   |
-|17.5|是|是|是|是|是|是|是|是|   |   |   |
-|17.4|是|是|是|是|是|是|是|是|   |   |   |
-|17.3|是|是|是|是|是|是|是|是|是|是|   |
-|17.2|是|是|是|   |是|是|是|是|是|是|   |
-|17.1|是|是|是|   |是|是|是|是|是|是|   |
-|17.0|是|是|是|   |是|是|是|是|是|是|   |
-|13.1|   |   |   |   |是|是|是|是|是|是|   |
-|13  |   |   |   |   |   |是|是|是|是|是|   |
-|11  |   |   |   |   |   |   |是|是|是|是|是|
+| 数据库版本&nbsp;&#8594;<br />&#8595; 驱动程序版本 | Azure SQL Database | Azure Synapse Analytics | Azure SQL 托管实例 | SQL Server 2019 | SQL Server 2017 | SQL Server 2016 | SQL Server 2014 | SQL Server 2012 | SQL Server 2008 R2 | SQL Server 2008 | SQL Server 2005 |
+| ------------------------------------------------- | ------------------ | ----------------------- | ------------------ | --------------- | --------------- | --------------- | --------------- | --------------- | ------------------ | --------------- | --------------- |
+| 17.6                                              | 是                 | 是                      | 是                 | 是              | 是              | 是              | 是              | 是              |                    |                 |                 |
+| 17.5                                              | 是                 | 是                      | 是                 | 是              | 是              | 是              | 是              | 是              |                    |                 |                 |
+| 17.4                                              | 是                 | 是                      | 是                 | 是              | 是              | 是              | 是              | 是              |                    |                 |                 |
+| 17.3                                              | 是                 | 是                      | 是                 | 是              | 是              | 是              | 是              | 是              | 是                 | 是              |                 |
+| 17.2                                              | 是                 | 是                      | 是                 |                 | 是              | 是              | 是              | 是              | 是                 | 是              |                 |
+| 17.1                                              | 是                 | 是                      | 是                 |                 | 是              | 是              | 是              | 是              | 是                 | 是              |                 |
+| 17.0                                              | 是                 | 是                      | 是                 |                 | 是              | 是              | 是              | 是              | 是                 | 是              |                 |
+| 13.1                                              |                    |                         |                    |                 | 是              | 是              | 是              | 是              | 是                 | 是              |                 |
+| 13                                                |                    |                         |                    |                 |                 | 是              | 是              | 是              | 是                 | 是              |                 |
+| 11                                                |                    |                         |                    |                 |                 |                 | 是              | 是              | 是                 | 是              | 是              |
 
 <p align="center">
 SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/system-requirements-installation-and-driver-files?view=sql-server-ver15#sql-version-compatibility">Microsoft</a>
@@ -91,8 +91,8 @@ ConnectionStrings.com 帮助开发人员将软件连接到数据库。它是一�
 
 ## 参考链接
 
-- [sql server - Differences Between Drivers for ODBC Drivers - Stack Overflow](https://stackoverflow.com/questions/39440008/differences-between-drivers-for-odbc-drivers )
+- [sql server - Differences Between Drivers for ODBC Drivers - Stack Overflow](https://stackoverflow.com/questions/39440008/differences-between-drivers-for-odbc-drivers)
 - [Windows 上的 ODBC Driver for SQL Server 发行说明 - SQL Server | Microsoft Docs](https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/release-notes-odbc-sql-server-windows?view=sql-server-ver15#previous-releases)
-- [Installing - SQL Server Native Client | Microsoft Docs](https://docs.microsoft.com/en-us/sql/relational-databases/native-client/applications/installing-sql-server-native-client?view=sql-server-ver15 )
+- [Installing - SQL Server Native Client | Microsoft Docs](https://docs.microsoft.com/en-us/sql/relational-databases/native-client/applications/installing-sql-server-native-client?view=sql-server-ver15)
 - [Driver history for Microsoft SQL Server - SQL Server | Microsoft Docs](https://docs.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver15#odbc)
 - [系统要求、安装和驱动程序文件 - SQL Server | Microsoft Docs](https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/system-requirements-installation-and-driver-files?view=sql-server-ver15#sql-version-compatibility)

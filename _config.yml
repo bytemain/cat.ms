@@ -7,7 +7,7 @@ language: zh-CN
 timezone: Asia/Shanghai
 
 meta_generator: true
-updated_option: "date"
+updated_option: 'date'
 
 url: https://cat.ms
 root: /
@@ -47,7 +47,7 @@ prismjs:
   line_number: true
 
 index_generator:
-  path: ""
+  path: ''
   per_page: 10
   order_by: -date
 
@@ -98,11 +98,11 @@ symbols_count_time:
   exclude_codeblock: true
   awl: 4
   wpm: 275
-  suffix: "mins."
+  suffix: 'mins.'
 
 js_concator:
   enable: true
-  bundle_path: "/js/bundle.js"
+  bundle_path: '/js/bundle.js'
   front: false
   silent: false
 html_minifier:
@@ -114,7 +114,7 @@ css_minifier:
   enable: true
   silent: false
   exclude:
-    - "*.min.css"
+    - '*.min.css'
 js_minifier:
   enable: true
   mangle: true
@@ -122,7 +122,7 @@ js_minifier:
   output:
   compress:
   exclude:
-    - "*.min.js"
+    - '*.min.js'
 image_minifier:
   enable: false
   interlaced: false
@@ -132,14 +132,14 @@ image_minifier:
   progressive: false
   silent: false
 markdown:
-  preset: "default"
+  preset: 'default'
   render:
     html: true
     xhtmlOut: true
     breaks: false
     linkify: true
     typographer: true
-    quotes: "“”‘’"
+    quotes: '“”‘’'
   enable_rules:
   disable_rules:
   plugins:
@@ -151,17 +151,17 @@ markdown:
     - markdown-it-container
   anchors:
     level: 2
-    collisionSuffix: ""
+    collisionSuffix: ''
     case: 0
-    separator: "-"
+    separator: '-'
     # If `true`, creates an anchor tag with a permalink besides the heading.
     permalink: true
     # Class used for the permalink anchor tag.
     permalinkClass: header-anchor
     # Set to 'right' to add permalink after heading
-    permalinkSide: "right"
+    permalinkSide: 'right'
     # The symbol used to make the permalink
-    permalinkSymbol: ""
+    permalinkSymbol: ''
 
 theme_config:
   preconnect: true
@@ -204,7 +204,7 @@ theme_config:
     icon:
       name: fa fa-heart
       animated: true
-      color: ""
+      color: ''
 
     # If not defined, `author` from Hexo `_config.yml` will be used.
     copyright:
@@ -343,8 +343,8 @@ theme_config:
     # All values below are same as default, change them by yourself.
     min: 12 # Minimun font size in px
     max: 30 # Maxium font size in px
-    start: "#ccc" # Start color (hex, rgba, hsla or color keywords)
-    end: "#111" # End color (hex, rgba, hsla or color keywords)
+    start: '#ccc' # Start color (hex, rgba, hsla or color keywords)
+    end: '#111' # End color (hex, rgba, hsla or color keywords)
     amount: 200 # Amount of tags, change it if you have more than 200 tags
 
   # Set the text alignment in posts / pages.
@@ -357,7 +357,7 @@ theme_config:
   mobile_layout_economy: true
 
   # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
-  android_chrome_color: "#222"
+  android_chrome_color: '#222'
 
   codeblock:
     # Code Highlight theme
