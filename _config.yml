@@ -102,7 +102,7 @@ symbols_count_time:
 
 js_concator:
   enable: true
-  bundle_path: '/js/bundle.js'
+  bundle_path: "/js/bundle.js"
   front: false
   silent: false
 html_minifier:
@@ -113,16 +113,16 @@ html_minifier:
 css_minifier:
   enable: true
   silent: false
-  exclude: 
-    - '*.min.css'
+  exclude:
+    - "*.min.css"
 js_minifier:
   enable: true
   mangle: true
   silent: false
   output:
   compress:
-  exclude: 
-    - '*.min.js'
+  exclude:
+    - "*.min.js"
 image_minifier:
   enable: false
   interlaced: false
