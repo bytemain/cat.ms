@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -15,16 +15,16 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"bytem.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cat.ms","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="最近在忙一个外包，因为大屏展示页面是用 React 写的（使用 create-react-app），甲方想访问后端控制页面的网址就能直接访问这个大屏展示，而不是前后端分离部署。 自己尝试了一下，还是遇到了点问题。 create-react-app 会将打包的结果放在项目根目录中的 build 文件夹，打包后的路径结构： build directory structureSource- build">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 Flask 加载打包后的 React 前端页面">
-<meta property="og:url" content="https://bytem.io/posts/serving-a-front-end-created-with-create-react-app-with-flask/">
+<meta property="og:url" content="https://cat.ms/posts/serving-a-front-end-created-with-create-react-app-with-flask/">
 <meta property="og:site_name" content="Artin&#39;s Blog">
 <meta property="og:description" content="最近在忙一个外包，因为大屏展示页面是用 React 写的（使用 create-react-app），甲方想访问后端控制页面的网址就能直接访问这个大屏展示，而不是前后端分离部署。 自己尝试了一下，还是遇到了点问题。 create-react-app 会将打包的结果放在项目根目录中的 build 文件夹，打包后的路径结构： build directory structureSource- build">
 <meta property="og:locale" content="zh_CN">
@@ -38,15 +38,16 @@
 <meta name="twitter:image" content="https://i.lengthm.in/posts/serving-a-front-end-created-with-create-react-app-with-flask/app_struct.png">
 
 
-<link rel="canonical" href="https://bytem.io/posts/serving-a-front-end-created-with-create-react-app-with-flask/">
+<link rel="canonical" href="https://cat.ms/posts/serving-a-front-end-created-with-create-react-app-with-flask/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://bytem.io/posts/serving-a-front-end-created-with-create-react-app-with-flask/","path":"/posts/serving-a-front-end-created-with-create-react-app-with-flask/","title":"使用 Flask 加载打包后的 React 前端页面"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cat.ms/posts/serving-a-front-end-created-with-create-react-app-with-flask/","path":"/posts/serving-a-front-end-created-with-create-react-app-with-flask/","title":"使用 Flask 加载打包后的 React 前端页面"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>使用 Flask 加载打包后的 React 前端页面 | Artin's Blog</title>
   
+
 
 
 
@@ -150,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%88%98-2"><span class="nav-number">2.</span> <span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%89%8D%E7%AB%AF-homepage"><span class="nav-number">2.1.</span> <span class="nav-text">设置前端 homepage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%90%8E%E7%AB%AF-API-%E5%9C%B0%E5%9D%80"><span class="nav-number">2.2.</span> <span class="nav-text">设置后端 API 地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5-3"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%88%98"><span class="nav-number">2.</span> <span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%89%8D%E7%AB%AF-homepage"><span class="nav-number">2.1.</span> <span class="nav-text">设置前端 homepage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%90%8E%E7%AB%AF-API-%E5%9C%B0%E5%9D%80"><span class="nav-number">2.2.</span> <span class="nav-text">设置后端 API 地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,7 +225,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://bytem.io/posts/serving-a-front-end-created-with-create-react-app-with-flask/">
+    <link itemprop="mainEntityOfPage" href="https://cat.ms/posts/serving-a-front-end-created-with-create-react-app-with-flask/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -344,7 +345,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> send_from_directory<span class="token punctuation">(</span>app<span class="token punctuation">.</span>static_folder<span class="token punctuation">,</span> <span class="token string">'index.html'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>就是根据请求的  <code>path</code> 来从不同的文件夹返回内容。测试路径是否要请求一个文件 =&gt; 发送相应的文件 =&gt; 否则发送 index.html。</p>
-<h2 id="实战-2">实战<a class="header-anchor" href="#实战-2"></a></h2>
+<h2 id="实战">实战<a class="header-anchor" href="#实战"></a></h2>
 <p>根据思路，我们也要捕获所有的路径:</p>
 <p>业务的关系，我这里使用一个 <code>front</code> 蓝图来 serve 静态网站，路径在 <code>app/front_api/__init__.py</code>。</p>
 <p>把静态资源放在 <code>app/react_app</code> 下：</p>
@@ -400,7 +401,7 @@ react_folder <span class="token operator">=</span> <span class="token punctuatio
 <p>使用了 <a href="https://github.com/isaacs/rimraf">rimraf</a> 和 <a href="https://github.com/mysticatea/cpx">cpx</a> 两个跨平台的 cli 工具包。</p>
 <p>这里还有一些其他的跨平台的 cli 工具包：<a href="https://github.com/pandawing/awesome-nodejs-cross-platform-cli">
 awesome-nodejs-cross-platform-cli</a></p>
-<h2 id="参考链接-3">参考链接<a class="header-anchor" href="#参考链接-3"></a></h2>
+<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
 <ul>
 <li><a href="https://www.jianshu.com/p/b348926fa628">React 创建项目并打包到 Flask 后端</a></li>
 <li><a href="https://stackoverflow.com/questions/44209978/serving-a-front-end-created-with-create-react-app-with-flask">Serving a front end created with create-react-app with Flask</a></li>
@@ -460,7 +461,7 @@ awesome-nodejs-cross-platform-cli</a></p>
   </li>
   <li class="post-copyright-link">
     <strong>文章链接：</strong>
-    <a href="https://bytem.io/posts/serving-a-front-end-created-with-create-react-app-with-flask/" title="使用 Flask 加载打包后的 React 前端页面">https://bytem.io/posts/serving-a-front-end-created-with-create-react-app-with-flask/</a>
+    <a href="https://cat.ms/posts/serving-a-front-end-created-with-create-react-app-with-flask/" title="使用 Flask 加载打包后的 React 前端页面">https://cat.ms/posts/serving-a-front-end-created-with-create-react-app-with-flask/</a>
     <span class="copy-path" title="点击复制文章链接">
       <i class="fa fa-clipboard"></i>
     </span>
@@ -477,11 +478,11 @@ awesome-nodejs-cross-platform-cli</a></p>
   <li class="post-copyright-history">
     <strong>更新历史：</strong>
     <i class="fab fa-github"></i>
-    <a href="https://github.com/bytemain/bytem.io/blame/hexo/source/_posts/20201224serving-a-front-end-created-with-create-react-app-with-flask.md" title="顺序查看文章各部分修改记录" target="_blank">Blame</a>,
-    <a href="https://github.com/bytemain/bytem.io/commits/hexo/source/_posts/20201224serving-a-front-end-created-with-create-react-app-with-flask.md" title="查看文章有关更新记录" target="_blank">History</a>
+    <a href="https://github.com/bytemain/cat.ms/blame/main/source/_posts/20201224serving-a-front-end-created-with-create-react-app-with-flask.md" title="顺序查看文章各部分修改记录" target="_blank">Blame</a>,
+    <a href="https://github.com/bytemain/cat.ms/commits/main/source/_posts/20201224serving-a-front-end-created-with-create-react-app-with-flask.md" title="查看文章有关更新记录" target="_blank">History</a>
     <strong style="margin-left: 1em">源文件：</strong>
     <i class="fas fa-file-alt"></i>
-    <a href="https://raw.githubusercontent.com/bytemain/bytem.io/hexo/source/_posts/20201224serving-a-front-end-created-with-create-react-app-with-flask.md" title="查看 & 下载文章 Markdown 原始文件" target="_blank">.md Raw</a>
+    <a href="https://raw.githubusercontent.com/bytemain/cat.ms/main/source/_posts/20201224serving-a-front-end-created-with-create-react-app-with-flask.md" title="查看 & 下载文章 Markdown 原始文件" target="_blank">.md Raw</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明：
@@ -512,7 +513,7 @@ awesome-nodejs-cross-platform-cli</a></p>
     var copyTooltip = document.querySelector('.copy-tooltip');
     var timeout;
     copyButton.addEventListener('click', function (e) {
-      const text = `原文作者：Artin\n原文标题：使用 Flask 加载打包后的 React 前端页面\n原文链接：https://bytem.io/posts/serving-a-front-end-created-with-create-react-app-with-flask/`;
+      const text = `原文作者：Artin\n原文标题：使用 Flask 加载打包后的 React 前端页面\n原文链接：https://cat.ms/posts/serving-a-front-end-created-with-create-react-app-with-flask/`;
 
       if (copyTooltip.hasChildNodes()) {
         copyTooltip.removeChild(copyTooltip.firstChild);
@@ -596,7 +597,7 @@ awesome-nodejs-cross-platform-cli</a></p>
 
 
     
-  <div class="comments" id="disqus_thread">
+  <div class="comments disqusjs">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
@@ -651,7 +652,7 @@ awesome-nodejs-cross-platform-cli</a></p>
     <span class="post-meta-item-icon">
       <i class="fab fa-github fa-fw"></i>
     </span>
-    <a class="theme-link" href="https://github.com/bytemain/bytem.io" title="bytemain/bytem.io">Blog Source</a>
+    <a class="theme-link" href="https://github.com/bytemain/cat.ms" title="bytemain/cat.ms">Blog Source</a>
   </span>
 </div>
 
@@ -671,7 +672,7 @@ awesome-nodejs-cross-platform-cli</a></p>
 <script src="/js/third-party/search/local-search.js"></script>
 
 
-  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"neutral","js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@9.1.3/dist/mermaid.min.js","integrity":"sha256-TIYL00Rhw/8WaoUhYTLX9SKIEFdXxg+yMWSLVUbhiLg="}}</script>
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"neutral","js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@9.1.7/dist/mermaid.min.js","integrity":"sha256-G58AID1YoX5YaEtWfXSI0VLrZ6N4kvNvwg0BI8zUFxE="}}</script>
   <script src="/js/third-party/tags/mermaid.js"></script>
 
 
@@ -683,12 +684,12 @@ awesome-nodejs-cross-platform-cli</a></p>
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"ignores":null,"url":"https://bytem.io/posts/serving-a-front-end-created-with-create-react-app-with-flask/"}</script>
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.3.0/dist/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"ignores":null,"url":"https://cat.ms/posts/serving-a-front-end-created-with-create-react-app-with-flask/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css" integrity="sha256-GxdCIOyfxQ1OBfS99qAIJDoGK1ADuBsxhMTqXG82fAY=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@3.0.2/dist/browser/styles/disqusjs.css" integrity="sha256-71XarXwNr1Td27HmZI9zjY+rMzRdush6/glo6VFXp7o=" crossorigin="anonymous">
 
-<script class="next-config" data-name="disqusjs" type="application/json">{"enable":true,"api":"https://disqus.skk.moe/disqus/","apikey":"Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR","shortname":"hexo-1","js":{"url":"https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqus.js","integrity":"sha256-LVaMHPQ2zLqOc5rXSAfr4d1PIkEGNLyyUTDNPZmTtUw="}}</script>
+<script class="next-config" data-name="disqusjs" type="application/json">{"enable":true,"api":"https://disqus.skk.moe/disqus/","apikey":"Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR","shortname":"hexo-1","js":{"url":"https://cdn.jsdelivr.net/npm/disqusjs@3.0.2/dist/browser/disqusjs.es2015.umd.min.js","integrity":"sha256-okP99ZQKVpIy7+NogAMpGlIQzJa9XKXhIJcFgdju5bU="}}</script>
 <script src="/js/third-party/comments/disqusjs.js"></script>
 
 </body>

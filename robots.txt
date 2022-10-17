@@ -7,4 +7,4 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://bytem.io/sitemap.xml
+Sitemap: https://cat.ms/sitemap.xml

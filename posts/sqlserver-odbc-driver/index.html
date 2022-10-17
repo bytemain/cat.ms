@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -15,16 +15,16 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"bytem.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cat.ms","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="table {     word-break: keep-all; }  使用 pyodbc + sqlalchemy 连接 SQLServer 数据库的时候遇到一个报错： [IM002] [Microsoft][ODBC 驱动程序管理器] 未发现数据源名称并且未指定默认驱动程序 (0) (SQLDriverConnect)。 查阅 sqlalchemy mssql+pyodbc 数据库文档 后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLServer 不同 ODBC 驱动的区别">
-<meta property="og:url" content="https://bytem.io/posts/sqlserver-odbc-driver/">
+<meta property="og:url" content="https://cat.ms/posts/sqlserver-odbc-driver/">
 <meta property="og:site_name" content="Artin&#39;s Blog">
 <meta property="og:description" content="table {     word-break: keep-all; }  使用 pyodbc + sqlalchemy 连接 SQLServer 数据库的时候遇到一个报错： [IM002] [Microsoft][ODBC 驱动程序管理器] 未发现数据源名称并且未指定默认驱动程序 (0) (SQLDriverConnect)。 查阅 sqlalchemy mssql+pyodbc 数据库文档 后">
 <meta property="og:locale" content="zh_CN">
@@ -36,15 +36,16 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://bytem.io/posts/sqlserver-odbc-driver/">
+<link rel="canonical" href="https://cat.ms/posts/sqlserver-odbc-driver/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://bytem.io/posts/sqlserver-odbc-driver/","path":"/posts/sqlserver-odbc-driver/","title":"SQLServer 不同 ODBC 驱动的区别"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cat.ms/posts/sqlserver-odbc-driver/","path":"/posts/sqlserver-odbc-driver/","title":"SQLServer 不同 ODBC 驱动的区别"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>SQLServer 不同 ODBC 驱动的区别 | Artin's Blog</title>
   
+
 
 
 
@@ -148,7 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E8%BF%99%E4%B9%88%E5%A4%9A%E9%A9%B1%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">怎么这么多驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-Server-Native-Client"><span class="nav-number">2.</span> <span class="nav-text">SQL Server Native Client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Microsoft-ODBC-Driver-for-SQL-Server"><span class="nav-number">3.</span> <span class="nav-text">Microsoft ODBC Driver for SQL Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-2"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5-4"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E8%BF%99%E4%B9%88%E5%A4%9A%E9%A9%B1%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">怎么这么多驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-Server-Native-Client"><span class="nav-number">2.</span> <span class="nav-text">SQL Server Native Client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Microsoft-ODBC-Driver-for-SQL-Server"><span class="nav-number">3.</span> <span class="nav-text">Microsoft ODBC Driver for SQL Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -222,7 +223,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://bytem.io/posts/sqlserver-odbc-driver/">
+    <link itemprop="mainEntityOfPage" href="https://cat.ms/posts/sqlserver-odbc-driver/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -493,7 +494,7 @@ table {
 <p align="center">
 SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/system-requirements-installation-and-driver-files?view=sql-server-ver15#sql-version-compatibility">Microsoft</a>
 </p>
-<h2 id="总结-2">总结<a class="header-anchor" href="#总结-2"></a></h2>
+<h2 id="总结">总结<a class="header-anchor" href="#总结"></a></h2>
 <p><code>ODBC Driver for SQL Server</code> 的性能更好，新版本有很多优化，有新特性，2021 年做开发就要选他。</p>
 <p>不同的驱动版本的支持的数据库版本也不同。请你一定要看好自己的 SQLServer 版本，去安装对应版本的驱动，然后配置好驱动名字。</p>
 <p>还发现了一个非常棒的网站：<a href="https://www.connectionstrings.com/">ConnectionStrings</a></p>
@@ -501,7 +502,7 @@ SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql
 <p><a href="http://ConnectionStrings.com">ConnectionStrings.com</a> helps developers connect software to data. It’s a straight to the point reference about connection strings, a <a href="https://www.connectionstrings.com/kb/">knowledge base</a> of articles and database connectivity content and a host of <a href="https://www.connectionstrings.com/questions/">Q &amp; A forums</a> where developers help each other finding solutions.</p>
 </blockquote>
 <p><a href="http://ConnectionStrings.com">ConnectionStrings.com</a> 帮助开发人员将软件连接到数据库。它是一个关于连接字符串的直接参考、一个数据库连接内容和文章的知识库，同时也是一个问答论坛，开发人员可以在这里互相帮助寻找解决方案。</p>
-<h2 id="参考链接-4">参考链接<a class="header-anchor" href="#参考链接-4"></a></h2>
+<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/39440008/differences-between-drivers-for-odbc-drivers">sql server - Differences Between Drivers for ODBC Drivers - Stack Overflow</a></li>
 <li><a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/release-notes-odbc-sql-server-windows?view=sql-server-ver15#previous-releases">Windows 上的 ODBC Driver for SQL Server 发行说明 - SQL Server | Microsoft Docs</a></li>
@@ -563,7 +564,7 @@ SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql
   </li>
   <li class="post-copyright-link">
     <strong>文章链接：</strong>
-    <a href="https://bytem.io/posts/sqlserver-odbc-driver/" title="SQLServer 不同 ODBC 驱动的区别">https://bytem.io/posts/sqlserver-odbc-driver/</a>
+    <a href="https://cat.ms/posts/sqlserver-odbc-driver/" title="SQLServer 不同 ODBC 驱动的区别">https://cat.ms/posts/sqlserver-odbc-driver/</a>
     <span class="copy-path" title="点击复制文章链接">
       <i class="fa fa-clipboard"></i>
     </span>
@@ -580,11 +581,11 @@ SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql
   <li class="post-copyright-history">
     <strong>更新历史：</strong>
     <i class="fab fa-github"></i>
-    <a href="https://github.com/bytemain/bytem.io/blame/hexo/source/_posts/20201229sqlserver-odbc-driver.md" title="顺序查看文章各部分修改记录" target="_blank">Blame</a>,
-    <a href="https://github.com/bytemain/bytem.io/commits/hexo/source/_posts/20201229sqlserver-odbc-driver.md" title="查看文章有关更新记录" target="_blank">History</a>
+    <a href="https://github.com/bytemain/cat.ms/blame/main/source/_posts/20201229sqlserver-odbc-driver.md" title="顺序查看文章各部分修改记录" target="_blank">Blame</a>,
+    <a href="https://github.com/bytemain/cat.ms/commits/main/source/_posts/20201229sqlserver-odbc-driver.md" title="查看文章有关更新记录" target="_blank">History</a>
     <strong style="margin-left: 1em">源文件：</strong>
     <i class="fas fa-file-alt"></i>
-    <a href="https://raw.githubusercontent.com/bytemain/bytem.io/hexo/source/_posts/20201229sqlserver-odbc-driver.md" title="查看 & 下载文章 Markdown 原始文件" target="_blank">.md Raw</a>
+    <a href="https://raw.githubusercontent.com/bytemain/cat.ms/main/source/_posts/20201229sqlserver-odbc-driver.md" title="查看 & 下载文章 Markdown 原始文件" target="_blank">.md Raw</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明：
@@ -615,7 +616,7 @@ SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql
     var copyTooltip = document.querySelector('.copy-tooltip');
     var timeout;
     copyButton.addEventListener('click', function (e) {
-      const text = `原文作者：Artin\n原文标题：SQLServer 不同 ODBC 驱动的区别\n原文链接：https://bytem.io/posts/sqlserver-odbc-driver/`;
+      const text = `原文作者：Artin\n原文标题：SQLServer 不同 ODBC 驱动的区别\n原文链接：https://cat.ms/posts/sqlserver-odbc-driver/`;
 
       if (copyTooltip.hasChildNodes()) {
         copyTooltip.removeChild(copyTooltip.firstChild);
@@ -699,7 +700,7 @@ SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql
 
 
     
-  <div class="comments" id="disqus_thread">
+  <div class="comments disqusjs">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
@@ -754,7 +755,7 @@ SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql
     <span class="post-meta-item-icon">
       <i class="fab fa-github fa-fw"></i>
     </span>
-    <a class="theme-link" href="https://github.com/bytemain/bytem.io" title="bytemain/bytem.io">Blog Source</a>
+    <a class="theme-link" href="https://github.com/bytemain/cat.ms" title="bytemain/cat.ms">Blog Source</a>
   </span>
 </div>
 
@@ -774,7 +775,7 @@ SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql
 <script src="/js/third-party/search/local-search.js"></script>
 
 
-  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"neutral","js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@9.1.3/dist/mermaid.min.js","integrity":"sha256-TIYL00Rhw/8WaoUhYTLX9SKIEFdXxg+yMWSLVUbhiLg="}}</script>
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"neutral","js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@9.1.7/dist/mermaid.min.js","integrity":"sha256-G58AID1YoX5YaEtWfXSI0VLrZ6N4kvNvwg0BI8zUFxE="}}</script>
   <script src="/js/third-party/tags/mermaid.js"></script>
 
 
@@ -786,12 +787,12 @@ SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"ignores":null,"url":"https://bytem.io/posts/sqlserver-odbc-driver/"}</script>
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.3.0/dist/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"ignores":null,"url":"https://cat.ms/posts/sqlserver-odbc-driver/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css" integrity="sha256-GxdCIOyfxQ1OBfS99qAIJDoGK1ADuBsxhMTqXG82fAY=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@3.0.2/dist/browser/styles/disqusjs.css" integrity="sha256-71XarXwNr1Td27HmZI9zjY+rMzRdush6/glo6VFXp7o=" crossorigin="anonymous">
 
-<script class="next-config" data-name="disqusjs" type="application/json">{"enable":true,"api":"https://disqus.skk.moe/disqus/","apikey":"Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR","shortname":"hexo-1","js":{"url":"https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqus.js","integrity":"sha256-LVaMHPQ2zLqOc5rXSAfr4d1PIkEGNLyyUTDNPZmTtUw="}}</script>
+<script class="next-config" data-name="disqusjs" type="application/json">{"enable":true,"api":"https://disqus.skk.moe/disqus/","apikey":"Wp9jc6GyN0XKFUFLkGWUSBO7bd9DlM5N74lNoUkyq4A2Vu8DLUysfoKeygIqTpbR","shortname":"hexo-1","js":{"url":"https://cdn.jsdelivr.net/npm/disqusjs@3.0.2/dist/browser/disqusjs.es2015.umd.min.js","integrity":"sha256-okP99ZQKVpIy7+NogAMpGlIQzJa9XKXhIJcFgdju5bU="}}</script>
 <script src="/js/third-party/comments/disqusjs.js"></script>
 
 </body>

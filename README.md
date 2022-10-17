@@ -1,3 +1,3 @@
 # Blog
 
-[Artin's Blog](https://bytem.io/)
+[Artin's Blog](https://cat.ms/)

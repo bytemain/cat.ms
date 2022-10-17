@@ -1658,7 +1658,7 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
 <p>在 omencommandcenter 下依次添加 <code>Shell</code>、 <code>Open</code>、 <code>Command</code>，大小写不敏感，然后修改 <code>Command</code> 的 <code>(Default)</code> 值为想打开的应用程序。</p>
 <p>这里的 <code>Open</code> 的意思就是你在资源管理器中双击一个类型的文件就打开某个软件那样。</p>
 <p>比如说像我就设置成了 <code>wt.exe</code>，就是打开 Windows Terminal。</p>
-<h2 id="一些-Tips-2">一些 Tips<a class="header-anchor" href="#一些-Tips-2"></a></h2>
+<h2 id="一些-Tips">一些 Tips<a class="header-anchor" href="#一些-Tips"></a></h2>
 <p>windows 还提供了 执行 vbs 的工具：</p>
 <pre class="line-numbers language-bat" data-language="bat"><code class="language-bat">mshta vbscript:clipboarddata.setdata(\"text\",\"%1\")(close)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>参考： <a href="https://lolbas-project.github.io/lolbas/Binaries/Mshta/">https://lolbas-project.github.io/lolbas/Binaries/Mshta/</a></p>
@@ -2180,7 +2180,7 @@ response<span class="token punctuation">.</span>headers<span class="token punctu
 <h2 id="总结">总结<a class="header-anchor" href="#总结"></a></h2>
 <p>其实思路也很简单，代码也很简单。</p>
 <p>完整代码见：<a href="https://github.com/bytemain/mail2rss">https://github.com/bytemain/mail2rss</a></p>
-<h2 id="参考链接-2">参考链接<a class="header-anchor" href="#参考链接-2"></a></h2>
+<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
 <ol>
 <li>DIYgod/RSSHub
 <a href="https://github.com/DIYgod/RSSHub">https://github.com/DIYgod/RSSHub</a></li>
@@ -2575,7 +2575,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> send_from_directory<span class="token punctuation">(</span>app<span class="token punctuation">.</span>static_folder<span class="token punctuation">,</span> <span class="token string">'index.html'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>就是根据请求的  <code>path</code> 来从不同的文件夹返回内容。测试路径是否要请求一个文件 =&gt; 发送相应的文件 =&gt; 否则发送 index.html。</p>
-<h2 id="实战-2">实战<a class="header-anchor" href="#实战-2"></a></h2>
+<h2 id="实战">实战<a class="header-anchor" href="#实战"></a></h2>
 <p>根据思路，我们也要捕获所有的路径:</p>
 <p>业务的关系，我这里使用一个 <code>front</code> 蓝图来 serve 静态网站，路径在 <code>app/front_api/__init__.py</code>。</p>
 <p>把静态资源放在 <code>app/react_app</code> 下：</p>
@@ -2631,7 +2631,7 @@ react_folder <span class="token operator">=</span> <span class="token punctuatio
 <p>使用了 <a href="https://github.com/isaacs/rimraf">rimraf</a> 和 <a href="https://github.com/mysticatea/cpx">cpx</a> 两个跨平台的 cli 工具包。</p>
 <p>这里还有一些其他的跨平台的 cli 工具包：<a href="https://github.com/pandawing/awesome-nodejs-cross-platform-cli">
 awesome-nodejs-cross-platform-cli</a></p>
-<h2 id="参考链接-3">参考链接<a class="header-anchor" href="#参考链接-3"></a></h2>
+<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
 <ul>
 <li><a href="https://www.jianshu.com/p/b348926fa628">React 创建项目并打包到 Flask 后端</a></li>
 <li><a href="https://stackoverflow.com/questions/44209978/serving-a-front-end-created-with-create-react-app-with-flask">Serving a front end created with create-react-app with Flask</a></li>
@@ -2847,7 +2847,7 @@ table {
 <p align="center">
 SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/system-requirements-installation-and-driver-files?view=sql-server-ver15#sql-version-compatibility">Microsoft</a>
 </p>
-<h2 id="总结-2">总结<a class="header-anchor" href="#总结-2"></a></h2>
+<h2 id="总结">总结<a class="header-anchor" href="#总结"></a></h2>
 <p><code>ODBC Driver for SQL Server</code> 的性能更好，新版本有很多优化，有新特性，2021 年做开发就要选他。</p>
 <p>不同的驱动版本的支持的数据库版本也不同。请你一定要看好自己的 SQLServer 版本，去安装对应版本的驱动，然后配置好驱动名字。</p>
 <p>还发现了一个非常棒的网站：<a href="https://www.connectionstrings.com/">ConnectionStrings</a></p>
@@ -2855,7 +2855,7 @@ SQL 版本兼容性 | 表格来自 <a href="https://docs.microsoft.com/zh-cn/sql
 <p><a href="http://ConnectionStrings.com">ConnectionStrings.com</a> helps developers connect software to data. It’s a straight to the point reference about connection strings, a <a href="https://www.connectionstrings.com/kb/">knowledge base</a> of articles and database connectivity content and a host of <a href="https://www.connectionstrings.com/questions/">Q &amp; A forums</a> where developers help each other finding solutions.</p>
 </blockquote>
 <p><a href="http://ConnectionStrings.com">ConnectionStrings.com</a> 帮助开发人员将软件连接到数据库。它是一个关于连接字符串的直接参考、一个数据库连接内容和文章的知识库，同时也是一个问答论坛，开发人员可以在这里互相帮助寻找解决方案。</p>
-<h2 id="参考链接-4">参考链接<a class="header-anchor" href="#参考链接-4"></a></h2>
+<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/39440008/differences-between-drivers-for-odbc-drivers">sql server - Differences Between Drivers for ODBC Drivers - Stack Overflow</a></li>
 <li><a href="https://docs.microsoft.com/zh-cn/sql/connect/odbc/windows/release-notes-odbc-sql-server-windows?view=sql-server-ver15#previous-releases">Windows 上的 ODBC Driver for SQL Server 发行说明 - SQL Server | Microsoft Docs</a></li>
@@ -2941,12 +2941,12 @@ Dart 作为一个集众家之所长的语言，还是不错的，有印象的就
 <h3 id="其他">其他<a class="header-anchor" href="#其他"></a></h3>
 <p>自己也在学日语，五十音都背完了，词汇语法也在慢慢学习中。</p>
 <p>前段时间拿到了一个 Coding 的抱枕，挺开心的。</p>
-<h2 id="今年最有成就感的事情是什么？-2">今年最有成就感的事情是什么？<a class="header-anchor" href="#今年最有成就感的事情是什么？-2"></a></h2>
+<h2 id="今年最有成就感的事情是什么？">今年最有成就感的事情是什么？<a class="header-anchor" href="#今年最有成就感的事情是什么？"></a></h2>
 <ol>
 <li>能保研没保。</li>
 <li>拿了蚂蚁腾讯的校招 Offer。</li>
 </ol>
-<h2 id="看的书-2">看的书<a class="header-anchor" href="#看的书-2"></a></h2>
+<h2 id="看的书">看的书<a class="header-anchor" href="#看的书"></a></h2>
 <p>说一些很有印象的编程书吧</p>
 <ul>
 <li>JavaScript 语言精粹</li>
@@ -2957,7 +2957,7 @@ Dart 作为一个集众家之所长的语言，还是不错的，有印象的就
 </ul>
 <p>把习大大的七年知青岁月看完了。</p>
 <p>紫金陈的几部推理都很好看。</p>
-<h2 id="看的剧-2">看的剧<a class="header-anchor" href="#看的剧-2"></a></h2>
+<h2 id="看的剧">看的剧<a class="header-anchor" href="#看的剧"></a></h2>
 <p>年初的时候看的《爱情公寓 5》，印象深刻的是诸葛大力，狗哥。</p>
 <p>年中吧，又有一部小众剧《我的刺猬女孩》真的爱了，庄达菲真好看。</p>
 <p>年中跟同学去看了《八佰》</p>
@@ -2965,10 +2965,10 @@ Dart 作为一个集众家之所长的语言，还是不错的，有印象的就
 <p>《后翼弃兵》</p>
 <p>在小破站看了《信条》，《姜子牙》。</p>
 <p>最近在看《巡回检查组》，还不错。</p>
-<h2 id="去哪了-2">去哪了<a class="header-anchor" href="#去哪了-2"></a></h2>
+<h2 id="去哪了">去哪了<a class="header-anchor" href="#去哪了"></a></h2>
 <p>2020 的春节本来打算去珠海澳门玩玩的，港澳通行证都办好了，计划都写得好好的。然后因为疫情就取消了计划。</p>
 <p>不过今年的机票真便宜。</p>
-<h2 id="总的来说-2">总的来说<a class="header-anchor" href="#总的来说-2"></a></h2>
+<h2 id="总的来说">总的来说<a class="header-anchor" href="#总的来说"></a></h2>
 <p>又是在计算机上摸爬打滚的一年。</p>
 ]]></content>
       <categories>
@@ -3013,7 +3013,7 @@ gpg-logout() {
 <pre class="line-numbers language-conf" data-language="conf"><code class="language-conf">default-cache-ttl 3600
 max-cache-ttl 3600<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>单位是秒。</p>
-<h2 id="参考链接-5">参考链接<a class="header-anchor" href="#参考链接-5"></a></h2>
+<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/61939216/vscode-with-ubuntu-wsl-2-never-prompts-for-gpg-passphrase-even-after-configura">vscode with ubuntu + wsl 2 never prompts for gpg passphrase even after configuration just “failed to write commit data”</a></li>
 <li><a href="https://askubuntu.com/questions/349238/how-can-i-clear-my-cached-gpg-password">How can I clear my cached gpg password?</a></li>
@@ -3035,7 +3035,7 @@ max-cache-ttl 3600<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <p>于是搜索了一下，发现其实 <code>/etc/resolv.conf</code> 只是 <code>/var/run/resolv.conf</code> 的一个软链接。</p>
 <p><img data-src="https://i.lengthm.in/uPic/2rrWP7.png" alt="soft link"></p>
 <span id="more"></span>
-<h2 id="解决方案-2">解决方案<a class="header-anchor" href="#解决方案-2"></a></h2>
+<h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
 <p>所以解决办法就很简单了：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">ln</span> -s /var/run/resolv.conf /etc/resolv.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="参考">参考<a class="header-anchor" href="#参考"></a></h2>
@@ -3058,7 +3058,7 @@ INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
 INFO  [alembic.env] No changes in schema detected.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>各种方法都尝试过了，在每个地方都试了引入了 <code>models</code> 里的内容、调整使用 flask script 等等等等…</p>
 <span id="more"></span>
-<h2 id="解决方案-3">解决方案<a class="header-anchor" href="#解决方案-3"></a></h2>
+<h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
 <p>因为我的数据库已经启动了，我的数据库和我的 <code>models</code> 内容是一致的。所以这句话不会生效…</p>
 <p>所以 migrate 最好的时机是没有建立数据库之前…</p>
 <p>然后我就删库重来了，删库之后 migrate 果然成功了。</p>
@@ -3081,7 +3081,7 @@ INFO  [alembic.env] No changes in schema detected.<span aria-hidden="true" class
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">denied: requested access to the resource is denied<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>使用 docker login 之后也不行，给镜像打的标签也是正常的，就很奇怪。</p>
 <span id="more"></span>
-<h2 id="解决方案-4">解决方案<a class="header-anchor" href="#解决方案-4"></a></h2>
+<h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
 <p>其实这也是个很神奇的问题，你会发现这篇文章有个 tag 是 Linux。</p>
 <p>因为 docker login 会把用户信息保存在当前的用户路径下，从 login 后会有一个『你是使用明文密码登录』的提示可以看出这一点。</p>
 <pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">WARNING! Your password will be stored unencrypted in /home/xxxx/.docker/config.json.
@@ -3169,7 +3169,7 @@ log-queries
 <span class="token punctuation">[</span><span class="token table class-name">static</span><span class="token punctuation">]</span>
   <span class="token punctuation">[</span><span class="token table class-name">static.'alidns-doh'</span><span class="token punctuation">]</span>
   <span class="token key property">stamp</span> <span class="token punctuation">=</span> <span class="token string">'sdns://AgAAAAAAAAAACTIyMy41LjUuNSCoF6cUD2dwqtorNi96I2e3nkHPSJH1ka3xbdOglmOVkQ5kbnMuYWxpZG5zLmNvbQovZG5zLXF1ZXJ5'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="参考-2">参考<a class="header-anchor" href="#参考-2"></a></h2>
+<h2 id="参考">参考<a class="header-anchor" href="#参考"></a></h2>
 <ul>
 <li><a href="https://page.codespaper.com/2019/dnsmasq-cloudflare-doh/">https://page.codespaper.com/2019/dnsmasq-cloudflare-doh/</a></li>
 <li><a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation-macOS">https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation-macOS</a></li>
@@ -3306,7 +3306,7 @@ rm cron.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <p>这个漏洞很早之前就看过相关新闻，但没联想到会发生在自己身上…
 看记录，6.4 号就有人注册了新的 yapi 帐号，止血太晚～</p>
 <p>还好是执行在容器里的服务，没有造成太大的损失。</p>
-<h2 id="参考链接-6">参考链接<a class="header-anchor" href="#参考链接-6"></a></h2>
+<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
 <ul>
 <li><a href="https://github.com/fjc0k/docker-YApi">https://github.com/fjc0k/docker-YApi</a></li>
 <li><a href="https://paper.seebug.org/1639/">https://paper.seebug.org/1639/</a></li>
@@ -3328,7 +3328,7 @@ rm cron.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <p><img data-src="https://i.lengthm.in/uimages/1629526988050-1629526988031-afaa3675ccc17c8f48c136af73aa4d2f7b8c2ba4.png" alt="弹框"></p>
 <p>中文提示的应该是：操作已超时。</p>
 <span id="more"></span>
-<h2 id="解决方案-5">解决方案<a class="header-anchor" href="#解决方案-5"></a></h2>
+<h2 id="解决方案">解决方案<a class="header-anchor" href="#解决方案"></a></h2>
 <p>可能是因为在 Windows 的更新中 Docker 还没退出？然后计算机重新启动后 Docker 检测到某个文件还在，但发现一直请求都请求不到。</p>
 <p>删除 Docker 的几个数据文件就可以了:</p>
 <ul>
@@ -3336,7 +3336,7 @@ rm cron.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <li>C:\Users\[USER]\AppData\Roaming\Docker</li>
 <li>C:\Users\[USER]\AppData\Roaming\Docker Desktop</li>
 </ul>
-<h2 id="参考链接-7">参考链接<a class="header-anchor" href="#参考链接-7"></a></h2>
+<h2 id="参考链接">参考链接<a class="header-anchor" href="#参考链接"></a></h2>
 <ul>
 <li><a href="https://forums.docker.com/t/docker-failed-to-initialize/111341/8">Docker failed to initialize</a></li>
 <li><a href="https://forums.docker.com/t/docker-failed-to-initialize-operation-timed-out/111321/3">Docker failed to initialize.Operation timed out</a></li>

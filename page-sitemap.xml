@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://bytem.io/</loc>
+        <loc>https://cat.ms/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
@@ -10,7 +10,7 @@
     
     
     <url>
-        <loc>https://bytem.io/friends/</loc>
+        <loc>https://cat.ms/friends/</loc>
         <lastmod>2020-04-28T03:46:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -19,7 +19,7 @@
     
     
     <url>
-        <loc>https://bytem.io/about/</loc>
+        <loc>https://cat.ms/about/</loc>
         <lastmod>2016-03-26T11:39:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -28,7 +28,7 @@
     
     
     <url>
-        <loc>https://bytem.io/404</loc>
+        <loc>https://cat.ms/404</loc>
         <lastmod>2015-12-31T16:00:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -37,7 +37,7 @@
     
     
     <url>
-        <loc>https://bytem.io/categories/</loc>
+        <loc>https://cat.ms/categories/</loc>
         <lastmod>2015-12-31T16:00:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -46,7 +46,7 @@
     
     
     <url>
-        <loc>https://bytem.io/tags/</loc>
+        <loc>https://cat.ms/tags/</loc>
         <lastmod>2015-12-31T16:00:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
