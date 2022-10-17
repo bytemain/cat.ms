@@ -503,7 +503,7 @@ theme_config:
       family:
 
   vendors:
-    internal: local
+    internal: jsdelivr
     plugins: jsdelivr
   # Use velocity to animate everything.
   # For more information: http://velocityjs.org
