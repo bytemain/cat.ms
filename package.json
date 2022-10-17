@@ -15,30 +15,30 @@
     "updated": "tsx ./helper/article-updated.ts"
   },
   "dependencies": {
-    "hexo": "^6.2.0",
-    "hexo-generator-archive": "^1.0.0",
-    "hexo-generator-category": "^1.0.0",
+    "hexo": "^6.3.0",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
     "hexo-generator-feed": "^3.0.0",
-    "hexo-generator-index": "^2.0.0",
+    "hexo-generator-index": "^3.0.0",
     "hexo-generator-searchdb": "^1.4.0",
     "hexo-generator-seo-friendly-sitemap": "^0.2.1",
-    "hexo-generator-tag": "^1.0.0",
-    "hexo-pangu": "^0.2.1",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-pangu": "^0.2.2",
     "hexo-related-popular-posts": "^5.0.1",
-    "hexo-renderer-markdown-it": "^6.0.1",
+    "hexo-renderer-markdown-it": "^6.1.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
     "hexo-symbols-count-time": "^0.7.1",
-    "hexo-theme-next": "^8.12.2"
+    "hexo-theme-next": "^8.13.1"
   },
   "devDependencies": {
-    "chardet": "^1.4.0",
-    "dayjs": "^1.11.3",
-    "dotenv": "^16.0.1",
+    "chardet": "^1.5.0",
+    "dayjs": "^1.11.5",
+    "dotenv": "^16.0.3",
     "execa": "^6.1.0",
     "gray-matter": "^4.0.3",
     "husky": "^8.0.1",
-    "npm-check-updates": "^15.2.6",
+    "npm-check-updates": "^16.3.13",
     "staged-git-files": "^1.3.0",
     "tsx": "^3.10.1"
   }
