@@ -303,7 +303,6 @@ theme_config:
     max_depth: 6
 
   excerpt_description: true
-
   read_more_btn: true
 
   post_meta:
@@ -382,29 +381,8 @@ theme_config:
     # Scroll percent label in b2t button.
     scrollpercent: true
 
-  # Reading progress bar
-  reading_progress:
-    enable: false
-    # Available values: top | bottom
-    position: top
-    color: "#37c6c0"
-    height: 3px
-
-  # For more information: https://github.com/CodeByZach/pace
-  pace:
-    enable: false
-    # All available colors:
-    # black | blue | green | orange | pink | purple | red | silver | white | yellow
-    color: blue
-    # All available themes:
-    # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
-    # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-    theme: minimal
-
   disable_baidu_transformation: true
-
   canonical: true
-
   exturl: false
 
   math:
@@ -419,15 +397,10 @@ theme_config:
       enable: false
       # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
       copy_tex: false
-
   pjax: false
-
   mediumzoom: true
-
   lazyload: true
-
   pangu: false
-
   quicklink:
     enable: true
 
@@ -482,25 +455,6 @@ theme_config:
       tabs: false
       labels: true
 
-  # Use velocity to animate everything.
-  # For more information: http://velocityjs.org
-  motion:
-    enable: false
-    async: false
-    transition:
-      # Transition variants:
-      # fadeIn | flipXIn | flipYIn | flipBounceXIn | flipBounceYIn
-      # swoopIn | whirlIn | shrinkIn | expandIn
-      # bounceIn | bounceUpIn | bounceDownIn | bounceLeftIn | bounceRightIn
-      # slideUpIn | slideDownIn | slideLeftIn | slideRightIn
-      # slideUpBigIn | slideDownBigIn | slideLeftBigIn | slideRightBigIn
-      # perspectiveUpIn | perspectiveDownIn | perspectiveLeftIn | perspectiveRightIn
-      post_block: fadeIn
-      post_header: slideDownIn
-      post_body: slideDownIn
-      coll_header: slideLeftIn
-      # Only for Pisces | Gemini.
-      sidebar: slideUpIn
   # ---------------------------------------------------------------
   # Tags Settings
   # See: https://theme-next.org/docs/tag-plugins/
