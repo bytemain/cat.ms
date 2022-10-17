@@ -100,7 +100,7 @@ symbols_count_time:
   wpm: 275
   suffix: 'mins.'
 js_concator:
-  enable: true
+  enable: false
   bundle_path: '/js/bundle.js'
   front: false
   silent: false
@@ -196,18 +196,12 @@ theme_config:
   footer:
     # Specify the date when the site was setup. If not defined, current year will be used.
     since: 2016
-
     icon:
       name: fa fa-heart
       animated: true
       color: ''
-
-    # If not defined, `author` from Hexo `_config.yml` will be used.
     copyright:
-
     powered: true
-
-    # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
     beian:
       enable: false
       icp:
