@@ -1553,6 +1553,50 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
       </categories>
   </entry>
   <entry>
+    <title>暗影精灵修改 OMEN 键</title>
+    <url>//posts/mod-omencommandcenter-key/</url>
+    <content><![CDATA[<p>暗影精灵的键盘上有一个自带的 OEM 键，按了之后可以打开 OMEN Command Center, 一个可以对笔记本的性能，网络管理的工具。</p>
+<p>但是我对这个控制中心需求很小，所以我直接把软件卸载了 (●´ω ｀ ●)。</p>
+<p>所以，怎么去利用这个键呢？</p>
+<p>注意：该键是没有 keycode 的，也就是不被作为键盘的输入键。</p>
+<span id="more"></span>
+<h2 id="如果你按这个键没有效果">如果你按这个键没有效果<a class="header-anchor" href="#如果你按这个键没有效果"></a></h2>
+<p>参考惠普官方文档：<a href="https://support.hp.com/cn-zh/document/c01198500">https://support.hp.com/cn-zh/document/c01198500</a></p>
+<p>对于我的暗影精灵 3，装一个惠普的 SystemEvent 即可：</p>
+<ul>
+<li><a href="https://www.microsoft.com/store/productId/9P4W8RFN9M2T">https://www.microsoft.com/store/productId/9P4W8RFN9M2T</a></li>
+</ul>
+<h2 id="20200607-更新">20200607 更新<a class="header-anchor" href="#20200607-更新"></a></h2>
+<p>SystemEvent 更新了，反编译后发现按这个键目前会直接启动：<code>AD2F1837.OMENCommandCenter</code> 这个软件， 过段时间再看看怎么弄。</p>
+<p><strong>以下内容已经失效。</strong></p>
+<hr>
+<h2 id="修改注册表">修改注册表<a class="header-anchor" href="#修改注册表"></a></h2>
+<p><img data-src="https://i.lengthm.in/posts/mod-omencommandcenter-key/omencommandcenter.png" alt="omencommandcenter"></p>
+<p>按下 OMEN 键时，系统会弹出来这个框，这说明系统想打开注册了这个链接的应用。</p>
+<pre class="line-numbers language-reg" data-language="reg"><code class="language-reg">HKEY_CURRENT_USER\SOFTWARE\Classes\omencommandcenter<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>关于 windows 应用注册链接详见：<a href="https://blog.walterlv.com/post/windows-uri-scheme-association.html">https://blog.walterlv.com/post/windows-uri-scheme-association.html</a></p>
+<p>解决方法就是修改注册表：
+<img data-src="https://i.lengthm.in/posts/mod-omencommandcenter-key/modify-registry.png" alt="修改注册表"></p>
+<pre class="line-numbers language-reg" data-language="reg"><code class="language-reg">HKEY_CURRENT_USER\SOFTWARE\Classes\omencommandcenter\Shell\Open\Command<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在 omencommandcenter 下依次添加 <code>Shell</code>、 <code>Open</code>、 <code>Command</code>，大小写不敏感，然后修改 <code>Command</code> 的 <code>(Default)</code> 值为想打开的应用程序。</p>
+<p>这里的 <code>Open</code> 的意思就是你在资源管理器中双击一个类型的文件就打开某个软件那样。</p>
+<p>比如说像我就设置成了 <code>wt.exe</code>，就是打开 Windows Terminal。</p>
+<h2 id="一些-Tips">一些 Tips<a class="header-anchor" href="#一些-Tips"></a></h2>
+<p>windows 还提供了 执行 vbs 的工具：</p>
+<pre class="line-numbers language-bat" data-language="bat"><code class="language-bat">mshta vbscript:clipboarddata.setdata(\"text\",\"%1\")(close)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>参考： <a href="https://lolbas-project.github.io/lolbas/Binaries/Mshta/">https://lolbas-project.github.io/lolbas/Binaries/Mshta/</a></p>
+<p>或者你可以执行某个 <code>Powershell</code> 文件：</p>
+<pre class="line-numbers language-bat" data-language="bat"><code class="language-bat">powershell.exe -ExecutionPolicy ByPass -File "xxx.ps1"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果你还想再硬核一点，你可以通过注册表唤起自己写的一个脚本来执行你要做的事情。</p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>tricks</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>React 项目中动态加载 Mathjax</title>
     <url>//posts/use-mathjax-in-react/</url>
     <content><![CDATA[<p>做一个 React 项目的时候，想在网页上渲染数学公式，不想用别人封装好的 React 组件，采用动态加载的方式直接渲染 DOM。</p>
@@ -1686,50 +1730,6 @@ Netch 是一款 Windows 平台的开源游戏加速工具，Netch 可以实现�
       </categories>
       <tags>
         <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>暗影精灵修改 OMEN 键</title>
-    <url>//posts/mod-omencommandcenter-key/</url>
-    <content><![CDATA[<p>暗影精灵的键盘上有一个自带的 OEM 键，按了之后可以打开 OMEN Command Center, 一个可以对笔记本的性能，网络管理的工具。</p>
-<p>但是我对这个控制中心需求很小，所以我直接把软件卸载了 (●´ω ｀ ●)。</p>
-<p>所以，怎么去利用这个键呢？</p>
-<p>注意：该键是没有 keycode 的，也就是不被作为键盘的输入键。</p>
-<span id="more"></span>
-<h2 id="如果你按这个键没有效果">如果你按这个键没有效果<a class="header-anchor" href="#如果你按这个键没有效果"></a></h2>
-<p>参考惠普官方文档：<a href="https://support.hp.com/cn-zh/document/c01198500">https://support.hp.com/cn-zh/document/c01198500</a></p>
-<p>对于我的暗影精灵 3，装一个惠普的 SystemEvent 即可：</p>
-<ul>
-<li><a href="https://www.microsoft.com/store/productId/9P4W8RFN9M2T">https://www.microsoft.com/store/productId/9P4W8RFN9M2T</a></li>
-</ul>
-<h2 id="20200607-更新">20200607 更新<a class="header-anchor" href="#20200607-更新"></a></h2>
-<p>SystemEvent 更新了，反编译后发现按这个键目前会直接启动：<code>AD2F1837.OMENCommandCenter</code> 这个软件， 过段时间再看看怎么弄。</p>
-<p><strong>以下内容已经失效。</strong></p>
-<hr>
-<h2 id="修改注册表">修改注册表<a class="header-anchor" href="#修改注册表"></a></h2>
-<p><img data-src="https://i.lengthm.in/posts/mod-omencommandcenter-key/omencommandcenter.png" alt="omencommandcenter"></p>
-<p>按下 OMEN 键时，系统会弹出来这个框，这说明系统想打开注册了这个链接的应用。</p>
-<pre class="line-numbers language-reg" data-language="reg"><code class="language-reg">HKEY_CURRENT_USER\SOFTWARE\Classes\omencommandcenter<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>关于 windows 应用注册链接详见：<a href="https://blog.walterlv.com/post/windows-uri-scheme-association.html">https://blog.walterlv.com/post/windows-uri-scheme-association.html</a></p>
-<p>解决方法就是修改注册表：
-<img data-src="https://i.lengthm.in/posts/mod-omencommandcenter-key/modify-registry.png" alt="修改注册表"></p>
-<pre class="line-numbers language-reg" data-language="reg"><code class="language-reg">HKEY_CURRENT_USER\SOFTWARE\Classes\omencommandcenter\Shell\Open\Command<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>在 omencommandcenter 下依次添加 <code>Shell</code>、 <code>Open</code>、 <code>Command</code>，大小写不敏感，然后修改 <code>Command</code> 的 <code>(Default)</code> 值为想打开的应用程序。</p>
-<p>这里的 <code>Open</code> 的意思就是你在资源管理器中双击一个类型的文件就打开某个软件那样。</p>
-<p>比如说像我就设置成了 <code>wt.exe</code>，就是打开 Windows Terminal。</p>
-<h2 id="一些-Tips">一些 Tips<a class="header-anchor" href="#一些-Tips"></a></h2>
-<p>windows 还提供了 执行 vbs 的工具：</p>
-<pre class="line-numbers language-bat" data-language="bat"><code class="language-bat">mshta vbscript:clipboarddata.setdata(\"text\",\"%1\")(close)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>参考： <a href="https://lolbas-project.github.io/lolbas/Binaries/Mshta/">https://lolbas-project.github.io/lolbas/Binaries/Mshta/</a></p>
-<p>或者你可以执行某个 <code>Powershell</code> 文件：</p>
-<pre class="line-numbers language-bat" data-language="bat"><code class="language-bat">powershell.exe -ExecutionPolicy ByPass -File "xxx.ps1"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果你还想再硬核一点，你可以通过注册表唤起自己写的一个脚本来执行你要做的事情。</p>
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>tricks</tag>
       </tags>
   </entry>
   <entry>
