@@ -194,23 +194,12 @@ theme_config:
     #ms_browserconfig: /images/browserconfig.xml
 
   footer:
-    # Specify the date when the site was setup. If not defined, current year will be used.
-    since: 2016
     icon:
       name: fa fa-heart
       animated: true
       color: ''
     copyright:
     powered: true
-    beian:
-      enable: false
-      icp:
-      # The digit in the num of gongan beian.
-      gongan_id:
-      # The full num of gongan beian.
-      gongan_num:
-      # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
-      gongan_icon_url:
 
   # scheme: Muse
   scheme: Mist
