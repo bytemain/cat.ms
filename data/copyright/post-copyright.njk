@@ -65,8 +65,10 @@
     <a href="https://github.com/{{ username }}/{{ repository }}/blame/{{ branch }}/source/{{ page.source }}" title="顺序查看文章各部分修改记录" target="_blank">Blame</a>,
     <a href="https://github.com/{{ username }}/{{ repository }}/commits/{{ branch }}/source/{{ page.source }}" title="查看文章有关更新记录" target="_blank">History</a>
     <strong style="margin-left: 1em">{{ rawText  }}：</strong>
+    <i class="fab fa-github"></i>
+    <a href="https://github.com/{{ username }}/{{ repository }}/blob/{{ branch }}/source/{{ page.source }}" title="在 GitHub 查看 Markdown 原始文件" target="_blank">Preview</a>,
     <i class="fas fa-file-alt"></i>
-    <a href="https://raw.githubusercontent.com/{{ username }}/{{ repository }}/{{ branch }}/source/{{ page.source }}" title="查看 & 下载文章 Markdown 原始文件" target="_blank">.md Raw</a>
+    <a href="https://raw.githubusercontent.com/{{ username }}/{{ repository }}/{{ branch }}/source/{{ page.source }}" title="Markdown 原始文件" target="_blank">.md Raw</a>
   </li>
   <li class="post-copyright-license">
     <strong>{{ licenseTitle  }}：
@@ -97,7 +99,7 @@
     var copyTooltip = document.querySelector('.copy-tooltip');
     var timeout;
     copyButton.addEventListener('click', function (e) {
-      const text = `原文作者：{{ page.author or author }}\n原文标题：{{ page.title }}\n原文链接：{{ postURL }}`;
+      const text = `标题：{{ page.title }}\n链接：{{ postURL }}`;
 
       if (copyTooltip.hasChildNodes()) {
         copyTooltip.removeChild(copyTooltip.firstChild);
