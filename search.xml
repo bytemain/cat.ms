@@ -3047,7 +3047,31 @@ Login Succeeded<span aria-hidden="true" class="line-numbers-rows"><span></span><
 <span id="more"></span>
 <h2 id="什么是-DoH">什么是 DoH<a class="header-anchor" href="#什么是-DoH"></a></h2>
 <p>什么是 DoH，可以看：<a href="https://zh.wikipedia.org/zh-cn/DNS_over_HTTPS">https://zh.wikipedia.org/zh-cn/DNS_over_HTTPS</a>。</p>
-<h2 id="准备工作">准备工作<a class="header-anchor" href="#准备工作"></a></h2>
+<h2 id="使用-smartdns-rs">使用 smartdns-rs<a class="header-anchor" href="#使用-smartdns-rs"></a></h2>
+<p><a href="https://github.com/mokeyish/smartdns-rs">smartdns-rs</a> 是一个用 Rust 编写的跨平台本地 DNS 服务器，获取最快的网站 IP，获得最佳上网体验，支持 DoH，DoT。</p>
+<p>开源在 GitHub: <a href="https://github.com/mokeyish/smartdns-rs">https://github.com/mokeyish/smartdns-rs</a></p>
+<p>使用这个软件可以非常方便的使用 DoH。</p>
+<p>在 <a href="https://github.com/mokeyish/smartdns-rs/releases">releases 页面</a> 下载你的系统的二进制文件，解压，然后执行：</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># 安装服务并启动
+sudo ./smartdns service install
+sudo ./smartdns service start
+
+# 关闭服务
+# sudo ./smartdns service stop
+# 卸载服务
+# sudo ./smartdns service uninstall<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>此时软件会把自己安装到 <code>/usr/local/bin/smartdns</code>，以后你只需要执行 <code>smartdns</code> 就可以控制服务的行为了。</p>
+<p>服务默认使用的配置文件是：<code>/usr/local/etc/smartdns/smartdns.conf</code>，具体各参数可以查看官方文档：</p>
+<p>直接在这个文件的底部加入如下配置即可：</p>
+<pre class="line-numbers language-conf" data-language="conf"><code class="language-conf"># ... 默认配置
+
+# server-tls dns.alidns.com
+# server-https https://cloudflare-dns.com/dns-query
+# server-https https://dns.alidns.com/dns-query
+server-tls 8.8.8.8:853
+server-https https://223.5.5.5/dns-query<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>smartdns</code> 会默认监听本机的 53 端口。</p>
+<h2 id="使用-dnsmasq-dnscrypt-proxy">使用 dnsmasq &amp; dnscrypt-proxy<a class="header-anchor" href="#使用-dnsmasq-dnscrypt-proxy"></a></h2>
 <h3 id="安装-dnsmasq、dnscrypt-proxy">安装 dnsmasq、dnscrypt-proxy<a class="header-anchor" href="#安装-dnsmasq、dnscrypt-proxy"></a></h3>
 <p>安装很简单，使用 brew：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">brew install dnsmasq dnscrypt-proxy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -3072,8 +3096,8 @@ Login Succeeded<span aria-hidden="true" class="line-numbers-rows"><span></span><
 <span class="token builtin class-name">echo</span> <span class="token string">"nameserver <span class="token variable">$DNS</span>"</span> <span class="token operator">&gt;</span> <span class="token string">"<span class="token environment constant">$HOME</span>/upstream.conf"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这个命令会把路由器下发的 DNS 写入到 <code>$HOME/upstream.conf</code> 文件中。</p>
 <p>然后我们手动执行一遍 <code>locationchanger</code>，将这个文件生成出来。</p>
-<h2 id="配置">配置<a class="header-anchor" href="#配置"></a></h2>
-<h3 id="配置-dnsmasq">配置 dnsmasq<a class="header-anchor" href="#配置-dnsmasq"></a></h3>
+<h3 id="配置">配置<a class="header-anchor" href="#配置"></a></h3>
+<h4 id="配置-dnsmasq">配置 dnsmasq<a class="header-anchor" href="#配置-dnsmasq"></a></h4>
 <p>看 brew 提示你的配置文件在哪里，像我的 m1 的 brew 就提示配置文件在 <code>/opt/homebrew/etc/dnsmasq.conf</code>：然后修改这个配置文件的内容：</p>
 <pre class="line-numbers language-ini" data-language="ini"><code class="language-ini"><span class="token comment"># 设置只解析域名</span>
 domain-needed
@@ -3089,7 +3113,7 @@ bogus-priv
 <span class="token comment"># 打日志出来，好排查问题</span>
 log-queries
 <span class="token key attr-name">log-facility</span><span class="token punctuation">=</span><span class="token value attr-value">/var/log/dnsmasq.log</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="配置-dnscrypt-proxy">配置 dnscrypt-proxy<a class="header-anchor" href="#配置-dnscrypt-proxy"></a></h3>
+<h4 id="配置-dnscrypt-proxy">配置 dnscrypt-proxy<a class="header-anchor" href="#配置-dnscrypt-proxy"></a></h4>
 <p>M1 系统的配置文件地址在：/opt/homebrew/etc/dnscrypt-proxy.toml</p>
 <p>这里主要是我个人的配置，我只保留一个阿里云的 DoH，然后把 sources 下的所有内容都注释掉，这样启动会快很多。</p>
 <p>如果保留 sources 下的内容的话，每次启动软件都要去找一个最快的 DNS，要遍历很久。</p>
@@ -3102,7 +3126,7 @@ log-queries
 <span class="token punctuation">[</span><span class="token table class-name">static</span><span class="token punctuation">]</span>
   <span class="token punctuation">[</span><span class="token table class-name">static.'alidns-doh'</span><span class="token punctuation">]</span>
   <span class="token key property">stamp</span> <span class="token punctuation">=</span> <span class="token string">'sdns://AgAAAAAAAAAACTIyMy41LjUuNSCoF6cUD2dwqtorNi96I2e3nkHPSJH1ka3xbdOglmOVkQ5kbnMuYWxpZG5zLmNvbQovZG5zLXF1ZXJ5'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="参考">参考<a class="header-anchor" href="#参考"></a></h2>
+<h3 id="参考">参考<a class="header-anchor" href="#参考"></a></h3>
 <ul>
 <li><a href="https://page.codespaper.com/2019/dnsmasq-cloudflare-doh/">https://page.codespaper.com/2019/dnsmasq-cloudflare-doh/</a></li>
 <li><a href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation-macOS">https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation-macOS</a></li>
