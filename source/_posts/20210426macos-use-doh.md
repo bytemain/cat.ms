@@ -3,8 +3,8 @@ title: MacOS 配置 DNS Over HTTPS
 comments: true
 toc: true
 permalink: posts/macos-use-doh/
-date: 2021-04-26 13:09:22
-updated: 2021-07-25 21:33:00
+date: '2021-04-26 13:09:22'
+updated: '2023-03-08 17:33:02'
 categories: DNS
 tags:
   - DoH
@@ -27,7 +27,46 @@ dnsmasq 是一个轻量级的域名解析服务器，帮我们把 DNS 请求转�
 
 什么是 DoH，可以看：<https://zh.wikipedia.org/zh-cn/DNS_over_HTTPS>。
 
-## 准备工作
+## 使用 smartdns-rs
+
+[smartdns-rs](https://github.com/mokeyish/smartdns-rs) 是一个用 Rust 编写的跨平台本地DNS服务器，获取最快的网站IP，获得最佳上网体验，支持DoH，DoT。
+
+开源在 GitHub: <https://github.com/mokeyish/smartdns-rs>
+
+使用这个软件可以非常方便的使用 DoH。
+
+在 [releases 页面](https://github.com/mokeyish/smartdns-rs/releases) 下载你的系统的二进制文件，解压，然后执行：
+
+```sh
+# 安装服务并启动
+sudo ./smartdns service install
+sudo ./smartdns service start
+
+# 关闭服务
+# sudo ./smartdns service stop
+# 卸载服务
+# sudo ./smartdns service uninstall
+```
+
+此时软件会把自己安装到 `/usr/local/bin/smartdns`，以后你只需要执行 `smartdns` 就可以控制服务的行为了。
+
+服务默认使用的配置文件是：`/usr/local/etc/smartdns/smartdns.conf`，具体各参数可以查看官方文档：
+
+直接在这个文件的底部加入如下配置即可：
+
+```conf
+# ... 默认配置
+
+# server-tls dns.alidns.com
+# server-https https://cloudflare-dns.com/dns-query
+# server-https https://dns.alidns.com/dns-query
+server-tls 8.8.8.8:853
+server-https https://223.5.5.5/dns-query
+```
+
+`smartdns` 会默认监听本机的 53 端口。
+
+## 使用 dnsmasq & dnscrypt-proxy
 
 ### 安装 dnsmasq、dnscrypt-proxy
 
@@ -79,9 +118,9 @@ echo "nameserver $DNS" > "$HOME/upstream.conf"
 
 然后我们手动执行一遍 `locationchanger`，将这个文件生成出来。
 
-## 配置
+### 配置
 
-### 配置 dnsmasq
+#### 配置 dnsmasq
 
 看 brew 提示你的配置文件在哪里，像我的 m1 的 brew 就提示配置文件在 `/opt/homebrew/etc/dnsmasq.conf`：
 然后修改这个配置文件的内容：
@@ -103,7 +142,7 @@ log-queries
 log-facility=/var/log/dnsmasq.log
 ```
 
-### 配置 dnscrypt-proxy
+#### 配置 dnscrypt-proxy
 
 M1 系统的配置文件地址在：/opt/homebrew/etc/dnscrypt-proxy.toml
 
@@ -123,7 +162,7 @@ log_file = '/var/log/dnscrypt-proxy.log'
   stamp = 'sdns://AgAAAAAAAAAACTIyMy41LjUuNSCoF6cUD2dwqtorNi96I2e3nkHPSJH1ka3xbdOglmOVkQ5kbnMuYWxpZG5zLmNvbQovZG5zLXF1ZXJ5'
 ```
 
-## 参考
+### 参考
 
 - <https://page.codespaper.com/2019/dnsmasq-cloudflare-doh/>
 - <https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation-macOS>
