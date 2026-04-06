@@ -1,5 +1,4 @@
 const { transformFactory, pad } = require('./utils.js');
-const execa = require('execa');
 
 const year = pad(new Date().getFullYear());
 const month = pad(new Date().getMonth() + 1);
@@ -32,7 +31,8 @@ if (!typeArray.includes(type)) {
 console.log(`type:`, type);
 console.log(`title:`, title);
 
-try {
+async function main() {
+  const { execa } = await import('execa');
   let exec;
   if (type !== 'page') {
     if (title[0] >= '0' && title[0] <= '9') {
@@ -45,6 +45,8 @@ try {
   }
   exec.stdout.pipe(transformFactory()).pipe(process.stdout);
   exec.stderr.pipe(transformFactory()).pipe(process.stderr);
-} catch (error) {
-  console.log(error);
 }
+
+main().catch((error) => {
+  console.log(error);
+});

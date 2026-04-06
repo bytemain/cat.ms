@@ -5,3 +5,19 @@
 - Powered by [Hexo](https://hexo.io/zh-cn/)
 - Theme - [hexo-theme-next](https://github.com/theme-next/hexo-theme-next)
 - Hosted by [GitHub Pages](https://pages.github.com/)
+
+## Development
+
+- Node.js 22
+- pnpm
+
+```bash
+pnpm install
+pnpm dev
+```
+
+## Build
+
+```bash
+pnpm build
+```

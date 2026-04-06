@@ -7,27 +7,23 @@ hexo.extend.tag.register(
   'friends',
   function (args) {
     const friends = yaml.load(
-      fs.readFileSync(path.join(__dirname, '../data/friends.yml'), 'utf8')
+      fs.readFileSync(path.join(__dirname, '../data/friends.yml'), 'utf8'),
     );
-    let array = [];
-    Object.keys(friends).forEach((v) => {
-      array.push({
-        name: v,
-        href: friends[v].href,
-        intro: friends[v].intro,
-      });
-    });
-    let template = `<ul>
+    const items = Object.entries(friends).map(([name, friend]) => ({
+      name,
+      href: friend.href,
+      intro: friend.intro,
+    }));
+    const template = `<ul>
   {% for item in items -%}
     <li>
-      <a class="name" href="{{item.href}}" target="_blank">{{item.name}}</a>
+      <a class="name" href="{{item.href}}" target="_blank" rel="noopener noreferrer">{{item.name}}</a>
       <br>
       <span class="intro">{{item.intro}}</span>
     </li>
   {%- endfor %}
   </ul>`;
-    let result = nunjucks.renderString(template, { items: array });
-    return result;
+    return nunjucks.renderString(template, { items });
   },
-  { async: true }
+  {},
 );

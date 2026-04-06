@@ -6,7 +6,6 @@
     "version": "8.1.1"
   },
   "scripts": {
-    "prepare": "husky install",
     "dev": "hexo server --draft",
     "dev:clean": "pnpm clean && pnpm dev",
     "build": "hexo generate -f",
@@ -30,18 +29,18 @@
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-symbols-count-time": "^0.7.1",
-    "hexo-theme-next": "^8.13.1"
+    "hexo-theme-next": "8.25.0"
   },
   "devDependencies": {
-    "chardet": "^1.5.0",
+    "chardet": "^2.1.1",
     "dayjs": "^1.11.5",
-    "dotenv": "^16.0.3",
-    "execa": "^6.1.0",
+    "dotenv": "^17.4.1",
+    "execa": "^9.6.1",
     "gray-matter": "^4.0.3",
-    "husky": "^8.0.1",
-    "npm-check-updates": "^16.3.13",
-    "prettier": "^2.7.1",
+    "iconv-lite": "^0.7.0",
+    "npm-check-updates": "^20.0.0",
+    "prettier": "^3.8.1",
     "staged-git-files": "^1.3.0",
-    "tsx": "^3.10.1"
+    "tsx": "^4.21.0"
   }
 }

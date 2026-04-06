@@ -197,7 +197,6 @@ theme_config:
     icon:
       name: fa fa-heart
       animated: true
-      color: ''
     copyright:
     powered: true
 
