@@ -12,7 +12,7 @@ tags:
 
 于是搜索了一下，发现其实 `/etc/resolv.conf` 只是 `/var/run/resolv.conf` 的一个软链接。
 
-![soft link](https://i.lengthm.in/uPic/2rrWP7.png)
+![soft link](https://i.cat.ms/uPic/2rrWP7.png)
 
 <!-- more -->
 

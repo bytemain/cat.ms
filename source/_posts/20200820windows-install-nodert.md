@@ -105,7 +105,7 @@ gyp ERR! build error
 
 从此以后，遇到打包 Native 的场景，我再也不怕了！
 
-![安装成功](https://i.lengthm.in/posts/windows-install-nodert/succ.png)
+![安装成功](https://i.cat.ms/posts/windows-install-nodert/succ.png)
 
 ---
 

@@ -11,7 +11,7 @@ tags:
 
 在 Windows 上遇到一个 Docker Desktop 无法启动的问题，表现就是点击 Docker 图标，但是就是不启动，过了一会弹了一个框：
 
-![弹框](https://i.lengthm.in/uimages/1629526988050-1629526988031-afaa3675ccc17c8f48c136af73aa4d2f7b8c2ba4.png)
+![弹框](https://i.cat.ms/uimages/1629526988050-1629526988031-afaa3675ccc17c8f48c136af73aa4d2f7b8c2ba4.png)
 
 中文提示的应该是：操作已超时。
 

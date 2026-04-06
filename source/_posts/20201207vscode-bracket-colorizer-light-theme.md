@@ -12,7 +12,7 @@ tags:
 目前使用的亮色主题（Github Light Theme - Gray）下使用 Bracket-Pair-Colorizer-2 会发现默认的金色括号太不明显。
 搜索了一下 issue 发现已经有 [解决方案](https://github.com/CoenraadS/Bracket-Pair-Colorizer-2/issues/62)。
 
-![比较](https://i.lengthm.in/posts/vscode-bracket-colorizer-light-theme/comparison.png)
+![比较](https://i.cat.ms/posts/vscode-bracket-colorizer-light-theme/comparison.png)
 
 <!-- more -->
 

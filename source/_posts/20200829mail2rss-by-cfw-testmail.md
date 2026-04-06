@@ -63,7 +63,7 @@ tag 可以是任意内容。
 
 之后查询 API 的时候，可以过滤指定标签来查看发给每个用户的邮件。
 
-![namespace](https://i.lengthm.in/posts/mail2rss-by-cfw-testmail/namespace.png)
+![namespace](https://i.cat.ms/posts/mail2rss-by-cfw-testmail/namespace.png)
 
 ### 使用 API
 

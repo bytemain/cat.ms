@@ -92,7 +92,7 @@ def serve(path):
 
 把静态资源放在 `app/react_app` 下：
 
-![文件夹结构](https://i.lengthm.in/posts/serving-a-front-end-created-with-create-react-app-with-flask/app_struct.png)
+![文件夹结构](https://i.cat.ms/posts/serving-a-front-end-created-with-create-react-app-with-flask/app_struct.png)
 
 然后设置 `react_folder` 这个变量为静态资源的路径就好。
 
